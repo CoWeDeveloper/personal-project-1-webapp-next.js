@@ -1,7 +1,9 @@
 import React from 'react'
-import logo from "../../public/assets/images/cloudlogo.png"; 
-import Link from "next/link"
+import Link from "next/link";
 import Image from 'next/image';
+// import assets
+import logo from "../../public/assets/images/cloudlogo.png"; 
+import { Handshake } from 'lucide-react';
 
 const Navbar = () => {
   return (
@@ -20,7 +22,12 @@ const Navbar = () => {
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Customers</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Alliances</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Resources</li></Link>
-                <Link href={'/'} className='hover:text-white active:hover:text-white'><li> Request Demo</li></Link>
+                <Link href={'/'} className='hover:text-white active:hover:text-white'>
+                  <li className='flex gap-1'>
+                    <Handshake />
+                    Request Demo
+                  </li>
+                </Link>
             </ul>
             </div>
         </nav>
