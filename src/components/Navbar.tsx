@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from 'next/image';
 // import assets
 import logo from "../../public/assets/images/cloudlogo.png"; 
-import { Handshake } from 'lucide-react';
+import {Presentation} from 'lucide-react';
 
 const Navbar = () => {
   return (
@@ -24,7 +24,7 @@ const Navbar = () => {
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Resources</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'>
                   <li className='flex gap-1'>
-                    <Handshake />
+                  <Presentation />
                     Request Demo
                   </li>
                 </Link>
