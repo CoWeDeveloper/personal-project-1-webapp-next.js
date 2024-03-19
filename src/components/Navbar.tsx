@@ -23,8 +23,8 @@ const Navbar = () => {
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Alliances</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Resources</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'>
-                  <li className='flex gap-1'>
-                  <Presentation />
+                  <li className='hover:translate-y-1 group  transition ease-in-out duration-500  flex gap-1'>
+                  <Presentation className='group-hover:scale-x-[-1] transition ease-in-out duration-500 ' />
                     Request Demo
                   </li>
                 </Link>

@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@tailwind base; /*It is apply globally. it is a part of approach to sturcturing and organizing the style using configure method */
+@tailwind components; /*style that apply on components */
+@tailwind utilities; /*atomic style for margin, style and padding. Small set of classes we could reuse*/
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -29,5 +29,13 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components{
+  .whiteCloudBackground{
+    @apply z-0 hidden md:flex items-center w-full absolute  
+    h-fit object-contain px-[8%] mx-auto transition-all duration-300 ease-linear 
+    hover:invert-[1%] hover:sepia-[5%] hover:saturate-[2261%] hover:hue-rotate-[314deg] hover:brightness-[100%] hover:contrast-[50%]
   }
 }
