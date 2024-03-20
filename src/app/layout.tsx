@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+      <section className="m-0 p-0 scroll-smooth box-border">
         <Navbar />
         {children}
+        </section>
       </body>
     </html>
   );

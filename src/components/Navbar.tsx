@@ -8,13 +8,14 @@ import {Presentation} from 'lucide-react';
 const Navbar = () => {
   return (
     <> 
-        <nav className='flex w-5/6 m-auto justify-between relative top-3 left-0 z-50'> 
-            <div>
-              <Image src={logo} className='w-36 cursor-pointer'  alt="CloudTanentLogo" />
+    <header className='absolute z-10 w-full mx-auto justify-center px-36 py-2'>
+        <nav className='flex m-auto items-center justify-between mx-5'> 
+            <div className='pl-34'>
+              <Image src={logo} className='w-37 cursor-pointer'  alt="CloudTanentLogo" />
             </div> 
 
             <div className='flex items-end '>
-            <ul className='flex space-x-4 text-gray-300 '>
+            <ul className='flex space-x-4 text-gray-300 gap-4 '>
                 <Link href={'/'} className='hover:text-white active:hover:text-white '><li>Home</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>About Us</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Services Network</li></Link>
@@ -31,6 +32,7 @@ const Navbar = () => {
             </ul>
             </div>
         </nav>
+        </header>
     </>
   )
 }

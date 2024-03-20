@@ -8,7 +8,7 @@ function About() {
   return (
     <>
       <section className="bg-white w-full h-[100vh]">
-        <div className=" relative grid max-w-screen-xl lg:grid-cols-12 mx-auto p x-4 py-8 lg:py-16 items-center md:h-screen">
+        <div className=" relative grid max-w-screen-xl lg:grid-cols-12 mx-auto px-4 py-8 lg:py-16 items-center md:h-screen">
           <Image
             className="whiteCloudBackground"
             src={WhiteCloudBackground}
@@ -37,7 +37,7 @@ function About() {
                         alt={aboutData.alt}
                       />
                     </div>
-                    <h3 className="flex font-bold justify-center items-center">
+                    <h3 className="flex font-semibold  justify-center items-center">
                       {aboutData.title}
                     </h3>
                   </div>

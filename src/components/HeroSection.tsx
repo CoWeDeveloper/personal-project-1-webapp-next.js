@@ -8,8 +8,8 @@ function Home() {
   return (
     <>
       <header
-        className="w-full h-screen z-0 bg-top relative 
-     ease-in-out bottom-10 overflow-hidden  duration-300 
+        className="w-full h-screen z-0  
+     ease-in-out overflow-hidden  duration-300 
      transition-all g-no-repeat bg-cover flex items-center "
         style={{ backgroundImage: `url("assets/images/HomeHeader.webp")` }}
       >
