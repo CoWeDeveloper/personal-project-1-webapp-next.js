@@ -6,6 +6,7 @@ import AboutSection from "../components/AboutSection"
 import Image from "next/image";
 import HomeHeader from "/assets/images/HomeHeader.webp"
 import OurServices from "@/components/OurServices";
+import OurEdges from "@/components/OurEdges";
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <HeroSection />
     <AboutSection />
     <OurServices />
+    <OurEdges /> 
     </main>
   );
 }

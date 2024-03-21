@@ -8,13 +8,13 @@ function Home() {
   return (
     <>
       <header
-        className="w-full h-screen z-0  
+        className="w-full h-screen z-0    
      ease-in-out overflow-hidden  duration-300 
      transition-all g-no-repeat bg-cover flex items-center "
         style={{ backgroundImage: `url("assets/images/HomeHeader.webp")` }}
       >
         <div className="item-center grid max-w-screen-xl w-full  mx-auto lg:gap-8 xl:gap-0 lg:px-4 lg:py-0 lg:grid-cols-12">
-          <div className="mx-auto col-span-7">
+          <div className="animate__animated animate__slideInLeft animate__faster mx-auto col-span-7">
             <h1 className="text-7xl text-white font-bold  tracking-tight">
               Your True Digital Transformation Partner.
             </h1>
