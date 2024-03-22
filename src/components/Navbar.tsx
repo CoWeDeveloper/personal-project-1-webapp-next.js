@@ -5,7 +5,7 @@ import Image from 'next/image';
 import logo from "../../public/assets/images/cloudlogo.png"; 
 import {Presentation} from 'lucide-react';
 
-const Navbar = () => {
+function Navbar()  {
   return (
     <> 
     <header className='absolute z-10 w-full mx-auto justify-center px-36 py-2'>
@@ -37,4 +37,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

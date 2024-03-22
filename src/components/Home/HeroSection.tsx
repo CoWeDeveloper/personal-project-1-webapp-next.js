@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRightFromLine } from "lucide-react";
 
-// style={{backgroundImage: `url("assets/images/HomeHeader.webp")`}}
-// absolute top-96 lg:left-96 sm:left-40 w-96
 function Home() {
   return (
     <>
@@ -26,7 +24,6 @@ function Home() {
               Request Demo
             </button>
             <button className="text-blue-500 hover:text-blue-700	hover:translate-x-3	hover:duration-700 font-bold rounded-lg py-2 px-5 border-hidden ">
-              
               Explore More <ArrowRightFromLine className="inline" />
             </button>
           </div>

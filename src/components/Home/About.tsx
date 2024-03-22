@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 // import assets
-import WhiteCloudBackground from "../../public/assets/images/WhiteCloudBackground.png";
-import {aboutData} from "../data/homedata";
+import WhiteCloudBackground from "../../../public/assets/images/WhiteCloudBackground.png";
+import { aboutData } from "../../data/homedata";
 
 function About() {
   return (

@@ -1,21 +1,23 @@
 // component import
-import HeroSection from "../components/HeroSection"
-import AboutSection from "../components/AboutSection"
+import HeroSection from "../components/Home/HeroSection";
+import About from "../components/Home/About";
+import OurServices from "@/components/Home/Services";
+import OurEdges from "@/components/Home/Edges";
+import Application from  "@/components/Home/Application";
 
 // assets import
 import Image from "next/image";
-import HomeHeader from "/assets/images/HomeHeader.webp"
-import OurServices from "@/components/OurServices";
-import OurEdges from "@/components/OurEdges";
+
 
 
 export default function Home() {
   return (
     <main className="relative">
     <HeroSection />
-    <AboutSection />
+    <About />
     <OurServices />
     <OurEdges /> 
+    <Application />
     </main>
   );
 }
