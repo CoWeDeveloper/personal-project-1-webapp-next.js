@@ -4,10 +4,7 @@ import About from "../components/Home/About";
 import OurServices from "@/components/Home/Services";
 import OurEdges from "@/components/Home/Edges";
 import Application from  "@/components/Home/Application";
-
-// assets import
-import Image from "next/image";
-
+import Product from "@/components/Home/Product"
 
 
 export default function Home() {
@@ -18,6 +15,7 @@ export default function Home() {
     <OurServices />
     <OurEdges /> 
     <Application />
+    <Product />
     </main>
   );
 }

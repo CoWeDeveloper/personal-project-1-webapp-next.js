@@ -8,12 +8,12 @@ function OurServices() {
   return (
     <>
       <section className="max-w-screen-full w-full h-auto bg-[#211C5D]">
-        <div className='py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6"'>
+        <div className='py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6'>
           <h3 className="animate__animated animate__slideInLeft animate__slow  text-center py-10 cursor-pointer text-4xl font-extrabold text-white tracking-tight">
             OUR SERVICES
           </h3>
 
-          <div className="flex flex-wrap gap-6 w-full mx-auto">
+          <div className="flex flex-wrap gap-6 justify-center w-full mx-auto">
             {/* card UI */}
             {servicesData.map((servicesData) => {
               return (

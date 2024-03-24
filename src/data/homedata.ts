@@ -1,25 +1,25 @@
 export const aboutData =[
         {
             "id":1,
-            "img":"/assets/icons/tech.png" ,
+            "img":"/assets/icons/About/tech.png" ,
             "alt":"Technologies",
             "title":"Technologies"
         },
         {
             "id":2,
-            "img":"/assets/icons/supportMech.png" ,
+            "img":"/assets/icons/About/supportMech.png" ,
             "alt":"Support Mechanism",
             "title":"Support Mechanism"
         },
         {
             "id":3,
-            "img":"/assets/icons/onBoarding.png" ,
+            "img":"/assets/icons/About/onBoarding.png" ,
             "alt":"On-boarding Process",
             "title":"On-boarding Process"
         },
         {
             "id":4,
-            "img":"/assets/icons/serviceNetwork.png" ,
+            "img":"/assets/icons/About/serviceNetwork.png" ,
             "alt":"Our Services Network",
             "title":"Our Services Network"
         }
@@ -122,41 +122,43 @@ export const applicationData = [
     },
     {
         "id": 10,
-        "img": "/assets/icons/Applications/Applications/app13_phlebotomy.png",
-        "alt": "Order Booking App",
-        "title": "Order Booking App"
-    },
-    {
-        "id": 9,
-        "img": "/assets/icons/Applications/app9_sales.png",
-        "alt": "Order Booking App",
-        "title": "Order Booking App"
-    },
-    {
-        "id": 10,
-        "img": "/assets/icons/Applications/app10_travelling.png",
-        "alt": "Order Booking App",
-        "title": "Order Booking App"
+        "img": "/assets/icons/Applications/app10_phlebotomy.png",
+        "alt": "Phlebotomy App",
+        "title": "Phlebotomy App"
     },
     {
         "id": 11,
-        "img": "/assets/icons/Applications/app11_staff_tracking.png",
-        "alt": "Order Booking App",
-        "title": "Order Booking App"
+        "img": "/assets/icons/Applications/app11_consultant.png",
+        "alt": "Consultant App",
+        "title": "Consultant App"
     },
-    
-
+    {
+        "id": 12,
+        "img": "/assets/icons/Applications/app12_dressing.png",
+        "alt": "Dressing App",
+        "title": "Dressing App"
+    },
+    {
+        "id": 13,
+        "img": "/assets/icons/Applications/app13_sales.png",
+        "alt": "Sales Incentive App",
+        "title": "Sales Incentive App"
+    },
     {
         "id": 14,
-        "img": "/assets/icons/Applications/Applications/app14_consultant.png",
-        "alt": "Order Booking App",
-        "title": "Order Booking App"
+        "img": "/assets/icons/Applications/app14_travelling.png",
+        "alt": "Travelling App",
+        "title": "Travelling App"
     },
     {
         "id": 15,
-        "img": "/assets/icons/Applications/Applications/app15_dressing.png",
-        "alt": "Order Booking App",
-        "title": "Order Booking App"
+        "img": "/assets/icons/Applications/app15_staff_tracking.png",
+        "alt": "Cane Procurement Staff Tracking App",
+        "title": "Cane Procurement Staff Tracking App"
     },
+    
+
+   
+ 
 ]
 
