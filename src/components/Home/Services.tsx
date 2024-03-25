@@ -27,15 +27,15 @@ function OurServices() {
                    origin-right transform scale-y-0 bg-[length:200%_200%] transition-transform duration-500 group-hover:scale-y-100"
                   ></div>
 
-                  <div className="flex justify-center items-center py-2">
+                  {/* <div className="flex justify-center items-center py-2"> */}
                     <Image
-                      className=" group-hover:invert-[100%] group-hover:sepia-[0%] group-hover:saturate-[100%] group-hover:hue-rotate-[272deg] group-hover:brightness-[0%] group-hover:contrast-[103%]"
+                      className="py-2 group-hover:invert-[100%] group-hover:sepia-[0%] group-hover:saturate-[100%] group-hover:hue-rotate-[272deg] group-hover:brightness-[0%] group-hover:contrast-[103%]"
                       src={servicesData.img}
                       width={100}
                       height={30}
                       alt={servicesData.alt}
                     />
-                  </div>
+                  {/* </div> */}
                   <h5 className="text-gray-600 hover:text-white z-10 group-hover:text-white text-2xl text-center text-warp font-medium">
                     {servicesData.title}
                   </h5>

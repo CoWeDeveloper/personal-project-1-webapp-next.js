@@ -9,7 +9,7 @@ function Application() {
     <>
      <section className='w-full h-fit bg-[#211c5d] p-20'>
         <div className=' mx-auto lg:px-45 md:px-38 max-w-screen-xl text-center justify-center'>
-            <div className=''>
+          
             <h3 className="text-white text-4xl font-black mb-20 ">MOBILE APPLICATIONS</h3>
             <div className="flex flex-wrap gap-7  justify-center items-center">
               
@@ -29,7 +29,7 @@ function Application() {
              
              
             </div>
-            </div>
+         
         </div>
 
      </section>
