@@ -5,6 +5,7 @@ import OurServices from "@/components/Home/Services";
 import OurEdges from "@/components/Home/Edges";
 import Application from  "@/components/Home/Application";
 import Product from "@/components/Home/Product"
+import Customers from "@/components/Home/Customers";
 
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
     <OurEdges /> 
     <Application />
     <Product />
+    <Customers />
     </main>
   );
 }

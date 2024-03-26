@@ -43,7 +43,7 @@ body {
   .whiteCloudBackground{
     @apply z-0 hidden md:flex items-center w-full absolute  
     h-fit object-contain px-[8%] mx-auto transition-all duration-300 ease-linear 
-    hover:invert-[1%] hover:sepia-[5%] hover:saturate-[100%] hover:hue-rotate-[314deg] hover:brightness-[100%] hover:contrast-[50%]
+    hover:invert-[1%] hover:sepia-[5%] hover:saturate-[100%] hover:hue-rotate-[314deg] hover:brightness-[110%] hover:contrast-[80%]
   }
  
 }

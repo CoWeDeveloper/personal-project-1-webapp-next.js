@@ -13,7 +13,7 @@ function Home() {
       >
         <div className="item-center grid max-w-screen-xl w-full  mx-auto lg:gap-8 xl:gap-0 lg:px-4 lg:py-0 lg:grid-cols-12">
           <div className="animate__animated animate__slideInLeft animate__faster mx-auto col-span-7">
-            <h1 className="text-7xl text-white font-bold  tracking-tight">
+            <h1 className="text-7xl text-white font-bold">
               Your True Digital Transformation Partner.
             </h1>
             <p className="text-2xl text-gray-300 py-4">
