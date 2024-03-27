@@ -17,7 +17,7 @@ function Navbar()  {
             <div className='flex items-end '>
             <ul className='flex space-x-4 text-gray-300 gap-4 '>
                 <Link href={'/'} className='hover:text-white active:hover:text-white '><li>Home</li></Link>
-                <Link href={'/'} className='hover:text-white active:hover:text-white'><li>About Us</li></Link>
+                <Link href={'/about'} className='hover:text-white active:hover:text-white'><li>About Us</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Services Network</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Software</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Customers</li></Link>

@@ -9,10 +9,11 @@ import partnerLogo4 from "../../public/assets/images/Footer/p4.png";
 import partnerLogo5 from "../../public/assets/images/Footer/p5.png";
 import partnerLogo6 from "../../public/assets/images/Footer/p6.png";
 import partnerLogo7 from "../../public/assets/images/Footer/p7.png";
+import partnerLogo8 from "../../public/assets/images/Footer/p8.png";
 
 function Footer() {
   return (
-    <section className="w-full h-screen  bg-[#211c5d] p-16">
+    <section className="w-full h-fit  bg-[#211c5d] px-16 pt-16 pb-5">
         <div className="mx-auto lg:px-40 md:px-36  max-w-screen-xl text-center justify-center">
         <div className="flex justify-between">
 
@@ -33,12 +34,12 @@ function Footer() {
                 <div className="px-28">
                     <h3 className="text-white text-start font-bold text-sm my-4">Quick Links</h3>
                     <ul className="text-gray-500 text-left text-sm dark:text-gray-400 font-medium">
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500">Softwares</li></Link>
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500">About Us</li></Link>
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500">Careers</li></Link>
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500">Become a Partner</li></Link>
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500">Privacy Policy</li></Link>
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500">FAQ's</li></Link>
+                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Softwares</li></Link>
+                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">About Us</li></Link>
+                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Careers</li></Link>
+                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Become a Partner</li></Link>
+                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Privacy Policy</li></Link>
+                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">FAQ's</li></Link>
                     </ul>
                 </div>
 
@@ -63,22 +64,28 @@ function Footer() {
                     <li className="pt-1">Email:<span className="hover:font-bold hover:underline"> sales@cloudtenants.com</span></li>
                     </ul>
                     </div>
+                    
                 </div>
             </div>
         </div>
         </div>
-        {/* logo */}
-        <div className="mx-auto md:w-[80%] gap-10 mt-28 lg:px-40 md:px-40 max-w-screen-xl flex-wrap text-center justify-center">
-        <div className="flex justify-center items-center gap-10">
-        <Image className="w-34 h-10 " src={partnerLogo1} width={120} height={80} alt="Logo" />
-        <Image className="w-20 h-20 " src={partnerLogo2} width={120} height={80} alt="Logo" />
-        <Image className="w-34 h-10 " src={partnerLogo3} width={120} height={80} alt="Logo" />
+        {/* logo at last */}
+        <div className="mx-auto md:w-[80%] gap-10 mt-20 lg:px-64 md:px-40 max-w-screen-xl flex-wrap text-center justify-center">
+        <div className="flex flex-wrap justify-center items-center gap-10">
+        <Image className="w-24 h-18 " src={partnerLogo1} width={120} height={80} alt="Logo" />
+        <Image className="w-24 h-18 " src={partnerLogo2} width={120} height={80} alt="Logo" />
+        <Image className="w-34 h-18 " src={partnerLogo3} width={120} height={80} alt="Logo" />
         <Image className="w-36 h-18 " src={partnerLogo4} width={120} height={80} alt="Logo" />
-        <Image className="w-34 h-10 " src={partnerLogo5} width={120} height={80} alt="Logo" />
-        <Image className="w-34 h-10 " src={partnerLogo6} width={120} height={80} alt="Logo" />
-        <Image className="w-34 h-10 " src={partnerLogo7} width={120} height={80} alt="Logo" />
+        <Image className="w-34 h-18 " src={partnerLogo5} width={120} height={80} alt="Logo" />
+        <Image className="w-34 h-18 " src={partnerLogo6} width={120} height={80} alt="Logo" />
+        <Image className="w-34 h-18 " src={partnerLogo7} width={120} height={80} alt="Logo" />
+        <Image className="w-34 h-18 " src={partnerLogo8} width={120} height={80} alt="Logo" />
         </div>
         </div>
+        <hr className="max-w-screen-lg mx-auto lg:mt-10 lg:mb-3 mt-6 mb-3 border-gray-600" />
+       
+        <div className="flex justify-center text-center italic font-black text-gray-400 text-xs">&copy;2024 CloudTenants. All Right Reserved</div>
+       
     </section>
   )
 }
