@@ -12,62 +12,127 @@ function SliderEdge() {
     arrows:false,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1,
+   
+    autoplay: true,
+    loop: true,
+    mousewheel: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
   };
   return (
-    <Slider className="w-full" {...settings}>
-      <div className="lg:flex-row md:flex-col sm:flex-col flex-wrap items-center ">
+    <div className="slider-container">
+    <Slider {...settings}>
+      <div className="flex-col flex-wrap items-center ">  
 
+       <div className="flex container">
+        <div className="flex-col flex-wrap">
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">25+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center">Years of Industry Experience </div>
+          </div>
 
-        <div className="lg:flex md:flex ms:md:flex-col flex-warp justify-between  px-4 md:mb-8 text-center ">
-          <div className="p-7 text-center">
-            <span className="text-7xl font-bold text-[#22B8EE]">
-              10,000+
-            </span>
-            <p className="mt-2 text-gray-800 font-semibold text-sm">
-              Distribution Sites Implementation Experience
-            </p>
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">15+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center">Moblie Applications</div>
           </div>
-          <div className="p-7 text-center">
-            <span className="text-7xl font-bold text-[#22B8EE]">
-              150+
-            </span>
-            <p className="mt-2 text-gray-800 font-semibold text-sm">
-              Highly Capable Team of Professionals
-            </p>
+ </div>
+  
+        <div className="flex-col flex-wrap">
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">15+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center md:px-7 lg:px-7 xl:px-20"> Diversified Business Verticals Powered by Our S&D</div>
           </div>
+
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">7+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center"> S&D Add-On Modules</div>
+          </div>
+
         </div>
-   
-
-        <div className="lg:flex md:flex ms:md:flex-col flex-warp justify-between px-4 md:mb-8 text-center ">
-          <div className=" p-7 text-center">
-            <span className="text-7xl font-bold text-[#22B8EE]">
-              200+
-            </span>
-            <p className="mt-2 text-gray-800 font-semibold text-sm">
-              Restaurant & Food Outlets Implementation Experience
-            </p>
-          </div>
-          <div className="p-7 text-center">
-            <span className="text-7xl font-bold text-[#22B8EE]">
-            100+
-            </span>
-            <p className="mt-2 text-gray-800 font-semibold text-sm">
-            Supermarkets Implementation Experience
-            </p>
-          </div>
-        </div>
+       </div>
    
         
       </div>
 
       <div>
-        <h3>2</h3>
+      <div className="flex container xl:gap-14 lg:gap-10 md:gap-5">
+        <div className="flex-col flex-wrap">
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center"> 10,000+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center">Distribution Sites Implementation Experience </div>
+          </div>
+
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">150+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center">Highly Capable Team of Professionals</div>
+          </div>
+ </div>
+  
+        <div className="flex-col flex-wrap">
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">200+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center">Restaurant & Food Outlets Implementation Experience </div>
+          </div>
+
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">100+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center">Supermarkets Implementation Experience </div>
+          </div>
+
+        </div>
+       </div>
       </div>
       <div>
-        <h3>3</h3>
+      <div className="flex container xl:gap-10 lg:gap-3 md:gap-1">
+        <div className="flex-col flex-wrap">
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">11+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center"> Offices in Pakistan & Growing</div>
+          </div>
+
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">3+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center"> Global Offices & Growing </div>
+          </div>
+    </div>
+  
+        <div className="flex-col flex-wrap">
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">7+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center"> e.suite Modules for S&D Business Optimization </div>
+          </div>
+
+          <div className="flex-col justify-center items-center p-2 w-38">
+            <div className="text-7xl font-bold text-[#22B8EE] text-center">6+</div>
+            <div className="mt-2 text-gray-800 font-semibold text-sm text-center"> ERP Modules Suite </div>
+          </div>
+
+        </div>
+       </div>
       </div>
     </Slider>
+</div>
   );
 }
 

@@ -7,7 +7,7 @@ import { aboutData } from "../../data/homedata";
 function About() {
   return (
     <>
-      <section className="bg-white w-full max-sm:w-fit h-full">
+      <section className="bg-white w-full max-sm:w-fit h-fit">
         {/* background Image of cloud */}
         <div className=" relative grid max-w-screen-xl lg:grid-cols-12 mx-auto px-4 py-8 lg:py-16 items-center md:h-screen">
           <Image
@@ -31,7 +31,7 @@ function About() {
                   >
                     <div className="group my-2 mx-4 w-72 px-120 py-4 flex flex-wrap justify-center border-2 border-gray-600 rounded-xl">
                       <Image
-                        className=" group-hover:scale-x-[-1] transition ease-in-out duration-500 justify-center w-20 h-30 m-4"
+                        className="group-hover:scale-x-[-1] transition ease-in-out duration-500 justify-center w-20 h-30 m-4"
                         width={100}
                         height={40}
                         src={aboutData.img}
