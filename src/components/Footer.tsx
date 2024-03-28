@@ -14,8 +14,8 @@ import partnerLogo8 from "../../public/assets/images/Footer/p8.png";
 function Footer() {
   return (
     <section className="w-full h-fit  bg-[#211c5d] px-16 pt-16 pb-5">
-        <div className="mx-auto lg:px-40 md:px-36  max-w-screen-xl text-center justify-center">
-        <div className="flex justify-between">
+        <div className="mx-auto lg:px-40 md:px-36 sm:px-16  max-w-screen-xl text-center justify-center">
+        <div className="flex flex-wrap justify-between">
 
             <div className="flex-col items-center">
                 <div className="flex justify-center">
@@ -30,8 +30,8 @@ function Footer() {
                     </ul>
             </div>
             
-            <div className="flex justify-between ">
-                <div className="px-28">
+            <div className="flex flex-wrap">
+                <div className="lg:px-24 md:px-20 sm:px-14 px-0">
                     <h3 className="text-white text-start font-bold text-sm my-4">Quick Links</h3>
                     <ul className="text-gray-500 text-left text-sm dark:text-gray-400 font-medium">
                     <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Softwares</li></Link>
@@ -43,7 +43,7 @@ function Footer() {
                     </ul>
                 </div>
 
-                <div className="flex-col justify-center items-center">
+                <div className="flex-col flex-wrap justify-center items-center">
                     
                 <h3 className="text-white text-start font-bold text-sm my-4">Head Office</h3>
                     <ul className="text-gray-500 text-left text-xs dark:text-gray-400 font-medium ">
@@ -57,15 +57,15 @@ function Footer() {
                     <div>
                 <h3 className="text-white text-start font-bold text-sm my-4">Contact Info</h3>
                     <ul className="text-gray-500 text-left text-xs dark:text-gray-400 font-medium">
-                    <li className="pt-1">PAK:  <span className="hover:font-bold hover:underline"> +92 213 497 1995</span></li>
-                    <li className="pt-1">KSA:  <span className="hover:font-bold hover:underline"> +96 659 427 4605</span></li>
-                    <li className="pt-1">UAE:  <span className="hover:font-bold hover:underline"> +971 55 548 8093</span></li>
-                    <li className="pt-1">QAT:  <span className="hover:font-bold hover:underline"> +974 5573 0350</span></li>
-                    <li className="pt-1">Email:<span className="hover:font-bold hover:underline"> sales@cloudtenants.com</span></li>
+                    <li className="pt-1">PAK:  <span className="hover:font-bold hover:underline duration-500"> +92 213 497 1995</span></li>
+                    <li className="pt-1">KSA:  <span className="hover:font-bold hover:underline duration-500"> +96 659 427 4605</span></li>
+                    <li className="pt-1">UAE:  <span className="hover:font-bold hover:underline duration-500"> +971 55 548 8093</span></li>
+                    <li className="pt-1">QAT:  <span className="hover:font-bold hover:underline duration-500"> +974 5573 0350</span></li>
+                    <li className="pt-1">Email:<span className="hover:font-bold hover:underline duration-500"> sales@cloudtenants.com</span></li>
                     </ul>
                     </div>
-                    
                 </div>
+                    
             </div>
         </div>
         </div>

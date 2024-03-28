@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowRightFromLine } from "lucide-react";
+import { ArrowRight  } from "lucide-react";
 
 function HeroSection() {
   return (
@@ -7,10 +7,10 @@ function HeroSection() {
     ease-in-out overflow-hidden  duration-300 
     transition-all g-no-repeat bg-cover flex items-center '
        style={{ backgroundImage: `url("assets/images/AboutHeader.webp")` }} >
-      <div className='mx-auto max-w-screen-lg text-center'>
-        <h1 className='text-white font-black text-5xl'>Complete Business Solutions As Per Your Needs</h1>
-        <button className="text-white hover:text-gray-200	hover:translate-x-3	hover:duration-700 font-bold rounded-lg py-2 px-5 border-4">
-              Explore More <ArrowRightFromLine className="inline" />
+      <div className='mx-auto max-w-screen-lg lg:px-20 md:px-16 sm:px-5 text-center'>
+        <h1 className='text-white font-black text-5xl mb-4'>Complete Business Solutions As Per Your Needs</h1>
+        <button className="text-white hover:text-gray-200	hover:translate-x-3	hover:duration-700 font-bold text-es rounded-lg py-1 px-2 border-2 ">
+              Explore More <ArrowRight  className="inline text-sm" />
             </button>
       </div>
     </div>

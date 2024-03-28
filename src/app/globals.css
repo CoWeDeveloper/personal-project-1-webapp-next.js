@@ -1,6 +1,6 @@
-@tailwind base; /*It is apply globally. it is a part of approach to sturcturing and organizing the style using configure method */
-@tailwind components; /*style that apply on components */
-@tailwind utilities; /*atomic style for margin, style and padding. Small set of classes we could reuse*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   margin: 0;
