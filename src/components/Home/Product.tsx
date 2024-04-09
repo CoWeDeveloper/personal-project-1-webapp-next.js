@@ -14,7 +14,7 @@ function Product() {
     <>
       <section className="w-full h-fit bg-white">
         <div className="py-8 px-4 mx-auto  max-w-screen-xl  sm:py-16 lg:px-6">
-          <h3 className="text-3xl text-center text-black font-black mb-14">
+          <h3 className="tracking-wide text-3xl text-center text-black font-black mb-14">
             OUR SPECIALITY PRODUCTS PORTFOLIO
           </h3>
 

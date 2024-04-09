@@ -10,7 +10,7 @@ function Application() {
      <section className='w-full h-fit bg-[#211c5d] p-20'>
         <div className=' mx-auto lg:px-[11rem] md:px-38 max-w-screen-xl text-center justify-center'>
           
-            <h3 className="text-white text-3xl font-black mb-14">MOBILE APPLICATIONS</h3>
+            <h3 className="tracking-wide text-white text-3xl font-black mb-14">MOBILE APPLICATIONS</h3>
             <div className="flex flex-wrap gap-7  justify-center items-center">
               
              
