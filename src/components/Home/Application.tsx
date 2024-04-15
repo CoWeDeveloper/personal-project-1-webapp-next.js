@@ -2,7 +2,7 @@ import Image from "next/image";
 // import Image from "next/image";
 import Order from "../../../public/assets/icons/Mobile Applications/app1 order.png"
 // import
-import {applicationData} from "@/data/homedata"
+import {applicationData} from "@/data/homeData"
 
 function Application() {
   return (

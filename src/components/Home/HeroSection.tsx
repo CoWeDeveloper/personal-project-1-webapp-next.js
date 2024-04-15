@@ -8,7 +8,7 @@ function Home() {
       <header
         className="w-full h-screen z-0    
      ease-in-out overflow-hidden  duration-300 
-     transition-all g-no-repeat bg-cover flex items-center "
+     transition-all bg-no-repeat bg-cover flex items-center "
         style={{ backgroundImage: `url("assets/images/HomeHeader.webp")` }}
       >
         <div className="item-center lg:text-left md:text-center grid max-w-screen-xl w-full  mx-auto lg:gap-8 xl:gap-0 lg:px-4 sm:px-10 px-10  lg:py-0 lg:grid-cols-12">

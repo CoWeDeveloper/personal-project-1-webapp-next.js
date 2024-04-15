@@ -2,7 +2,7 @@ import Image from "next/image";
 import "animate.css";
 
 // import data
-import { servicesData } from "../../data/homedata";
+import { servicesData } from "../../data/homeData";
 
 function OurServices() {
   return (

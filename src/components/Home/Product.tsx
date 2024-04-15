@@ -7,7 +7,7 @@ import WMS from "../../../public/assets/images/Products/wmsextend.png";
 import WMSgrid from "../../../public/assets/images/Products/wmsextendgrid.png";
 
 // data
-import { productData } from "../../data/homedata";
+import { productData } from "../../data/homeData";
 
 function Product() {
   return (

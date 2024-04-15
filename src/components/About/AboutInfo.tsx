@@ -4,9 +4,9 @@ function aboutInfo() {
   return (
     <section className='w-full h-fit bg-white'>
         <div className='max-w-screen-lg mx-auto px-5 py-10'>
-            <div className='text-center'>
+            <div className='text-center flex flex-col justify-center items-center'>
                 <h2 className='font-extrabold text-3xl py-4 tracking-tight'>About Us</h2>
-                <h4 className='font-medium text-[#545456] px-48 text-lg text-pretty'>
+                <h4 className='font-medium text-[#545456] px-48 text-lg text-pretty max-sm:px-2 max-sm:text-center '>
                     You want to integrate your business management, Our services tie it all together.
                 </h4>
             </div>
