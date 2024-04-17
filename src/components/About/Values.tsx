@@ -1,6 +1,4 @@
 import Image from "next/image";
-import integrity from "../../../public/assets/images/About/abt1.png";
-import one from "../../../public/assets/images/About/abtinfo1.png"
 
 // import assets
 import {valueData} from "@/data/aboutData"
