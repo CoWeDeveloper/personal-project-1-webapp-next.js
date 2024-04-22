@@ -9,7 +9,7 @@ function aboutInfo() {
                 <h4 className='font-medium text-[#545456] px-48 text-lg text-pretty max-sm:px-2 max-sm:text-center '>
                     You want to integrate your business management, Our services tie it all together.
                 </h4>
-            </div>git s
+            </div>
             <div className='text-sm py-8 text-[#636468]'>
                 <p className='text-justify py-2 tracking-wide subpixel-antialiased'>
                 <span className='font-bold'>Cloud Tenants Pvt Ltd</span> has evolved in <span className='font-bold'>Year 2017</span> from its Group Company Fourgen Information Systems which has been in <span className='font-bold'>software business since 1998</span>. Collectively, Cloud Tenants bear with it an experience of <span className='font-bold'>25+ Years</span>. Over the years, our team of experts has successfully completed software projects with a number of renowned companies in Pakistan & Internationally.
