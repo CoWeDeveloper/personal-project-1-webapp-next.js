@@ -28,7 +28,7 @@ function OurEdges() {
         <div className="z-10 col-span-6 ">
          
             
-            <SliderEdge  />
+            {/* <SliderEdge  /> */}
           
 
 

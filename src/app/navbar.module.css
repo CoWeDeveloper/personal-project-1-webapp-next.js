@@ -1,0 +1,56 @@
+/* Burger Menu Icon */
+.burgerMenuIcon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 999;
+    cursor: pointer;
+    background-color: transparent;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    margin: 6px auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Start off-screen */
+    width: 300px;
+    height: 100vh;
+    background-color: #333;
+    padding: 20px;
+    z-index: 998;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  .sidebar p {
+    color: #fff;
+  }
+  
+  /* Show sidebar when :target is .sidebarId */
+  .sidebarId:target {
+    left: 0;
+  }
+  
+  /* Rotate bars when sidebar is visible */
+  .sidebarId:target ~ .burgerMenuIcon .bar:first-child {
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  .sidebarId:target ~ .burgerMenuIcon .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .sidebarId:target ~ .burgerMenuIcon .bar:last-child {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+  
