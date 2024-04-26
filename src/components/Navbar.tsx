@@ -6,7 +6,7 @@ import Image from 'next/image';
 // import assets
 import logo from "../../public/assets/images/cloudlogo.png"; 
 import {Presentation} from 'lucide-react';
-import NavbarMoblie from "./NavbarMoblie";
+import NavbarMoblie from "./MenuNavbar";
 
 function Navbar()  {
   
