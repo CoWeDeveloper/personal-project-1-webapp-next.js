@@ -54,7 +54,7 @@ function NavbarMoblie() {
               />
             </div>
 
-            <div className="grid z-100 relative md:grid-cols-12 md:py-16 px-4 max-w-screen-md mx-auto">
+            <div className="grid z-100 relative md:grid-cols-12 md:py-16 px-4 max-w-screen-md mx-auto ">
             <div className="md:col-span-6">
             <ul className='relative flex flex-col text-white md:text-xl sm:text-2xl xs:text-xl font-medium sm:pt-32 xs:pt-32 sm:pb-20 xs:pt-28 md:gap-1 sm:gap-2 xs:gap-1'>
                 <Link href={'/'} className=' justify-center hover:text-white active:hover:text-white drop-shadow-xl'><li>Home</li></Link>
@@ -92,7 +92,7 @@ function NavbarMoblie() {
             </div>
             </div>
          
-          <footer className="absolute bottom-0 right-0 left-0 text-center ">
+          <footer className="absolute bottom-0 right-0 left-0 text-center">
           <div className="text-white font-bold text-sm relative">&copy;2024 CloudTenants. All Right Reserved.</div>
           </footer>
 

@@ -20,7 +20,7 @@ function Navbar()  {
               <Image src={logo} className='w-37 cursor-pointer'  alt="CloudTanentLogo" />
             </div> 
 
-            <div className='flex items-end text-center'>
+            <div className='flex items-end text-center '>
             <ul className='lg:flex space-x-4 hidden text-gray-300 lg:gap-0 xl:gap-3 2xl:gap-4'>
                 <Link href={'/'} className=' justify-center hover:text-white active:hover:text-white '><li>Home</li></Link>
                 <Link href={'/about'} className='hover:text-white active:hover:text-white'><li>About Us</li></Link>
