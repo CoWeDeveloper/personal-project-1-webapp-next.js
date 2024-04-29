@@ -7,7 +7,7 @@ import { aboutData } from "../../data/homeData";
 function About() {
   return (
     <>
-      <section className="bg-white w-full max-sm:w-fit h-fit">
+      <section className="bg-white w-full -z-10 max-sm:w-fit h-fit">
         {/* background Image of cloud */}
         <div className=" relative grid max-w-screen-xl lg:grid-cols-12 mx-auto px-4 py-8 lg:py-16 items-center md:h-screen">
           <Image
@@ -16,12 +16,12 @@ function About() {
             alt="Cloud Background"
           />
 
-          <div className="z-10 w-full col-span-5 ml-14">
+          <div className="z-0 w-full col-span-5 ml-14">
             <h2 className="animate__animated animate__slideInLeft cursor-pointer max-sm:text-5xl sm:text-6xl  md:text-7xl lg:text-8xl font-semibold text-[#636468] tracking-tight ">
               ABOUT US
             </h2>
           </div>
-          <div className="z-10 w-full col-span-7">
+          <div className="z-0 w-full col-span-7">
             <div className="flex flex-wrap justify-center  ">
               {aboutData.map((aboutData) => {
                 return (

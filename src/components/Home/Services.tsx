@@ -36,7 +36,7 @@ function OurServices() {
                       alt={servicesData.alt}
                     />
                   {/* </div> */}
-                  <h5 className="text-gray-600 hover:text-white z-10 group-hover:text-white text-2xl text-center text-warp font-medium">
+                  <h5 className="text-gray-600 hover:text-white z-0 group-hover:text-white text-2xl text-center text-warp font-medium">
                     {servicesData.title}
                   </h5>
                 </div>
