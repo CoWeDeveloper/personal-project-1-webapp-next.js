@@ -5,7 +5,8 @@ import Image from 'next/image';
 
 // import assets
 import logo from "../../public/assets/images/cloudlogo.png"; 
-import {Presentation} from 'lucide-react';
+import {Presentation, ChevronDown  } from 'lucide-react';
+
 import NavbarMoblie from "./MenuNavbar";
 
 function Navbar()  {
@@ -28,12 +29,12 @@ function Navbar()  {
                 <Link href={'/softwares'} className='hover:text-white active:hover:text-white'><li>Softwares</li></Link>
                 <Link href={'/customers'} className='hover:text-white active:hover:text-white'><li>Customers</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Alliances</li></Link>
-                <Link href={'/'} className='hover:text-white active:hover:text-white'><li>Resources</li></Link>
+                <Link href={'/'} className='hover:text-white active:hover:text-white'><li className='group  flex gap-1'><div className='flex justify-end text-nowrap'> Resources  <ChevronDown className="group-hover:rotate-180 transition ease-out duration-300" /></div></li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'>
                   <li className='hover:translate-y-1 group  transition ease-in-out duration-500  flex gap-1'>
                   <div className='flex justify-end text-nowrap'>
+                  Request Demo
                   <Presentation className='group-hover:scale-x-[-1] transition ease-in-out duration-500 ' />
-                    Request Demo
                   </div>
                   </li>
                 </Link>
