@@ -56,7 +56,7 @@ function NavbarMoblie() {
 
             <div className="grid z-100 relative md:grid-cols-12 md:py-16 px-4 max-w-screen-md mx-auto ">
             <div className="md:col-span-6">
-            <ul className='relative flex flex-col text-white md:text-xl sm:text-2xl xs:text-xl font-medium sm:pt-32 xs:pt-32 sm:pb-20 xs:pt-28 md:gap-1 sm:gap-2 xs:gap-1'>
+            <ul className='relative flex flex-col text-white md:text-xl sm:text-2xl xs:text-xl font-medium sm:pt-32 sm:pb-20 xs:pt-28 md:gap-1 sm:gap-2 xs:gap-1'>
                 <Link href={'/'} className=' justify-center hover:text-white active:hover:text-white drop-shadow-xl'><li>Home</li></Link>
                 <Link href={'/about'} className='hover:text-white  active:hover:text-white drop-shadow-xl'><li>About Us</li></Link>
                 <Link href={'/network'} className=' justify-center drop-shadow-xl hover:text-white active:hover:text-white'><li className=''>Services Network</li></Link>

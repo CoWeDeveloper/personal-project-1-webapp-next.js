@@ -45,7 +45,7 @@ function SliderEdge() {
     <Slider {...settings}>
       <div className="flex-col flex-wrap items-center ">  
 
-       <div className="flex container">
+       <div className="flex max-w-screen-lg">
         <div className="flex-col flex-wrap">
           <div className="flex-col justify-center items-center p-2 w-38">
             <div className="text-7xl font-bold text-[#22B8EE] text-center">25+</div>

@@ -9,7 +9,7 @@ import Customers from "@/components/Home/Customers";
 
 
 
-export default function Home() {
+function Home() {
   return (
     <main className="relative">
     <HeroSection />
@@ -22,3 +22,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home;

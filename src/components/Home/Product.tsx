@@ -1,10 +1,6 @@
 // import Image from "next/image"
 import Image from "next/image";
-import SnD from "../../../public/assets/images/Products/sndnext.png";
-import SnDgrid from "../../../public/assets/images/Products/sndnextgrid.png";
 import Arrow from "../../../public/assets/images/Products/productarrow.png";
-import WMS from "../../../public/assets/images/Products/wmsextend.png";
-import WMSgrid from "../../../public/assets/images/Products/wmsextendgrid.png";
 
 // data
 import { productData } from "../../data/homeData";
@@ -22,7 +18,7 @@ function Product() {
   {productData.map((product, index) => (
 <section key={product.id} className="flex flex-wrap w-9/12 mx-auto justify-center items-center">
 
-    <div key={product.id} className="w-full flex flex-wrap mx-auto justify-center" >
+    <div className="w-full flex flex-wrap mx-auto justify-center" >
       <div className={` w-full lg:w-[55%] ${product.id % 2 === 0 ? 'order-1' : 'order-0'} `} >
       <Image
         className="w-40"
@@ -32,7 +28,7 @@ function Product() {
         alt="Product Image"
       />
       <p className=" text-sm text-[#636468] my-3 text-justify">{product.description}</p>
-      <button style={{backgroundColor: `${product.color}`,  transition: 'background-color 0.3s'}} className={`text-white hover:bg-[#066B8A] text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none`}>Schedule a Demo</button>
+      <button className={product.styleButton}>Schedule a Demo</button>
       <button className="hover:border-[#0A9AC8] text-[#0A9AC8] text-xs   hover:ring-2 py-2 px-5 font-medium rounded-lg hover:ring-[#0A9AC8] focus:outline-none duration-500">Read More</button>
       </div>
       <div  className="lg:mt-0 mt-5 w-full lg:w-[45%] flex justify-center"  >
@@ -62,10 +58,6 @@ function Product() {
 <div className="flex justify-center mt-10">
 <button className="bg-[#22B8EE] hover:bg-[#1B8FBF] text-white text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none">Seem More Products</button>
 </div>
-
-
-          
-          
         </div>
       </section>
     </>
