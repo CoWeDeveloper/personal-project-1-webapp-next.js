@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Logo1 from "../../../public/assets/images/Customers/c1.png"
+
 
 // import assets
 import { customersData } from "@/data/customersData"
