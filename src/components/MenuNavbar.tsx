@@ -34,7 +34,7 @@ function NavbarMoblie() {
       >
     
         <div
-          className={`w-screen h-screen relative bg-cover bg-center bg-no-repeat mix-blend-multiply`}
+          className={`w-screen h-screen relative bg-cover bg-center bg-no-repeat mix-blend-overlay`}
           style={{
             backgroundImage: `url("assets/images/Software/softwareHeader.webp")`,
           }}

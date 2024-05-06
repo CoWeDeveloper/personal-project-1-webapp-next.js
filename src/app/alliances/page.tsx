@@ -1,5 +1,5 @@
 import HeroSection from "@/components/Alliance/HeroSection"
-import Membership from "@/components/Alliance/Membership"
+import Membership from "@/components/Alliance/ComponentAlliance"
 
 function Alliances() {
   return (

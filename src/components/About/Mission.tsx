@@ -1,6 +1,6 @@
 import Image from "next/image";
 import mission from "../../../public/assets/images/About/mission.png"
-// import Image from "next/image";
+
 function Mission() {
   return (
     <section className="w-full h-fit bg-white" >
