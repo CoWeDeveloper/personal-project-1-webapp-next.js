@@ -1,9 +1,9 @@
 import React from 'react';
 // import components
-import HeroSection from '@/components/Network/HeroSection';
-import Services from '@/components/Network/Services';
+import HeroSection from '@/components/network/HeroSection';
+import Services from '@/components/network/Services';
 
-function About() {
+function Network() {
   return (
     <>
       <HeroSection />
@@ -12,4 +12,4 @@ function About() {
   )
 }
 
-export default About;
+export default Network;

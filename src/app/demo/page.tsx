@@ -1,9 +1,9 @@
 import React from 'react';
 // import components
-import HeroSection from '@/components/Demo/HeroSection';
-import Schedule  from '@/components/Demo/Schedule';
+import HeroSection from '@/components/demo/HeroSection';
+import Schedule  from '@/components/demo/Schedule';
 
-function About() {
+function Demo() {
   return (
     <>
       <HeroSection />
@@ -12,4 +12,4 @@ function About() {
   )
 }
 
-export default About;
+export default Demo;

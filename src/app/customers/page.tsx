@@ -1,9 +1,9 @@
 import React from 'react';
 // import components
-import HeroSection from '@/components/Customers/HeroSection';
-import ValuableCustomers from '@/components/Customers/ValuableCustomers';
+import HeroSection from '@/components/customers/HeroSection';
+import ValuableCustomers from '@/components/customers/ValuableCustomers';
 
-function About() {
+function Customers() {
   return (
     <>
       <HeroSection />
@@ -12,4 +12,4 @@ function About() {
   )
 }
 
-export default About;
+export default Customers;

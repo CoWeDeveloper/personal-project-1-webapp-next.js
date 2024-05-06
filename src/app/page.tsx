@@ -1,11 +1,11 @@
 // component import
-import HeroSection from "../components/Home/HeroSection";
-import About from "../components/Home/About";
-import OurServices from "@/components/Home/Services";
-import OurEdges from "@/components/Home/Edges";
-import Application from  "@/components/Home/Application";
-import Product from "@/components/Home/Product"
-import Customers from "@/components/Home/Customers";
+import HeroSection from "../components/home/HeroSection";
+import About from "../components/home/About";
+import OurServices from "@/components/home/Services";
+import OurEdges from "@/components/home/Edges";
+import Application from  "@/components/home/Application";
+import Product from "@/components/home/Product"
+import Customers from "@/components/home/Customers";
 
 
 

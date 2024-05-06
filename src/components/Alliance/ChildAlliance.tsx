@@ -17,8 +17,13 @@ function ChildAlliance(props: any) {
         <div className='max-w-screen-lg mx-auto pt-10 pb-5'>
             <h1 className='text-4xl font-black tracking-wider text-center'>{props.title}</h1>
             <div className='flex justify-center items-center mt-52 my-20'>
-            
-             */}
+                {
+                    props.logo.map((data: any)=>
+                        (
+                            <div>hi</div>
+                        )
+                    ) 
+                }
                 {/* <Image key={data.id} className='w-72 mx-5 hover:shadow-md' src={data.logoImg} alt={data.alt} width={100} height={100} /> */}
                 {/* <Image className='w-72 mx-5 hover:shadow-md' src={member2Pseb} alt='logo of Pasha' width={100} height={100} /> */}
             </div>
@@ -28,3 +33,27 @@ function ChildAlliance(props: any) {
 }
 
 export default ChildAlliance;
+
+
+import React from 'react'
+
+const ChildAlliance = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+
+export default ChildAlliance
+
+import React from 'react'
+
+export default function ChildAlliance() {
+  return (
+    <div>
+      
+    </div>
+  )
+}
+rfc

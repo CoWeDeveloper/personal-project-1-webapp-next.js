@@ -1,6 +1,6 @@
 
-import HeroSection from '@/components/Softwares/HeroSection';
-import Products from '@/components/Softwares/Products';
+import HeroSection from '@/components/softwares/HeroSection';
+import Products from '@/components/softwares/Products';
 
 function Software() {
   return (
