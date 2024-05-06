@@ -17,9 +17,7 @@ function ComponentAlliance() {
     {allianceData.map((data : any) => (
       <ChildAlliance
         key={data.id}
-        title={data.title}
-        bgImage={data.bgImage}
-        images={data.logo}
+        {...data}
       />
     ))}
     </>
