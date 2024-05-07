@@ -16,7 +16,7 @@ function Navbar()  {
     <header className='absolute z-10 w-full mx-auto justify-center px-0 lg:px-0 xl:px-16 2xl:px-36 py-2'>
         <nav className='flex m-auto items-center justify-between mx-5'> 
             <div className='pl-34'>
-              <Image src={logo} className='w-37 cursor-pointer'  alt="CloudTanentLogo" />
+             <Link href={'/'}><Image src={logo} className='w-37 cursor-pointer'  alt="CloudTanentLogo" /> </Link>
             </div> 
 
             <div className='flex items-end text-center'>
@@ -29,7 +29,7 @@ function Navbar()  {
                 <Link href={'/alliances'} className='hover:text-white active:hover:text-white'><li>Alliances</li></Link>
                 <Link href={'/'} className='hover:text-white active:hover:text-white'><li className='group  flex gap-1'><div className='flex justify-end text-nowrap'> Resources  <ChevronDown className="group-hover:rotate-180 transition ease-out duration-300" /></div></li></Link>
                 <Link href={'/demo'} className='hover:text-white active:hover:text-white'>
-                  <li className='hover:translate-y-1 group  transition ease-in-out duration-500  flex gap-1'>
+                  <li className='hover:translate-y-1 group transition ease-in-out duration-500  flex gap-1'>
                   <div className='flex justify-end text-nowrap'>
                   Request Demo
                   <Presentation className='group-hover:scale-x-[-1] transition ml-1 ease-in-out duration-500 ' />
