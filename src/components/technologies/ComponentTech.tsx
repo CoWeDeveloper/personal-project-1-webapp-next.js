@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { techData } from "../../data/techData";
 
-function ComponentAlliance() {
+function ComponentTech() {
   return (
     <>
       {techData.map((data: any) => (
@@ -28,4 +28,4 @@ function ComponentAlliance() {
   );
 }
 
-export default ComponentAlliance;
+export default ComponentTech;
