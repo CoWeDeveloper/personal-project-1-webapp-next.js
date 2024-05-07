@@ -1,27 +1,33 @@
+import { link } from "fs"
+
 export const aboutData =[
         {
             "id":1,
             "img":"/assets/icons/About/tech.png" ,
             "alt":"Technologies",
-            "title":"Technologies"
+            "title":"Technologies",
+            "link":"/technologies"
         },
         {
             "id":2,
             "img":"/assets/icons/About/supportMech.png" ,
             "alt":"Support Mechanism",
-            "title":"Support Mechanism"
+            "title":"Support Mechanism",
+            "link":"/support"
         },
         {
             "id":3,
             "img":"/assets/icons/About/onBoarding.png" ,
             "alt":"On-boarding Process",
-            "title":"On-boarding Process"
+            "title":"On-boarding Process",
+            "link":"/boarding"
         },
         {
             "id":4,
             "img":"/assets/icons/About/serviceNetwork.png" ,
             "alt":"Our Services Network",
-            "title":"Our Services Network"
+            "title":"Our Services Network",
+            "link":"/networks"
         }
     ]
 

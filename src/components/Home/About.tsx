@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Image from "next/image";
+
 
 // import assets
 import WhiteCloudBackground from "../../../public/assets/images/WhiteCloudBackground.png";
@@ -17,9 +19,11 @@ function About() {
           />
 
           <div className="z-0 w-full col-span-5 ml-14">
+          <Link href={'/about'} className='hover:text-white active:hover:text-white'>
             <h2 className="animate__animated animate__slideInLeft cursor-pointer max-sm:text-5xl sm:text-6xl  md:text-7xl lg:text-8xl font-semibold text-[#636468] tracking-tight ">
               ABOUT US
             </h2>
+            </Link>
           </div>
           <div className="z-0 w-full col-span-7">
             <div className="flex flex-wrap justify-center  ">
@@ -29,6 +33,7 @@ function About() {
                     key={aboutData.id}
                     className="duration-500 hover:scale-110 flex-wrap my-4 justify-center items-center"
                   >
+                    <Link href={aboutData.link}>
                     <div className="group my-2 mx-4 w-72 px-120 py-4 flex flex-wrap justify-center border-2 border-gray-600 rounded-xl">
                       <Image
                         className="group-hover:scale-x-[-1] transition ease-in-out duration-500 justify-center w-20 h-30 m-4"
@@ -41,6 +46,7 @@ function About() {
                     <h3 className="flex font-semibold  justify-center items-center">
                       {aboutData.title}
                     </h3>
+                    </Link>
                   </div>
                 );
               })}

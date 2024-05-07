@@ -24,12 +24,12 @@ export const allianceData = [
             {
                 id: 5,
                 logoImg: "assets/icons/Alliance/partner1Microsoft.svg",
-                alt: "Logo of pasha"
+                alt: "Logo of microsoft"
             },
             {
                 id: 6,
                 logoImg: "assets/icons/Alliance/partner2Honeywell.svg",
-                alt: "Logo of Pseb",
+                alt: "Logo of honeywell",
             },
         ],
     },
@@ -41,22 +41,22 @@ export const allianceData = [
             {
                 id: 8,
                 logoImg: "assets/icons/Alliance/vent1ITBVision.svg",
-                alt: "Logo of pasha"
+                alt: "Logo of ITBVision"
             },
             {
                 id: 9,
                 logoImg: "assets/icons/Alliance/vent2Elenoc.svg",
-                alt: "Logo of Pseb",
+                alt: "Logo of elenoc",
             },
             {
                 id: 10,
                 logoImg: "assets/icons/Alliance/vent3Burgundy.svg",
-                alt: "Logo of pasha"
+                alt: "Logo of burgundy"
             },
             {
                 id: 11,
                 logoImg: "assets/icons/Alliance/vent4OwareTechnologies.svg",
-                alt: "Logo of Pseb",
+                alt: "Logo of oware technologies",
             },
             
         ],

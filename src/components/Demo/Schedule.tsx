@@ -2,9 +2,12 @@ import React from 'react'
 
 function Schedule() {
   return (
-    <div>
-      hi
-    </div>
+    <section className='w-full h-screen'>
+       <div className='container'>
+        
+
+       </div>
+    </section>
   )
 }
 
