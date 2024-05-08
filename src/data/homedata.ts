@@ -169,28 +169,28 @@ export const productData = [
 
     {
         "id": 1,
-        "img": "/assets/images/Products/sndnext.png",
+        "img": "/assets/images/Products/sndnext.svg",
         "description": "Cloud Tenants Sales & Distribution Software provides tools and features to enhance Sales Efficiency, Track Leads and Opportunities, Manage Customer Relationships, Automate Sales Tasks, and Analyze Sales & Distribution Performance....",
         "gridImg": "/assets/images/Products/sndnextgrid.png",
         "styleButton": "bg-[#1b95c3] hover:bg-[#066B8A] text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none"
     },
     {
         "id": 2,
-        "img": "/assets/images/Products/wmsextend.png",
+        "img": "/assets/images/Products/wmsextend.svg",
         "description": "Cloud Tenants WMS Extended is a highly Efficient & Effective software to manage Inventory and Stock movement in the Warehouse. The Software is designed to manage extensive operations of Warehouse, including Inventory Management, Storage, and Movement of goods....",
         "gridImg": "/assets/images/Products/wmsextendgrid.png",
         "styleButton": "bg-[#6378bb] hover:bg-[#4d5c8c] text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none"
     },
     {
         "id": 3,
-        "img": "/assets/images/Products/pos.png",
+        "img": "/assets/images/Products/pos.svg",
         "description": "Cloud Tenants Leading Point of Sale Solution for Small Retail Shops to Chain of Supermarkets. It serves as the Central Hub for processing Sales, Managing Inventory, and providing an overall Seamless Customer Experience....",
         "gridImg": "/assets/images/Products/posgrid.png",
         "styleButton": "bg-[#fb8c00] hover:bg-[#d26f00] text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none" 
     },
     {
         "id": 4,
-        "img": "/assets/images/Products/poss.png",
+        "img": "/assets/images/Products/poss.svg",
         "description": "Cloud Tenants Leading Point of Sale Solution for Food Kiosk to Fine Dining Restaurants Chain. POS Select, is designed specifically for the food service industry to manage Restaurant Operations, Streamline Order Processing, and Enhancing Overall Dining Experience....",
         "gridImg": "/assets/images/Products/possgrid.png",
         "styleButton": "bg-[#7fb041] hover:bg-[#638938] text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none" 

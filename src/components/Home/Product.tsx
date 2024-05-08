@@ -16,12 +16,12 @@ function Product() {
 
 
   {productData.map((product, index) => (
-<section key={product.id} className="flex flex-wrap w-9/12 mx-auto justify-center items-center">
+<section key={product.id} className="flex flex-wrap max-w-screen-lg mx-auto justify-center items-center">
 
     <div className="w-full flex flex-wrap mx-auto justify-center" >
       <div className={` w-full lg:w-[55%] ${product.id % 2 === 0 ? 'order-1' : 'order-0'} `} >
       <Image
-        className="w-40"
+        className="w-48"
         src={product.img}
         width={120}
         height={60}

@@ -3,13 +3,11 @@ import Image from 'next/image';
 
 // import assets
 import logo from "../../public/assets/images/cloudlogo.png"; 
-import {Presentation, ChevronDown  } from 'lucide-react';
-
+import {Presentation } from 'lucide-react';
 import NavbarMoblie from "./MenuNavbar";
+import DropMenu from "./DropMenu";
 
 function Navbar()  {
-  
-
 
   return (
     <> 
@@ -20,14 +18,14 @@ function Navbar()  {
             </div> 
 
             <div className='flex items-end text-center'>
-            <ul className='lg:flex space-x-4 hidden text-gray-300 lg:gap-0 xl:gap-3 2xl:gap-4'>
+            <ul  className='lg:flex space-x-4 hidden text-gray-300 lg:gap-0 xl:gap-3 2xl:gap-4'>
                 <Link href={'/'} className=' justify-center hover:text-white active:hover:text-white '><li>Home</li></Link>
                 <Link href={'/about'} className='hover:text-white active:hover:text-white'><li>About Us</li></Link>
                 <Link href={'/network'} className=' justify-center hover:text-white active:hover:text-white'><li className=''>Services Network</li></Link>
                 <Link href={'/softwares'} className='hover:text-white active:hover:text-white'><li>Softwares</li></Link>
                 <Link href={'/customers'} className='hover:text-white active:hover:text-white'><li>Customers</li></Link>
                 <Link href={'/alliances'} className='hover:text-white active:hover:text-white'><li>Alliances</li></Link>
-                <Link href={'/'} className='hover:text-white active:hover:text-white'><li className='group  flex gap-1'><div className='flex justify-end text-nowrap'> Resources  <ChevronDown className="group-hover:rotate-180 transition ease-out duration-300" /></div></li></Link>
+                <li className='group  flex gap-1'><DropMenu /></li>
                 <Link href={'/demo'} className='hover:text-white active:hover:text-white'>
                   <li className='hover:translate-y-1 group transition ease-in-out duration-500  flex gap-1'>
                   <div className='flex justify-end text-nowrap'>
@@ -40,10 +38,7 @@ function Navbar()  {
              <div className='items-end cursor-pointer md:flex lg:hidden'>
               <NavbarMoblie />
             </div>
-
             </div>
-
-
         </nav>
     
         </header>
