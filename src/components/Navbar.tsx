@@ -21,7 +21,7 @@ function Navbar()  {
             <ul  className='lg:flex space-x-4 hidden text-gray-300 lg:gap-0 xl:gap-3 2xl:gap-4'>
                 <Link href={'/'} className=' justify-center hover:text-white active:hover:text-white '><li>Home</li></Link>
                 <Link href={'/about'} className='hover:text-white active:hover:text-white'><li>About Us</li></Link>
-                <Link href={'/network'} className=' justify-center hover:text-white active:hover:text-white'><li className=''>Services Network</li></Link>
+                <Link href={'/networks'} className=' justify-center hover:text-white active:hover:text-white'><li className=''>Services Network</li></Link>
                 <Link href={'/softwares'} className='hover:text-white active:hover:text-white'><li>Softwares</li></Link>
                 <Link href={'/customers'} className='hover:text-white active:hover:text-white'><li>Customers</li></Link>
                 <Link href={'/alliances'} className='hover:text-white active:hover:text-white'><li>Alliances</li></Link>

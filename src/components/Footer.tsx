@@ -34,12 +34,12 @@ function Footer() {
                 <div className="lg:px-24 md:px-20 sm:px-14 px-0">
                     <h3 className="text-white text-start font-bold text-sm my-4">Quick Links</h3>
                     <ul className="text-gray-500 text-left text-sm dark:text-gray-400 font-medium">
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Softwares</li></Link>
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">About Us</li></Link>
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Careers</li></Link>
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Become a Partner</li></Link>
+                    <Link href={"/softwares"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Softwares</li></Link>
+                    <Link href={"/about"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">About Us</li></Link>
+                    <Link href={"/careers"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Careers</li></Link>
+                    <Link href={"/partner"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Become a Partner</li></Link>
                     <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">Privacy Policy</li></Link>
-                    <Link href={"/"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">FAQ's</li></Link>
+                    <Link href={"/faq"} className="hover:underline "><li className="pt-1 hover:translate-x-2 duration-500 hover:text-gray-400">FAQ's</li></Link>
                     </ul>
                 </div>
 
