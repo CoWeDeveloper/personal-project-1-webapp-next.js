@@ -1,23 +1,17 @@
 import Image from "next/image";
-// import { useRouter } from 'next/router';
 import "animate.css";
 // import assets
 import Arrow from "../../../public/assets/images/Products/productarrow.png";
 // import data
 import {softwareData} from "../../data/softwareData";
 import ScheduleBtn from "./ScheduleBtn";
-// import { useRouter } from "next/router";
+
+
+
 
 function Products() {
-  // const router = useRouter();
-  // const handleClick = () => {
-  //   router.push(
-  //     {
-  //       pathname: "/demo",
-  //       query: "S&D Next"
-  //     }
-  //   )
-  // }
+
+ 
     return (
       <section className="w-full h-fit bg-white">
         <div className="py-8 px-4 mx-auto  max-w-screen-xl  sm:py-16 lg:px-6">
@@ -41,6 +35,7 @@ function Products() {
       /> 
       <p className=" text-sm text-[#636468] my-3 text-justify">{cards.description}</p>
       <ScheduleBtn styleButton={cards.styleButton} />
+      {/* <button onClick={handleClick} className={cards.styleButton}>Schedule a Demo</button> */}
       <button className="hover:border-[#0A9AC8] text-[#066f8f] text-xs   hover:ring-2 py-2 px-5 font-medium rounded-lg hover:ring-[#0A9AC8] focus:outline-none duration-500">Read More</button>
       </div>
       <div  className={`lg:mt-0 mt-5 w-full lg:w-[45%] flex justify-center ${cards.id % 2 === 0 ? 'order-1' : 'order-0'} `}  >
