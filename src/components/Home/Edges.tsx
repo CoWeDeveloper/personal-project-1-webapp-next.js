@@ -11,32 +11,27 @@ import WhiteCloudBackground from "../../../public/assets/images/WhiteCloudBackgr
 
 
 function OurEdges() {
-  return (
-    <section className="bg-white w-full -z-10  h-full">
+  return (  
+    <section className="bg-white w-full -z-10  lg:h-screen">
       {/* background Image of cloud */}
-      <div className=" relative grid max-w-screen-xl lg:grid-cols-12 mx-auto px-4 py-8 lg:py-16 items-center md:h-screen">
+      <div className=" relative grid max-w-screen-xl lg:grid-cols-12 mx-auto px-4 py-8 lg:py-16 items-center w-full md:h-full sm:h-fit ">
         <Image
-          className="whiteCloudBackground"
+          className="whiteCloudBackground flex w-[100%]"
           src={WhiteCloudBackground}
           alt="Cloud Background"
+          
+       
         />
-        <div className="z-0 w-full  md:col-span-6  lg:ml-14 sm:ml-4 md:ml-2">
+        <div className="z-0 w-full  col-span-6  lg:ml-14 sm:ml-4 md:ml-2">
           <h2 className="animate__animated animate__slideInLeft  cursor-pointer text-4xl leading-none md:text-6xl xl:text-8xl font-semibold text-[#636468] tracking-tight ">
             OUR EDGES
           </h2>
         </div>
-        <div className="z-0 md:col-span-6 ">
+        <div className="col-span-6 my-14 lg:my-0">
          
             
-            {/* <SliderEdge  />
-           */}
-
-
-
-          
-            
-
-            
+            <SliderEdge  />
+      
     
         </div>
       </div>

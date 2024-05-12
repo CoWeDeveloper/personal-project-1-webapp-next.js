@@ -9,18 +9,18 @@ import { aboutData } from "../../data/homeData";
 function About() {
   return (
     <>
-      <section className="bg-white w-full -z-10 max-sm:w-fit h-fit">
+      <section className="bg-white w-full -z-10  h-fit">
         {/* background Image of cloud */}
         <div className=" relative grid max-w-screen-xl lg:grid-cols-12 mx-auto px-4 py-8 lg:py-16 items-center md:h-screen">
           <Image
-            className="whiteCloudBackground"
+            className="whiteCloudBackground flex"
             src={WhiteCloudBackground}
             alt="Cloud Background"
           />
 
-          <div className="z-0 w-full col-span-5 ml-14">
+          <div className="z-0 w-full col-span-5 ml-14 sm:mx-auto">
           <Link href={'/about'} className='hover:text-white active:hover:text-white'>
-            <h2 className="animate__animated animate__slideInLeft cursor-pointer max-sm:text-5xl sm:text-6xl  md:text-7xl lg:text-8xl font-semibold text-[#636468] tracking-tight ">
+            <h2 className="animate__animated animate__slideInLeft cursor-pointer max-sm:text-4xl sm:text-4xl  md:text-7xl lg:text-8xl font-semibold text-[#636468] tracking-tight ">
               ABOUT US
             </h2>
             </Link>
@@ -34,7 +34,7 @@ function About() {
                     className="duration-500 hover:scale-110 flex-wrap my-4 justify-center items-center"
                   >
                     <Link href={aboutData.link}>
-                    <div className="group my-2 mx-4 w-72 px-120 py-4 flex flex-wrap justify-center border-2 border-gray-600 rounded-xl">
+                    <div className="group my-2 mx-4 w-64 sm:w-72 px-120 py-4 flex flex-wrap justify-center border-2 border-gray-600 rounded-xl">
                       <Image
                         className="group-hover:scale-x-[-1] transition ease-in-out duration-500 justify-center w-20 h-30 m-4"
                         width={100}
