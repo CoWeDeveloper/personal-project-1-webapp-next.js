@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from 'next/image';
 import { usePathname } from 'next/navigation'
+import { useState, useEffect } from "react";
 
 // import assets
 import logo from "../../public/assets/images/cloudlogo.png"; 
@@ -9,11 +10,33 @@ import {Presentation } from 'lucide-react';
 import NavbarMoblie from "./MenuNavbar";
 import DropMenu from "./DropMenu";
 
+
 function NavbarClient()  {
+    const [ scrollUp, setScrollUp ] = useState(false);
+    
+    useEffect( ()=>{
+        let prevScroll = window.scrollY;
+        const handleScroll: any = ()=> {
+            const currentScroll = window.scrollY;
+            const scrollUp = prevScroll > currentScroll;
+            
+            setScrollUp(scrollUp);
+            prevScroll = currentScroll;
+        }
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+          };
+    }, [] )
+
     const pathname = usePathname()
   return (
     <> 
-    <header className={` ${pathname == "/faq" ? "bg-[#211c5d]" : "bg-transparent"} absolute z-10 w-full mx-auto justify-center px-0 lg:px-0 xl:px-16 2xl:px-36 py-2`} >
+    <header 
+    className={` absolute z-10 w-full mx-auto justify-center px-0 lg:px-0 xl:px-16 2xl:px-36 py-2
+     ${scrollUp ? "bg-[#211c5d] sticky top-0 z-20" : "" }
+     ${pathname == "/faq" ? "bg-[#211c5d] z-20" : "" }
+   `} >
         <nav className='flex m-auto items-center justify-between mx-5'> 
             <div className='pl-34'>
              <Link href={'/'}><Image src={logo} className='w-37 cursor-pointer'  alt="CloudTanentLogo" /> </Link>

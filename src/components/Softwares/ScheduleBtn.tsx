@@ -3,9 +3,9 @@
 import { useRouter } from 'next/navigation';
 
 function ScheduleBtn(props: any) {
+  const router = useRouter();
   const handleClick = () => {
-    const router = useRouter();
-    const query = encodeURIComponent(JSON.stringify({ value: "S&D Next" }));
+    const query = encodeURIComponent(JSON.stringify("S&D Next" ));
     router.push(`/demo?query=${query}`);
     console.log("S&D");
   }

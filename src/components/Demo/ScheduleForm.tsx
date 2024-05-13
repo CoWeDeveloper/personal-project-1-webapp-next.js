@@ -9,19 +9,12 @@ import { HandHelping } from 'lucide-react';
 
     function ScheduleForm(){
     const searchParams = useSearchParams();
-
-        // const router = useRouter();
-        // console.log(searchParams.get("pathname")); // Log the router object
-
-        // const { query } = router;
-        // const selectedOption: any = query.value as string;
-        
-        // const handleChange = () =>{
-        //     console.log(selectedOption);
-        // }
-        
-    const options = [
-        { value: 'S&D Next', label: 'S&D Next (Sales & Distribution)', },
+    const recevied: any = searchParams.get("query");
+    const decodedValue = decodeURIComponent(recevied);
+    
+    
+    const options: any = [
+      { value: 'S&D Next', label: 'S&D Next (Sales & Distribution)', },
         { value: 'S&D E-Suite', label: 'S&D E-Euite (Sales & Distribution)' },
         { value: 'POS Xtreme', label: 'POS Xtreme (Point of Solution for Shops & Supermarkets)' },
         { value: 'POS Select', label: 'POS Select (Point of Solution for Food & Resturants Chain)' },
@@ -33,9 +26,11 @@ import { HandHelping } from 'lucide-react';
         { value: 'Primary+', label: 'Primary+ (Primary Sales)' },
         { value: 'Import+', label: 'Import+' },
         
-    ];
-    // const selectedValue = options.find((option)=> option.value == selectedOption );
-    
+      ];
+      // console.log()
+      // const selectedValue = options.find((option)=> option.value == selectedOption );
+      console.log(JSON.parse(recevied) == options[0].value);
+      
       const customStyles= {
         control: (styles: any) => ({
           ...styles,
