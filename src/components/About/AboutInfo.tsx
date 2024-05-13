@@ -12,16 +12,16 @@ function aboutInfo() {
             </div>
             <div className='text-sm py-8 text-[#636468]'>
                 <p className='text-justify py-2 tracking-wide subpixel-antialiased'>
-                <span className='font-bold'>Cloud Tenants Pvt Ltd</span> has evolved in <span className='font-bold'>Year 2017</span> from its Group Company Fourgen Information Systems which has been in <span className='font-bold'>software business since 1998</span>. Collectively, Cloud Tenants bear with it an experience of <span className='font-bold'>25+ Years</span>. Over the years, our team of experts has successfully completed software projects with a number of renowned companies in Pakistan & Internationally.
+                <b>Cloud Tenants Pvt Ltd</b> has evolved in <b>Year 2017</b> from its Group Company Fourgen Information Systems which has been in <b>software business since 1998</b>. Collectively, Cloud Tenants bear with it an experience of <b>25+ Years</b>. Over the years, our team of experts has successfully completed software projects with a number of renowned companies in Pakistan & Internationally.
                 </p>
                 <p className='text-justify py-2 tracking-wide subpixel-antialiased'>
-                We offer <span className='font-bold'>Cloud Hosted, Web Based</span> & <span className='font-bold'>Mobile Applications based solutions</span>, eliminating the heavy infrastructure procurement cost and its regular management/administration costs, yet more versatile, user friendly, mobility enhanced and feature rich solutions.
+                We offer <b>Cloud Hosted, Web Based</b> & <b>Mobile Applications based solutions</b>, eliminating the heavy infrastructure procurement cost and its regular management/administration costs, yet more versatile, user friendly, mobility enhanced and feature rich solutions.
                 </p>
                 <p className='text-justify py-2 tracking-wide subpixel-antialiased'>
-                Our solutions have supported the businesses to enhance their <span className='font-bold'>productivity</span>, increase their <span className='font-bold'>profitability</span>& <span className='font-bold'>growth</span>. Our efficient <span className='font-bold'>Reporting Tools</span> & <span className='font-bold'>Management Dashboards</span> help managements take <span className='font-bold'>Effective Business Decision</span> for their Businesses.
+                Our solutions have supported the businesses to enhance their <b>productivity</b>, increase their <b >profitability</b>& <b>growth</b>. Our efficient <b >Reporting Tools</b> & <b >Management Dashboards</b> help managements take <b >Effective Business Decision</b> for their Businesses.
                 </p>
                 <p className='text-justify py-2 tracking-wide subpixel-antialiased'>
-                We offer complete integrated environment with our <span className='font-bold'>ERP modules</span>, hence, we truly are a <span className='font-bold'>One Window Solution Provider</span>.
+                We offer complete integrated environment with our <b>ERP modules</b>, hence, we truly are a <b >One Window Solution Provider</b>.
                 </p>
             </div>
 

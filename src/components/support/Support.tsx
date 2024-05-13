@@ -14,7 +14,7 @@ function Support() {
         >
           <div className="max-w-screen-lg mx-auto pt-10 pb-5 ">
             {data.id == 1 && (
-              <h1 className="md:text-3xl sm:text-2xl font-black tracking-wider text-center">
+              <h1 className="md:text-3xl text-4xl font-black tracking-wider text-center">
                 SUPPORT MECHANISM
               </h1>
             )}
