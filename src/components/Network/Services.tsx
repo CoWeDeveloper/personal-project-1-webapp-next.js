@@ -28,7 +28,7 @@ function Services() {
                     {networkData.country}
                     <span>
                     <Image
-                      className="w-10 ml-1 ring-2 ring-offset-2"
+                      className="w-10 ml-1 ring-2 ring-offset-2 "
                       style={{boxShadow: "0px 2px 18px 0px rgba(0,0,0,0.3)"}}
                       src={networkData.flagImg}
                       width={40}
@@ -76,7 +76,7 @@ function Services() {
 
                 <div className="col-span-7 w-full h-full grid md:place-content-end lg:place-content-center lg:items-center md:pt-32">
                   <Image
-                    className="relative w-full h-auto mx-auto"
+                    className="relative w-full h-auto mx-auto drop-shadow-2xl"
                     src={networkData.mapImg}
                     width={900}
                     height={900}
