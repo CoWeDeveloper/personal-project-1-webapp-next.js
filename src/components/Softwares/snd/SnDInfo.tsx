@@ -48,6 +48,12 @@ function SnDInfo() {
             </div>
     </div>
     ))}
+
+<div className="flex justify-center">
+<button className="ring-[#0A9AC8] text-[#0A9AC8] duration-500 transition-all px-5 py-2.5 text-xs font-medium ring-2 focus:outline-none rounded-lg text-center mx-auto flex w-fit justify-center hover:bg-[#066B8A] hover:text-white hover:ring-[#066B8A]">
+Explore S&D Add-On Modules
+</button>
+</div>
       </div>   
     </div>
   )
