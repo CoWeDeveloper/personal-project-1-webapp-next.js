@@ -1,6 +1,6 @@
 import Image from "next/image";
-import banner from "../../../../public/assets/images/Software/SnD/sndNHeader.svg"
-import { SnDData } from "@/data/SnDData";
+import banner from "../../../../public/assets/images/Software/PosXtreme/posxsubbanner.svg"
+import { posXData } from "@/data/posXtremeData";
 
 function SnDInfo() {
   return (
@@ -10,15 +10,13 @@ function SnDInfo() {
            <Image src={banner} alt="banner" width={600} />
 
            </div>
-          <p className=" font-medium pt-12 pb-8 text-justify text-[#636468]" >Elevate your business with our Cloud-based and Web-based Sales & Distribution Management solution that give unparalleled advantage to your organization. 
-            Optimize your operational efficiency by streamlining your sales processes with improved customer engagement and better insights into your business with our AI Based Dashboards and Real-Time Reporting. 
-            Utilize the Cloud-based features with seamless accessibility from anywhere. Cloud Tenants encourage adaptability and empower insightful decision-making.
-            
+          <p className=" font-medium pt-12 pb-8 text-justify text-[#636468]" >Cloud Tenants’ POS Xtreme is a leading Point of Sale Solution suitable for Small Retail Shops to Multi Outlets Businesses. It is the Central Hub for processing Sales, Managing Inventory, and providing an overall Seamless Customer Experience.
+
             <br />
             <br />
-           Our Sales and Distribution Software provides tools and features to enhance Sales Efficiency, Track Leads, and Opportunities, Manage Customer Relationships, Automate Sales Tasks, and Analyze Sales and Distribution Performance.</p>
+            We are here to provide a Competitive advantage over the dynamic retail market, with our scalable and versatile system. POS Xtreme fosters customer management and relationships with its Comprehensive Loyalty Program module, which empowers businesses with repetitive sales and customer satisfaction. Minimize long queues and accelerate checkouts with our Comprehensive Sales Module and Digital Payment Integration.</p>
          
-          {SnDData.map(( data: any) => (
+          {posXData.map(( data: any) => (
    <div key={data.id}>
         <h1 className="text-3xl text-black font-extrabold">
             {data.heading}
@@ -49,11 +47,6 @@ function SnDInfo() {
     </div>
     ))}
 
-<div className="flex justify-center">
-<button className="ring-[#0A9AC8] text-[#0A9AC8] duration-500 transition-all px-5 py-2.5 text-xs font-medium ring-2 focus:outline-none rounded-lg text-center mx-auto flex w-fit justify-center hover:bg-[#066B8A] hover:text-white hover:ring-[#066B8A]">
-Explore S&D Add-On Modules
-</button>
-</div>
       </div>   
     </div>
   )

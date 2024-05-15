@@ -1,4 +1,4 @@
-export const SnDData = [  {
+export const sndNextData = [  {
         id: 1,
         heading: "Key Feature",
         cards: [

@@ -38,4 +38,4 @@ return (
   )
 }
 
-export default DropMenu
+export default DropMenu;

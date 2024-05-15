@@ -38,7 +38,7 @@ function Products() {
       <ScheduleBtn styleButton={cards.styleButton} />
       {/* <button onClick={handleClick} className={cards.styleButton}>Schedule a Demo</button> */}
       
-     <Link  href={'/softwares/snd-next'} > <button className="hover:border-[#0A9AC8] text-[#066f8f] text-xs   hover:ring-2 py-2 px-5 font-medium rounded-lg hover:ring-[#0A9AC8] focus:outline-none duration-500">Read More</button></Link>
+     <Link  href={cards.link} > <button className="hover:border-[#0A9AC8] text-[#066f8f] text-xs   hover:ring-2 py-2 px-5 font-medium rounded-lg hover:ring-[#0A9AC8] focus:outline-none duration-500">Read More</button></Link>
       </div>
       <div  className={`lg:mt-0 mt-5 w-full lg:w-[45%] flex justify-center ${cards.id % 2 === 0 ? 'order-1' : 'order-0'} `}  >
         <Image
@@ -49,7 +49,6 @@ function Products() {
           alt="mock up"
         />
       </div>
-   
     </div>
     {index < softwareData.cards.length - 1 && softwareData.cards[index + 1].id === cards.id + 1 && (
       <div className="flex justify-center my-14">

@@ -10,6 +10,7 @@ import Customers from "@/components/home/Customers";
 
 
 function Home() {
+  
   return (
     <main className="relative">
     <HeroSection />

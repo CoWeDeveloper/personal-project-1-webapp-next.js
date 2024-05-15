@@ -19,7 +19,7 @@ function Support() {
               </h1>
             )}
             <div className="text-center flex flex-col justify-center items-center">
-              <h1 className="text-3xl font-semibold mt-10">{data.title}</h1>
+              <h1 className="text-3xl font-semibold mt-10 ">{data.title}</h1>
               <div className="flex flex-wrap justify-center items-center mt-10 my-10">
                 {data.card.map((card: any)=>
             (

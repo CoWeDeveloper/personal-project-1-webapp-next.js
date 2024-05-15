@@ -1,6 +1,4 @@
-// import { HeroSection, SnDInfo } from "@/components/softwares/SnD/index"
-import { HeroSection } from "@/components/softwares/snd";
-import SnDInfo from "@/components/softwares/snd/SnDInfo"
+import { HeroSection, SnDInfo } from "@/components/softwares/sndNext";
 
 function Snd() {
   return (
