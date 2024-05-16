@@ -22,7 +22,10 @@ function Products() {
             {softwareData.title}
           </h3>
 
-{softwareData.cards.map((cards, index) => (
+{softwareData.cards.map((cards, index) => {
+  const bgColorRead = cards.styleRead;
+  const bgcolorSchedule = cards.styleSchedule; 
+    return(
 <section key={cards.id} className="flex flex-wrap w-9/12 mx-auto justify-center items-center">
 
     <div className="w-full flex flex-wrap mx-auto justify-center" >
@@ -35,17 +38,18 @@ function Products() {
         alt="Product Image"
       /> 
       <p className=" text-sm text-[#636468] my-3 text-justify">{cards.description}</p>
-      <ScheduleBtn styleButton={cards.styleButton} />
+      <ScheduleBtn styleButton={`${cards.styleSchedule} text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none`} />
       {/* <button onClick={handleClick} className={cards.styleButton}>Schedule a Demo</button> */}
       
-     <Link  href={cards.link} > <button className="hover:border-[#0A9AC8] text-[#066f8f] text-xs   hover:ring-2 py-2 px-5 font-medium rounded-lg hover:ring-[#0A9AC8] focus:outline-none duration-500">Read More</button></Link>
+     <Link  href={cards.link} > 
+     <button className={` ${bgColorRead} text-xs hover:ring-2 py-2 px-5 font-medium rounded-lg  focus:outline-none duration-500`}>Read More</button></Link>
       </div>
       <div  className={`lg:mt-0 mt-5 w-full lg:w-[45%] flex justify-center ${cards.id % 2 === 0 ? 'order-1' : 'order-0'} `}  >
         <Image
-          className="lg:w-70 md:w-64 sm:w-56"
+          className="lg:w-60  md:w-64 sm:w-56"
           src={cards.gridImg}
-          width={200}
-          height={150}
+          width={500}
+          height={100}
           alt="mock up"
         />
       </div>
@@ -62,7 +66,8 @@ function Products() {
       </div>
     )}
 </section>
-  ))}
+  )}
+)}
 
 </div>
                  

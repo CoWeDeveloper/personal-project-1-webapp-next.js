@@ -176,9 +176,9 @@ export const productData = [
     },
     {
         "id": 2,
-        "img": "/assets/images/Products/wmsextend.svg",
+        "img": "/assets/images/Products/wmsextend.svg"  ,
         "description": "Cloud Tenants WMS Extended is a highly Efficient & Effective software to manage Inventory and Stock movement in the Warehouse. The Software is designed to manage extensive operations of Warehouse, including Inventory Management, Storage, and Movement of goods....",
-        "gridImg": "/assets/images/Products/wmsextendgrid.png",
+        "gridImg": "/assets/images/Products/wmsextendgridRightSide.png",
         "styleButton": "bg-[#6378bb] hover:bg-[#4d5c8c] text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none"
     },
     {
