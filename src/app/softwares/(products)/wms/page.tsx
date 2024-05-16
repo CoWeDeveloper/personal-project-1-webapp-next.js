@@ -1,10 +1,10 @@
-import { HeroSection, SnDInfo } from "@/components/softwares/wms/index";
+import { HeroSection, WmsInfo } from "@/components/softwares/wms/index";
 
 function Wms() {
   return (
     <div>
     <HeroSection />
-    <SnDInfo />      
+    <WmsInfo />      
     </div>
   )
 }

@@ -24,22 +24,21 @@ export const wmsData= [{
     id: 18,
     heading: "Inbound Operations",
     cards: [
-        { id:19, url: '/assets/icons/Software/Wms/wms15.png', title: 'Arrival' },
-        { id:20, url: '/assets/icons/Software/Wms/wms16.png', title: 'Inspection' },
-        { id:21, url: '/assets/icons/Software/Wms/wms17.png', title: 'Stock Receiving' },
-        { id:22, url: '/assets/icons/Software/Wms/wms18.png', title: 'Put Away' },
-        { id:23, url: '/assets/icons/Software/Wms/wms19.png', title: 'Docking' },
+        { id: 19, url: '/assets/icons/Software/Wms/wms15.png', title: 'Arrival' },
+        { id: 20, url: '/assets/icons/Software/Wms/wms16.png', title: 'Inspection' },
+        { id: 21, url: '/assets/icons/Software/Wms/wms17.png', title: 'Stock Receiving' },
+        { id: 22, url: '/assets/icons/Software/Wms/wms18.png', title: 'Put Away' },
+        { id: 23, url: '/assets/icons/Software/Wms/wms19.png', title: 'Docking' },
     ]
 },
 {
     id: 24,
     heading: "Outbound Operations",
     cards: [
-        { url: '../../../../assets/wms20.png', title: 'Stock Picking' },
-        { url: '../../../../assets/wms21.png', title: 'Customer-wise Segregation' },
-        { url: '../../../../assets/wms22.png', title: 'Digital Signature on Dispatch' },
-        { url: '../../../../assets/wms23.png', title: 'Shipment to Customer' },
+        { id: 25, url: '/assets/icons/Software/Wms/wms20.png', title: 'Stock Picking' },
+        { id: 26, url: '/assets/icons/Software/Wms/wms21.png', title: 'Customer-wise Segregation' },
+        { id: 27, url: '/assets/icons/Software/Wms/wms22.png', title: 'Digital Signature on Dispatch' },
+        { id: 28, url: '/assets/icons/Software/Wms/wms23.png', title: 'Shipment to Customer' },
     ]
 } 
 ]
-  
