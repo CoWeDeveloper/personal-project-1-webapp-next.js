@@ -1,14 +1,12 @@
-// import { HeroSection, SnDInfo } from "@/components/softwares/sndSuit";
-import HeroSection from "@/components/softwares/sndSuit/HeroSection";
-import SndInfo from "@/components/softwares/sndSuit/SndInfo";
+import { HeroSection, PosSInfo } from "@/components/softwares/posSelect/index";
 
-function Snd() {
+function PosSelect() {
   return (
     <div>
     <HeroSection />
-       <SndInfo />      
+       <PosSInfo />      
     </div>
   )
 }
 
-export default Snd;
+export default PosSelect;

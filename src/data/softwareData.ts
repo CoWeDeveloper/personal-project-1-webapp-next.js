@@ -89,7 +89,7 @@ export const softwareData: Software[] = [
                 description: "Cloud Tenants HCM+ (Human Capital Management) solutions offers end-to-end Employee Lifecycle Management. t manages Recruitment, Detailed HR Information, Time & Attendance, Payroll and other processes..",
                 gridImg: "/assets/images/Products/hcmgrid.png",
                 styleButton: "bg-[#1798a7] hover:bg-[#00818F] text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none",
-                link: "/softwares/production" 
+                link: "/softwares/hcm" 
             },
             {
                 id: 11,

@@ -1,8 +1,6 @@
-// import { HeroSection, SnDInfo } from "@/components/softwares/sndSuit";
-import HeroSection from "@/components/softwares/posXtreme/HeroSetion";
-import PosXInfo from "@/components/softwares/posXtreme/PosXInfo";
+import { HeroSection, PosXInfo } from "@/components/softwares/posXtreme/index";
 
-function Snd() {
+function PosXtreme() {
   return (
     <div>
     <HeroSection />
@@ -11,4 +9,4 @@ function Snd() {
   )
 }
 
-export default Snd;
+export default PosXtreme;

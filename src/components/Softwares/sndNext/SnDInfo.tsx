@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import banner from "../../../../public/assets/images/Software/SnDNext/sndNHeader.svg"
 import { sndNextData } from "@/data/sndNextData";
 
@@ -40,7 +41,6 @@ function SnDInfo() {
                     />
                     <div className="mx-auto  w-[170px]">
                     <h2 className="  px-4 py-1 text-center  text-sm">{card.title}</h2>
-
                     </div>
                 </div>
                 );
@@ -50,13 +50,15 @@ function SnDInfo() {
     ))}
 
 <div className="flex justify-center">
-<button className="ring-[#0A9AC8] text-[#0A9AC8] duration-500 transition-all px-5 py-2.5 text-xs font-medium ring-2 focus:outline-none rounded-lg text-center mx-auto flex w-fit justify-center hover:bg-[#066B8A] hover:text-white hover:ring-[#066B8A]">
+ <Link  href={'/softwares/snd-esuite'}>
+   <button className="ring-[#0A9AC8] text-[#0A9AC8] duration-500 transition-all px-5 py-2.5 text-xs font-medium ring-2 focus:outline-none rounded-lg text-center mx-auto flex w-fit justify-center hover:bg-[#066B8A] hover:text-white hover:ring-[#066B8A]">
 Explore S&D Add-On Modules
 </button>
+</Link>
 </div>
       </div>   
     </div>
   )
 }
 
-export default SnDInfo
+export default SnDInfo;

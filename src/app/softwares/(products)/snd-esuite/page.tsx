@@ -1,14 +1,12 @@
-// import { HeroSection, SnDInfo } from "@/components/softwares/sndSuit";
-import HeroSection from "@/components/softwares/sndSuit/HeroSection";
-import SndInfo from "@/components/softwares/sndSuit/SndInfo";
+import { HeroSection, SnDInfo } from "@/components/softwares/sndSuit/index";
 
-function Snd() {
+function SndSuit() {
   return (
     <div>
     <HeroSection />
-       <SndInfo />      
+    <SnDInfo />      
     </div>
   )
 }
 
-export default Snd;
+export default SndSuit;

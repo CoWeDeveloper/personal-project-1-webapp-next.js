@@ -1,8 +1,8 @@
 import Image from "next/image";
-import banner from "../../../../public/assets/images/Software/PosXtreme/posxsubbanner.svg"
+import banner from "../../../../public/assets/images/Software/PosXtreme/posxsubbanner.png"
 import { posXData } from "@/data/posXtremeData";
 
-function SnDInfo() {
+function PosXInfo() {
   return (
     <div className="w-full h-fit bg-white pt-14 pb-10">
       <div className=" container mx-auto lg:px-36">
@@ -52,4 +52,4 @@ function SnDInfo() {
   )
 }
 
-export default SnDInfo
+export default PosXInfo

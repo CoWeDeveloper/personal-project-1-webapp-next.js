@@ -1,6 +1,6 @@
 import Image from "next/image";
-import banner from "../../../../public/assets/images/Software/SnDSuit/sndesubbanner.png";
-import { sndSuitData } from "@/data/sndSuitData";
+import banner from "../../../../public/assets/images/Software/Wms/wmssubbanner.png";
+import { wmsData } from "@/data/wmsData";
 
 function SnDInfo() {
   return (
@@ -10,18 +10,14 @@ function SnDInfo() {
           <Image src={banner} alt="banner" width={600} />
         </div>
         <p className=" font-medium pt-12 pb-8 text-justify text-[#636468]">
-          Cloud Tenants S&D E-suite takes you to the next level of Business
-          Optimization. It includes Demand-Based Replenishment, Distributor
-          Claims Automation, Sales Incentive Module, Sales Forecast, Retailer
-          App, Ordering Management, Travelling Management App, and Merchandiser
-          Module that can drive your business toward success.
+        Cloud Tenants’ WMS Extended is a Highly Efficient and effective software to manage Inventory and Stock movement in the Warehouse. The Software is designed to manage extensive operations of the Warehouse, including Inventory Management, Storage, and Movement of goods.
+
           <br />
           <br />
-          S&D E-suite is designed specifically to provide extra support to your
-          sales critical processes.
+          Get business intelligence and static reports with our user-friendly Power BI dashboards. We aim to reduce operational costs and eliminate human errors from data entry to inventory management, ensuring optimal accuracy at every step. WMS Extended helps to provide businesses maintain accurate stock control as per warehouse layout and storage configuration. Maximize your available warehouse space now with our system-generated suggestions and MRP forecasting features.
         </p>
 
-        {sndSuitData.map((data: any) => (
+        {wmsData.map((data: any) => (
           <div key={data.id}>
             <h1 className="text-3xl text-black font-extrabold">
               {data.heading}
