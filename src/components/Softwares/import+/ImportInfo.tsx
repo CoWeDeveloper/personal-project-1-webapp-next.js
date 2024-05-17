@@ -1,8 +1,8 @@
 import Image from "next/image";
-import banner from "../../../../public/assets/images/Software/Production/prodsubbanner.png"
-import { productionData } from "@/data/productionData";
+import banner from "../../../../public/assets/images/Software/Import/importsubbanner.png"
+import { importData } from "@/data/importData";
 
-function ProductionInfo() {
+function ImportInfo() {
   return (
     <div className="w-full h-fit bg-white pt-14 pb-10">
       <div className=" container mx-auto lg:px-36">
@@ -11,13 +11,13 @@ function ProductionInfo() {
 
            </div>
           <p className=" font-medium pt-12 pb-8 text-justify text-[#636468]" >
-          Join the league of businesses that have successfully transformed their production process with Cloud Tenants’ Production software. Stay ahead in this dynamic landscape of manufacturing with a strategic plan in all your production steps from production to order and return we got you covered with our Production software. We ensure better insights into your production process that result in cost-effective manufacturing operations.
+          Cloud Tenants’ import module ensures that the import operations adhere to custom regulatory standards that avoid penalties and minimize delays. Our import module ensures accurate calculations of taxes and import duties and helps businesses to get precise tax management. Now, you may have a seamless import journey with a simplified LC opening and arrival procedure, multi-currency financial setup, and much more with our high-tech import+ management software.
 
             <br />
             <br />
-            It offers tools that are designed to assist businesses in Managing, and optimizing their production processes. It helps you Streamline and automate various aspects of Production such as Planning, Scheduling, Inventory Management, Quality Control, and Reporting.
+            It manages Landed Cost Tracking, Duty and Taxes, LC Opening/Arrival, and Import Good Received Notes (GRN).
            </p>  
-          {productionData.map(( data: any) => (
+          {importData.map(( data: any) => (
    <div key={data.id}>
         <h1 className="text-3xl text-black font-extrabold">
             {data.heading}
@@ -51,4 +51,4 @@ function ProductionInfo() {
   )
 }
 
-export default ProductionInfo;
+export default ImportInfo;
