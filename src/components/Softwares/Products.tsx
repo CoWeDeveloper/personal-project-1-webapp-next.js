@@ -14,7 +14,7 @@ function Products() {
 
  
     return (
-      <section className="w-full h-fit bg-white">
+      <section id="Products" className="w-full h-fit bg-white">
         <div className="py-8 px-4 mx-auto  max-w-screen-xl  sm:py-16 lg:px-6">
        {softwareData.map((softwareData)=> ( 
         <div key={softwareData.id} className={`${(softwareData.id == 1) ? "mt-2" : "mt-36"}`}>

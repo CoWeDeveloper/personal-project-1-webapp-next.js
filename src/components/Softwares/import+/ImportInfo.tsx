@@ -4,7 +4,7 @@ import { importData } from "@/data/importData";
 
 function ImportInfo() {
   return (
-    <div className="w-full h-fit bg-white pt-14 pb-10">
+    <div id="ImportInfo" className="w-full h-fit bg-white pt-14 pb-10">
       <div className=" container mx-auto lg:px-36">
            <div className="flex justify-center items-center">
            <Image src={banner} alt="banner" width={600} />

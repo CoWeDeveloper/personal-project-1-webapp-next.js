@@ -10,7 +10,7 @@ import ScheduleForm from "./ScheduleForm";
 function Schedule() {
 
   return (
-    <section className='w-full h-fit bg-white'>
+    <section id="Schedule" className='w-full h-fit bg-white'>
        <div className='max-w-screen-lg py-10 mx-auto'>
         <h1 className='text-4xl font-black'>Schedule a Demo</h1>
         <div className='flex justify-between '>

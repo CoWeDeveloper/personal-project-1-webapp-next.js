@@ -1,6 +1,6 @@
 function vaccany() {
   return (
-    <section className="w-full h-[60vh] bg-white">
+    <section id="Vaccany" className="w-full h-[60vh] bg-white">
       <div className="container mx-auto">
         <div className="pt-10">
           <h1 className="font-black tracking-wide text-3xl">
@@ -10,7 +10,6 @@ function vaccany() {
             Currently we don't have any job vacancy, however, for future
             reference please send us your Resume at
             <span className="font-semibold text-black  hover:underline cursor-pointer">
-              {" "}
               careers@cloudtenants.com
             </span>
           </p>

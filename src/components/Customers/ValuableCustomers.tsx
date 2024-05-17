@@ -5,7 +5,7 @@ import { customersData } from "@/data/customersData";
 
 function ValuableCustomers() {
   return (
-    <section className=" w-full h-fit bg-white">
+    <section id="ValCustomers" className=" w-full h-fit bg-white">
       <div className="max-w-screen-lg mx-auto pt-20">
         <h2 className="text-center text-4xl text-black font-black">
           Our Valuable Customers

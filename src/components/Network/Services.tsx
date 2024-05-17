@@ -14,7 +14,7 @@ function Services() {
      
 
         return (
-          <section key={networkData.id} className={` ${bgColor} w-full h-fit`}>
+          <section id="Services" key={networkData.id} className={` ${bgColor} w-full h-fit`}>
             <div className="mx-auto w-full max-w-screen-lg pt-10 pb-4 xs:p-2">
               {networkData.id == "1" && (
                 <h2 className="text-center pt-10 text-4xl text-black font-black">

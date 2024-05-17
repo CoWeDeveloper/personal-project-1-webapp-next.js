@@ -1,12 +1,12 @@
-import { techData } from "../../data/techData";
 import Image from "next/image";
 import { supportData } from "@/data/supportData";
-// h-fit karna ha!
+
 function Support() {
   return (
     <>
       {supportData.map((data: any, index: number) => (
-        <section
+        <section 
+        id="Support"
           key={data.id}
           className={`w-full h-fit bg-cover bg-no-repeat bg-center ${
             index % 2 == 0 ? "bg-white" : "bg-[#f5f4fe]"

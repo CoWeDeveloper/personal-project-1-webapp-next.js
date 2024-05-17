@@ -1,4 +1,4 @@
 import HeroSection from "./HeroSection";
-import PrimaryInfo from "./primaryInfo";
+import PrimaryInfo from "./PrimaryInfo";
 
 export { HeroSection, PrimaryInfo};
