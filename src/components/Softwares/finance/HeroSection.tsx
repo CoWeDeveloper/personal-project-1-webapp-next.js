@@ -1,4 +1,4 @@
-import { ArrowRight  } from "lucide-react";
+import ExploreBtn from "@/components/ExploreBtn"
 
 export default function HeroSection() {
   return (

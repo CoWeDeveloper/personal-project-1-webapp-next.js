@@ -1,6 +1,6 @@
 import Image from "next/image";
 import banner from "../../../../public/assets/images/Software/Finance/finsubbanner.png"
-import { financeData } from "@/data/FinanceData";
+import { financeData } from "@/data/financeData";
 
 function FinanceInfo() {
   return (

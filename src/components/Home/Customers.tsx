@@ -1,4 +1,4 @@
-
+import CustomerSlider from "./CustomerSlider";
 
 function Customer() {
   return (
@@ -9,6 +9,7 @@ function Customer() {
             <p className="text-sm text-center text-[#636468]">We are working with amazing companies.
 
 </p>
+        <CustomerSlider />
         </div>
     </section>
   )
