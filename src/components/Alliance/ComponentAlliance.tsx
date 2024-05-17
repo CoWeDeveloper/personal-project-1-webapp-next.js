@@ -10,7 +10,7 @@ function ComponentAlliance() {
              <h1 className='text-4xl font-black tracking-wider text-center'>{data.title}</h1>
              <div className='flex flex-wrap justify-center items-center mt-40 my-10'>
              {data.logo.map((logo: any) => (
-                 <Image key={logo.id} className='w-72 mx-5 hover:shadow-md my-10' src={logo.logoImg} alt={logo.alt} width={100} height={100} />
+                 <Image key={logo.id} className='w-72 mx-5 my-10' src={logo.logoImg} alt={logo.alt} width={100} height={100} />
                          ))}
              </div>
          </div>
