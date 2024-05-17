@@ -73,7 +73,7 @@ function Products() {
                  
 ))}
 <div className="flex justify-center mt-10">
-<button className="bg-[#22B8EE] hover:bg-[#1B8FBF] text-white text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none">Seem More Products</button>
+<button className="bg-white border-2 border-[#1798a7] ring-[#1798a7] hover:bg-[#1B8FBF] text-[#1798a7] text-sm hover:text-sky-100 rounded-lg px-4 py-2 transition-all duration-500 mr-2 font-medium focus:outline-none">Explore Other Modules</button>
 </div>
 
 </div>

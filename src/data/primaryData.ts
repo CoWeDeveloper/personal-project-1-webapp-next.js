@@ -9,9 +9,9 @@ export const primaryData = [
     { id:5, url: '/assets/icons/Software/Primary/prim4.png', title: 'Dispatch' },
     { id:6, url: '/assets/icons/Software/Primary/prim5.png', title: 'Sales Invoice' },
     { id:7, url: '/assets/icons/Software/Primary/prim6.png', title: 'Sales Return' },
-    { id:8, url:  'assets/icons/Software/Hcm/hcm15.png', title: 'Real-Time Reporting' },
-    { id:9, url:  'assets/icons/Software/Hcm/hcm16.png', title: 'Business Intelligence Reports & Static Reports' },
-    { id:10, url: 'assets/icons/Software/Hcm/hcm17.png', title: 'MS Power BI Dashboard' },
+    { id:8, url: '/assets/icons/Software/Hcm/hcm15.png', title: 'Real-Time Reporting' },
+    { id:9, url: '/assets/icons/Software/Hcm/hcm16.png', title: 'Business Intelligence Reports & Static Reports' },
+    { id:10, url:'/assets/icons/Software/Hcm/hcm17.png', title: 'MS Power BI Dashboard' },
   ]
 }
 ]
