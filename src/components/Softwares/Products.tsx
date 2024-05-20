@@ -24,7 +24,7 @@ function Products() {
 
 {softwareData.cards.map((cards, index) => {
   const bgColorRead = cards.styleRead;
-  const bgcolorSchedule = cards.styleSchedule; 
+  const bgColorSchedule = cards.styleSchedule; 
     return(
 <section key={cards.id} className="flex flex-wrap w-9/12 mx-auto justify-center items-center">
 

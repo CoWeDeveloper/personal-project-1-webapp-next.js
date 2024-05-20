@@ -15,7 +15,10 @@ function Product() {
           </h3>
 
 
-  {productData.map((product, index) => (
+  {productData.map((product, index) => {
+      const bgColorRead = product.styleRead;
+      const bgColorSchedule = product.styleSchedule;
+    return(
 <section key={product.id} className="flex flex-wrap max-w-screen-lg mx-auto justify-center items-center">
 
     <div className="w-full flex flex-wrap mx-auto justify-center" >
@@ -28,8 +31,8 @@ function Product() {
         alt="Product Image"
       />
       <p className=" text-sm text-[#636468] my-3 text-justify">{product.description}</p>
-      <button className={product.styleButton}>Schedule a Demo</button>
-      <button className="hover:border-[#0A9AC8] text-[#0A9AC8] text-xs   hover:ring-2 py-2 px-5 font-medium rounded-lg hover:ring-[#0A9AC8] focus:outline-none duration-500">Read More</button>
+      <button className={`${bgColorSchedule} text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none`} >Schedule a Demo</button>
+      <button className={` ${bgColorRead} text-xs hover:ring-2 py-2 px-5 font-medium rounded-lg  focus:outline-none duration-500`}>Read More</button>
       </div>
       <div  className="lg:mt-0 mt-5 w-full lg:w-[45%] flex justify-center"  >
         <Image
@@ -54,7 +57,9 @@ function Product() {
       </div>
     )}
 </section>
-  ))}
+  )
+}
+  )}
 <div className="flex justify-center mt-10">
 <button className="bg-[#22B8EE] hover:bg-[#1B8FBF] text-white text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none">Seem More Products</button>
 </div>
