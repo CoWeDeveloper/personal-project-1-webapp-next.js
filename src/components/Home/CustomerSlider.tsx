@@ -1,50 +1,118 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
-import Logo from "../../../public/assets/images/Customers/c1.png"
-import { customersData }  from "@/data/customersData";
+import { customersData } from "@/data/customersData";
 
 function AutoPlay() {
-  const settings = {
+  const row1Data = customersData.filter((data: any, index: number) => index % 2 === 0 && data.id <= 16);
+  const row2Data = customersData.filter((data: any, index: number) => index % 2 !== 0 && data.id <= 16);
+
+  const settingsRow1 = {
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 2000,
+    speed: 4000,
     autoplaySpeed: 2000,
-    cssEase: "linear"
+    cssEase: "linear",
+    rtl: true,
+    rows: 1,
+    responsive: [
+      {
+        breakpoint: 748,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          speed: 4000,
+          autoplaySpeed: 2000,
+          cssEase: "linear",
+          rtl: true,
+          rows: 1,
+        }
+      },
+      {
+        breakpoint: 380,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplay: true,
+          speed: 4000,
+          autoplaySpeed: 2000,
+          cssEase: "linear",
+          rtl: true,
+          rows: 1,
+        }
+      }
+    ]
   };
-  return (
-    <div className="slider-container bg-yellow-400">
-      <Slider {...settings}>
-      {customersData
-  .filter((data: any) => data.id <= 7)
-  .map(
 
-    (data: any) => {return(
-    <div key={data.id} className="bg-green-400 mx-auto flex items-center justify-center w-full h-full">
-        <div className="flex items-center justify-center w-64 mx-auto">
-      <Image className="flex items-center justify-center w-36" src={data.logo} width={200} height={200} alt={data.alt} />
-        </div>
-    </div>
-  )})}
-        {/* <div>
-          <h3>2</h3>
-        </div>
-        <div>
-          <h3>3</h3>
-        </div>
-        <div>
-          <h3>4</h3>
-        </div>
-        <div>
-          <h3>5</h3>
-        </div>
-        <div>
-          <h3>6</h3>
-        </div> */}
-      </Slider>
+  const settingsRow2 = {
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 4000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
+    rtl: false,
+    rows: 1,
+    responsive: [
+      {
+        breakpoint: 748,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          autoplay: true,
+          speed: 4000,
+          autoplaySpeed: 2000,
+          cssEase: "linear",
+          rtl: false,
+          rows: 1,
+        }
+      },
+      {
+        breakpoint: 380,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          autoplay: true,
+          speed: 4000,
+          autoplaySpeed: 2000,
+          cssEase: "linear",
+          rtl: false,
+          rows: 1,
+        }
+      }
+    ]
+
+  };
+
+  return (
+    <div className="slider-container">
+      <div className="row-1 mb-4">
+        <Slider {...settingsRow1}>
+          {row1Data.map((data: any) => (
+            <div key={data.id} className="place-content-center w-full h-24">
+              <div className="w-64 flex justify-center items-center">
+                <Image className="flex items-center justify-center w-28 " src={data.logo} width={200} height={200} alt={data.alt} />
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
+      <div className="row-2">
+        <Slider {...settingsRow2}>
+          {row2Data.map((data: any) => (
+            <div key={data.id} className="place-content-center w-full h-24">
+              <div className="w-64 flex justify-center items-center">
+                <Image className="flex items-center justify-center w-28" src={data.logo} width={200} height={200} alt={data.alt} />
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 }
