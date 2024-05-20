@@ -1,44 +1,75 @@
-import { motion, useAnimation, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
-interface propsSchema {
+interface PropsSchema {
   value: number;
 }
 
+const CounterAnimation: React.FC<PropsSchema> = ({ value }) => {
+  const duration = 2000; // in milliseconds
+  const [displayValue, setDisplayValue] = useState(0);
 
-function CounterAnimation (props: propsSchema ){
-    const duration = 2;
-    const controls = useAnimation();
-    const [ displayValue, setDisplayValue ] = useState(1);
+  useEffect(() => {
+    let animationStartTime: number;
+    let animationFrameId: number;
 
-    const spring = useSpring(1, {duration: duration * 2000}); // For smoother transition
-    
-    useEffect(() => {
-        controls.start({
-            x: 0,
-            transition: { duration },
-        });
-        spring.set(props.value);
-        const onClickHandle = spring.on("change", (v) =>{
-            setDisplayValue(Math.floor(v)); 
-        })
-        return () => onClickHandle();
+    const startAnimation = (timestamp: number) => {
+      animationStartTime = timestamp;
+      animationFrameId = requestAnimationFrame(updateValue);
+    };
 
-    }, [controls, props.value, duration, spring,]);
-   
-   
-    
-  
-const formattedValue = new Intl.NumberFormat().format(displayValue);
+    const updateValue = (timestamp: number) => {
+      const elapsedTime = timestamp - animationStartTime;
+      const progress = Math.min(elapsedTime / duration, 1);
+      setDisplayValue(Math.floor(progress * value));
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(updateValue);
+      } else {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+
+    // Start animation on component mount
+    animationFrameId = requestAnimationFrame(startAnimation);
+
+    // Cleanup on unmount
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [value, duration]);
+
+  const handleClick = () => {
+    // Reset value to 0
+    setDisplayValue(0);
+    // After a delay, start the animation again
+    setTimeout(() => {
+      let animationStartTime: number;
+      let animationFrameId: number;
+
+      const startAnimation = (timestamp: number) => {
+        animationStartTime = timestamp;
+        animationFrameId = requestAnimationFrame(updateValue);
+      };
+
+      const updateValue = (timestamp: number) => {
+        const elapsedTime = timestamp - animationStartTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        setDisplayValue(Math.floor(progress * value));
+
+        if (progress < 1) {
+          animationFrameId = requestAnimationFrame(updateValue);
+        } else {
+          cancelAnimationFrame(animationFrameId);
+        }
+      };
+
+      // Start animation after delay
+      animationFrameId = requestAnimationFrame(startAnimation);
+    }, 100); // Change the delay as needed
+  };
+
   return (
-    <motion.span
-      initial={{ x: -100 }}
-      animate={controls}
-    //   onClick={handleClick}
-      onAnimationComplete={() => controls.set({  x: 0 })}
-    >
-      {formattedValue}
-    </motion.span>
+    <span onClick={handleClick} style={{ cursor: "pointer" }}>
+      {displayValue.toLocaleString()}
+    </span>
   );
 };
 

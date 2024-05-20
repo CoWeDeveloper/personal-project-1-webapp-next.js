@@ -14,7 +14,7 @@ function AutoPlay() {
     slidesToScroll: 1,
     autoplay: true,
     speed: 4000,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1,
     cssEase: "linear",
     rtl: true,
     rows: 1,
@@ -26,7 +26,7 @@ function AutoPlay() {
           slidesToScroll: 1,
           autoplay: true,
           speed: 4000,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 1,
           cssEase: "linear",
           rtl: true,
           rows: 1,
@@ -39,7 +39,7 @@ function AutoPlay() {
           slidesToScroll: 1,
           autoplay: true,
           speed: 4000,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 1,
           cssEase: "linear",
           rtl: true,
           rows: 1,
@@ -54,7 +54,7 @@ function AutoPlay() {
     slidesToScroll: 1,
     autoplay: true,
     speed: 4000,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1,
     cssEase: "linear",
     rtl: false,
     rows: 1,
@@ -66,7 +66,7 @@ function AutoPlay() {
           slidesToScroll: 1,
           autoplay: true,
           speed: 4000,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 1,
           cssEase: "linear",
           rtl: false,
           rows: 1,
@@ -79,7 +79,7 @@ function AutoPlay() {
           slidesToScroll: 1,
           autoplay: true,
           speed: 4000,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 1,
           cssEase: "linear",
           rtl: false,
           rows: 1,
@@ -96,7 +96,7 @@ function AutoPlay() {
           {row1Data.map((data: any) => (
             <div key={data.id} className="place-content-center w-full h-24">
               <div className="w-64 flex justify-center items-center">
-                <Image className="flex items-center justify-center w-28 " src={data.logo} width={200} height={200} alt={data.alt} />
+                <Image className="flex items-center justify-center w-28 cursor-grab "  src={data.logo} width={200} height={200} alt={data.alt} />
               </div>
             </div>
           ))}
@@ -107,7 +107,7 @@ function AutoPlay() {
           {row2Data.map((data: any) => (
             <div key={data.id} className="place-content-center w-full h-24">
               <div className="w-64 flex justify-center items-center">
-                <Image className="flex items-center justify-center w-28" src={data.logo} width={200} height={200} alt={data.alt} />
+                <Image className="flex items-center justify-center w-28 cursor-grab" src={data.logo} width={200} height={200} alt={data.alt} />
               </div>
             </div>
           ))}
