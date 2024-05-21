@@ -18,8 +18,8 @@ function OurServices() {
               return (
                 <div
                   key={servicesData.id}
-                  className="p-10 w-[24rem] bg-white flex flex-col items-center justify-center
-                   rounded-lg h-54 relative overflow-hidden group">
+                  className="p-10 w-[21rem] bg-white flex flex-col items-center justify-center
+                   rounded-lg h-56 relative overflow-hidden group">
                   {/* to change the filling color orgin. Select from top instead of origin right in the following div */}
                   <div
                     className="absolute inset-0 bg-gradient-to-t from-white via-blue-500 to-blue-400 
@@ -28,14 +28,14 @@ function OurServices() {
 
                   {/* <div className="flex justify-center items-center py-2"> */}
                     <Image
-                      className="py-2 group-hover:invert-[100%] group-hover:sepia-[0%] group-hover:saturate-[100%] group-hover:hue-rotate-[272deg] group-hover:brightness-[0%] group-hover:contrast-[103%]"
+                      className="py-2 w-20 group-hover:invert-[100%] group-hover:sepia-[0%] group-hover:saturate-[100%] group-hover:hue-rotate-[272deg] group-hover:brightness-[0%] group-hover:contrast-[103%]"
                       src={servicesData.img}
                       width={100}
                       height={30}
                       alt={servicesData.alt}
                     />
                   {/* </div> */}
-                  <h5 className="text-gray-600 hover:text-white z-0 group-hover:text-white text-2xl text-center text-warp font-medium">
+                  <h5 className="text-gray-600 px-3 hover:text-white z-0 group-hover:text-white text-lg text-center text-warp font-medium">
                     {servicesData.title}
                   </h5>
                 </div>

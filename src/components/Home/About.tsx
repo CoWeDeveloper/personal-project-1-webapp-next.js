@@ -33,7 +33,7 @@ function About() {
                     key={aboutData.id}
                     className="duration-500 hover:scale-110 flex-wrap my-4 justify-center items-center"
                   >
-                    <Link href={aboutData.link}>
+                    <Link className="group" href={aboutData.link}>
                     <div className="group my-2 mx-4 w-64 sm:w-72 px-120 py-4 flex flex-wrap justify-center border-2 border-gray-600 rounded-xl">
                       <Image
                         className="group-hover:scale-x-[-1] transition ease-in-out duration-500 justify-center w-20 h-30 m-4"
@@ -43,7 +43,7 @@ function About() {
                         alt={aboutData.alt}
                       />
                     </div>
-                    <h3 className="flex font-semibold  justify-center items-center">
+                    <h3 className="flex font-semibold group   justify-center items-center">
                       {aboutData.title}
                     </h3>
                     </Link>

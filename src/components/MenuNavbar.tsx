@@ -28,7 +28,7 @@ function NavbarMoblie() {
       <div
         className={
           menuOpen
-            ? "fixed inset-0 z-100 md:w-screen  bg-[#114d966e] md:h-screen transition-all duration-700 ease-in"
+            ? "fixed inset-0 z-50 md:w-screen  bg-[#114d966e] md:h-screen transition-all duration-700 ease-in"
             : "fixed left-[100%] top-0 right-0 duration-300 "
         }
       >

@@ -13,10 +13,10 @@ function Home() {
       >
         <div className="items-center lg:text-left md:text-center grid max-w-screen-xl  mx-auto lg:gap-8 xl:gap-0 lg:px-4 sm:px-10 px-0  lg:py-0 lg:grid-cols-12">
           <div className="animate__animated animate__slideInLeft animate__faster lg:ml-14 ml-4 col-span-7">
-            <h1 className="tracking-wide drop-shadow-2xl lg:text-7xl md:text-5xl  sm:text-5xl text-3xl text-white text-pretty font-bold">
+            <h1 className="tracking-wide drop-shadow-2xl lg:text-6xl md:text-5xl  sm:text-5xl text-3xl text-white text-pretty font-bold">
               Your True Digital Transformation Partner.
             </h1>
-            <p className="lg:text-xl sm:text-md text-gray-300 py-4">
+            <p className="lg:text-xl sm:text-md text-gray-300 py-4 text-pretty">
               Streamline your business operations with our cutting-edge software
               solutions.
             </p>

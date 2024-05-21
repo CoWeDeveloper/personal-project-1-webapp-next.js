@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CustomerSlider from "./CustomerSlider";
 
 function Customer() {
@@ -11,8 +12,10 @@ function Customer() {
 </p>
         <CustomerSlider />
         <div className="flex justify-center pt-5">
+          <Link href={'./customers'}>
           <button className="bg-white border-2 border-[#105AB6] ring-[#105AB6] hover:bg-[#105AB6] text-[#105AB6] 
           text-sm hover:text-sky-100 rounded-lg px-10 py-2 transition-all duration-500 mr-2 font-medium focus:outline-none">Show All</button>
+        </Link>
         </div>
         </div>
     </section>

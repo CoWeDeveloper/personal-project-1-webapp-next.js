@@ -133,6 +133,8 @@ import { HandHelping } from 'lucide-react';
               peer-focus:px-2 peer-focus:textgray-900 peer-placeholder-shown:scale-100
               peer-placeholder-shown:-translate-y-1/2
               peer-placeholder-shown:top-1/2
+              sm:peer-placeholder-shown:w-auto
+              xs:peer-placeholder-shown:w-28
               peer-focus:text-[#4796cd]
               peer-focus:font-semibold
               peer-focus:top-2 peer-focus:scale-75
@@ -165,7 +167,7 @@ import { HandHelping } from 'lucide-react';
       </li>
     </ul>
           <Select
-          className="focus:text-black w-[520px] text-sm text-gray-600 pb-1.5 pt-2 focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none "
+          className="focus:text-black lg:w-[520px] xs:w-full text-sm text-gray-600 pb-1.5 pt-2 focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none "
       options={options}
       styles={customStyles}
     //   onChange={handleChange}
@@ -189,11 +191,13 @@ import { HandHelping } from 'lucide-react';
               peer-focus:px-2 peer-focus:textgray-900 peer-placeholder-shown:scale-100
               peer-placeholder-shown:-translate-y-1/2
               peer-placeholder-shown:top-7
+              peer-placeholder-shown:w-64
+              sm:peer-placeholder-shown:w-auto
               peer-focus:top-2
               peer-focus:text-[#4796cd]
               peer-focus:font-semibold
               peer-focus:scale-75
-              peer-focus:-translate-y-4 left-1`}>Tell us more about your business & software requirement</label>
+              peer-focus:-translate-y-4 left-1 `}>Tell us more about your business & software requirement</label>
              </div>         
               </div>
               <button type="submit" className="bg-[#4796cd] hover:bg-[#155777] text-sm text-white font-semibold mt-4 px-4 py-3 flex items-center rounded-lg">Submit           

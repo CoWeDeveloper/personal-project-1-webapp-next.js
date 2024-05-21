@@ -16,30 +16,34 @@ function NavbarClient()  {
     
     useEffect( ()=>{
         let prevScroll = window.scrollY;
+        
         const handleScroll: any = ()=> {
             const currentScroll = window.scrollY;
-            const scrollUp = prevScroll > currentScroll;
+            const scrollUp = prevScroll > currentScroll && currentScroll > 0;
             
             setScrollUp(scrollUp);
             prevScroll = currentScroll;
         }
+        
         window.addEventListener("scroll", handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
           };
+
     }, [] )
 
-    const pathname = usePathname()
+  const pathname = usePathname();
+ 
   return (
     <> 
     <header 
-    className={` absolute z-10 w-full mx-auto justify-center px-0 lg:px-0 xl:px-16 2xl:px-36 py-2
+    className={`absolute w-full mx-auto justify-center px-0 lg:px-0 xl:px-16 2xl:px-36 py-2
      ${scrollUp ? "bg-[#211c5d] sticky top-0 z-20" : "" }
      ${pathname == "/faq" ? "bg-[#211c5d] z-20" : "" }
    `} >
-        <nav className='flex m-auto items-center justify-between mx-5'> 
+        <nav className='flex m-auto items-center lg:justify-around lg:ml-32 mx-5 justify-between'> 
             <div className='pl-34'>
-             <Link href={'/'}><Image src={logo} className='w-37 cursor-pointer'  alt="CloudTanentLogo" /> </Link>
+             <Link href={'/'}><Image src={logo} className='w-40  cursor-pointer'  alt="CloudTanentLogo" /> </Link>
             </div> 
 
             <div className='flex items-end text-center'>

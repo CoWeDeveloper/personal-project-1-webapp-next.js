@@ -1,4 +1,4 @@
 import HeroSection  from "./HeroSection";
-import PartnerForm  from "./PartnerForm";
+import PartnerSect  from "./PartnerSect";
  
-export { HeroSection, PartnerForm };
+export { HeroSection, PartnerSect };
