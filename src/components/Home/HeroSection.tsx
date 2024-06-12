@@ -6,7 +6,7 @@ function Home() {
   return (
     <>
       <header
-        className="w-full h-screen z-0    
+        className="w-full h-screen     
      ease-in-out overflow-hidden  duration-300 
      transition-all bg-no-repeat bg-cover flex items-center "
         style={{ backgroundImage: `url("assets/images/HomeHeader.webp")` }}
