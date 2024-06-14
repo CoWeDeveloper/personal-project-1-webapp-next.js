@@ -1,3 +1,4 @@
+"use client"
 import ExploreBtn from "../ExploreBtn";
 
 function HeroSection() {

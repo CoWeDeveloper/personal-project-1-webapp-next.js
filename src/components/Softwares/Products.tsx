@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import "animate.css";
@@ -29,7 +30,7 @@ function Products() {
 <section key={cards.id} className="flex flex-wrap w-9/12 mx-auto justify-center items-center">
 
     <div className="w-full flex flex-wrap mx-auto justify-center" >
-      <div className={` w-full lg:w-[55%] ${cards.id % 2 === 0 ? 'order-0' : 'order-1'} `} >
+      <div className={`w-full lg:w-[55%] ${cards.id % 2 === 0 ? 'order-0' : 'order-1'} `} >
       <Image
         className="w-40"
         src={cards.img}
@@ -37,9 +38,11 @@ function Products() {
         height={60}
         alt="Product Image"
       /> 
-      <p className=" text-sm text-[#636468] my-3 text-justify">{cards.description}</p>
-      <ScheduleBtn styleButton={`${cards.styleSchedule} text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none`} />
-      {/* <button onClick={handleClick} className={cards.styleButton}>Schedule a Demo</button> */}
+      <p className="text-sm text-[#636468] my-3 text-justify">{cards.description}</p>
+      <ScheduleBtn value={cards.value} styleButton={`${cards.styleSchedule} text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none`} />
+      {/* <button  className={`${bgColorSchedule} text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none`}>
+        Schedule a Demo
+      </button> */}
       
      <Link  href={cards.link} > 
      <button className={` ${bgColorRead} text-xs hover:ring-2 py-2 px-5 font-medium rounded-lg  focus:outline-none duration-500`}>Read More</button></Link>
@@ -69,11 +72,12 @@ function Products() {
   )}
 )}
 
-</div>
-                 
+</div>           
 ))}
 <div className="flex justify-center mt-10">
-<button className="bg-white border-2 border-[#1798a7] ring-[#1798a7] hover:bg-[#1B8FBF] text-[#1798a7] text-sm hover:text-sky-100 rounded-lg px-4 py-2 transition-all duration-500 mr-2 font-medium focus:outline-none">Explore Other Modules</button>
+<button className="bg-white border-2 border-[#1798a7] ring-[#1798a7] hover:bg-[#1B8FBF] text-[#1798a7] text-sm hover:text-sky-100 rounded-lg px-4 py-2 transition-all duration-500 mr-2 font-medium focus:outline-none">
+  Explore Other Modules
+  </button>
 </div>
 
 </div>

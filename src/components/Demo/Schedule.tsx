@@ -7,8 +7,7 @@ import phone from "../../../public/assets/icons/Demo/phone.svg";
 
 import ScheduleForm from "./ScheduleForm";
 
-function Schedule() {
-
+function Schedule( { product} : { product : {product? : string[]}}  ) {  
   return (
     <section id="Schedule" className='w-full h-fit bg-white'>
        <div className='max-w-screen-lg py-10 mx-auto'>
@@ -26,8 +25,7 @@ function Schedule() {
             </div>
           </div>
           <div className="lg:order-2 xs:order-1 xs:w-full xs:mx-5 lg:w-auto lg:mx-0">
-          <ScheduleForm />
-
+          {product  ? (<ScheduleForm product={product} /> ) :( <ScheduleForm />) }
           </div>
         </div>
        </div>

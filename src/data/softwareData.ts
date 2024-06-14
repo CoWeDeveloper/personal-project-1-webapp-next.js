@@ -3,6 +3,7 @@ interface Software {
     title: string;
     cards: {
       id: number;
+      value: string;
       img: string;
       description: string;
       gridImg: string;
@@ -18,6 +19,7 @@ export const softwareData: Software[] = [
         title: "OUR SPECIALITY PRODUCTS PORTFOLIO",
         cards: [{
             id : 2,
+            value: "S&D Next",
             img: "/assets/images/Products/sndnext.svg",
             description: "Cloud Tenants Sales & Distribution Software provides tools and features to enhance Sales Efficiency, Track Leads and Opportunities, Manage Customer Relationships, Automate Sales Tasks, and Analyze Sales & Distribution Performance....",
             gridImg: "/assets/images/Products/sndnextgrid.png",
@@ -27,6 +29,7 @@ export const softwareData: Software[] = [
             },
             {   
                 id: 3,
+                value: "S&D E-Suite",
                 img: "/assets/images/Products/sndesuite.svg",
                 description: "Cloud Tenants S&D e.suite takes you to the next level of Business Optimization. It includes DBRS, Sales Forecast, Distribution Claims, Sales Incentives and Merchandising Softwares that can drive your business towards success..",
                 gridImg: "/assets/images/Products/sndesuitegrid.png",
@@ -42,6 +45,7 @@ export const softwareData: Software[] = [
             title: 'POS Solutions',
             cards: [{
                 id: 2,
+                value: "POS Xtreme",
                 img: "/assets/images/Products/pos.svg",
                 description: "Cloud Tenants Leading Point of Sale Solution for Small Retail Shops to Chain of Supermarkets. It serves as the Central Hub for processing Sales, Managing Inventory, and providing an overall Seamless Customer Experience....",
                 gridImg: "/assets/images/Products/posgrid.png",
@@ -51,6 +55,7 @@ export const softwareData: Software[] = [
             },
             {
                 id: 3,
+                value: "POS Select",
                 img: "/assets/images/Products/poss.svg",
                 description: "Cloud Tenants Leading Point of Sale Solution for Food Kiosk to Fine Dining Restaurants Chain. POS Select, is designed specifically for the food service industry to manage Restaurant Operations, Streamline Order Processing, and Enhancing Overall Dining Experience....",
                 gridImg: "/assets/images/Products/possgrid.png",
@@ -66,6 +71,7 @@ export const softwareData: Software[] = [
             cards: [
             {
             id: 2,
+            value: 'WMS Extended',
             img: "/assets/images/Products/wmsextend.svg",
             description: "Cloud Tenants WMS Extended is a highly Efficient & Effective software to manage Inventory and Stock movement in the Warehouse. The Software is designed to manage extensive operations of Warehouse, including Inventory Management, Storage, and Movement of goods....",
             gridImg: "/assets/images/Products/wmsextendgrid.png",
@@ -75,6 +81,7 @@ export const softwareData: Software[] = [
             },
             {
                 id: 3,
+                value: 'SCM+',
                 img: "/assets/images/Products/scm.svg",
                 description: "Cloud Tenants SCM+ (Supply Chain Management) solution offers end-to-end Supply Chain Cycle. This module oversees the Procurement, Inventory, and Distribution of Materials and Products, as well as the management of Vendors and Suppliers..",
                 gridImg: "/assets/images/Products/scmgrid.png",
@@ -84,6 +91,7 @@ export const softwareData: Software[] = [
             },
             {
                 id: 4,
+                value: "HCM+",
                 img: "/assets/images/Products/hcm.svg",
                 description: "Cloud Tenants HCM+ (Human Capital Management) solutions offers end-to-end Employee Lifecycle Management. t manages Recruitment, Detailed HR Information, Time & Attendance, Payroll and other processes..",
                 gridImg: "/assets/images/Products/hcmgrid.png",
@@ -93,6 +101,7 @@ export const softwareData: Software[] = [
             },
             {
                 id: 5,
+                value: "Finance+",
                 img: "/assets/images/Products/finance.svg",
                 description: "Cloud tenants Finance+ Module manages the Financial transactions and Accounting activities, including General Ledger, Accounts Payable, Accounts Receivable, Cash Management, Fixed Assets Management..",
                 gridImg: "/assets/images/Products/financegrid.png",
@@ -103,6 +112,7 @@ export const softwareData: Software[] = [
          
             {
                 id: 6,
+                value: "Production+",
                 img: "/assets/images/Products/production.svg",
                 description: "Cloud Tenants Production+ Module is an excellent software module for businesses engaged in production of various goods.It Automates & Optimizes Planning, Scheduling, Inventory Management, Quality Control and Real Time Reporting for effective production management..",
                 gridImg: "/assets/images/Products/productiongrid.png",
@@ -112,6 +122,7 @@ export const softwareData: Software[] = [
             },
             {
                 id: 7,
+                value: "Primary+",
                 img: "/assets/images/Products/import.svg",
                 description: "Cloud Tenants Import+ module manages Landed Cost Tracking, Duty and Taxes, LC Opening/Arrival and Import Good Received Note (GRN) and others..",
                 gridImg: "/assets/images/Products/importgrid.png",
@@ -121,6 +132,7 @@ export const softwareData: Software[] = [
             },
             {
                 id: 8,
+                value: "Import+",
                 img: "/assets/images/Products/primary.svg",
                 description: "Cloud Tenants Primary Sales Module provides end-to-end Sales operations management directly between manufacturer/importer and customer. It covers receiving Order from customer to delivery of order to customer..",
                 gridImg: "/assets/images/Products/primarygrid.png",

@@ -1,35 +1,47 @@
 "use client";
-import React from 'react'
 import Image from "next/image";
+import { useState, useEffect } from 'react'
 import { useSearchParams } from "next/navigation";
 import Select from 'react-select';
 // import { MultiValue } from "react-select/animated";
 import send from "../../../public/assets/icons/Demo/send.svg";
 import { HandHelping } from 'lucide-react';
 
-    function ScheduleForm(){
-    const searchParams = useSearchParams();
-    const recevied: any = searchParams.get("query");
-    const decodedValue = decodeURIComponent(recevied);
-    
+    function ScheduleForm({product} : {product: {product?: string[]}} ){
+    // const searchParams = useSearchParams();
+    // const recevied: any = searchParams.get("query");
+    // const decodedValue = decodeURIComponent(recevied);
+    // const value = product;
+    // console.log(product);
+    // const product: any =  decodeURIComponent(product[0]); 
+    const [selectedOption, setSelectedOption] = useState<any>(null);
     
     const options: any = [
-      { value: 'S&D Next', label: 'S&D Next (Sales & Distribution)', },
+        { value: 'S&D Next', label: 'S&D Next (Sales & Distribution)', },
         { value: 'S&D E-Suite', label: 'S&D E-Euite (Sales & Distribution)' },
         { value: 'POS Xtreme', label: 'POS Xtreme (Point of Solution for Shops & Supermarkets)' },
         { value: 'POS Select', label: 'POS Select (Point of Solution for Food & Resturants Chain)' },
         { value: 'WMS Extended', label: 'WMS Extended (Warehouse Management System)' },
-        { value: 'SCM+ (Supply Chain Management)', label: 'SCM+ (Supply Chain Management)' },
+        { value: 'SCM+', label: 'SCM+ (Supply Chain Management)' },
         { value: 'HCM+', label: 'HCM+ (Human Capital Management)' },
         { value: 'Finance+', label: 'Finance+' },
         { value: 'Production+', label: 'Production+' },
         { value: 'Primary+', label: 'Primary+ (Primary Sales)' },
         { value: 'Import+', label: 'Import+' },
-        
       ];
       // console.log()
-      // const selectedValue = options.find((option)=> option.value == selectedOption );
-      console.log(JSON.parse(recevied) == options[0].value);
+      const selectedValue = options.find((option: any)=> option.value == selectedOption );
+      
+      useEffect(() => {
+        if (product) {
+          const matchingOption = options?.find((option: any) => option.value === product);
+          if (matchingOption) {
+            setSelectedOption(matchingOption);
+          }
+        }
+
+      }, [product]);
+      console.log(product == options[0].value);
       
       const customStyles= {
         control: (styles: any) => ({
@@ -170,6 +182,8 @@ import { HandHelping } from 'lucide-react';
           className="focus:text-black lg:w-[520px] xs:w-full text-sm text-gray-600 pb-1.5 pt-2 focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none "
       options={options}
       styles={customStyles}
+      value={selectedOption ? [selectedOption] : selectedValue}
+      isDisabled={!!selectedOption}
     //   onChange={handleChange}
       isMulti
       placeholder="Select your desired product(s), e.g: Sales & Distribution, POS, etc"
