@@ -11,7 +11,7 @@ function Demo({ params} : { params : {product? : string[]}}) {
   // console.log(product)
   return (
     <>
-      <HeroSection />
+      <HeroSection key={product || 'default'}  />
       {product ? <Schedule product={product}/> : <Schedule /> }
       
     </>

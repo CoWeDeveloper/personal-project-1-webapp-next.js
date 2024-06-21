@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import demoImg from "../../../public/assets/images/Demo/demo.png";
@@ -7,7 +6,7 @@ import phone from "../../../public/assets/icons/Demo/phone.svg";
 
 import ScheduleForm from "./ScheduleForm";
 
-function Schedule( { product} : { product : {product? : string[]}}  ) {  
+function Schedule( { product} : { product? : {product : string[]}}  ) {  
   return (
     <section id="Schedule" className='w-full h-fit bg-white'>
        <div className='max-w-screen-lg py-10 mx-auto'>

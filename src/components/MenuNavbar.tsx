@@ -34,7 +34,7 @@ function NavbarMoblie() {
       >
     
         <div
-          className={`w-screen h-screen relative bg-cover bg-center bg-no-repeat mix-blend-overlay`}
+          className={`w-screen h-screen relative bg-cover bg-center bg-no-repeat mix-blend-overlay z-50`}
           style={{
             backgroundImage: `url("assets/images/Software/softwareHeader.webp")`,
           }}
@@ -59,7 +59,7 @@ function NavbarMoblie() {
             <ul className='relative flex flex-col text-white md:text-xl sm:text-2xl xs:text-xl font-medium sm:pt-32 sm:pb-20 xs:pt-28 md:gap-1 sm:gap-2 xs:gap-1'>
                 <Link  onClick={handleNav} href={'/'} className=' justify-center hover:text-white active:hover:text-white drop-shadow-xl'><li>Home</li></Link>
                 <Link  onClick={handleNav} href={'/about'} className='hover:text-white  active:hover:text-white drop-shadow-xl'><li>About Us</li></Link>
-                <Link  onClick={handleNav} href={'/network'} className=' justify-center drop-shadow-xl hover:text-white active:hover:text-white'><li className=''>Services Network</li></Link>
+                <Link  onClick={handleNav} href={'/networks'} className=' justify-center drop-shadow-xl hover:text-white active:hover:text-white'><li className=''>Services Network</li></Link>
                 <Link  onClick={handleNav} href={'/softwares'} className='hover:text-white drop-shadow-xl active:hover:text-white'><li>Softwares</li></Link>
                 <Link  onClick={handleNav} href={'/customers'} className='hover:text-white drop-shadow-xl active:hover:text-white'><li>Customers</li></Link>
                 <Link  onClick={handleNav} href={'/alliances'} className='hover:text-white drop-shadow-xl active:hover:text-white'><li>Alliances</li></Link>
