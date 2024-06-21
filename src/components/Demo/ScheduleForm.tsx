@@ -3,8 +3,10 @@ import Image from "next/image";
 import { useEffect } from 'react'
 import { useFormik } from "formik";
 import { demoSchema } from "./schema";
+
 import Select from 'react-select';
 import send from "../../../public/assets/icons/Demo/send.svg";
+import { error } from "console";
 
 
 const initialValues = {
@@ -19,13 +21,57 @@ const initialValues = {
 }
 
 function ScheduleForm({product} : {product?: {product: string[]}} ){
-    
-    const { values, errors, handleBlur, handleChange, handleSubmit, setFieldValue, touched  }= useFormik ({
+
+  const customStyles= {
+    control: (styles: any) => ({
+      ...styles,
+      border: 'none', // Remove default border
+      boxShadow: 'none', 
+    }),
+    multiValue: (styles: any) => ({
+      ...styles,
+      backgroundColor:"#bae0ff",
+      borderRadius: "1rem",
+    }),
+    multiValueRemove: (styles: any) => ({
+      ...styles,
+      // color: '#333', 
+      // cursor: 'pointer',
+      // border: "none", 
+      '&:hover': {
+        borderTopRightRadius: "1rem",
+        borderBottomRightRadius: "1rem"
+      }
+  }),
+} 
+  // form handling and validation 
+  const { values, errors, handleBlur, handleChange, handleSubmit, setFieldValue, touched  }= useFormik ({
       initialValues: initialValues,
       validationSchema: demoSchema,
-      onSubmit: (values) => {
-        console.log(values)
-      }
+      onSubmit: async (values, { setSubmitting, resetForm }) => {
+        try {
+          const response = await fetch("api/sendEmail", {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: "application/json"
+            },
+            body: JSON.stringify(values),
+          });
+  
+          if (response.ok) {
+            alert('Email sent successfully!');
+          } else {
+            alert('Failed to send email. Please try again later.');
+          }
+        } catch (error) {
+          console.error('Error sending email:', error);
+          alert('An error occurred. Please try again later.');
+        } finally {
+          setSubmitting(false);
+          resetForm();  
+        }
+      },
     })
     
     const options: any = [
@@ -47,6 +93,7 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
      setFieldValue('products', selectedOptions);
     };
 
+    // for catch all segment. It find the value which ever "Schedule demo" button is pressed
       useEffect(() => {
         if (product) {
           const matchingOption = options?.find((option: any) => option.value === product);
@@ -57,35 +104,13 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
 
       }, [product]);
       
-      const customStyles= {
-        control: (styles: any) => ({
-          ...styles,
-          border: 'none', // Remove default border
-          boxShadow: 'none', 
-        }),
-        multiValue: (styles: any) => ({
-          ...styles,
-          backgroundColor:"#bae0ff",
-          borderRadius: "1rem",
-        }),
-        multiValueRemove: (styles: any) => ({
-          ...styles,
-          // color: '#333', 
-          // cursor: 'pointer',
-          // border: "none", 
-          '&:hover': {
-            borderTopRightRadius: "1rem",
-            borderBottomRightRadius: "1rem"
-          }
-      }),
-    } 
+
 
  
 
   return (
     <>
-          <form onSubmit={handleSubmit}>
-          
+          <form onSubmit={handleSubmit}>          
 
           <div className="flex justify-center items-center mb-4 mt-2">
             <div className="relative w-full mr-4">

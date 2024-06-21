@@ -5,7 +5,7 @@ export const demoSchema = Yup.object({
     email: Yup.string().email().required("Email Required"),
     country: Yup.string().min(2).max(30).required("Country Required"),
     contact: Yup.string().required("Contact Required")
-             .matches(/^\d{11 }$/, "Contact number must be exactly 12 digits"),
+             .matches(/^\d{11}$/, "Contact number must be exactly 12 digits"),
     company: Yup.string().required("Company Required"),
     industry: Yup.string().required("Industry Required"),
     products: Yup.array(
