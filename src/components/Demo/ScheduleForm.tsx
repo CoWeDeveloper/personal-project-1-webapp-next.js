@@ -3,10 +3,10 @@ import Image from "next/image";
 import { useEffect } from 'react'
 import { useFormik } from "formik";
 import { demoSchema } from "./schema";
+import  sendEmail from "./api/sendEmail";
 
 import Select from 'react-select';
 import send from "../../../public/assets/icons/Demo/send.svg";
-import { error } from "console";
 
 
 const initialValues = {
@@ -16,7 +16,7 @@ const initialValues = {
   contact: '',
   company: '',
   industry: '',
-  products: [],
+  solutions: [],
   message: ''
 }
 
@@ -44,34 +44,45 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
       }
   }),
 } 
+
   // form handling and validation 
   const { values, errors, handleBlur, handleChange, handleSubmit, setFieldValue, touched  }= useFormik ({
       initialValues: initialValues,
       validationSchema: demoSchema,
       onSubmit: async (values, { setSubmitting, resetForm }) => {
-        try {
-          const response = await fetch("api/sendEmail", {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              Accept: "application/json"
-            },
-            body: JSON.stringify(values),
-          });
-  
-          if (response.ok) {
-            alert('Email sent successfully!');
-          } else {
-            alert('Failed to send email. Please try again later.');
+        console.log(`payload data `, values);
+        
+        const formData = {
+          CompanyCode: 61,
+          OfficeCode: 100061,
+          Subject: 'Software Demo Request',
+          CC: 'm.owais@cloudtenants.com',
+          FromNames: 'noreply@cloudtenants.com',
+          ToNames: 'owaischemist22@gmail.com',
+          Body: '',
+          Template: 'DEMO_REQUEST',
+          KeyValuesData: {
+            Name: values.name,
+            Email: values.email,
+            Country: values.country,
+            Company: values.company,
+            Industry: values.industry,
+            Solution: values.solutions,
+            Message: values.message
           }
+        };
+        try {
+            const response = await sendEmail( formData);
+            
+            console.log(response);
         } catch (error) {
-          console.error('Error sending email:', error);
-          alert('An error occurred. Please try again later.');
+            alert('Failed to send email. Please try again later.');
+            console.error(`The error is ${error}`)
         } finally {
-          setSubmitting(false);
-          resetForm();  
+            setSubmitting(false);
+            resetForm();
         }
-      },
+    },
     })
     
     const options: any = [
@@ -90,7 +101,7 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
     
     // Custom handler for Select component
     const handleSelectChange = (selectedOptions: any) => {
-     setFieldValue('products', selectedOptions);
+     setFieldValue('solutions', selectedOptions);
     };
 
     // for catch all segment. It find the value which ever "Schedule demo" button is pressed
@@ -98,7 +109,7 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
         if (product) {
           const matchingOption = options?.find((option: any) => option.value === product);
           if (matchingOption) {
-            setFieldValue ('products' ,matchingOption);
+            setFieldValue ('solutions' ,matchingOption);
           }
         }
 
@@ -251,7 +262,7 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
           className="focus:text-black lg:w-[520px] xs:w-full text-sm text-gray-600 pb-1.5 pt-2 focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none "
           isMulti
           options={options}
-          value={values.products}
+          value={values.solutions}
           onChange={handleSelectChange}
           classNamePrefix="select"
           styles={customStyles}
@@ -297,7 +308,7 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
               {errors.contact && touched.contact ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.contact} *</p> ) : null}
               {errors.company && touched.company ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.company} *</p> ) : null}
               {errors.industry && touched.industry ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.industry} *</p> ) : null}
-              {errors.products && touched.products ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.products} *</p> ) : null}
+              {errors.solutions && touched.solutions ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.solutions} *</p> ) : null}
               {errors.message && touched.message ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.message} *</p> ) : null}
           </form>
     </>
