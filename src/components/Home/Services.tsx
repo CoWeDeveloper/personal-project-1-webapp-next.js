@@ -8,7 +8,7 @@ function OurServices() {
   return (
       <section className="max-w-screen-full w-full h-auto bg-[#211C5D]">
         <div className='py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6'>
-          <h3 className=" animate__animated animate__slideInLeft animate__slow  tracking-wide text-center py-10 cursor-pointer text-4xl font-extrabold text-white tracking-tight">
+          <h3 className=" tracking-wide text-center py-10 cursor-pointer text-4xl font-extrabold text-white ">
             OUR SERVICES
           </h3>
 
