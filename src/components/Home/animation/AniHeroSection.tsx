@@ -6,8 +6,6 @@ import { ArrowRightFromLine } from "lucide-react";
 function AnimaHeroSection() {
   const customEasing = [0.42, 0, 0.58, 1];
 
-  
-
   const staggerContainer = {
     hidden: { opacity: 0 },
     show: {
@@ -45,12 +43,9 @@ function AnimaHeroSection() {
   return (
     <motion.div
     variants={staggerContainer}
-
-    whileInView="visible"
-    viewport={{ once: true }}
-    
     initial="hidden"
-    animate="show"
+    whileInView="show"
+    viewport={{ once: false, amount: 1 }}
     className="lg:ml-14  ml-4 col-span-7"
     >
       <motion.h1

@@ -11,10 +11,10 @@ function AnimaAbout() {
     <motion.div 
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
+        viewport={{ once: false }}
         transition={{ 
             duration: 1.8,
-            ease: "easeInOut"
+            ease: customEasing
         }}
         variants={{
           visible: { opacity: 1, x: "0%" },
@@ -28,19 +28,21 @@ function AnimaAbout() {
       </h2>
       </Link>
     </motion.div>
-    <div className="z-0 w-full col-span-7">
+    <div 
+
+    className="z-0 w-full col-span-7">
       <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ 
-              duration: 2,
-              ease: "easeInOut"
-          }}
-          variants={{
-            visible: { opacity: 1, x: "0%" },
-            hidden: { opacity: 0, x: "110%" }
-          }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false }}
+              transition={{ 
+                  duration: 2,
+                  ease: customEasing
+              }}
+              variants={{
+                visible: { opacity: 1, x: "0%" },
+                hidden: { opacity: 0, x: "110%" }
+              }}
       className="flex flex-wrap justify-center  ">
         {aboutData.map((aboutData) => {
           return (

@@ -1,4 +1,4 @@
-import AnimaAbout from "./animation/AnimaAbout";
+import AnimaAbout from "./animation/AniAbout";
 import Image from "next/image";
 
 // import assets

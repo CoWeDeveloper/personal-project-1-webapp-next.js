@@ -1,14 +1,7 @@
-
-import React from "react";
 import Image from "next/image";
-// import slider libary
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import AnimaEdge from "./animation/AniEdge";
 
-// import assets
-import SliderEdge from "./SliderEdge";
 import WhiteCloudBackground from "../../../public/assets/images/WhiteCloudBackground.png";
-
 
 function OurEdges() {
   return (  
@@ -19,21 +12,8 @@ function OurEdges() {
           className="whiteCloudBackground flex w-[100%]"
           src={WhiteCloudBackground}
           alt="Cloud Background"
-          
-       
         />
-        <div className="z-0 w-full  col-span-6  lg:ml-14 sm:ml-4 md:ml-2">
-          <h2 className="animate__animated animate__slideInLeft  cursor-pointer text-4xl leading-none md:text-6xl xl:text-8xl font-semibold text-[#636468] tracking-tight ">
-            OUR EDGES
-          </h2>
-        </div>
-        <div className="col-span-6 my-14 lg:my-0">
-         
-            
-            <SliderEdge  />
-      
-    
-        </div>
+        <AnimaEdge />
       </div>
     </section>
   );

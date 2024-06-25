@@ -1,4 +1,4 @@
-import AnimaHeroSection from "./animation/AnimaHeroSection";
+import AnimaHeroSection from "./animation/AniHeroSection";
 
 function Home() {
   return (
