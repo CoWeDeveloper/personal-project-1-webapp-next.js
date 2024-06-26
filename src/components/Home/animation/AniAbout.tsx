@@ -8,26 +8,31 @@ function AnimaAbout() {
     const customEasing = [0.42, 0, 0.58, 1]; 
   return (
     <>
+    
+    <div className="z-0 w-full col-span-5 ml-14 sm:mx-auto">
+
     <motion.div 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false }}
         transition={{ 
-            duration: 1.8,
+          duration: 1,
             ease: customEasing
-        }}
+          }}
         variants={{
           visible: { opacity: 1, x: "0%" },
-          hidden: { opacity: 0, x: "-130%" }
+          hidden: { opacity: 0, x: "-30%" }
         }}
     
-    className="z-0 w-full col-span-5 ml-14 sm:mx-auto">
+    >
     <Link href={'/about'} className='hover:text-white active:hover:text-white'>
-      <h2 className="cursor-pointer max-sm:text-4xl sm:text-4xl  md:text-7xl lg:text-8xl font-semibold text-[#636468] tracking-tight ">
+      <h2 
+      className="cursor-pointer max-sm:text-4xl sm:text-4xl  md:text-7xl lg:text-8xl font-semibold text-[#636468] tracking-tight ">
         ABOUT US
       </h2>
       </Link>
     </motion.div>
+        </div>
     <div 
 
     className="z-0 w-full col-span-7">
@@ -36,12 +41,12 @@ function AnimaAbout() {
               whileInView="visible"
               viewport={{ once: false }}
               transition={{ 
-                  duration: 2,
+                  duration: 1,
                   ease: customEasing
               }}
               variants={{
                 visible: { opacity: 1, x: "0%" },
-                hidden: { opacity: 0, x: "110%" }
+                hidden: { opacity: 0, x: "30%" }
               }}
       className="flex flex-wrap justify-center  ">
         {aboutData.map((aboutData) => {

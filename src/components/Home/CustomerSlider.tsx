@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Slider from "react-slick";
 import { customersData } from "@/data/customersData";
+import { motion } from "framer-motion";
 
 function AutoPlay() {
   const row1Data = customersData.filter((data: any, index: number) => index % 2 === 0 && data.id <= 16);
@@ -94,9 +95,11 @@ function AutoPlay() {
         <Slider {...settingsRow1}>
           {row1Data.map((data: any) => (
             <div key={data.id} className="place-content-center w-full h-24">
-              <div className="w-64 flex justify-center items-center">
+              <motion.div 
+               whileHover={{ scale: 1.3 }}
+              className="w-64 flex justify-center items-center">
                 <Image className="flex items-center justify-center w-28 cursor-grab "  src={data.logo} width={200} height={200} alt={data.alt} />
-              </div>
+              </motion.div>
             </div>
           ))}
         </Slider>
@@ -105,9 +108,11 @@ function AutoPlay() {
         <Slider {...settingsRow2}>
           {row2Data.map((data: any) => (
             <div key={data.id} className="place-content-center w-full h-24">
-              <div className="w-64 flex justify-center items-center">
+              <motion.div 
+               whileHover={{ scale: 1.3 }}
+              className="w-64 flex justify-center items-center">
                 <Image className="flex items-center justify-center w-28 cursor-grab" src={data.logo} width={200} height={200} alt={data.alt} />
-              </div>
+              </motion.div>
             </div>
           ))}
         </Slider>

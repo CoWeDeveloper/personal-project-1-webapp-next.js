@@ -1,9 +1,4 @@
-import React from 'react';
-// import components
-import HeroSection from '@/components/about/HeroSection';
-import AboutInfo from '@/components/about/AboutInfo';
-import Values from '@/components/about/Values';
-import Mission from "@/components/about/Mission";
+import { HeroSection, AboutInfo, Values, Mission } from "@/components/about";
 
 function About() {
   return (

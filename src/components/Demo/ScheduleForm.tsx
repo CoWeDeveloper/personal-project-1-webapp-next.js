@@ -45,6 +45,20 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
   }),
 } 
 
+const options: any = [
+  { value: 'S&D Next', label: 'S&D Next (Sales & Distribution)', },
+  { value: 'S&D E-Suite', label: 'S&D E-Euite (Sales & Distribution)' },
+  { value: 'POS Xtreme', label: 'POS Xtreme (Point of Solution for Shops & Supermarkets)' },
+  { value: 'POS Select', label: 'POS Select (Point of Solution for Food & Resturants Chain)' },
+  { value: 'WMS Extended', label: 'WMS Extended (Warehouse Management System)' },
+  { value: 'SCM+', label: 'SCM+ (Supply Chain Management)'},
+  { value: 'HCM+', label: 'HCM+ (Human Capital Management)'},
+  { value: 'Finance+', label: 'Finance+' },
+  { value: 'Production+', label: 'Production+' },
+  { value: 'Primary+', label: 'Primary+ (Primary Sales)'},
+  { value: 'Import+', label: 'Import+' },
+];
+
   // form handling and validation 
   const { values, errors, handleBlur, handleChange, handleSubmit, setFieldValue, touched  }= useFormik ({
       initialValues: initialValues,
@@ -85,19 +99,7 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
     },
     })
     
-    const options: any = [
-        { value: 'S&D Next', label: 'S&D Next (Sales & Distribution)', },
-        { value: 'S&D E-Suite', label: 'S&D E-Euite (Sales & Distribution)' },
-        { value: 'POS Xtreme', label: 'POS Xtreme (Point of Solution for Shops & Supermarkets)' },
-        { value: 'POS Select', label: 'POS Select (Point of Solution for Food & Resturants Chain)' },
-        { value: 'WMS Extended', label: 'WMS Extended (Warehouse Management System)' },
-        { value: 'SCM+', label: 'SCM+ (Supply Chain Management)'},
-        { value: 'HCM+', label: 'HCM+ (Human Capital Management)'},
-        { value: 'Finance+', label: 'Finance+' },
-        { value: 'Production+', label: 'Production+' },
-        { value: 'Primary+', label: 'Primary+ (Primary Sales)'},
-        { value: 'Import+', label: 'Import+' },
-      ];
+ 
     
     // Custom handler for Select component
     const handleSelectChange = (selectedOptions: any) => {
@@ -114,10 +116,7 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
         }
 
       }, [product]);
-      
 
-
- 
 
   return (
     <>
@@ -298,10 +297,13 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
              </div>         
               </div>
               
+              <div className="flex items-center">
 
               <button type="submit" className="bg-[#4796cd] hover:bg-[#155777] text-sm text-white font-semibold mt-4 px-4 py-3 flex items-center rounded-lg">Submit           
                   <Image  className="ml-1" src={send} width={16} height={16} alt="laptop with screen displaying calender" />
               </button>
+              <div className="flex-col">
+
               {errors.name && touched.name ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.name} *</p> ) : null}
               {errors.email && touched.email ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.email} *</p> ) : null}
               {errors.country && touched.country ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.country} *</p> ) : null}
@@ -310,6 +312,8 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
               {errors.industry && touched.industry ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.industry} *</p> ) : null}
               {errors.solutions && touched.solutions ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.solutions} *</p> ) : null}
               {errors.message && touched.message ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.message} *</p> ) : null}
+              </div>
+              </div>
           </form>
     </>
   )

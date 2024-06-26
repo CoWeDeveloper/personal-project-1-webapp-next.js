@@ -1,25 +1,40 @@
 "use client";
-import React from 'react'
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+import { useFormik } from "formik";
+import { partnerSchema} from "./schema";
 import send from "../../../public/assets/icons/Demo/send.svg";
 
+const initialValues = {
+  name: '',
+  contact: '',
+  email: '',
+  company: '',
+  designation: '',                                     
+  message: ''
+ }   
 
-    function PartnerForm(){
-    const searchParams = useSearchParams();
-    const recevied: any = searchParams.get("query");
-    const decodedValue = decodeURIComponent(recevied);
-    
-    
+function PartnerForm(){
+
+  const {handleSubmit, handleBlur, handleChange, values, errors, touched} = useFormik({
+    initialValues,
+    validationSchema: partnerSchema,
+    onSubmit : ()=>{
+      console.log(values);
+    } 
+  })
+  
  
   return (
     <>
-          <form className="">
+          <form onSubmit={handleSubmit}>
           
-
           <div className="flex justify-center items-center mb-4 mt-2">
             <div className="relative w-full mr-4">
-             <input type="text" id="name" name="name" placeholder=" "
+             <input 
+             value={values.name}
+             onChange={handleChange}
+             onBlur={handleBlur}
+             type="text" id="name" name="name" placeholder=" "
              className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-600 bg-transparent rounded-lg
               
               border-2 border-gray-400 focus:ring-0 focus:text-black focus:font-medium focus:border-gray-900 peer focus:outline-none"/>
@@ -40,8 +55,12 @@ import send from "../../../public/assets/icons/Demo/send.svg";
           </div>
           <div className="flex justify-center items-center mb-4">
              <div className="relative w-full mr-4">
-             <input id="country" name="country" placeholder=" " className="block px-2.5 pb-2.5  focus:font-medium focus:text-black pt-4 mr-4 w-full text-sm text-gray-600 bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none " type="text" />
-              <label htmlFor="country" 
+             <input 
+             value={values.contact}
+             onChange={handleChange}
+             onBlur={handleBlur}
+             id="contact" name="contact" placeholder=" " className="block px-2.5 pb-2.5  focus:font-medium focus:text-black pt-4 mr-4 w-full text-sm text-gray-600 bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none " type="text" />
+              <label htmlFor="contact" 
               className="absolute text-sm text-gray-500 duration-300 transform
               -translate-y-4 scale-75 top-2 z-10 bg-white origin-[0] px-2
               peer-focus:px-2 peer-focus:textgray-900 peer-placeholder-shown:scale-100
@@ -54,8 +73,12 @@ import send from "../../../public/assets/icons/Demo/send.svg";
              </div>
           
              <div className="relative w-full">
-             <input id="contact" name="contact" placeholder=" " className="block focus:text-black px-2.5 pb-2.5 pt-4 mr-4 w-full text-sm text-gray-600  focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none " type="text" />
-              <label htmlFor="contact" 
+             <input 
+             value={values.email}
+             onChange={handleChange}
+             onBlur={handleBlur}
+             id="email" name="email" placeholder=" " className="block focus:text-black px-2.5 pb-2.5 pt-4 mr-4 w-full text-sm text-gray-600  focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none " type="text" />
+              <label htmlFor="email" 
               className="absolute text-sm text-gray-500 duration-300 transform
               -translate-y-4 scale-75 top-2 z-10 bg-white origin-[0] px-2
               peer-focus:px-2 peer-focus:textgray-900 peer-placeholder-shown:scale-100
@@ -69,7 +92,11 @@ import send from "../../../public/assets/icons/Demo/send.svg";
           </div>   
           <div className="flex justify-center items-center mb-4">
              <div className="relative w-full mr-4">
-             <input id="company" name="company" placeholder=" " className="block focus:text-black px-2.5 pb-2.5 pt-4 mr-4 w-full text-sm text-gray-600  focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none " type="text" />
+             <input 
+             value={values.company}
+             onChange={handleChange}
+             onBlur={handleBlur}
+             id="company" name="company" placeholder=" " className="block focus:text-black px-2.5 pb-2.5 pt-4 mr-4 w-full text-sm text-gray-600  focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none " type="text" />
               <label htmlFor="company" 
               className="absolute text-sm text-gray-500 duration-300 transform
               -translate-y-4 scale-75 top-2 z-10 bg-white origin-[0] px-2
@@ -85,8 +112,12 @@ import send from "../../../public/assets/icons/Demo/send.svg";
              </div>
           
              <div className="relative w-full">
-             <input id="industry" name="industry" placeholder=" " className="block focus:text-black px-2.5 pb-2.5 pt-4 mr-4 w-full text-sm text-gray-600  focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none " type="text" />
-              <label htmlFor="industry" 
+             <input 
+             value={values.designation}
+             onChange={handleChange}
+             onBlur={handleBlur}
+             id="designation" name="designation" placeholder=" " className="block focus:text-black px-2.5 pb-2.5 pt-4 mr-4 w-full text-sm text-gray-600  focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none " type="text" />
+              <label htmlFor="designation" 
               className="absolute text-sm text-gray-500 duration-300 transform
               -translate-y-4 scale-75 top-2 z-10 bg-white origin-[0] px-2
               peer-focus:px-2 peer-focus:textgray-900 peer-placeholder-shown:scale-100
@@ -101,7 +132,11 @@ import send from "../../../public/assets/icons/Demo/send.svg";
 
           <div >
           <div className="relative w-full">
-             <textarea id="message" name="message" placeholder=" " 
+             <textarea 
+             value={values.message}
+             onChange={handleChange}
+             onBlur={handleBlur}
+             id="message" name="message" placeholder=" " 
              className="block focus:text-black align-text-bottom resize-none h-[150px] px-2.5 pb-2.5 pt-4 mr-4 w-full text-sm text-gray-600  focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none " 
               />
               <label htmlFor="message" 
@@ -119,9 +154,20 @@ import send from "../../../public/assets/icons/Demo/send.svg";
               peer-focus:-translate-y-4 left-1 `}>Tell us about your company and what are you looking for?</label>
              </div>         
               </div>
+              <div>
+
               <button type="submit" className="bg-[#4796cd] hover:bg-[#155777] text-sm text-white font-semibold mt-4 px-4 py-3 flex items-center rounded-lg">Submit           
                   <Image  className="ml-1" src={send} width={16} height={16} alt="laptop with screen displaying calender" />
               </button>
+              <div className="flex-col">
+                {errors.name && touched.name ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.name} *</p>) : null }
+                {errors.contact && touched.contact ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.contact} *</p>) : null}
+                {errors.email && touched.email ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.email} *</p>) : null}
+                {errors.company && touched.company ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.name} *</p>) : null}
+                {errors.designation && touched.designation ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.name} *</p>) : null}
+                {errors.message && touched.message ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.name} *</p>) : null }
+              </div>
+              </div>
           </form>
     </>
   )
