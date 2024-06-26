@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useFormik } from "formik";
 import { partnerSchema} from "./schema";
+import sendEmail from "../services/sendEmail";
 import send from "../../../public/assets/icons/Demo/send.svg";
 
 const initialValues = {
@@ -15,12 +16,40 @@ const initialValues = {
 
 function PartnerForm(){
 
-  const {handleSubmit, handleBlur, handleChange, values, errors, touched} = useFormik({
-    initialValues,
+  const { handleSubmit, handleBlur, handleChange, values, errors, touched } = useFormik({
+    initialValues: initialValues,
     validationSchema: partnerSchema,
-    onSubmit : ()=>{
-      console.log(values);
-    } 
+    onSubmit : async (values, { setSubmitting, resetForm })=>{
+       
+      const formData = {
+        CompanyCode: 61,
+          OfficeCode: 100061,
+          Subject: 'Software Demo Request',
+          CC: 'm.owais@cloudtenants.com',
+          FromNames: 'noreply@cloudtenants.com',
+          ToNames: 'owaischemist22@gmail.com',
+          Body: '',
+          Template: 'PARTNER_REQUEST',
+          KeyValuesData: {
+            Name: values.name,
+            Contact: values.contact,
+            Email: values.email,
+            Company: values.company,
+            Designation: values.designation,
+            Message: values.message
+          }
+      };
+      try{
+         const response = await sendEmail(formData);
+         console.log(response);
+      } catch(error){
+        alert("Failed to send email. Please try again later.");
+        console.error(`The error is ${error}`)
+      } finally{
+        setSubmitting(false);
+        resetForm();  
+      }
+    }
   })
   
  
@@ -59,7 +88,8 @@ function PartnerForm(){
              value={values.contact}
              onChange={handleChange}
              onBlur={handleBlur}
-             id="contact" name="contact" placeholder=" " className="block px-2.5 pb-2.5  focus:font-medium focus:text-black pt-4 mr-4 w-full text-sm text-gray-600 bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none " type="text" />
+             type="text"
+             id="contact" name="contact" placeholder=" " className="block px-2.5 pb-2.5  focus:font-medium focus:text-black pt-4 mr-4 w-full text-sm text-gray-600 bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none "  />
               <label htmlFor="contact" 
               className="absolute text-sm text-gray-500 duration-300 transform
               -translate-y-4 scale-75 top-2 z-10 bg-white origin-[0] px-2
@@ -163,9 +193,9 @@ function PartnerForm(){
                 {errors.name && touched.name ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.name} *</p>) : null }
                 {errors.contact && touched.contact ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.contact} *</p>) : null}
                 {errors.email && touched.email ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.email} *</p>) : null}
-                {errors.company && touched.company ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.name} *</p>) : null}
-                {errors.designation && touched.designation ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.name} *</p>) : null}
-                {errors.message && touched.message ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.name} *</p>) : null }
+                {errors.company && touched.company ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.company} *</p>) : null}
+                {errors.designation && touched.designation ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.designation} *</p>) : null}
+                {errors.message && touched.message ? (<p className="text-[10px] text-red-500 font-semibold pl-2">{errors.message} *</p>) : null }
               </div>
               </div>
           </form>

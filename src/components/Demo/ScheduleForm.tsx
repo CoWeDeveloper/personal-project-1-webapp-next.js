@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect } from 'react'
 import { useFormik } from "formik";
 import { demoSchema } from "./schema";
-import  sendEmail from "./api/sendEmail";
+import  sendEmail from "../services/sendEmail";
 
 import Select from 'react-select';
 import send from "../../../public/assets/icons/Demo/send.svg";
@@ -60,7 +60,7 @@ const options: any = [
 ];
 
   // form handling and validation 
-  const { values, errors, handleBlur, handleChange, handleSubmit, setFieldValue, touched  }= useFormik ({
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue,}= useFormik ({
       initialValues: initialValues,
       validationSchema: demoSchema,
       onSubmit: async (values, { setSubmitting, resetForm }) => {
@@ -98,8 +98,6 @@ const options: any = [
         }
     },
     })
-    
- 
     
     // Custom handler for Select component
     const handleSelectChange = (selectedOptions: any) => {
