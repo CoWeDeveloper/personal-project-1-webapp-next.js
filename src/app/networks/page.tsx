@@ -1,7 +1,4 @@
-// import components
-import HeroSection from '@/components/network/HeroSection';
-import Services from '@/components/network/Services';
-
+import { HeroSection, Services } from "@/components/network/index";
 function Network() {
   return (
     <>

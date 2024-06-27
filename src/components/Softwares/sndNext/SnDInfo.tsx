@@ -1,16 +1,39 @@
+"use client";
+import {motion, useAnimation} from "framer-motion";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import banner from "../../../../public/assets/images/Software/SnDNext/sndNHeader.svg"
 import { sndNextData } from "@/data/sndNextData";
 
 function SnDInfo() {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      controls.start({
+        left: ['-60%', '130%'],
+        opacity: [0, 1, 0],
+        transition: { duration: 2, ease: 'easeInOut' },
+      });
+    }, 3000); // Runs every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [controls]);
+
   return (
     <div id="SnDInfo" className="w-full h-fit bg-white pt-14 pb-10">
       <div className=" container mx-auto lg:px-36">
-           <div className="flex justify-center items-center">
-           <Image src={banner} alt="banner" width={600} />
-
-           </div>
+      <div className="flex justify-center items-center">
+      <div className=" relative group">
+      <Image src={banner} alt="banner" width={435} height={318} />
+        <motion.div
+          animate={controls}
+          initial={{ left: '-60%', opacity: 0 }}
+          className="absolute top-[-50%] w-[20%] h-[200%] transform rotate-[30deg] bg-gradient-to-r from-white/20 via-white/70 to-transparent"
+        ></motion.div>
+      </div>
+    </div>
           <p className=" font-medium pt-12 pb-8 text-justify text-[#636468]" >Elevate your business with our Cloud-based and Web-based Sales & Distribution Management solution that give unparalleled advantage to your organization. 
             Optimize your operational efficiency by streamlining your sales processes with improved customer engagement and better insights into your business with our AI Based Dashboards and Real-Time Reporting. 
             Utilize the Cloud-based features with seamless accessibility from anywhere. Cloud Tenants encourage adaptability and empower insightful decision-making.

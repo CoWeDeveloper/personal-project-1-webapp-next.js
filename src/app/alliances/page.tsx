@@ -1,11 +1,10 @@
-import HeroSection from "@/components/alliance/HeroSection"
-import Membership from "@/components/alliance/ComponentAlliance"
+import { HeroSection, ComponentAlliance } from "@/components/alliance";
 
 function Alliances() {
   return (
     <>
       <HeroSection />
-      <Membership />
+      <ComponentAlliance />
     </>
   )
 }

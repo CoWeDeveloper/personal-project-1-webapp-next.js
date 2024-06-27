@@ -1,6 +1,4 @@
-
-import HeroSection from '@/components/softwares/HeroSection';
-import Products from '@/components/softwares/Products';
+import { HeroSection, Products } from "@/components/softwares/index";
 
 function Software() {
   return (
