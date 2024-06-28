@@ -3,7 +3,7 @@ import { faqData } from "@/data/faqData";
 function faq() {
   return (
     <>
-      <div className="w-full h-fit bg-white pt-10 pb-10">
+      <div className="w-full h-fit bg-white pt-20 pb-10">
         <div className="container lg:px-20 md:lg:px-20 sm:px-10 px-2">
           <div className="max-w-3xl px-3 space-y-2">
             <div className="bg-slate-300 px-2 py-1 w-14 font-semibold text-black   flex justify-center rounded-md">

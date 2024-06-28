@@ -1,8 +1,32 @@
 "use client"
+import { motion, useMotionValue, useTransform } from "framer-motion";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useEffect } from "react";
 
-function AniServices({ networkData} : any ) {
+function AniServices({ networkData }: { networkData: any }) {
+    // Initialize motion values for rotation
+    const rotateX = useMotionValue(0);
+    const rotateY = useMotionValue(0);
+    const scale = useMotionValue(1);
+  
+    // Define a handler to update rotation values based on mouse movement
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const middleX = rect.width / 2;
+      const middleY = rect.height / 2;
+      const rotateYValue = ((x - middleX) / middleX) * 25; // Adjust the factor to control the intensity
+      const rotateXValue = ((y - middleY) / middleY) * 80; // Adjust the factor to control the intensity
+      rotateX.set(rotateXValue);
+      rotateY.set(rotateYValue);
+      scale.set(1.2); // Scale up on mouse move
+    };
+    const handleMouseLeave = () => {
+      rotateX.set(0);
+      rotateY.set(0);
+      scale.set(1);
+    };
   return (
     <div className="mx-auto w-full max-w-screen-lg pt-10 pb-4 xs:p-2">
     {networkData.id == "1" && (
@@ -23,11 +47,11 @@ function AniServices({ networkData} : any ) {
       </motion.h2>
     )}
 
-    <div className="sm:grid  sm:grid-cols-12 sm:h-screen mx-auto pt-14 xs:flex xs:flex-col xs:h-fit">
+    <div className="sm:grid sm:grid-cols-12 sm:h-screen mx-auto pt-14 xs:flex xs:flex-col xs:h-fit">
       <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{once: true, amount: 1}}
+            viewport={{once: true}}
             variants={{
               hidden: {opacity: 0},
               visible: {opacity: 1} 
@@ -85,27 +109,44 @@ function AniServices({ networkData} : any ) {
           </>
         )}
       </motion.div>
-
       <motion.div 
       initial="hidden"
       whileInView="visible"
-      viewport={{once: true, amount: 1}}
+      viewport={{ once: true }}
       variants={{
-        hidden: {opacity: 0},
-        visible: {opacity: 1} 
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
       }}
       transition={{
-        duration: 0.8, ease: "easeInOut"
+        duration: 0.8,
+        ease: "easeInOut",
       }}
-      className="col-span-7 w-full h-full grid md:place-content-end lg:place-content-center lg:items-center md:pt-32">
+      className="col-span-7 w-full h-full grid md:place-content-end lg:place-content-center lg:items-center md:pt-32 relative group"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        perspective: 1000, // Add perspective to the parent to enable 3D effect
+      }}
+    >
+      <motion.div
+        className="relative w-full h-auto mx-auto duration-300 transition-scale drop-shadow-2xl"
+        style={{
+          rotateX,
+          rotateY,
+          scale,
+          transformStyle: "preserve-3d",
+            // transition: "transform 0.2s ease-in-out"
+        }}
+      >
         <Image
-          className="relative w-full h-auto mx-auto drop-shadow-2xl"
           src={networkData.mapImg}
           width={900}
           height={900}
           alt={networkData.mapAlt}
+          className="rounded-lg"
         />
       </motion.div>
+    </motion.div>
     </div>
   </div>
   )

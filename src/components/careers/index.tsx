@@ -1,4 +1,2 @@
-import HeroSection from "./HeroSection";
-import Vaccany from "./Vaccany";
-
-export {HeroSection, Vaccany};
+export { default as HeroSection } from "./HeroSection";
+export { default as Vaccany } from "./Vaccany";

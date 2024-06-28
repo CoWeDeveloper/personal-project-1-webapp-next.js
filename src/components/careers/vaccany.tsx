@@ -8,7 +8,7 @@ function vaccany() {
           </h1>
           <p className="text-[#636468] lg:pr-72 text-pretty text-lg pt-5 max-w-screen-lg">
             Currently we don't have any job vacancy, however, for future
-            reference please send us your Resume at
+            reference please send us your Resume at&nbsp;
             <span className="font-semibold text-black  hover:underline cursor-pointer">
               careers@cloudtenants.com
             </span>

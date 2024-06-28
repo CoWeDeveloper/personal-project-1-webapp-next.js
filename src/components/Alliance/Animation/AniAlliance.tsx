@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Rotate3D } from "lucide-react";
 
 function AniAlliance({ data }: any) {
   return (
@@ -10,19 +11,31 @@ function AniAlliance({ data }: any) {
        whileInView="visible"
        viewport={{ once: true }}
        variants={{
-           hidden: { opacity: 0, scale: 0.6},
-           visible: { opacity: 1, scale: 1}
+           hidden: { opacity: 0},
+           visible: { opacity: 1,}
        }}
        transition={{
            duration: 0.5,
            ease: "easeInOut"
        }}
     className='text-4xl font-black tracking-wider text-center'>{data.title}</motion.h1>
-    <div className='flex flex-wrap justify-center items-center mt-40 '>
+    <motion.div 
+      initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true }}
+    variants={{
+        hidden: { opacity: 0, scale: 0},
+        visible: { opacity: 1, scale: 1}
+    }}
+    transition={{
+        duration: 0.8,
+        ease: "easeInOut"
+    }}
+    className='flex flex-wrap justify-center items-center mt-40 '>
     {data.logo.map((logo: any) => (
         <Image key={logo.id} className='w-72 mx-5 mt-10' src={logo.logoImg} alt={logo.alt} width={100} height={100} />
                 ))}
-    </div>
+    </motion.div>
 </div>
   )
 }
