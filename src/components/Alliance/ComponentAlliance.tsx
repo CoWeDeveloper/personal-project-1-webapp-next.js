@@ -1,4 +1,4 @@
-import AniAlliance from "./Animation/AniAlliance";
+import AniAlliance from "./animation/AniAlliance";
 import { allianceData } from "../../data/allianceData";
 
 function ComponentAlliance() {

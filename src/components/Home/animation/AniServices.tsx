@@ -15,12 +15,12 @@ initial="hidden"
 whileInView="visible"
 viewport={{ once: false }}
 transition={{ 
-    duration: 2,
+    duration: 1.8,
     ease: customEasing
 }}
 variants={{
-  visible: { opacity: 1, x: "0%" },
-  hidden: { opacity: 0, x: "-50%" }
+  visible: { opacity: 1, y: 0  },
+  hidden: { opacity: 0,  y: 20}
 }}
 className=" tracking-wide text-center py-10 cursor-pointer text-4xl font-extrabold text-white ">
             OUR SERVICES
@@ -31,12 +31,12 @@ className=" tracking-wide text-center py-10 cursor-pointer text-4xl font-extrabo
           whileInView="visible"
           viewport={{ once: false}}
           transition={{ 
-              duration: 1.8,
+              duration: 1.5,
               ease: customEasing
           }}
           variants={{
-            visible: { opacity: 1, x: "0%" },
-            hidden: { opacity: 0, x: "50%" }
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: -20 }
           }}
           className="flex flex-wrap gap-6 justify-center w-full mx-auto">
             {/* card UI */}

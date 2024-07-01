@@ -1,4 +1,4 @@
-import ExploreBtn from "../ExploreBtn";
+import AniHeroSection from "./animation/AniHeroSection";
 
 function HeroSection() {
   return (
@@ -6,10 +6,7 @@ function HeroSection() {
     ease-in-out overflow-hidden  duration-300 
     transition-all bg-no-repeat bg-cover bg-center flex items-center '
        style={{ backgroundImage: `url("assets/images/Support/supportHeader.webp")` }} >
-      <div className='mx-auto max-w-screen-lg lg:px-20 md:px-16 px-0  text-center'>
-        <h1  className="drop-shadow-2xl text-white font-black text-4xl sm:text-5xl mb-4" >Experience The Difference With Our Customer Services.</h1>
-        <ExploreBtn Id={"Support"} />
-      </div>
+      <AniHeroSection />
     </section>
   )
 }

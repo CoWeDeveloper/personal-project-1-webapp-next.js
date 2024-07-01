@@ -1,4 +1,4 @@
-import AniProducts from "./Animation/AniProducts";
+import AniProducts from "./animation/AniProducts";
 
 function Products() {
  

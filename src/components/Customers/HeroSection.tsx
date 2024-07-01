@@ -1,4 +1,4 @@
-import AniHeroSection from "./Animation/AniHeroSection"
+import AniHeroSection from "./animation/AniHeroSection"
 
 function HeroSection() {
   return (

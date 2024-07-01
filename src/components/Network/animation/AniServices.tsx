@@ -33,7 +33,7 @@ function AniServices({ networkData }: { networkData: any }) {
       <motion.h2 
       initial="hidden"
     whileInView="visible"
-    viewport={{ once: true}}
+    viewport={{ once: true, amount: 0.5}}
     transition={{ 
         duration: 1.2,
         ease: [0.42, 0, 0.58, 1]
@@ -51,7 +51,7 @@ function AniServices({ networkData }: { networkData: any }) {
       <motion.div 
             initial="hidden"
             whileInView="visible"
-            viewport={{once: true}}
+            viewport={{once: true, amount: 0.5}}
             variants={{
               hidden: {opacity: 0},
               visible: {opacity: 1} 

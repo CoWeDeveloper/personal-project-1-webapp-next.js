@@ -1,7 +1,6 @@
 "use client"
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Rotate3D } from "lucide-react";
 
 function AniAlliance({ data }: any) {
   return (
@@ -18,7 +17,9 @@ function AniAlliance({ data }: any) {
            duration: 0.5,
            ease: "easeInOut"
        }}
-    className='text-4xl font-black tracking-wider text-center'>{data.title}</motion.h1>
+    className='text-4xl font-black tracking-wider text-center'>
+      {data.title}
+      </motion.h1>
     <motion.div 
       initial="hidden"
     whileInView="visible"

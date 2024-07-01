@@ -1,4 +1,4 @@
-import AniCustomers from "./Animation/AniCustomers";
+import AniCustomers from "./animation/AniCustomers";
 
 function ValuableCustomers() {  
   return (

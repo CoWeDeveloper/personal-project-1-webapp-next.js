@@ -1,4 +1,4 @@
-import Image from "next/image";
+import AniSupport from "./animation/AniSupport";
 import { supportData } from "@/data/supportData";
 
 function Support() {
@@ -13,38 +13,7 @@ function Support() {
           }`}
         >
           <div className="max-w-screen-lg mx-auto pt-10 pb-5 ">
-            {data.id == 1 && (
-              <h1 className="md:text-3xl text-4xl font-black tracking-wider text-center">
-                SUPPORT MECHANISM
-              </h1>
-            )}
-            <div className="text-center flex flex-col justify-center items-center">
-              <h1 className="text-3xl font-semibold mt-10 ">{data.title}</h1>
-              <div className="flex flex-wrap justify-center items-center mt-10 my-10">
-                {data.card.map((card: any)=>
-            (
-              <div
-              key={card.id}
-              className="duration-500 hover:scale-110 flex-wrap my-4 justify-center items-center"
-            >
-              <div className="group my-2 mx-10 w-56 px-120 py-4 flex flex-wrap justify-center border-2 border-gray-400 rounded-xl">
-                <Image
-                  className="group-hover:scale-x-[-1] transition ease-in-out duration-500 justify-center w-20 h-30 m-4"
-                  width={100}
-                  height={40}
-                  src={card.img}
-                  alt={card.alt}
-                />
-              </div>
-              <h3 className="flex font-light  justify-center items-center">
-                {card.title}
-              </h3>
-           
-            </div>
-            ))}
-
-              </div>
-            </div>
+          <AniSupport data={data} />
           </div>
         </section>
       ))}
