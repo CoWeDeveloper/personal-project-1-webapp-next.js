@@ -38,7 +38,7 @@ const cardAnimat = {
     visible: {scale: 1, opacity: 1 },
     hidden: { scale: 0.4, opacity: 0}
    }}
-className="text-3xl text-cent er font-black underline">
+className="text-3xl text-center font-black underline">
   ON-BOARDING PROCESS
 </motion.h1>
 <motion.div 

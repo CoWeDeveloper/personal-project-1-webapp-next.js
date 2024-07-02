@@ -3,9 +3,10 @@ import Image from "next/image";
 import { useEffect } from 'react'
 import { useFormik } from "formik";
 import { demoSchema } from "./schema";
-import  sendEmail from "../services/sendEmail";
-
+import { useToast } from "@/components/ui/use-toast";
+ 
 import Select from 'react-select';
+import  sendEmail from "../services/sendEmail";
 import send from "../../../public/assets/icons/Demo/send.svg";
 
 
@@ -44,6 +45,8 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
       }
   }),
 } 
+
+const { toast } = useToast()
 
 const options: any = [
   { value: 'S&D Next', label: 'S&D Next (Sales & Distribution)', },
@@ -87,10 +90,20 @@ const options: any = [
         };
         try {
             const response = await sendEmail( formData);
-            
+            ()=>{
+              toast({title: "Form has been submitted Successfully",
+                description: "We will contact you shortly",
+                     variant: "default"
+              });
+            }
             console.log(response);
         } catch (error) {
-            alert('Failed to send email. Please try again later.');
+          ()=>{
+            toast({title: "Failed to send email!",
+              description: "There is a problem with your request",
+         
+            });
+          }
             console.error(`The error is ${error}`)
         } finally {
             setSubmitting(false);
@@ -297,7 +310,8 @@ const options: any = [
               
               <div className="flex items-center">
 
-              <button type="submit" className="bg-[#4796cd] hover:bg-[#155777] text-sm text-white font-semibold mt-4 px-4 py-3 flex items-center rounded-lg">Submit           
+              <button
+              type="submit" className="bg-[#4796cd] hover:bg-[#155777] text-sm text-white font-semibold mt-4 px-4 py-3 flex items-center rounded-lg">Submit           
                   <Image  className="ml-1" src={send} width={16} height={16} alt="laptop with screen displaying calender" />
               </button>
               <div className="flex-col">

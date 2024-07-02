@@ -32,9 +32,13 @@ function AniAlliance({ data }: any) {
         duration: 0.8,
         ease: "easeInOut"
     }}
-    className='flex flex-wrap justify-center items-center mt-40 '>
+    className='flex flex-wrap justify-center items-center mt-32  '>
+    
     {data.logo.map((logo: any) => (
-        <Image key={logo.id} className='w-72 mx-5 mt-10' src={logo.logoImg} alt={logo.alt} width={100} height={100} />
+        
+        <Image key={logo.id} className={`mx-14 mt-10 ${data.logo.length === 4 ? 'w-56' : 'w-64'}`} src={logo.logoImg} alt={logo.alt} width={100} height={100} />
+
+ 
                 ))}
     </motion.div>
 </div>

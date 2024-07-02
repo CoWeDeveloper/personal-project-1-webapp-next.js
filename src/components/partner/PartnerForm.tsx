@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useFormik } from "formik";
 import { partnerSchema} from "./schema";
+import { useToast } from "@/components/ui/use-toast";
 import sendEmail from "../services/sendEmail";
 import send from "../../../public/assets/icons/Demo/send.svg";
 
@@ -13,6 +14,8 @@ const initialValues = {
   designation: '',                                     
   message: ''
  }   
+
+const { toast } = useToast()
 
 function PartnerForm(){
 
@@ -41,9 +44,20 @@ function PartnerForm(){
       };
       try{
          const response = await sendEmail(formData);
+         ()=>{
+          toast({title: "Form has been submitted Successfully",
+            description: "We will contact you shortly",
+                 variant: "default"
+          });
+        }
          console.log(response);
       } catch(error){
-        alert("Failed to send email. Please try again later.");
+        ()=>{
+          toast({title: "Failed to send email!",
+            description: "There is a problem with your request",
+       
+          });
+        }
         console.error(`The error is ${error}`)
       } finally{
         setSubmitting(false);
@@ -51,7 +65,6 @@ function PartnerForm(){
       }
     }
   })
-  
  
   return (
     <>

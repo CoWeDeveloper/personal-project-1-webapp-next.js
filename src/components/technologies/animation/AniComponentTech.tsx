@@ -72,7 +72,7 @@ function AniComponentTech({ data }: any) {
              const logoWidth = `w-${logo.width}`
              return(
                  <Image key={logo.id}
-                 className={`${logoWidth} hover:drop-shadow-2xl hover:scale-125 hover:mx-14 transition-scale duration-300   mx-5 my-10`} src={logo.logoImg} alt={logo.alt} width={100} height={100} />
+                 className={`${logoWidth} hover:drop-shadow-2xl hover:scale-125 hover:mx-14 transition-scale duration-300   mx-10 my-10`} src={logo.logoImg} alt={logo.alt} width={100} height={100} />
                   )      
               }
           )}

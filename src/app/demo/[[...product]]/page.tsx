@@ -2,6 +2,7 @@ import React from 'react';
 // import components
 import HeroSection from '@/components/demo/HeroSection';
 import Schedule  from '@/components/demo/Schedule';
+import { Toaster } from "@/components/ui/toaster"
 
 function Demo({ params} : { params : {product? : string[]}}) {
   // const {product} = params;
@@ -12,8 +13,8 @@ function Demo({ params} : { params : {product? : string[]}}) {
   return (
     <>
       <HeroSection key={product || 'default'}  />
+ <Toaster />
       {product ? <Schedule product={product}/> : <Schedule /> }
-      
     </>
   )
 }
