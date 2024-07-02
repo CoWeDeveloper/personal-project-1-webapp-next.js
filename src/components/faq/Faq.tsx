@@ -1,9 +1,9 @@
-import { faqData } from "@/data/faqData";
+import QFaq from "./QFaq";
 
-function faq() {
+function Faq() {
   return (
     <>
-      <div className="w-full h-fit bg-white pt-20 pb-10">
+      <div className="w-full h-fit bg-white pt-24 pb-20">
         <div className="container lg:px-20 md:lg:px-20 sm:px-10 px-2">
           <div className="max-w-3xl px-3 space-y-2">
             <div className="bg-slate-300 px-2 py-1 w-14 font-semibold text-black   flex justify-center rounded-md">
@@ -21,22 +21,7 @@ function faq() {
             </div>
 
             <div className="ml-2 select-none pt-5 text-sm font-medium">
-              {faqData.map((data: any) => (
-                <div key={data.id}>
-                  <div className="font-semibold">{data.que}?</div>
-
-                  <div className="text-gray-500 mt-2 pb-4 ">
-                    <p className="my-2text-base">{data.ans}</p>
-                    {data.list.length > 0 && (
-                      <ul className="list-disc ml-5 mt-2 font-normal ">
-                        {data.list.map((list: any, index: number) => (
-                          <li key={list.index}>{list.name}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              ))}
+              <QFaq  />
             </div>
           </div>
         </div>
@@ -45,4 +30,4 @@ function faq() {
   );
 }
 
-export default faq;
+export default Faq;
