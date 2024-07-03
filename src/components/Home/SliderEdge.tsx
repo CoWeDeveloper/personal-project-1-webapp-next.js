@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -10,6 +10,37 @@ function SliderEdge() {
   const sliderRef = useRef<Slider | null>(null);
   const [sliderKey, setSliderKey] = useState(0);
 
+
+  useEffect(() => {
+    const sliderElement = sliderRef.current;
+
+    const handleMouseWheel = (event: WheelEvent) => {
+      if (sliderElement && event.deltaY !== 0) {
+        event.preventDefault(); // Prevent default scroll behavior
+        if (event.deltaY < 0) {
+          sliderElement.slickPrev(); // Scroll up, previous slide
+          
+        } else {
+          sliderElement.slickNext(); // Scroll down, next slide
+        }
+      }
+    };
+
+    // Attach event listener for mouse wheel
+    if (sliderElement && sliderElement.innerSlider && sliderElement.innerSlider.list) {
+      sliderElement.innerSlider.list.addEventListener("wheel", handleMouseWheel, {
+        passive: false,
+      });
+
+      return () => {
+        // Clean up: remove event listener when component unmounts
+        if (sliderElement && sliderElement.innerSlider && sliderElement.innerSlider.list) {
+          sliderElement.innerSlider.list.removeEventListener("wheel", handleMouseWheel);
+        }
+      };
+    }
+  }, []);
+
   const sliderSettings = {
     dots: true,
     infinite: true,
@@ -18,7 +49,7 @@ function SliderEdge() {
     slidesToShow: 1,
     autoplay: true,
     loop: true,
-    mousewheel: true,
+    mouseWheel: true, 
     beforeChange: () => {
       setSliderKey((prevKey) => prevKey + 1);
     },

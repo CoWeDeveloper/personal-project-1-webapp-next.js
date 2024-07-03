@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import SliderEdge from "../SliderEdge";
 
 function AnimaEdge() {
+    
   return (
     <>
     <motion.div 

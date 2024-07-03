@@ -3,7 +3,7 @@ import QFaq from "./QFaq";
 function Faq() {
   return (
     <>
-      <div className="w-full h-fit bg-white pt-24 pb-20">
+      <div className="w-full h-fit bg-white pt-28 pb-20">
         <div className="container lg:px-20 md:lg:px-20 sm:px-10 px-2">
           <div className="max-w-3xl px-3 space-y-2">
             <div className="bg-slate-300 px-2 py-1 w-14 font-semibold text-black   flex justify-center rounded-md">
@@ -20,7 +20,7 @@ function Faq() {
               </h2>
             </div>
 
-            <div className="ml-2 select-none pt-5 text-sm font-medium">
+            <div className="ml-2 select-none pt-10 text-sm font-medium">
               <QFaq  />
             </div>
           </div>

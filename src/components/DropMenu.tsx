@@ -2,27 +2,52 @@
 import Image from "next/image";
 import Link  from "next/link";
 import { useState } from "react";
-
-
+import {
+    DropdownMenu,
+    DropdownMenuContent,
+    DropdownMenuItem,
+    DropdownMenuTrigger,
+  } from "@/components/ui/dropdown-menu"  
 // import icons
 import { ChevronDown  } from "lucide-react";
 import career from "../../public/assets/icons/DropMenu/career.svg";
 import faq from "../../public/assets/icons/DropMenu/faq.svg";
+import styles from "@/styles/dropmenu.module.css";
 
 function DropMenu() {
     const [menuOpen, setMenuOpen] = useState(false);
 return (
     <>
        <div   className='relative inline-block'>
-                <div     onMouseEnter={()=> setMenuOpen(true)} onMouseLeave={()=> setMenuOpen(false)}
-                    className='flex justify-end text-nowrap cursor-pointer group-hover:relative  transition-all'
-                  
+                {/* <div     onMouseEnter={()=> setMenuOpen(true)} onMouseLeave={()=> setMenuOpen(false)}
+                    className='flex justify-end text-nowrap cursor-pointer group-hover:relative  transition-all' 
                 >
-                    Resources
-                    <ChevronDown className="group-hover:rotate-180 transition-all ease-out duration-300" />
-                </div>
-
-                <ul
+                  
+                </div> */}
+<DropdownMenu>
+  <DropdownMenuTrigger className="flex border-none outline-none">
+      Resources
+  <ChevronDown className="group-hover:rotate-180 transition-all ease-out duration-300" />
+  </DropdownMenuTrigger>
+  <DropdownMenuContent className="bg-white p-0 m-0 ">
+    <DropdownMenuItem className={styles.dropdown__list}> 
+    <Link href={"/careers"}>
+        Careers<Image src={career} alt="career" width={24} height={24}/>
+    </Link></DropdownMenuItem>
+    <DropdownMenuItem  className={styles.dropdown__list}>
+            Blogs   
+    </DropdownMenuItem>
+    <DropdownMenuItem className={styles.dropdown__list}>
+    <Link href={"/faq"}>
+        FAQ's
+    </Link >
+    </DropdownMenuItem>
+    <DropdownMenuItem className={styles.dropdown__list}>            
+        Gallery
+    </DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+{/*   <ul
                     onMouseEnter={()=> setMenuOpen(true)} onMouseLeave={()=> setMenuOpen(false)}
                     className={`absolute top-full left-0 mt-2 w-32 text-sm bg-white border border-gray-300 rounded-md shadow-lg 
                     overflow-hidden transform origin-top  transition-all 
@@ -32,7 +57,7 @@ return (
                     <li className="py-2 px-4 text-black text-left hover:bg-gray-300">Blogs</li>
                     <Link href={"/faq"}><li className="py-2 px-4 text-black text-left hover:bg-gray-300 flex items-center justify-between">FAQ's<Image src={faq} alt="career" width={20} height={20}/></li></Link>
                     <li className="py-2 px-4 text-black text-left hover:bg-gray-300">Gallery</li>
-                </ul>
+                </ul> */}
             </div>
     </>
   )
