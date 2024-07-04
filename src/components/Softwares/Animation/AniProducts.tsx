@@ -64,12 +64,13 @@ function AniProduct() {
       /> 
       <p className="text-sm text-[#636468] my-3 text-justify">{cards.description}</p>
       <ScheduleBtn value={cards.value} styleButton={`${cards.styleSchedule} text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none`} />
-      {/* <button  className={`${bgColorSchedule} text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none`}>
-        Schedule a Demo
-      </button> */}
+      
       
      <Link  href={cards.link} > 
-     <button className={` ${bgColorRead} text-xs hover:ring-2 py-2 px-5 font-medium rounded-lg  focus:outline-none duration-500`}>Read More</button></Link>
+     <button className={` ${bgColorRead} text-xs hover:ring-2 py-2 px-5 font-medium rounded-lg  focus:outline-none duration-500`}>
+      Read More
+      </button>
+      </Link>
       </div>
       <div  className={`lg:mt-0 mt-5 w-full lg:w-[45%] flex justify-center ${cards.id % 2 === 0 ? 'order-1' : 'order-0'} `}  >
         <Image

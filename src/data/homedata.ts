@@ -169,6 +169,7 @@ export const productData = [
 
     {
         "id": 1,
+        "value": "S&D Next",
         "img": "/assets/images/Products/sndnext.svg",
         "description": "Cloud Tenants Sales & Distribution Software provides tools and features to enhance Sales Efficiency, Track Leads and Opportunities, Manage Customer Relationships, Automate Sales Tasks, and Analyze Sales & Distribution Performance....",
         "gridImg": "/assets/images/Products/sndnextgrid.png",
@@ -177,6 +178,7 @@ export const productData = [
         "link": "/softwares/snd-next"    },
     {
         "id": 2,
+        "value": 'WMS Extended',
         "img": "/assets/images/Products/wmsextend.svg"  ,
         "description": "Cloud Tenants WMS Extended is a highly Efficient & Effective software to manage Inventory and Stock movement in the Warehouse. The Software is designed to manage extensive operations of Warehouse, including Inventory Management, Storage, and Movement of goods....",
         "gridImg": "/assets/images/Products/wmsextendgridRightSide.png",
@@ -185,6 +187,7 @@ export const productData = [
         "link": "/softwares/wms"    },
     {
         "id": 3,
+        value: "POS Xtreme",
         "img": "/assets/images/Products/pos.svg",
         "description": "Cloud Tenants Leading Point of Sale Solution for Small Retail Shops to Chain of Supermarkets. It serves as the Central Hub for processing Sales, Managing Inventory, and providing an overall Seamless Customer Experience....",
         "gridImg": "/assets/images/Products/posgrid.png",
@@ -194,6 +197,7 @@ export const productData = [
     },
     {
         "id": 4,
+        value: "POS Select",
         "img": "/assets/images/Products/poss.svg",
         "description": "Cloud Tenants Leading Point of Sale Solution for Food Kiosk to Fine Dining Restaurants Chain. POS Select, is designed specifically for the food service industry to manage Restaurant Operations, Streamline Order Processing, and Enhancing Overall Dining Experience....",
         "gridImg": "/assets/images/Products/possgrid.png",

@@ -54,7 +54,7 @@ function NavbarClient()  {
                 <Link href={'/softwares'} className='hover:text-white active:hover:text-white'><li>Softwares</li></Link>
                 <Link href={'/customers'} className='hover:text-white active:hover:text-white'><li>Customers</li></Link>
                 <Link href={'/alliances'} className='hover:text-white active:hover:text-white'><li>Alliances</li></Link>
-                <li className='group  flex gap-1'><DropMenu /></li>
+                <li className='group  flex items-start gap-1'><DropMenu /></li>
                 <Link href={'/demo'} className='hover:text-white active:hover:text-white'>
                   <li className='hover:translate-y-1 group transition ease-in-out duration-500  flex gap-1'>
                   <div className='flex justify-end text-nowrap'>

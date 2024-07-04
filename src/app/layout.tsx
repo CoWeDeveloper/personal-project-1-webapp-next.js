@@ -5,7 +5,7 @@ import "./globals.css";
 import NavbarServer from "@/components/NavbarServer";
 import Footer from "@/components/Footer";
 import Loading from "@/app/loading"
-
+import MoveToTop from "./moveToTop";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,8 +27,8 @@ export default function RootLayout({
         <NavbarServer />
         <Suspense fallback={<Loading />}>
         {children}
-</Suspense>
-
+        </Suspense>
+        <MoveToTop />
         <Footer />
         </section>
       </body>

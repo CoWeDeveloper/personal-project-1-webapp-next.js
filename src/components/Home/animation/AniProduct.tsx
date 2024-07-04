@@ -1,5 +1,6 @@
 "use client";
 // import Image from "next/image"
+import Link from "next/link";
 import Image from "next/image";
 import { easeIn, motion } from "framer-motion";
 import Arrow from "../../../../public/assets/images/Products/productarrow.svg";
@@ -64,8 +65,13 @@ function AniProduct() {
         alt="Product Image"
       />
       <p className=" text-sm text-[#636468] my-3 text-justify">{product.description}</p>
+      <Link href={`/demo/${product.value}#schedule`}>
       <button className={`${bgColorSchedule} text-white transition-all duration-300 text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none`} >Schedule a Demo</button>
-      <button className={` ${bgColorRead} text-xs hover:ring-2 py-2 px-5 font-medium rounded-lg  focus:outline-none duration-500`}>Read More</button>
+      </Link>
+      <Link  href={product.link}>
+      <button className={` ${bgColorRead} text-xs hover:ring-2 py-2 px-5 font-medium rounded-lg  focus:outline-none duration-500`}>
+        Read More</button>
+      </Link>
       </div>
       <div  className="lg:mt-0 mt-5 w-full lg:w-[45%] flex justify-center"  >
         <Image
@@ -111,9 +117,11 @@ function AniProduct() {
   )
 }
   )}
+  <Link href='./softwares'>
 <div className="flex justify-center mt-10">
 <button className="bg-[#22B8EE] hover:bg-[#1B8FBF] text-white text-xs hover:text-sky-100 rounded-lg px-5 py-2 mr-2 font-medium focus:outline-none">Seem More Products</button>
 </div>  
+  </Link>
     </>
   )
 }

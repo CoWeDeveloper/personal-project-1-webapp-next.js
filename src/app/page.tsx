@@ -1,16 +1,8 @@
-// component import
-// import HeroSection from "../components/home/HeroSection";
-// import About from "../components/home/About";
-// import OurServices from "@/components/home/Services";
-// import OurEdges from "@/components/home/Edges";
-// import Application from  "@/components/home/Application";
-// import Product from "@/components/home/Product"
-// import Customers from "@/components/home/Customers";
+
 import { HeroSection, About, OurServices, OurEdges, Application, Product, Customers } from "@/components/home/index";
 
-
 function Home() {
-  
+
   return (
     <main className="relative">
     <HeroSection />
@@ -20,6 +12,11 @@ function Home() {
     <Application />
     <Product />
     <Customers />
+
+    <div className="fixed bottom-8 right-8">
+  
+    </div>
+
     </main>
   );
 }

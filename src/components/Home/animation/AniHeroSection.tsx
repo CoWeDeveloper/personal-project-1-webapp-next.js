@@ -64,7 +64,7 @@ function AnimaHeroSection() {
       </motion.p>
       <motion.div variants={fadeInButtons}>
         <Link href={"./demo"}>
-          <button className="text-white font-bold-400 rounded-lg py-3 px-6 border hover:bg-white hover:text-black">
+          <button className="text-white font-bold-400 rounded-lg py-3 px-6 border duration-700 transition-all hover:bg-white hover:text-black">
             Request Demo
           </button>
         </Link>

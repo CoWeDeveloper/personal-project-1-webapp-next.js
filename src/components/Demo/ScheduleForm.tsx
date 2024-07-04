@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useFormik } from "formik";
 import { demoSchema } from "./schema";
 import { useToast } from "@/components/ui/use-toast";
- 
+import { useRouter } from 'next/navigation';
 import Select from 'react-select';
 import  sendEmail from "../services/sendEmail";
 import send from "../../../public/assets/icons/Demo/send.svg";
@@ -117,6 +117,8 @@ const options: any = [
      setFieldValue('solutions', selectedOptions);
     };
 
+
+    const router = useRouter();
     // for catch all segment. It find the value which ever "Schedule demo" button is pressed
       useEffect(() => {
         if (product) {
@@ -125,9 +127,13 @@ const options: any = [
             setFieldValue ('solutions' ,matchingOption);
           }
         }
+        const { pathname, hash } = window.location;
+        console.log(hash)
+        if (hash === '#schedule') {
+          document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth' });
+        }
 
       }, [product]);
-
 
   return (
     <>
