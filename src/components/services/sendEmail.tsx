@@ -1,5 +1,6 @@
 async function sendEmail (data: any){
   
+  console.log(data);
     const response = await fetch ('https://api-ct-common.azurewebsites.net/api/Email', {
       method: 'POST',
       headers: {

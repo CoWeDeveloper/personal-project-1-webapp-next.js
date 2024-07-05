@@ -67,8 +67,11 @@ const options: any = [
       initialValues: initialValues,
       validationSchema: demoSchema,
       onSubmit: async (values, { setSubmitting, resetForm }) => {
-        console.log(`payload data `, values);
-        
+        // console.log(`payload data `, values);
+        console.log("Checking the value ",values.solutions); // Log the array to verify its structure
+
+        const namesString = values.solutions.map(item => item.value).join(', ');
+        console.log("nameString:", namesString);
         const formData = {
           CompanyCode: 61,
           OfficeCode: 100061,
@@ -84,26 +87,24 @@ const options: any = [
             Country: values.country,
             Company: values.company,
             Industry: values.industry,
-            Solution: values.solutions,
+            Solution: namesString, 
             Message: values.message
           }
         };
         try {
             const response = await sendEmail( formData);
-            ()=>{
+            
               toast({title: "Form has been submitted Successfully",
                 description: "We will contact you shortly",
                      variant: "default"
               });
-            }
+            
             console.log(response);
         } catch (error) {
-          ()=>{
             toast({title: "Failed to send email!",
               description: "There is a problem with your request",
          
             });
-          }
             console.error(`The error is ${error}`)
         } finally {
             setSubmitting(false);
