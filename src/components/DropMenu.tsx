@@ -13,13 +13,12 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 // import icons
-import { ChevronDown } from "lucide-react";
+import { Newspaper, Images } from "lucide-react";
 import career from "../../public/assets/icons/DropMenu/career.svg";
 import faq from "../../public/assets/icons/DropMenu/faq.svg";
-import styles from "@/styles/dropmenu.module.css";
+
 
 function DropMenu() {
-  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
       <div className="relative inline-block">
@@ -30,26 +29,28 @@ function DropMenu() {
                 Resources
               </NavigationMenuTrigger>
 
-              <NavigationMenuContent className="p-1 bg-white text-black transition-all duration-600">
+              <NavigationMenuContent className="px-2 py-1 bg-white text-black transition-all duration-600">
                 <NavigationMenuLink href="careers">
-                  <div className="flex items-center rounded-lg w-28 px-2  py-1.5 transition-all duration-700 justify-between hover:bg-gray-300">
+                  <div className="flex items-center rounded-lg w-40 px-2 py-1 transition-all duration-700 justify-start hover:bg-gray-300">
+                    <Image src={career} className="mx-2" alt="career" width={24} height={24} />
                     Career
-                    <Image src={career} alt="career" width={24} height={24} />
                   </div>
                 </NavigationMenuLink>
                 <NavigationMenuLink>
-                  <div className="flex items-center px-2 rounded-lg py-2 justify-between transition-all duration-700  hover:bg-gray-300">
+                  <div className="flex items-center px-2 rounded-lg py-1 transition-all duration-700  hover:bg-gray-300">
+                    <Newspaper  className="mx-2 text-stone-900" strokeWidth={1} />
                     Blogs
                   </div>
                 </NavigationMenuLink>
                 <NavigationMenuLink href="faq">
-                  <div className="flex items-center px-2 rounded-lg py-2 justify-between  hover:bg-gray-300 transition-all duration-700">
+                  <div className="flex items-center px-2 rounded-lg py-1  hover:bg-gray-300 transition-all duration-700">
+                    <Image src={faq} alt="career" className="mx-2.5" width={20} height={20} />
                     FAQ's
-                    <Image src={faq} alt="career" width={20} height={20} />
                   </div>
                 </NavigationMenuLink>
                 <NavigationMenuLink>
-                  <div className="flex items-center px-2 rounded-lg py-2 justify-between  hover:bg-gray-300 transition-all duration-700">
+                  <div className="flex items-center px-2 rounded-lg py-1  hover:bg-gray-300 transition-all duration-700">
+                  <Images  className="mx-2 text-stone-900" strokeWidth={1}  /> 
                     Gallery
                   </div>
                 </NavigationMenuLink>

@@ -44,7 +44,7 @@ function AniCustomers() {
         
         >
           <Image
-            className="w-20 hover:scale-[2] transition-all"
+            className="w-20 hover:scale-[2]  transition-all"
             src={customersData.logo}
             title={customersData.alt}
             alt={customersData.alt}

@@ -1,11 +1,38 @@
 "use client";
-import { motion } from "framer-motion";
+import Image from 'next/image';
+import Loading from "@/app/loading";
+import { motion } from "framer-motion"
 import ExploreBtn from "../../ExploreBtn";
+import { useState, useEffect } from 'react';
 
 
 function AniHeroSection() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new window.Image();
+    img.src = '/assets/images/Alliance/allianceHeader.webp';
+    img.onload = () => setIsLoaded(true);
+  }, []);
+
   return (
     <>
+    {!isLoaded && (
+      <Loading />
+     )}
+     <div className={`absolute bg-gray-900 inset-0 w-full h-full transition-opacity duration-500`}>
+       <Image
+         src="/assets/images/Alliance/allianceHeader.webp"
+         alt="Career Header"
+         layout="fill"
+         objectFit="cover"
+         quality={75}
+         priority
+         onLoadingComplete={() => setIsLoaded(true)}
+       />
+       <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-50"></div>
+     </div>
+     <div className="relative z-10 w-full">
      <motion.div
         initial="hidden"
         whileInView="show"
@@ -21,6 +48,7 @@ function AniHeroSection() {
         <h1  className="drop-shadow-2xl text-white font-black text-5xl mb-4" >Join Our Mission & Experience The Vision.</h1>
         <ExploreBtn Id={"CompAlliances"} />
       </motion.div> 
+      </div>
     </>
   )
 }
