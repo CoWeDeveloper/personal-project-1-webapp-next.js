@@ -1,9 +1,12 @@
 
 import { HeroSection, About, OurServices, OurEdges, Application, Product, Customers } from "@/components/home/index";
 
+
 function Home() {
 
   return (
+<>
+
     <main className="relative">
     <HeroSection />
     <About />
@@ -18,6 +21,7 @@ function Home() {
     </div>
 
     </main>
+</>
   );
 }
 

@@ -71,7 +71,7 @@ const options: any = [
         console.log("Checking the value ",values.solutions); // Log the array to verify its structure
 
         const solutionString : string = values.solutions.map(item => item.value).join(', ');
-        console.log("nameString:", namesString);
+      
         const formData = {
           CompanyCode: 61,
           OfficeCode: 100061,

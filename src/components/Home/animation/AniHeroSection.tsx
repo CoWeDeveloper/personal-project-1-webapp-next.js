@@ -68,9 +68,11 @@ function AnimaHeroSection() {
             Request Demo
           </button>
         </Link>
+        <Link href={"./softwares"}>
         <button className="text-blue-500 hover:text-blue-700	hover:translate-x-3	duration-700 transition-all font-bold rounded-lg py-2 px-5 border-hidden ">
           Explore More <ArrowRightFromLine className="inline" />
         </button>
+        </Link>
       </motion.div>
     </motion.div>
   );

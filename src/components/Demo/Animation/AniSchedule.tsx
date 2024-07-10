@@ -41,7 +41,7 @@ function AniSchedule({ product }: { product?: { product: string[] } }) {
             visible: { opacity: 1, x: "0%" },
             hidden: { opacity: 0, x: "-50%" },
           }}
-          className="text-[#636468] mt-1 xs:order-2 lg:order-1 xs:flex-col xs:justify-center xs:mx-auto xs:pt-5 lg:mx-0"
+          className="text-[#636468] mt-1 relative  xs:order-2 lg:order-1 xs:flex-col xs:justify-center xs:mx-auto xs:pt-5 lg:mx-0"
         >
           <h2 className="text-black text-xl font-semibold">
             For Further Assistance
@@ -90,7 +90,7 @@ function AniSchedule({ product }: { product?: { product: string[] } }) {
             visible: { opacity: 1, x: "0%" },
             hidden: { opacity: 0, x: "50%" },
           }}
-          className="lg:order-2 xs:order-1 xs:w-full xs:mx-5 lg:w-auto lg:mx-0"
+          className="lg:order-2 relative  xs:order-1 xs:w-full xs:mx-5 lg:w-auto lg:mx-0"
         >
           {product ? <ScheduleForm product={product} /> : <ScheduleForm />}
         </motion.div>
