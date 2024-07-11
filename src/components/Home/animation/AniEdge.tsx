@@ -25,7 +25,7 @@ function AnimaEdge() {
         hidden: { opacity: 0, x: "-50%"}
     }}
     className="z-0 w-full  col-span-6  lg:ml-14 sm:ml-4 md:ml-2">
-          <h2 className=" cursor-pointer text-4xl leading-none md:text-6xl xl:text-8xl font-semibold text-[#636468] tracking-tight ">
+          <h2 className=" cursor-pointer text-4xl leading-none md:text-7xl xl:text-8xl font-semibold text-[#636468] tracking-tight ">
             OUR EDGES
           </h2>
     </motion.div>

@@ -36,7 +36,7 @@ function AniAlliance({ data }: any) {
     
     {data.logo.map((logo: any) => (
         
-        <Image key={logo.id} className={`mx-14 mt-10 ${data.logo.length === 4 ? 'w-56' : 'w-64'}`} src={logo.logoImg} alt={logo.alt} width={100} height={100} />
+        <Image key={logo.id} className={`mx-14 mt-10 xs:mb-14 ${data.logo.length === 4 ? 'w-56' : 'w-64'}`} src={logo.logoImg} alt={logo.alt} width={100} height={100} />
 
  
                 ))}

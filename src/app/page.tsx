@@ -14,7 +14,7 @@ function Home() {
     <OurEdges /> 
     <Application />
     <Product />
-    <Customers />
+    <Customers /> 
 
     <div className="fixed bottom-8 right-8">
   

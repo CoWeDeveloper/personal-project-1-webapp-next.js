@@ -40,7 +40,7 @@ const cardAnimat = {
     visible: {scale: 1, opacity: 1 },
     hidden: { scale: 0.4, opacity: 0}
    }}
-   className="tracking-wide text-white text-3xl font-black mb-14">
+   className="tracking-wide text-white text-3xl font-black mb-14 ">
     MOBILE APPLICATIONS
     </motion.h3>
             <motion.div 

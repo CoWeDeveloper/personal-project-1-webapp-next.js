@@ -9,7 +9,7 @@ function AnimaAbout() {
   return (
     <>
     
-    <div className="z-0 w-full col-span-5 ml-14 sm:mx-auto">
+    <div className="z-0 w-full col-span-5 ml-14 sm:mx-auto relative overflow-hidden">
 
     <motion.div 
         initial="hidden"
@@ -35,7 +35,7 @@ function AnimaAbout() {
         </div>
     <div 
 
-    className="z-0 w-full col-span-7">
+    className="z-0 w-full col-span-7  relative overflow-hidden">
       <motion.div 
               initial="hidden"
               whileInView="visible"

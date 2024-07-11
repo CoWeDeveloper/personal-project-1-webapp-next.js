@@ -50,14 +50,14 @@ function AniValues() {
              variants={staggerContainer}
              initial="hidden"
              whileInView="show"
-             viewport={{ once: true, amount: 1 }}
+             viewport={{ once: true, amount: 0.5 }}
             className="flex flex-wrap justify-center items-center">
 
             {
               valueData.map((valueData)=>{
                 return(
                   
-                  <motion.div key={valueData.id} className='pt-5 w-[230px] max-sm:pb-1 lg:pb-5 mx-5 '>
+                  <motion.div key={valueData.id} className='pt-5 xs:w-[200px] md:w-[230px] max-sm:pb-1 lg:pb-5 xs:mx-0 sm:mx-1 md:mx-5 '>
                       <div  className="flex flex-wrap justify-center m-1">
                      <div className="  pt-2 pr-2  bg-white rounded-lg shadow-md">
                           <div  className="bg-[#f1f1f1] h-56 py-6 px-5 ">

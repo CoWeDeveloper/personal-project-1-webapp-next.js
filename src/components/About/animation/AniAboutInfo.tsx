@@ -45,7 +45,7 @@ function AniAboutInfo() {
      variants={staggerContainer}
      initial="hidden"
      whileInView="show"
-     viewport={{ once: true, amount: 1 }}
+     viewport={{ once: true, amount: 0.5 }}
      className='max-w-screen-lg mx-auto px-5 py-10'>
 
         <div 

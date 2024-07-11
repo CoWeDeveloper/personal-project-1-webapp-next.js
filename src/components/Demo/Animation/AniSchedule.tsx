@@ -88,7 +88,7 @@ function AniSchedule({ product }: { product?: { product: string[] } }) {
           }}
           variants={{
             visible: { opacity: 1, x: "0%" },
-            hidden: { opacity: 0, x: "50%" },
+            hidden: { opacity: 0, x: "20%" },
           }}
           className="lg:order-2 relative  xs:order-1 xs:w-full xs:mx-5 lg:w-auto lg:mx-0"
         >
