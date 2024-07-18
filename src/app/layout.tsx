@@ -7,7 +7,8 @@ import Loading from "@/app/loading";
 import MoveToTop from "./moveToTop";
 import "./globals.css";
 import Script from "next/script";
-
+import Head from "next/head";
+import metaImg from "../../public/assets/images/metaLogoImg.png";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,28 @@ export const metadata: Metadata = {
     template: "%s - Cloud Tenants",
   },
   description: "Cloud Tenants offers Mobile applications and Web-based solutions. We specialize in Sales and Distribution, POS, and ERP Modules. Book A Demo Now.",
+  
+  openGraph: {
+    title: 'Cloud Tenants - Sales & Distribution and ERP Solutions Provider',
+    description: 'Cloud Tenants offers Mobile applications and Web-based solutions. We specialize in <b>Sales and Distribution, POS, and ERP Modules. Book A Demo Now.',
+    url: 'https://www.cloudtenants.com',
+    siteName: 'cloudtenants',
+    images: [
+      {
+        url: metaImg.src, // Dynamic og route
+        width: 800,
+        height: 600,
+        alt: 'Cloud tenants logo',
+      },
+      {
+        url: metaImg.src, // Dynamic og route
+        width: 1800,
+        height: 1600,
+        alt: 'Cloud tenants logo',
+      },
+    ],
+    type: 'website',
+  },
 };
 
 const schemaWebsite = {
@@ -117,7 +140,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
- 
+ <Head>
+ <Script async src="https://www.googletagmanager.com/gtag/js?id=G-S8WH9ZYXKL"></Script>
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html:`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-S8WH9ZYXKL');
+            `,
+          }}
+        />
+ </Head>
       <body className={inter.className}>
         <section className="m-0 p-0 scroll-smooth box-border">
           <NavbarServer />
@@ -127,6 +164,7 @@ export default function RootLayout({
           <MoveToTop />
           <Footer />
         </section>
+  
         {/* Rendering schema markup  */}
         <Script
         type="application/ld+json"

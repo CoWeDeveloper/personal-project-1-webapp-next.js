@@ -1,6 +1,6 @@
 import { HeroSection, Products } from "@/components/softwares/index";
 
-function Software() {
+function Softwares() {
   return (
     <>
       <HeroSection />
@@ -9,4 +9,4 @@ function Software() {
   )
 }
 
-export default Software;
+export default Softwares;

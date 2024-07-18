@@ -1,6 +1,6 @@
 import { HeroSection, Support} from "@/components/support/index";
 
-function technologies() {
+function Supports() {
   return (
     <>
      <HeroSection />
@@ -9,4 +9,4 @@ function technologies() {
   )
 }
 
-export default technologies
+export default Supports

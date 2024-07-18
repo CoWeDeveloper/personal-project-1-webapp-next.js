@@ -1,7 +1,7 @@
 import { HeroSection, BoardProcess } from "@/components/boarding/index";
 
 
-function page() {
+function Boarding() {
   return (
     <div>
         <HeroSection />
@@ -10,4 +10,4 @@ function page() {
   )
 }
 
-export default page
+export default Boarding

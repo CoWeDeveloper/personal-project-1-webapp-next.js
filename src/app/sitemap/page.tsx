@@ -1,6 +1,6 @@
 import { HeroSection, SitemapInfo } from "@/components/sitemap/index";
 
-function page() {
+function Sitemap() {
   return (
     <>
       <HeroSection />
@@ -9,4 +9,4 @@ function page() {
   )
 }
 
-export default page
+export default Sitemap

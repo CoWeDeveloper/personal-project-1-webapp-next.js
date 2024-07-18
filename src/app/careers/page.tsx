@@ -1,6 +1,6 @@
 import { HeroSection, Vaccany } from "@/components/careers/index";
 
-function page() {
+function Career() {
   return (
     <>
       <HeroSection />
@@ -9,4 +9,4 @@ function page() {
   );
 }
 
-export default page;
+export default Career;

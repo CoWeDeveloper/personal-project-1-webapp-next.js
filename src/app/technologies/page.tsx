@@ -1,6 +1,6 @@
 import { HeroSection, ComponentTech} from "@/components/technologies/index"
 
-function technologies() {
+function Technologies() {
   return (
     <>
      <HeroSection />
@@ -9,4 +9,4 @@ function technologies() {
   )
 }
 
-export default technologies
+export default Technologies

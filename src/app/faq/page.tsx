@@ -1,6 +1,6 @@
 import Faq from "@/components/faq/Faq";
 
-function Network() {
+function Faqs() {
   return (
     <>
     <Faq />
@@ -8,4 +8,4 @@ function Network() {
   )
 }
 
-export default Network;
+export default Faqs;
