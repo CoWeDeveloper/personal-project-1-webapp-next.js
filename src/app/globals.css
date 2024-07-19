@@ -45,6 +45,11 @@ body {
     h-fit object-contain px-[8%] mx-auto transition-all duration-300 ease-linear 
     hover:invert-[1%] hover:sepia-[5%] hover:saturate-[100%] hover:hue-rotate-[314deg] hover:brightness-[110%] hover:contrast-[80%]
   }
+  .blogIcon{
+    @apply  w-6 
+    group-hover:brightness-[0] group-hover:saturate-[100%] group-hover:invert-[99%] group-hover:sepia-[38%] group-hover:hue-rotate-[184deg] group-hover:contrast-[101%]
+
+  }
   .custom-shadow {
     @apply drop-shadow-lg; 
     text-shadow: 20 10 30px hsla(0, 0%, 0%, 0.4); 

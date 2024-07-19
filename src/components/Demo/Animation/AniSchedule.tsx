@@ -27,7 +27,7 @@ function AniSchedule({ product }: { product?: { product: string[] } }) {
       >
         Schedule a Demo
       </motion.h1>
-      <div className="flex flex-wrap justify-between ">
+      <div className="flex flex-wrap justify-between overflow-hidden ">
         <motion.div
           initial="hidden"
           whileInView="visible"
