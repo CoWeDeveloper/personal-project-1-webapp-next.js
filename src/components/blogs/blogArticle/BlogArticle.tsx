@@ -22,20 +22,20 @@ function blogsArticle() {
       </div>
     </div>
     {/* body */}
-    <div className="w-full h-screen bg-white">
-        <div className="flex">
+    <div className="w-full h-screen bg-white py-14  sm:px-10 px-4">
+        <div className="flex justify-center">
           <div>
-             <ul className="space-y-2 w-fit">
-              <li className="rounded-full p-3 bg-stone-200 grouphover:bg-sky-500 hover:cursor-pointer duration-500 transition-all ">
+             <ul className="space-y-3 sm:w-20 w-16">
+              <li className="rounded-full p-3 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-fit">
                 <Image
                src="/assets/icons/Blogs/shareIcon.svg"
                alt="Share icons"
                width={100}
                height={100}
-               className="blogIcon w-fit"
+               className="blogIcon"
               />
               </li>
-              <li className="rounded-full p-3 bg-stone-200 grouphover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-fit">
+              <li className="rounded-full p-3 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-fit">
                 <Image
                src="/assets/icons/Blogs/twitterIcon.svg"
                alt="Share icons"
@@ -44,19 +44,39 @@ function blogsArticle() {
                className="blogIcon "
               />
               </li>
-              <li>facebook</li>
-              <li>linkedin</li>
+              <li className="rounded-full p-3 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-fit">
+                <Image
+               src="/assets/icons/Blogs/facebookIcon.svg"
+               alt="Share icons"
+               width={100}
+               height={100}
+               className="blogIcon "
+              />
+              </li>
+              <li className="rounded-full p-3 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-fit">
+                <Image
+               src="/assets/icons/Blogs/linkedinIcon.svg"
+               alt="Share icons"
+               width={100}
+               height={100}
+               className="blogIcon "
+              />
+              </li>
              </ul>
 
           </div>
-          <div>
+          <div >
           Contrary to popular belief, Lorem Ipsum is not simply random text. 
           It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
            Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, 
            <br/>
            <br/>
-           <br/>
-           consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32
+           consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical    It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+           Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,  literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
+            <br/>
+            <br/>
+           "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.    It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+           Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,  This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32
           </div>
         </div>
     </div>
