@@ -7,7 +7,7 @@ import WhiteCloudBackground from "../../../public/assets/images/WhiteCloudBackgr
 function About() {
   return (
     <>
-      <section className="bg-white w-full -z-10  h-fit">
+      <section className="bg-white w-full -z-10  h-fit overflow-hidden">
         {/* background Image of cloud */}
         <div className=" relative grid max-w-screen-xl lg:grid-cols-12 mx-auto px-4 py-8 lg:py-16 items-center md:h-screen">
           <Image

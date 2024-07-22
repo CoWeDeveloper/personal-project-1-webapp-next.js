@@ -70,7 +70,7 @@ const options: any = [
         // console.log(`payload data `, values);
         console.log("Checking the value ",values.solutions); // Log the array to verify its structure
 
-        const solutionString : string = values.solutions.map(item => item.value).join(', ');
+        const solutionString : string = values.solutions.map((item : any) => item.value).join(', ');
       
         const formData = {
           CompanyCode: 61,

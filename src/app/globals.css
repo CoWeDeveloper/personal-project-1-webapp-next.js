@@ -46,7 +46,7 @@ body {
     hover:invert-[1%] hover:sepia-[5%] hover:saturate-[100%] hover:hue-rotate-[314deg] hover:brightness-[110%] hover:contrast-[80%]
   }
   .blogIcon{
-    @apply  w-6
+    @apply  sm:w-6 w-4 
     group-hover:brightness-[0] group-hover:saturate-[100%] group-hover:invert-[99%] group-hover:sepia-[38%] group-hover:hue-rotate-[184deg] group-hover:contrast-[101%]
 
   }

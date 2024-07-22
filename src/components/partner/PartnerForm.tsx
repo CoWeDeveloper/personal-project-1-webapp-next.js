@@ -15,10 +15,10 @@ const initialValues = {
   message: ''
  }   
 
-const { toast } = useToast()
-
-function PartnerForm(){
-
+ 
+ function PartnerForm(){
+   
+  const { toast } = useToast()
   const { handleSubmit, handleBlur, handleChange, values, errors, touched } = useFormik({
     initialValues: initialValues,
     validationSchema: partnerSchema,
@@ -44,20 +44,19 @@ function PartnerForm(){
       };
       try{
          const response = await sendEmail(formData);
-         ()=>{
+         
           toast({title: "Form has been submitted Successfully",
             description: "We will contact you shortly",
                  variant: "default"
           });
-        }
+        
          console.log(response);
       } catch(error){
-        ()=>{
+        
           toast({title: "Failed to send email!",
             description: "There is a problem with your request",
        
           });
-        }
         console.error(`The error is ${error}`)
       } finally{
         setSubmitting(false);
@@ -71,14 +70,13 @@ function PartnerForm(){
           <form onSubmit={handleSubmit}>
           
           <div className="flex justify-center items-center mb-4 mt-2">
-            <div className="relative w-full mr-4">
+            <div className="relative w-full">
              <input 
              value={values.name}
              onChange={handleChange}
              onBlur={handleBlur}
              type="text" id="name" name="name" placeholder=" "
-             className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-600 bg-transparent rounded-lg
-              
+             className="block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-600 bg-transparent rounded-lg 
               border-2 border-gray-400 focus:ring-0 focus:text-black focus:font-medium focus:border-gray-900 peer focus:outline-none"/>
               <label htmlFor="name" 
               className="absolute text-sm text-gray-500 duration-300 transform

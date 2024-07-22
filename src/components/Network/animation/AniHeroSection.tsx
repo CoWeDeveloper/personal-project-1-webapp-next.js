@@ -35,7 +35,7 @@ function AniHeroSection() {
     <motion.div
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true}}
+    viewport={{ once: true, amount: 0.5}}
     transition={{ 
         duration: 1.2,
         ease: [0.42, 0, 0.58, 1]

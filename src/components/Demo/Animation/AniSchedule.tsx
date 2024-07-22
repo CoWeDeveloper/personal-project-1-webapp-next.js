@@ -27,7 +27,7 @@ function AniSchedule({ product }: { product?: { product: string[] } }) {
       >
         Schedule a Demo
       </motion.h1>
-      <div className="flex flex-wrap justify-between overflow-hidden ">
+      <div className="flex flex-wrap justify-between">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -56,7 +56,7 @@ function AniSchedule({ product }: { product?: { product: string[] } }) {
             />
             <Link href={"sales@cloudtenants.com"}>sales@cloudtenants.com</Link>
           </div>
-          <div className="flex items-center text-sm  font-semibold my-4">
+          <div className="flex items-center text-sm font-semibold my-4">
             <Image
               src={phone}
               className="mr-2 text-[#636468]"
@@ -90,7 +90,7 @@ function AniSchedule({ product }: { product?: { product: string[] } }) {
             visible: { opacity: 1, x: "0%" },
             hidden: { opacity: 0, x: "20%" },
           }}
-          className="lg:order-2 relative  xs:order-1 xs:w-full xs:mx-5 lg:w-auto lg:mx-0"
+          className="lg:order-2 relative xs:order-1 xs:w-full xs:mx-5 lg:w-auto lg:mx-0"
         >
           {product ? <ScheduleForm product={product} /> : <ScheduleForm />}
         </motion.div>

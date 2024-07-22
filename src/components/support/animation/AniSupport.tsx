@@ -58,7 +58,7 @@ function AniSupport({data}: any) {
              variants={staggerContainer}
              initial="hidden"
              whileInView="show"
-             viewport={{ once: true, amount: 1 }}
+             viewport={{ once: true, amount: 0.5 }}
              className="text-center flex flex-col justify-center items-center">
               <motion.h1 
               variants={fadeInLeft}
@@ -73,7 +73,7 @@ function AniSupport({data}: any) {
               <div
               className="duration-500 group hover:scale-110 flex-wrap my-4 justify-center items-center"
               >
-              <div className="   my-2 mx-10 w-56 px-120 py-4 flex flex-wrap justify-center border-2 border-gray-400 rounded-xl">
+              <div className="my-2 mx-10 w-56 px-120 py-4 flex flex-wrap justify-center border-2 border-gray-400 rounded-xl">
                 <Image
                   className="group-hover:scale-x-[-1] transition ease-in-out duration-500 justify-center w-20 h-30 m-4"
                   width={100}
@@ -82,7 +82,7 @@ function AniSupport({data}: any) {
                   alt={card.alt}
                   />
               </div>
-              <h3 className="flex font-light  justify-center items-center">
+              <h3 className="flex font justify-center items-center">
                 {card.title}
               </h3>
            

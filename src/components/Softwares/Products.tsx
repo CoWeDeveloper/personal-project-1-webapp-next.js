@@ -5,7 +5,7 @@ function Products() {
  
     return (
       <section id="Products" className="w-full h-fit bg-white">
-        <div className="py-8 px-4 mx-auto  max-w-screen-xl  sm:py-16 lg:px-6">
+        <div className="py-8 px-4 mx-auto  max-w-screen-xl  sm:py-16 lg:px-6 overflow-hidden">
      <AniProducts />
 <div className="flex justify-center mt-10">
 <Link href="./softwares/om">

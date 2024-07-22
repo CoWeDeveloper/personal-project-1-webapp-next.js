@@ -57,7 +57,7 @@ function AniComponentTech({ data }: any) {
              variants={staggerContainer}
              initial="hidden"
              whileInView="show"
-             viewport={{ once: true, amount: 1 }}
+             viewport={{ once: true, amount: 0.5 }}
           className="text-center flex flex-col justify-center items-center">
 
             <motion.h1

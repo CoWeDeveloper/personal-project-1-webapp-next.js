@@ -9,7 +9,7 @@ function Services() {
         const bgColor = index % 2 == 0 ? "bg-white" : "bg-gray";
      
         return (
-          <section id="Services" key={networkData.id} className={` ${bgColor} w-full h-fit`}>
+          <section id="Services" key={networkData.id} className={` ${bgColor} w-full h-fit overflow-hidden`}>
            <AniServices networkData={networkData  } /> 
           </section>
         );
