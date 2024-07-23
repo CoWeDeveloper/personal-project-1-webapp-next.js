@@ -38,7 +38,7 @@ function NavbarClient()  {
     <> 
     <header 
     className={`absolute w-full mx-auto justify-center px-0 lg:px-0 xl:px-16 2xl:px-36 py-2 z-50
-      ${pathname == "/faq" ? "bg-[#211c5d] z-20" : "" }
+      ${pathname == "/faq"|| "/admin" ? "bg-[#211c5d] z-20" : "" }
      ${scrollUp ? "bg-[#211c5d] sticky top-0 z-20" : "" }
    `} >
         <nav className='flex m-auto items-center lg:justify-around lg:ml-32 mx-5 justify-between'> 
