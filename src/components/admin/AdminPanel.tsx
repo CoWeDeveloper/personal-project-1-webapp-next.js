@@ -7,14 +7,14 @@ function AdminPanel() {
  <header className='flex justify-between items-centre mb-14'>
     <div className="text-stone-600 text-4xl font-semibold">Manage Posts</div>
     <div className="space-x-4 flex items-center"> 
-    <div className="flex items-center rounded-xl relative p-1.5 bg-white border-[1px] border-[#5A5A5A]">
+    <div className="input__search">
     <Image
-          src="./assets/icons/Admin/search.svg"
-          alt="Plus Icon"
-          width={100}
-          height={100}
-          className="w-5 mx-2"
-           />
+         src="./assets/icons/Admin/search.svg"
+         alt="Plus Icon"
+         width={100}
+         height={100}
+         className="w-5 mx-2"
+         />
     <input type="text" placeholder="Search" className="outline-none w-full mx-auto"/>
 
     </div>
@@ -29,6 +29,7 @@ function AdminPanel() {
            />
            Add Post
            </button>
+           
         <button className="flex items-center bg-[#2F7EAA] hover:bg-[#2a6a8d] text-white rounded-lg px-5 py-1.5">
         <Image
           src="./assets/icons/Admin/managePost.svg"

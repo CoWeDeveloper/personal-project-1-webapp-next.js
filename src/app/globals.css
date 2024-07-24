@@ -47,10 +47,32 @@ body {
   }
   .blogIcon{
     @apply  sm:w-6 w-4 
-    group-hover:brightness-[0] group-hover:saturate-[100%] group-hover:invert-[99%] group-hover:sepia-[38%] group-hover:hue-rotate-[184deg] group-hover:contrast-[101%]
+        group-hover:brightness-[0]   group-hover:saturate-[100%] group-hover:invert-[99%] group-hover:sepia-[38%] group-hover:hue-rotate-[184deg] group-hover:contrast-[101%]
 
   }
-  .custom-shadow {
+
+.input__search{
+    @apply flex items-center border-gray-300 border-[1.5px] focus-within:border-[#2a6a8d] py-1.5 px-2 bg-white rounded-xl;
+  }
+
+.input__search img {
+     @apply focus-within:bg-blue-500 focus-within:text-[#3176b1] active:text-[#3176b1];
+    filter: invert(67%) sepia(11%) saturate(257%) hue-rotate(177deg) brightness(85%) contrast(88%)
+}
+
+.input__search:focus-within img {
+    filter: brightness(0) saturate(100%) invert(38%) sepia(19%) saturate(6809%) hue-rotate(179deg) brightness(86%) contrast(63%);
+}
+
+.viewMore2{
+    filter: invert(67%) sepia(11%) saturate(257%) hue-rotate(177deg) brightness(85%) contrast(88%)    
+}
+
+.viewMore1{
+    filter: brightness(0) saturate(100%) invert(38%) sepia(19%) saturate(6809%) hue-rotate(179deg) brightness(86%) contrast(63%);
+}
+
+.custom-shadow {
     @apply drop-shadow-lg; 
     text-shadow: 20 10 30px hsla(0, 0%, 0%, 0.4); 
   }
