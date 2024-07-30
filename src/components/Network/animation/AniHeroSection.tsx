@@ -45,7 +45,7 @@ function AniHeroSection() {
       hidden: { opacity:0.1, y: 300 }
     }}
     className='mx-auto max-w-screen-lg lg:px-20 md:px-16 sm:px-5 text-center'>
-        <h1  className={` drop-shadow-2xl text-white font-black text-5xl mb-4`} >Grow Your Business With The Right Connections.</h1>
+        <h1  className={`drop-shadow-2xl text-white font-black text-5xl mb-4`} >Grow Your Business With The Right Connections.</h1>
         <ExploreBtn Id={"Services"} />
     </motion.div>
     </div>

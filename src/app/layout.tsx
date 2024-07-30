@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from 'react';
 import { Inter } from "next/font/google";
 import NavbarServer from "@/components/NavbarServer";
-import Footer from "@/components/Footer";
+import Footer from "./footer";
 import Loading from "@/app/loading";
 import MoveToTop from "./moveToTop";
 import "./globals.css";

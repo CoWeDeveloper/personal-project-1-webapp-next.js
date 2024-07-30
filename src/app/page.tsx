@@ -6,7 +6,6 @@ function Home() {
 
   return (
 <>
-
     <main className="relative">
     <HeroSection />
     <About />
