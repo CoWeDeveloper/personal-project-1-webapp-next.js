@@ -4,7 +4,7 @@ import CloudBg from "./animation/CloudBg";
 
 function LoginAdmin() {
   return (
-    <div className="relative h-screen overflow-hidden flex items-center justify-center">
+    <div className="-z-10 w-full h-screen overflow-hidden flex items-center justify-center">
     
     {/* <div className="flex items-center justify-center min-h-screen bg- blue-500"> */}
 

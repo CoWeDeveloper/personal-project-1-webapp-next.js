@@ -46,27 +46,28 @@ function CloudBg() {
         alt="Cloud"
         width={Math.random() * 200 + 100}
         height={Math.random() * 100 + 50}
+          className="absolute bottom-0 left-96 "
       />
       <Image
         src={cloudImage3}
         alt="Cloud"
         width={Math.random() * 200 + 100}
         height={Math.random() * 100 + 50}
-        className="absolute bottom-2 right-32"
+        className="absolute bottom-0 left-72"
       />
       <Image
         src={cloudImage4}
         alt="Cloud"
-        width={Math.random() * 200 + 100}
-        height={Math.random() * 100 + 50}
-        className="absolute bottom-2 left-0 right-0"
+        width={500}
+        height={500}
+        className="absolute bottom-0 "
       />
       <Image
         src={cloudImage5}
         alt="Cloud"
         width={Math.random() * 200 + 100}
         height={Math.random() * 100 + 50}
-        className="absolute bottom-2"
+        className="absolute bottom-0"
       />
     </motion.div>
   ));
