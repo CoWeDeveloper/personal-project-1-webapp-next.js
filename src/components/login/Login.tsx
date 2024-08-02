@@ -1,29 +1,15 @@
-// "use client"
 import Image from "next/image";
-// import { motion } from 'framer-motion';
-import backgroundImage from '../../../public/assets/images/Admin/cloudBg.jpg';
 import logo from '../../../public/assets/images/cloudlogo.png';
+import CloudBg from "./animation/CloudBg";
 
 function LoginAdmin() {
   return (
     <div className="relative h-screen overflow-hidden flex items-center justify-center">
-      {/* <motion.div
-        className="absolute inset-0 z-0"
-        initial={{ scale: 1, x:"3" }}
-        animate={{ scale: 1.08,  x:"-2%" }}
-        transition={{ duration: 10, repeat: Infinity, repeatType: 'reverse' }}
-      > */}
+    
+    {/* <div className="flex items-center justify-center min-h-screen bg- blue-500"> */}
 
-    <Image 
-      src={backgroundImage  }
-      alt="Background"
-      layout="fill"
-      objectFit="cover"
-      quality={100}
-      className="-z-10 drop-shadow-2xl "
-      />
-      
-      {/* </motion.div> */}
+    <CloudBg />
+    {/* </div> */}
     <div className="bg-white/50 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full">
       <div className="flex flex-col items-center mb-6">
         <Image
@@ -31,9 +17,8 @@ function LoginAdmin() {
         alt="Company Logo"
         width={100}
         height={100}
-        className="w-72  mb-4 shadow-sky-400 drop-shadow-2xl "
+        className="w-72  mb-4  shadow-sky-400 drop-shadow-2xl "
         />
-
         
         <h1 className="text-3xl font-bold shadow-dropShadow-3xl">Welcome Back</h1>
       </div>
