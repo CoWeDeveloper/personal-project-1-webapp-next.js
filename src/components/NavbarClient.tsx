@@ -38,7 +38,7 @@ function NavbarClient()  {
     <> 
     <header 
     className={`absolute w-full mx-auto justify-center px-0 lg:px-0 xl:px-16 2xl:px-36 py-2 z-50
-      ${pathname == "/faq"|| "/admin" ? "bg-[#211c5d] z-20" : "" }
+      ${pathname == "/faq" ? "bg-[#211c5d] z-20" : "" }
       ${pathname == "/login" ? "bg-white/10 z-20 duration-300" : "" }
      ${scrollUp ? "bg-[#211c5d] sticky top-0 z-20" : "" }
    `} >

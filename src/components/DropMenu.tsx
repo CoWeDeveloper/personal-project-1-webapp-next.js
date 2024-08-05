@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -16,7 +15,7 @@ import {
 import { Newspaper, Images } from "lucide-react";
 import career from "../../public/assets/icons/DropMenu/career.svg";
 import faq from "../../public/assets/icons/DropMenu/faq.svg";
-
+import admin from "../../public/assets/icons/DropMenu/personAdmin.svg";
 
 function DropMenu() {
   return (
@@ -43,7 +42,7 @@ function DropMenu() {
                 </NavigationMenuLink>
                 <NavigationMenuLink href="faq">
                   <div className="flex items-center px-2 rounded-lg py-1  hover:bg-gray-300 transition-all duration-700">
-                    <Image src={faq} alt="career" className="mx-2.5" width={20} height={20} />
+                    <Image src={faq} alt="career" className="mx-2.5 text-stone-900"  width={20} height={20} />
                     FAQ's
                   </div>
                 </NavigationMenuLink>
@@ -51,6 +50,12 @@ function DropMenu() {
                   <div className="flex items-center px-2 rounded-lg py-1  hover:bg-gray-300 transition-all duration-700">
                   <Images  className="mx-2 text-stone-900" strokeWidth={1}  /> 
                     Gallery
+                  </div>
+                </NavigationMenuLink>
+                <NavigationMenuLink href="login">
+                  <div className="flex items-center px-2 rounded-lg py-1  hover:bg-gray-300 transition-all duration-700">
+                  <Image src={admin} alt="admin icon" width={24} height={24} className="mx-2 text-stone-900 "  /> 
+                  Admin  
                   </div>
                 </NavigationMenuLink>
               </NavigationMenuContent>

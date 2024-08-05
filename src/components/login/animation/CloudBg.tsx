@@ -2,10 +2,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import backgroundImage from "../../../../public/assets/images/Admin/cloudBg.webp";
-import cloudImage1 from "../../../../public/assets/images/Admin/cloud1.png"; 
-import cloudImage3 from "../../../../public/assets/images/Admin/cloud3.png";
-import cloudImage4 from "../../../../public/assets/images/Admin/cloud4.png";
-import cloudImage5 from "../../../../public/assets/images/Admin/cloud5.png";
+import cloudImage1 from "../../../../public/assets/images/Admin/cloud1.svg"; 
+import cloudImage3 from "../../../../public/assets/images/Admin/cloud3.svg";
+import cloudImage4 from "../../../../public/assets/images/Admin/cloud4.svg";
+import cloudImage5 from "../../../../public/assets/images/Admin/cloud5.svg";
 
 function CloudBg() {
   const cloudVariants = (delay: number) => ({
@@ -31,10 +31,10 @@ function CloudBg() {
     },
   });
 
-  const clouds = Array.from({ length: 20 }).map((_, index) => (
+  const clouds = Array.from({ length:10 }).map((_, index) => (
     <motion.div
       key={index}
-      className={`absolute w-full left-0 bottom-${
+      className={`absolute w-full z-20 left-0 bottom-${
         index % 2 === 0 ? "2" : "1"
       }`}
       variants={cloudVariants(index * 3)}
@@ -46,28 +46,28 @@ function CloudBg() {
         alt="Cloud"
         width={Math.random() * 200 + 100}
         height={Math.random() * 100 + 50}
-          className="absolute bottom-0 left-96 "
+          className="absolute bottom-0 left-96"
       />
       <Image
         src={cloudImage3}
         alt="Cloud"
         width={Math.random() * 200 + 100}
         height={Math.random() * 100 + 50}
-        className="absolute bottom-0 left-72"
+        className="absolute bottom-0 left-64"
       />
       <Image
         src={cloudImage4}
         alt="Cloud"
         width={500}
         height={500}
-        className="absolute bottom-0 "
+        className="absolute bottom-0"
       />
       <Image
         src={cloudImage5}
         alt="Cloud"
         width={Math.random() * 200 + 100}
         height={Math.random() * 100 + 50}
-        className="absolute bottom-0"
+        className="absolute bottom-1 xs:bottom-0"
       />
     </motion.div>
   ));
@@ -88,7 +88,7 @@ function CloudBg() {
           className="-z-10 drop-shadow-2xl "
         />
       </motion.div>
-      <div className="absolute w-full h-full overflow-hidden ">{clouds}</div>
+      <div className="absolute bottom-0  w-full ">{clouds}</div>
     </>
   );
 }
