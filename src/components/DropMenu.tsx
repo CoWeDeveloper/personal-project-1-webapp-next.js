@@ -52,7 +52,7 @@ function DropMenu() {
                     Gallery
                   </div>
                 </NavigationMenuLink>
-                <NavigationMenuLink href="login">
+                <NavigationMenuLink href="./login">
                   <div className="flex items-center px-2 rounded-lg py-1  hover:bg-gray-300 transition-all duration-700">
                   <Image src={admin} alt="admin icon" width={24} height={24} className="mx-2 text-stone-900 "  /> 
                   Admin  

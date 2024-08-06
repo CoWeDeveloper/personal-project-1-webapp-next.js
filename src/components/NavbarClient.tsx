@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import Image from 'next/image';
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useState, useEffect } from "react";
 
 // import assets
@@ -33,14 +33,19 @@ function NavbarClient()  {
     }, [] )
 
   const pathname = usePathname();
+  // const router = useRouter();
+  const hideNavbarOnRoutes = ['/manage-posts'];
+  const showNavbar = !hideNavbarOnRoutes.includes(pathname)
  
   return (
     <> 
+    {showNavbar && 
+    
     <header 
     className={`absolute w-full mx-auto justify-center px-0 lg:px-0 xl:px-16 2xl:px-36 py-2 z-50
       ${pathname == "/faq" ? "bg-[#211c5d] z-20" : "" }
       ${pathname == "/login" ? "bg-white/10 z-20 duration-300" : "" }
-     ${scrollUp ? "bg-[#211c5d] sticky top-0 z-20" : "" }
+      ${scrollUp ? "bg-[#211c5d] sticky top-0 z-20" : "" }
    `} >
         <nav className='flex m-auto items-center lg:justify-around lg:ml-32 mx-5 justify-between'> 
             <div className='pl-34'>
@@ -72,6 +77,7 @@ function NavbarClient()  {
         </nav>
     
         </header>
+  }
     </>
   )
 }

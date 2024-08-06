@@ -26,14 +26,14 @@ function LoginForm() {
     const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (email === "cloudadmin@cloudtenants.com" && password === "pass123@"){ 
-        route.push("/admin"); 
+        route.push("/manage-posts"); 
     }else{
         alert("Invalid credentail");
     }
 }
     
   return (
-    <div className="bg-white/50 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full">
+    <div className="bg-white/50 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full xs:mx-2">
       <div className="flex flex-col items-center mb-6">
         <Image
         src={logo}
@@ -47,7 +47,7 @@ function LoginForm() {
           initial={{ opacity: 0, y: "-10" }}
           animate={{ opacity: greet ? 1 : 0, y: greet ? 1 : 10 }}
           transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="text-3xl font-bold shadow-dropShadow-3xl duration-300"
+          className="sm:text-3xl  xs:text-lg font-bold shadow-dropShadow-3xl duration-300 "
           style={{ visibility: greet ? 'visible' : 'hidden' }}
         >
           Welcome Back
@@ -80,15 +80,15 @@ function LoginForm() {
             placeholder="Enter Password"
           />
         </div>
-        <div className="  w-full ">
-          <Link href={"/admin"}>
+        <div className="w-full">
+          
           <button
             className="flex justify-center w-full mx-auto bg-[#289bf3] hover:bg-[#388ccc] duration-300 transition-all text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
             >
             Login 
           </button> 
-          </Link>
+          
         </div>
       </form>
     </div>

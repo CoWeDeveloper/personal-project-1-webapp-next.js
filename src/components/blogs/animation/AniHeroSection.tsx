@@ -35,7 +35,7 @@ function AniHeroSection() {
     <motion.div 
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: true}}
+    viewport={{ once: true, amount: 0}}
     transition={{ 
         duration: 1.2,
         ease: [0.42, 0, 0.58, 1]
@@ -45,7 +45,7 @@ function AniHeroSection() {
       hidden: { opacity:0.1, y: 300 }
     }}
     className='mx-auto max-w-screen-lg lg:px-20 md:px-16 sm:px-5 text-center'>
-        <h1  className={` drop-shadow-2xl text-white font-black text-5xl mb-4`} >Tech Expert latest: Innovation in Digital Enterprise</h1>
+        <h1  className={` drop-shadow-2xl text-white font-black md:text-5xl xs:text-3xl mb-4`} >Tech Expert latest: Innovation in Digital Enterprise</h1>
         <ExploreBtn Id={"AboutInfo"} />
       </motion.div>
       </div>

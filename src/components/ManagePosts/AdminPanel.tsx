@@ -1,11 +1,14 @@
 import Image from "next/image";
+import Header from "./Header";
 import TableContent from "./TableContent";
 
 function AdminPanel() {
   return (
-    <section className="w-full h-screen pt-24 lg:px-14 md:px-8 sm:px-0 pb-10 bg-[#f1f1f1]">
-      <header className="flex flex-wrap md:justify-start lg:justify-between lg:items-start md:items-end md:mb-0 xs:mb-5">
-        <div className="text-stone-600 text-4xl font-semibold mb-10">
+    <>
+    <Header />
+    <section className="w-full h-screen pt-10 lg:px-14 md:px-8 sm:px-0 pb-10 bg-[#f1f1f1]">
+      <header className="flex flex-wrap md:justify-start xs:justify-center lg:justify-between lg:items-start md:items-end md:mb-0 xs:mb-5">
+        <div className="text-stone-600 text-4xl  font-semibold mb-10">
           Manage Posts
         </div>
         <div className="flex md:flex-row xs:flex-col lg:items-start md:items-end xs:px-2 md:px-0 flex-wrap w-full  md:justify-between lg:w-auto xs:space-x-0 sm:space-x-4 md:my-2 lg:my-0">
@@ -43,15 +46,16 @@ function AdminPanel() {
               width={100}
               height={100}
               className="w-6 mr-2"
-            />
+              />
             Manage Post
           </button>
               </div>
         </div>
+      
       </header>
-
       <TableContent />
     </section>
+              </>
   );
 }
 

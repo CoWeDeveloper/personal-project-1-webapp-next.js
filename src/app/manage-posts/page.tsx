@@ -1,4 +1,4 @@
-import { AdminPanel } from "@/components/admin/index";
+import { AdminPanel } from "@/components/ManagePosts/index";
 
 function page() {
   return (

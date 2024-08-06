@@ -64,6 +64,10 @@ body {
     filter: brightness(0) saturate(100%) invert(38%) sepia(19%) saturate(6809%) hue-rotate(179deg) brightness(86%) contrast(63%);
 }
 
+.input__search:focus-within .blog__serachIcon{
+    @apply scale-110 duration-700;
+}
+
 .viewMore2{
     filter: invert(67%) sepia(11%) saturate(257%) hue-rotate(177deg) brightness(85%) contrast(88%)    
 }
