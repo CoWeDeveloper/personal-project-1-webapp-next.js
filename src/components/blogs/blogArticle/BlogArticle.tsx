@@ -1,6 +1,6 @@
 import Image from "next/image";
 import RecentBlogs from "./RecentBlogs";
-import SearchField from "./Searchfield";
+import SearchField from "./SearchField";
 
 function blogsArticle() {
   return (
