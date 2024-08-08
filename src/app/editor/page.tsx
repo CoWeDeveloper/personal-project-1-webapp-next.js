@@ -1,4 +1,4 @@
-import BlogEditor from "@/components/blogEditor/blogEditor"
+import BlogEditor from "@/components/blogEditor/BlogEditor";
 
 function Editor() {
   return (

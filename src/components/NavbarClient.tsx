@@ -34,7 +34,7 @@ function NavbarClient()  {
 
   const pathname = usePathname();
   // const router = useRouter();
-  const hideNavbarOnRoutes = ['/manage-posts', '/editor'];
+  const hideNavbarOnRoutes = ['/posts', '/editor'];
   const showNavbar = !hideNavbarOnRoutes.includes(pathname)
  
   return (

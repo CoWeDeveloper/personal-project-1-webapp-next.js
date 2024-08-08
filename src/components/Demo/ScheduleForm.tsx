@@ -319,7 +319,7 @@ const options: any = [
 
               <button
               type="submit" className="bg-[#4796cd] hover:bg-[#155777] text-sm text-white font-semibold mt-4 px-4 py-3 flex items-center rounded-lg">Submit           
-                  <Image  className="ml-1" src={send} width={16} height={16} alt="laptop with screen displaying calender" />
+                  <Image className="ml-1" src={send} width={16} height={16} alt="laptop with screen displaying calender" />
               </button>
               <div className="flex-col">
 

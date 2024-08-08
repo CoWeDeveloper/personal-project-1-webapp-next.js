@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link"
 import Header from "./Header";
 import TableContent from "./TableContent";
 
@@ -27,7 +28,7 @@ function AdminPanel() {
             />
           </div>
           <div className="flex flex-row justify-center items-center  xs:w-full sm:w-auto xs:justify-center space-x-5 xs:my-2 md:my-0">
-
+          <Link href={"/editor"}>
           <button className="flex sm:justify-center  items-center bg-[#58C796] hover:bg-[#57bb8f] text-white rounded-lg px-5 py-1.5">
             <Image
               src="./assets/icons/Admin/plus.svg"
@@ -38,6 +39,7 @@ function AdminPanel() {
               />
             Add Post
           </button>
+              </Link>
 
           <button className="flex items-center  bg-[#2F7EAA] hover:bg-[#2a6a8d] text-white rounded-lg px-5 py-1.5">
             <Image

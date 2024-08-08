@@ -59,7 +59,7 @@ function AniCustomer() {
         <Link href={"./customers"}>
           <button
             className="bg-white border-2 border-[#105AB6] ring-[#105AB6] hover:bg-[#105AB6] text-[#105AB6] 
-  text-sm hover:text-sky-100 rounded-lg px-10 py-2 transition-all duration-500 mr-2 font-medium focus:outline-none"
+            text-sm hover:text-sky-100 rounded-lg px-10 py-2 transition-all duration-500 mr-2 font-medium focus:outline-none"
           >
             Show All
           </button>

@@ -30,6 +30,7 @@ const SearchField = () => {
 
   return (
     <div
+    onClick={handleSearchIconClick}
       className={`input__search ml-12 mb-4 border-white duration-700 w-96 ${isSearchActive ? 'translate-x-14' : '-translate-x-5'}`}
     >
       <Image
@@ -38,7 +39,7 @@ const SearchField = () => {
         width={20}
         height={20}
         className="blog__searchIcon w-5 mx-2 scale-100 duration-300 hover:cursor-pointer"
-        onClick={handleSearchIconClick}
+        
       />
       <input
         ref={inputRef}

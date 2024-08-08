@@ -62,9 +62,11 @@ body {
   .blogIcon{
     @apply  sm:w-6 w-4 
         group-hover:brightness-[0]   group-hover:saturate-[100%] group-hover:invert-[99%] group-hover:sepia-[38%] group-hover:hue-rotate-[184deg] group-hover:contrast-[101%]
-
   }
 
+  .blogIconPreview{
+    filter: invert(100%) sepia(3%) saturate(7485%) hue-rotate(271deg) brightness(103%) contrast(109%);
+}
 .input__search{
     @apply flex items-center border-gray-300 border-[1.5px] focus-within:border-[#2a6a8d] py-1.5 px-2 bg-white rounded-xl;
   }
@@ -128,6 +130,7 @@ body {
     left: 0;
     border-radius: 3px;
 }
+
 .box:before {
     content: '';
     width: 50px;

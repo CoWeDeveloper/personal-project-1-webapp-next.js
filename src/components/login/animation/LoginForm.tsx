@@ -26,7 +26,7 @@ function LoginForm() {
     const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (email === "cloudadmin@cloudtenants.com" && password === "pass123@"){ 
-        route.push("/manage-posts"); 
+        route.push("/posts"); 
     }else{
         alert("Invalid credentail");
     }

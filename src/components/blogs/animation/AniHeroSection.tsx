@@ -21,7 +21,7 @@ function AniHeroSection() {
      )}
      <div className={`absolute inset-0 w-full h-full transition-opacity duration-500`}>
        <Image
-         src="/assets/images/blogs/BlogHeader.webp"
+         src="/assets/images/blogs/Headerspace.webp"
          alt="Career Header"
          layout="fill"
          objectFit="cover"
@@ -29,6 +29,8 @@ function AniHeroSection() {
          priority
          onLoadingComplete={() => setIsLoaded(true)}
        />
+              <div className="absolute inset-0 bg-gradient-to-br from-black to-transparent opacity-50"></div>
+
        <div className="absolute inset-0 bg-gradient-to-b from-black to-transparent opacity-50"></div>
      </div>
      <div className="relative z-10 w-full">
@@ -42,11 +44,11 @@ function AniHeroSection() {
     }}
     variants={{
       visible: { opacity:1,  y: 0 },
-      hidden: { opacity:0.1, y: 300 }
+      hidden: { opacity:0.1, y: 100 }
     }}
     className='mx-auto max-w-screen-lg lg:px-20 md:px-16 sm:px-5 text-center'>
-        <h1  className={` drop-shadow-2xl text-white font-black md:text-5xl xs:text-3xl mb-4`} >Tech Expert latest: Innovation in Digital Enterprise</h1>
-        <ExploreBtn Id={"AboutInfo"} />
+        <h1  className={` drop-shadow-2xl -z-10 text-white font-black md:text-5xl xs:text-3xl`} >Tech Expert latest: Innovation in Digital Enterprise</h1>
+        {/* <ExploreBtn Id={"AboutInfo"} /> */}
       </motion.div>
       </div>
       </>

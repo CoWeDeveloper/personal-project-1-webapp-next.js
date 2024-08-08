@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { recentBlogData } from "@/lib/tableData";
+import { recentBlogData } from "@/lib/recentBlogData";
 
 function RecentBlogs() {
   return (
     <section className=' my-14'>
-        <h1 className='text-center text-4xl font-bold text-gray-500'> Read our Recent Blogs</h1>
+        <h1 className='text-center text-4xl font-bold text-gray-500'> LASEST ARTICLES</h1>
     
         <div>
             <div className="flex flex-wrap gap-5  justify-center my-14  items-center ">
