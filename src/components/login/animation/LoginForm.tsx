@@ -80,16 +80,16 @@ function LoginForm() {
             placeholder="Enter Password"
           />
         </div>
-        <div className="w-full">
+        
           
           <button
-            className="flex justify-center w-full mx-auto bg-[#289bf3] hover:bg-[#388ccc] duration-300 transition-all text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="flex justify-center w-full mx-auto bg-[#289bf3] hover:bg-[#388ccc] duration-1000 transition-all text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
             >
             Login 
           </button> 
           
-        </div>
+        
       </form>
     </div>
   )

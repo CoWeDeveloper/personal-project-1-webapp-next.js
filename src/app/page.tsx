@@ -15,10 +15,6 @@ function Home() {
     <Product />
     <Customers /> 
 
-    {/* <div className="fixed bottom-8 right-8">
-  
-    </div> */}
-
     </main>
 </>
   );

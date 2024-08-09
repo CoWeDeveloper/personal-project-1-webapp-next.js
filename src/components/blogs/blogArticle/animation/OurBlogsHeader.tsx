@@ -2,6 +2,7 @@
 import {motion} from "framer-motion";
 import Image from "next/image";
 
+
 function OurBlogsHeader() {
     const customEasing = [0.42, 0, 0.58, 1];
 
@@ -37,6 +38,7 @@ function OurBlogsHeader() {
         }
       };
 
+
   return (
     <>
       <motion.div 
@@ -45,7 +47,7 @@ function OurBlogsHeader() {
       whileInView="show"
       viewport={{ once: true, amount: 1 }}
     
-      className="container  md:px-56 sm:px-5  flex items-center w-full mx-auto ">
+      className="container  md:px-56 sm:px-5 flex items-center w-full mx-auto ">
        
       <motion.hr 
       variants={fadeInOut}
@@ -64,20 +66,7 @@ function OurBlogsHeader() {
         Lastest News
       </motion.h6>
       </div>
-      <div className="input__search hidden  w-56">
-            <Image
-              src="./assets/icons/Admin/search.svg"
-              alt="Plus Icon"
-              width={100}
-              height={100}
-              className="blog__serachIcon w-5 mx-2 scale-100 duration-300"
-              />
-            <input
-              type="text"
-              placeholder="Search"
-              className="outline-none w-full mx-auto  "
-              />
-          </div>
+      
         </motion.div>
     </>
   )

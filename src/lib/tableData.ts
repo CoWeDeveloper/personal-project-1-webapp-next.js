@@ -19,3 +19,17 @@ export const tableData = [
     },
 
 ]
+
+// interface blogPost {
+//     id: string,
+//     bgImg: string,
+//     title: string,
+//     subDescription: string,
+//     date: string
+// }
+
+export const getTableData: any = () => tableData;
+
+export const addBlog = (blog: { id: string; bgImg: string; title: string; date: string }) => {
+  tableData.push(blog);
+};

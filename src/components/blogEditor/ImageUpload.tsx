@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useState, FC } from 'react';
 
-const ImageUpload = () => {
-  const [image, setImage] = useState<File | null>(null);
+interface ImageUploadProps {
+  setImage: React.Dispatch<React.SetStateAction<File | null>>;
+}
+
+const ImageUpload : FC<ImageUploadProps> = ({ setImage}) => {
+
   const [preview, setPreview] = useState<string | null>(null);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
