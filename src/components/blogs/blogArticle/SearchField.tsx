@@ -31,7 +31,7 @@ const SearchField = () => {
   return (
     <div
     onClick={handleSearchIconClick}
-      className={`input__search ml-12 mb-4 border-white duration-700 w-96 ${isSearchActive ? 'translate-x-14' : '-translate-x-5'}`}
+      className={`input__search overflow-hidden border-stone-400 duration-700 w-64 mr-10 ${isSearchActive ? '-translate-x-16' : '-translate-x-0'}`}
     >
       <Image
         src="../../../assets/icons/Admin/search.svg"
@@ -44,6 +44,7 @@ const SearchField = () => {
       <input
         ref={inputRef}
         id="searchBlog"
+        autoComplete="off"
         type="text"
         placeholder="Search in this blog"
         className="outline-none w-full mx-auto placeholder-shown:text-gray-100 placeholder-shown:translate-x-10 focus-within:translate-x-1 duration-500"

@@ -7,7 +7,7 @@ function AdminPanel() {
   return (
     <>
     <Header />
-    <section className="w-full h-screen pt-10 lg:px-14 md:px-8 sm:px-0 pb-10 bg-[#f1f1f1]">
+    <section className="w-full h-screen pt-10 lg:px-14 md:px-8 sm:px-0 pb-10 bg-white">
       <header className="flex flex-wrap md:justify-start xs:justify-center lg:justify-between lg:items-start md:items-end md:mb-0 xs:mb-5">
         <div className="text-stone-600 text-4xl  font-semibold mb-10">
           Manage Posts
@@ -41,7 +41,7 @@ function AdminPanel() {
           </button>
               </Link>
 
-          <button className="flex items-center  bg-[#2F7EAA] hover:bg-[#2a6a8d] text-white rounded-lg px-5 py-1.5">
+          {/* <button className="flex items-center  bg-[#2F7EAA] hover:bg-[#2a6a8d] text-white rounded-lg px-5 py-1.5">
             <Image
               src="./assets/icons/Admin/managePost.svg"
               alt="Plus Icon"
@@ -50,7 +50,7 @@ function AdminPanel() {
               className="w-6 mr-2"
               />
             Manage Post
-          </button>
+          </button> */}
               </div>
         </div>
       

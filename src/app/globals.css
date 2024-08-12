@@ -44,11 +44,7 @@ body {
     @apply z-0 hidden md:flex items-center w-full absolute  
     h-fit object-contain px-[8%] mx-auto transition-all duration-300 ease-linear 
     hover:invert-[1%] hover:sepia-[5%] hover:saturate-[100%] hover:hue-rotate-[314deg] hover:brightness-[110%] hover:contrast-[80%]
-  }
-
-  .custom-row-spacing {
-    @apply !my-10 bg-green-100; /* Adjust the spacing as needed */
-  }
+  }  
 
   .custom-quill .ql-container {
     border: none !important;

@@ -13,7 +13,7 @@ import partnerLogo8 from "../../public/assets/images/Footer/p8.png";
 
 function Footer() {
   return (
-    <section className="w-full h-fit  bg-[#211c5d] px-16 xs:px-5 pt-16 pb-5">
+    <section className="w-full h-fit bg-[#211c5d] px-16 xs:px-5 pt-16 pb-5">
         <div className="mx-auto lg:px-10  sm:px-16  max-w-screen-xl text-center justify-center">
         <div className="md:flex  flex-wrap justify-center lg:justify-around w-full mx-auto">
 

@@ -8,9 +8,13 @@ function blogsArticle() {
     {/* header */}
       <div className="grid grid-cols-2 sm:grid-cols-2 h-96">
       {/* Left Box */}
-      <div className="flex flex-col justify-center py-4 w-full bg-[#154D8F] text-white ">
-        <h1 className="md:text-3xl sm:text-2xl xs:text-md  font-bold tracking-wide max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-24">Tech expert latest: Innovation in Digital Enterprise</h1>
-        <h2 className="md:text-md sm:text-sm xs:text-xs mt-2 max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-24">Follow this guide to see how an expert staff augumentation team can quickly provide skilled HAVC industry Outsourcing skills.</h2>
+      <div className="flex items-center py-4 w-full bg-[#154D8F] text-white ">
+
+        <div >
+
+        <h1 className="md:text-3xl sm:text-2xl xs:text-md  font-bold tracking-wide max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-16">Tech expert latest: Innovation in Digital Enterprise</h1>
+        <h2 className="md:text-md sm:text-sm xs:text-xs mt-2 max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-16">Follow this guide to see how an expert staff augumentation team can quickly provide skilled HAVC industry Outsourcing skills.</h2>
+        </div>
       </div>
 
       {/* Right Box */}
@@ -25,14 +29,18 @@ function blogsArticle() {
       </div>
     </div>
     {/* body */}
-    <div className="w-full h-fit bg-white text-gray-700 pt-5 pb-14  lh:px-10 md:px-5 px-1">
+    <div className="w-full h-fit bg-white text-gray-700 pt-5 pb-14 lh:px-10 md:px-5 px-1">
+    <div className="flex justify-end w-full mr-10 mb-5">
+
     <SearchField />
+    </div>
     
 
-        <div className="flex justify-center">
-          <div  >
-             <ul className="space-y-3 lg:w-28 sm:w-20 w-12 flex flex-col items-center">
-              <li className="rounded-full sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-fit">
+        <div className="flex justify-center md:mx-2 lg:mx-10 xs:mx-1 ">
+          <div className="" >
+                <div className="text-pretty flex " >
+             <ul className="space-y-3  flex flex-col items-center xs:mr-2 lg:mr-5">
+              <li className="rounded-full xs:w-8 sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10 ">
                 <Image
                src="/assets/icons/Blogs/shareIcon.svg"
                alt="Share icons"
@@ -41,7 +49,7 @@ function blogsArticle() {
                className="blogIcon"
               />
               </li>
-              <li className="rounded-full  sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-fit">
+              <li className="rounded-full  sm:p-3 xs:p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
                 <Image
                src="/assets/icons/Blogs/twitterIcon.svg"
                alt="Share icons"
@@ -50,7 +58,7 @@ function blogsArticle() {
                className="blogIcon "
               />
               </li>
-              <li className="rounded-full  sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-fit">
+              <li className="rounded-full  sm:p-3 xs:p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
                 <Image
                src="/assets/icons/Blogs/facebookIcon.svg"
                alt="Share icons"
@@ -59,7 +67,7 @@ function blogsArticle() {
                className="blogIcon "
               />
               </li>
-              <li className="rounded-full  sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-fit">
+              <li className="rounded-full  sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-auto">
                 <Image
                src="/assets/icons/Blogs/linkedinIcon.svg"
                alt="Share icons"
@@ -70,8 +78,6 @@ function blogsArticle() {
               </li>
              </ul>
 
-          </div>
-          <div className="text-pretty" >
           
           Contrary to popular belief, Lorem Ipsum is not simply random text. 
           It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
@@ -84,6 +90,7 @@ function blogsArticle() {
             <br/>
            "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.    It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
            Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,  This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32
+          </div>
           
     <Image
       src="/assets/images/Blogs/blogHeader.webp"

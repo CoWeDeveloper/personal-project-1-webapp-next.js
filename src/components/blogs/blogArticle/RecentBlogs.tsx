@@ -4,10 +4,10 @@ import { recentBlogData } from "@/lib/recentBlogData";
 function RecentBlogs() {
   return (
     <section className=' my-14'>
-        <h1 className='text-center text-4xl font-bold text-gray-500'> LASEST ARTICLES</h1>
+        <h1 className='text-center text-4xl font-bold text-gray-500'> LASEST BLOGS</h1>
     
         <div>
-            <div className="flex flex-wrap gap-5  justify-center my-14  items-center ">
+            <div className="flex flex-wrap lg:gap-x-20 md:gap-x-10  justify-center my-14  items-center ">
         {recentBlogData.map((data: any)=>{
         return(
             <div className="sm:mx-2 xs:my-4 ">
@@ -17,12 +17,12 @@ function RecentBlogs() {
         width={200}
         height={200}
         objectFit="cover"
-        className="rounded-lg xs:w-60 sm:56 "  
+        className="rounded-lg xs:w-80 sm:56 "  
         />
           <h2 className='font-bold text-stone-500 tracking-tighter text-lg w-64 pt-4  text-pretty '>
             {data.title}
           </h2>
-          <p className='font-medium pt-3 pb-5  text-gray-500 text-xs'>{data.author}</p>
+          <p className='font-medium pt-3 pb-5 text-gray-500 text-xs'>{data.author}</p>
           <button className='px-6 py-1.5 text-white bg-sky-500 hover:bg-sky-600 rounded-lg'>Read</button>
         </div>
       )
