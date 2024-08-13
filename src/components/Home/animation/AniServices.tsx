@@ -22,7 +22,7 @@ variants={{
   visible: { opacity: 1, y: 0  },
   hidden: { opacity: 0,  y: 20}
 }}
-className=" tracking-wide text-center py-10 cursor-pointer text-4xl font-extrabold text-white ">
+className=" tracking-wide text-center pb-14 cursor-pointer text-4xl font-extrabold text-white ">
             OUR SERVICES
           </motion.h3>
 
@@ -38,13 +38,13 @@ className=" tracking-wide text-center py-10 cursor-pointer text-4xl font-extrabo
             visible: { opacity: 1, y: 0 },
             hidden: { opacity: 0, y: -20 }
           }}
-          className="flex flex-wrap gap-6 justify-center w-full mx-auto">
+          className="flex flex-wrap gap-y-10 gap-x-14 justify-center w-full mx-auto">
             {/* card UI */}
             {servicesData.map((servicesData) => {
               return (
                 <div
                   key={servicesData.id}
-                  className="p-10 w-[21rem] bg-white flex flex-col items-center justify-center
+                  className="py-10 w-[21rem] bg-white flex flex-col items-center 
                    rounded-lg h-56 relative overflow-hidden group">
                   {/* to change the filling color orgin. Select from top instead of origin right in the following div */}
                   <div
@@ -53,17 +53,20 @@ className=" tracking-wide text-center py-10 cursor-pointer text-4xl font-extrabo
                   ></div>
 
                   {/* <div className="flex justify-center items-center py-2"> */}
+                    
+
                     <Image
                       className="py-2 w-20 group-hover:invert-[100%] group-hover:sepia-[0%] group-hover:saturate-[100%] group-hover:hue-rotate-[272deg] group-hover:brightness-[0%] group-hover:contrast-[103%]"
                       src={servicesData.img}
                       width={100}
                       height={30}
                       alt={servicesData.alt}
-                    />
+                      />
                   {/* </div> */}
-                  <h5 className="text-gray-600 px-3 hover:text-white z-0 group-hover:text-white text-lg text-center text-warp font-medium">
+                  <h5 className="text-gray-500 w-52  hover:text-white z-0 group-hover:text-white text-lg text-center text-warp font-semibold">
                     {servicesData.title}
                   </h5>
+                     
                 </div>
               );
             })}

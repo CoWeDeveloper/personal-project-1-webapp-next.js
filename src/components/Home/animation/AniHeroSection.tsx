@@ -46,18 +46,18 @@ function AnimaHeroSection() {
     initial="hidden"
     whileInView="show"
     viewport={{ once: false, amount: 1 }}
-    className="lg:ml-14  ml-4 col-span-7"
+    className="lg:ml-7  ml-4 lg:w-1/2 md:w-2/3 sm:w-24 xs:w-auto space-y-2"
     >
       <motion.h1
      
         variants={fadeIn}
-        className="tracking-wide drop-shadow-2xl lg:text-6xl md:text-5xl  sm:text-5xl text-3xl text-white text-pretty font-bold"
+        className="tracking-wide shadow-2xl lg:text-6xl md:text-5xl  sm:text-5xl text-3xl text-white text-pretty font-extrabold"
       >
         Your True Digital Transformation Partner.
       </motion.h1>
       <motion.p
         variants={scaleIn}
-        className="lg:text-xl sm:text-md text-gray-300 py-4 text-pretty"
+        className="lg:text-xl sm:text-md  text-gray-300 py-4 text-pretty font-[300]"
       >
         Streamline your business operations with our cutting-edge software
         solutions.

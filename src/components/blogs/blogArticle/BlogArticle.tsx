@@ -1,8 +1,38 @@
+"use client";
 import Image from "next/image";
+import { useParams } from 'next/navigation';
 import RecentBlogs from "./RecentBlogs";
 import SearchField from "./SearchField";
+import { tableData } from "@/lib/tableData";
+
+interface blogPost {
+    id: string;
+    bgImg: string;
+    title: string;
+    subDescription: string;
+    content: string;
+    date: string;
+}
+
+interface blogPageProps {
+  blog: blogPost;
+}
 
 function blogsArticle() {
+  const params = useParams<{ blogTitle: string }>(); // Ensure TypeScript is used correctly if applicable
+
+  const blogTitle: string = params.slug;
+  
+  const blog = tableData.find((item: any) => {
+    return item.title === blogTitle
+    
+    });
+console.log(blog)
+  
+  if (!blog) {
+    return <div>Blog not found</div>;
+  }
+
   return (
     <>
     {/* header */}
@@ -12,15 +42,22 @@ function blogsArticle() {
 
         <div >
 
-        <h1 className="md:text-3xl sm:text-2xl xs:text-md  font-bold tracking-wide max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-16">Tech expert latest: Innovation in Digital Enterprise</h1>
-        <h2 className="md:text-md sm:text-sm xs:text-xs mt-2 max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-16">Follow this guide to see how an expert staff augumentation team can quickly provide skilled HAVC industry Outsourcing skills.</h2>
+        <h1 className="md:text-3xl sm:text-2xl xs:text-md  font-bold tracking-wide max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-16">
+          {/* Tech expert latest: Innovation in Digital Enterprise */}
+        {blog.title}  
+        </h1>
+        <h2 className="md:text-md sm:text-sm xs:text-xs mt-2 max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-16">
+        {blog.subDescripation}
+          {/* Follow this guide to see how an expert staff augumentation team can quickly provide skilled HAVC industry Outsourcing skills. */}
+        </h2>
         </div>
       </div>
 
       {/* Right Box */}
       <div className="relative aspect-auto">
         <Image 
-          src="/assets/images/blogs/b2.webp" 
+          // src="/assets/images/blogs/b2.webp"
+          src={blog.bgImg} 
           alt="Right Box Image" 
           layout="fill" 
           objectFit="cover" 
@@ -78,27 +115,29 @@ function blogsArticle() {
               </li>
              </ul>
 
-          
-          Contrary to popular belief, Lorem Ipsum is not simply random text. 
+          {blog.content}
+          {/* Contrary to popular belief, Lorem Ipsum is not simply random text. 
           It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
            Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, 
            <br/>
-           <br/>
-           consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical    It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+           <br/> */}
+           {/* consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical    It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
            Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,  literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of 
-            <br/>
-            <br/>
+            <br/> */}
+            {/* <br/>
            "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.    It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
            Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,  This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32
+           */}
           </div>
           
-    <Image
-      src="/assets/images/Blogs/blogHeader.webp"
+    {blog.optionalImage && (<Image
+      // src="/assets/images/Blogs/blogHeader.webp"
+      src={blog.optionalImage}
       alt="Digital Enterprise"
       width={1000}
       height={1000}
       className="w-full shadow-lg rounded-lg  max-w-9xl lg:h-[500px] h-fit  object-cover my-5 mx-auto"
-    />
+    />)}
 
   <div className="w-full">
     <h1 className="md:text-3xl text-gray-500 sm:text-2xl xs:text-md font-bold mb-4">

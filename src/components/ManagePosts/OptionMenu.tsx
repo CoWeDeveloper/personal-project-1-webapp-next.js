@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-
+import Link from "next/link";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -12,11 +12,19 @@ import {
 
 import { useState } from "react";
 
-function optionMenu() {
+interface OptionMenuProps {
+  title: string;
+}
+const OptionMenu: React.FC<OptionMenuProps> = ({ title }) => {
+
   const [colorbg, setColor] = useState<boolean>(false);
   const handleColor = (): void => {
     setColor(!colorbg);
     console.log(colorbg);
+  };
+  const handlePreviewClick = (blogTitle: string) => {
+    // Navigate to the blog post page
+    window.location.href = `/blogs/${blogTitle}`;
   };
   return (
     <>
@@ -55,7 +63,10 @@ function optionMenu() {
             />
             Edit
           </DropdownMenuItem>
-          <DropdownMenuItem className="hover:!text-white hover:!bg-[#2F7EAA]  group">
+          <DropdownMenuItem 
+            // onClick={() => handlePreviewClick(title)}
+          className=" hover:!text-white hover:!bg-[#2F7EAA]  group">
+            <Link className="flex" href={`/blogs/${title}`}>
             <Image
               src="/assets/icons/Admin/view.svg"
               alt="eye icon"
@@ -63,8 +74,9 @@ function optionMenu() {
               height={100}
               objectFit="cover"
               className="w-4 mx-2 blogIcon"
-            />
+              />
             Preview
+              </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="hover:!text-white hover:!bg-[#2F7EAA] group">
             <Image
@@ -83,4 +95,4 @@ function optionMenu() {
   );
 }
 
-export default optionMenu;
+export default OptionMenu;

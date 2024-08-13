@@ -9,7 +9,7 @@ function AnimaAbout() {
   return (
     <>
     
-    <div className="z-0 w-full col-span-5 ml-14 sm:mx-auto relative">
+    <div className="z-0 w-full col-span-5   sm:mx-auto relative">
 
     <motion.div 
         initial="hidden"
@@ -27,7 +27,7 @@ function AnimaAbout() {
     >
     <Link href={'/about'} className='hover:text-white active:hover:text-white'>
       <h2 
-      className="cursor-pointer max-sm:text-4xl sm:text-4xl  md:text-7xl lg:text-8xl font-semibold text-[#636468] tracking-tight ">
+      className="text-right cursor-pointer max-sm:text-4xl sm:text-4xl  md:text-7xl lg:text-8xl font-semibold text-[#636468] tracking-tight ">
         ABOUT US
       </h2>
       </Link>
@@ -35,7 +35,7 @@ function AnimaAbout() {
         </div>
     <div 
 
-    className="z-0 w-full col-span-7  relative overflow-hidden">
+    className="z-0 w-full col-span-7 relative overflow-hidden">
       <motion.div 
               initial="hidden"
               whileInView="visible"

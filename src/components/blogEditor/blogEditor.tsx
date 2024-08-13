@@ -10,7 +10,7 @@ const BlogEditor = () => {
   return (
     <>
       <Header />
-      <section className='relative w-full min-h-screen bg-gray-200 py-24 flex justify-center items-center'>
+      <section className='relative w-full min-h-screen bg-white py-24 flex justify-center items-center'>
         
       <Editorsession />
       </section>

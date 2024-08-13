@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import { useFormik } from "formik";
 import { demoSchema } from "./schema";
 import { useToast } from "@/components/ui/use-toast";
-import { useRouter } from 'next/navigation';
 import Select from 'react-select';
 import  sendEmail from "../services/sendEmail";
 import send from "../../../public/assets/icons/Demo/send.svg";
@@ -22,7 +21,9 @@ const initialValues = {
 }
 
 function ScheduleForm({product} : {product?: {product: string[]}} ){
-
+  
+  const { toast } = useToast();
+  
   const customStyles= {
     control: (styles: any) => ({
       ...styles,
@@ -46,7 +47,6 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
   }),
 } 
 
-const { toast } = useToast()
 
 const options: any = [
   { value: 'S&D Next', label: 'S&D Next (Sales & Distribution)', },
@@ -119,7 +119,7 @@ const options: any = [
     };
 
 
-    const router = useRouter();
+    
     // for catch all segment. It find the value which ever "Schedule demo" button is pressed
       useEffect(() => {
         if (product) {

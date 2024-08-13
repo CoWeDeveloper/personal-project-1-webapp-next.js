@@ -27,9 +27,9 @@ function AdminPanel() {
               className="outline-none w-full mx-auto"
             />
           </div>
-          <div className="flex flex-row justify-center items-center  xs:w-full sm:w-auto xs:justify-center space-x-5 xs:my-2 md:my-0">
+          <div className="flex !justify-end items-center w-full sm:w-auto xs:justify-center space-x-5 xs:my-2 md:my-0">
           <Link href={"/editor"}>
-          <button className="flex sm:justify-center  items-center bg-[#58C796] hover:bg-[#57bb8f] text-white rounded-lg px-5 py-1.5">
+          <button className="flex items-center bg-[#58C796] hover:bg-[#57bb8f] text-white rounded-lg px-5 py-1.5">
             <Image
               src="./assets/icons/Admin/plus.svg"
               alt="Plus Icon"

@@ -118,11 +118,11 @@ function TableContent() {
                 {data.title}
               </div>
             </TableCell>
-            <TableCell className="text-center font-medium md:text-base xs:text-xs">
+            <TableCell className="text-right w-36 font-medium md:text-base xs:text-xs">
               {data.date}
             </TableCell>
             <TableCell className="text-right md:pr-9 xs:pr-6">
-              <OptionMenu />
+              <OptionMenu title={data.title} />
             </TableCell>    
           </TableRow>
 
@@ -138,7 +138,7 @@ function TableContent() {
     <PaginationItem className=" ">
       <PaginationPrevious className="hover:bg-gray-400 w-fit px-2" href="#" />
     </PaginationItem>
-    <PaginationItem className="mx-1 ">
+    <PaginationItem className="mx-1">
       <PaginationLink className="border-2 border-gray-200 hover:bg-gray-400" href="#">1</PaginationLink>
       <PaginationLink className="border-2 border-gray-200 hover:bg-gray-400" href="#">2</PaginationLink>
       <PaginationLink className="border-2 border-gray-200 hover:bg-gray-400" href="#">3</PaginationLink>
