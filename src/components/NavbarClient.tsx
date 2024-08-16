@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 import Image from 'next/image';
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname, useRouter,useParams } from 'next/navigation'
 import { useState, useEffect } from "react";
 
 // import assets
@@ -14,39 +14,43 @@ import DropMenu from "./DropMenu";
 function NavbarClient()  {
     const [ scrollUp, setScrollUp ] = useState(false);
     
-    useEffect( ()=>{
-        let prevScroll = window.scrollY;
-        
-        const handleScroll: any = ()=> {
-            const currentScroll = window.scrollY;
-            const scrollUp = prevScroll > currentScroll && currentScroll > 0;
-            
-            setScrollUp(scrollUp);
-            prevScroll = currentScroll;
-        }
-        
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-          };
-
-    }, [] )
+    useEffect(() => {
+      let prevScroll = window.scrollY;
+  
+      const handleScroll = () => {
+          const currentScroll = window.scrollY;
+          const isScrollingUp = prevScroll > currentScroll && currentScroll > 0;
+          
+          setScrollUp(isScrollingUp);
+          prevScroll = currentScroll;
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+          window.removeEventListener('scroll', handleScroll);
+      };
+  }, []);
 
   const pathname = usePathname();
-  // const router = useRouter();
+  const params = useParams();
+  // const blogTitle = params.slug;
   const hideNavbarOnRoutes = ['/posts', '/editor'];
   const showNavbar = !hideNavbarOnRoutes.includes(pathname)
- 
+  const isBlogPage = pathname.startsWith('/blogs/');
+
   return (
     <> 
     {showNavbar && 
     
-    <header 
-    className={`absolute w-full mx-auto lg:pl-24 md:pl-14 xs:pl-4  py-2 z-50
-      ${pathname == "/faq" ? "bg-[#211c5d] z-20" : "" }
-      ${pathname == "/login" ? "bg-white/10 z-20 duration-300" : "" }
-      ${scrollUp ? "bg-[#211c5d] sticky top-0 z-20" : "" }
-   `} >
+<header 
+  className={`absolute w-full mx-auto lg:pl-24 md:pl-14 xs:pl-4 py-2 z-50
+    ${pathname === "/faq" ? "!bg-[#211c5d] z-20" : ""}
+    ${pathname === "/login" ? "!bg-white/10 z-20 duration-300" : ""}
+    ${isBlogPage ? "!bg-[#211c5d] z-20" : ""}
+    ${scrollUp ? "bg-[#211c5d] sticky top-0 z-50" : "bg-transparent"}
+  `}
+>
+
         <nav className='flex mx-auto items-center lg:justify-around  justify-between'> 
             <div className='xl:ml-24 '>
              <Link href={'/'}><Image src={logo} className='w-40 cursor-pointer' alt="CloudTanentLogo" /> </Link>

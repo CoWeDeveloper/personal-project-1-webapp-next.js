@@ -27,7 +27,7 @@ import {useState, useEffect} from "react";
 
 function TableContent() {
   const [posts, setPosts] = useState([]);
-
+  const [currentPage,setCurrentPage] = useState([]);
 
   useEffect(()=>{
     setPosts(getTableData);                
@@ -35,55 +35,7 @@ function TableContent() {
 
   return (
     <>
-    {/* <div  className="w-full">
-      <div className="flex justify-between md:text-xl xs:text-sm">
-
-        <div className="ml-2">Publish Blogs</div>
-        <div className="flex justify-between w-96 mr-5">
-          <div >Publish Date</div>
-          <div>Actions</div>
-        </div>
-      </div>
-
-      <div className="w-full">
-      {tableData.map((data: any, index:number)=>
-           
-           {
-            return(   
-            <div 
-            key={data.id} className="flex justify-between bg  text-stone-500 drop-shadow-md   hover:drop-shadow-lg duration-600 transition-all  hover:bg-slate-200 ">
-            
-            <div className="flex">
-            <span className=" font-medium bg-sky-500 text-slate-200 drop-shadow-lg text-xs  rounded-full text-center">
-               {index+1}
-              
-              </span>
-              <Image
-                src={data.bgImg}
-                alt="blog image"
-                width={100}
-                height={100}
-                objectFit="cover"
-                className="rounded-lg aspect-auto mr-4 "
-                />
-              <div className=" md:text-xl xs:text-sm font-semibold text-stone-500 ">
-                {data.title}
-              </div>
-            </div>
-            <div className="text-center font-medium md:text-base xs:text-xs">
-              {data.date}
-            </div>
-            <div className="">
-              <OptionMenu />
-            </div>    
-          </div>
-
-               )
-          }
-          )}
-       
-      </div>
-    </div> */}
+    
       <Table>
         <TableHeader className="md:text-xl xs:text-sm ">
           <TableRow>
@@ -122,10 +74,9 @@ function TableContent() {
               {data.date}
             </TableCell>
             <TableCell className="text-right md:pr-9 xs:pr-6">
-              <OptionMenu title={data.title} />
+              <OptionMenu id={data.id} />
             </TableCell>    
           </TableRow>
-
                )
           }
           )}

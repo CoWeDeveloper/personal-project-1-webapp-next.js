@@ -19,6 +19,7 @@ function AutoPlay() {
     cssEase: "linear",
     rtl: true,
     rows: 1,
+    arrows: false,
     responsive: [
       {
         breakpoint: 748,

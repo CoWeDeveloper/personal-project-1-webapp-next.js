@@ -58,6 +58,19 @@ body {
     outline: none !important;
   }
   
+  
+.quillContent h1 {
+    @apply md:text-3xl text-gray-500 sm:text-2xl xs:text-base font-bold mb-4;
+  }
+  
+  .quillContent p {
+    @apply text-lg text-gray-700;
+  }
+
+  .quillContent img {
+    @apply w-full shadow-lg rounded-lg  lg:h-[500px] h-fit object-cover my-5 mx-auto;
+  }
+  
 
   .blogIcon{
     @apply  sm:w-6 w-4 

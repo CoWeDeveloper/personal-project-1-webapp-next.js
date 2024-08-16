@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -16,7 +16,8 @@ const config = {
       screens: {
         "2xl": "1400px",
       },
-    }, screens: {
+    },
+    screens: {
       'xs': '300px',
       'sm': '640px',
       'md': '768px',
@@ -77,9 +78,33 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      textShadow: {
+        'sm': '1px 1px 2px rgba(0, 0, 0, 0.5)',
+        'DEFAULT': '2px 2px 4px rgba(0, 0, 0, 0.5)',
+        'lg': '4px 4px 6px rgba(0, 0, 0, 0.5)',
+      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addUtilities }: { addUtilities: (utilities: Record<string, any>, variants?: string[]) => void }) {
+      const newUtilities = {
+        '.text-shadow-sm': {
+          textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)',
+        },
+        '.text-shadow': {
+          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+        },
+        '.text-shadow-base': {
+          textShadow: '0px 4px 4px rgba(0, 0, 0, 0.4)',
+        },
+        '.text-shadow-lg': {
+          textShadow: '4px 4px 6px rgba(0, 0, 0, 0.5)',
+        },
+      };
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    },
+  ],
+};
 
-export default config
+export default config;

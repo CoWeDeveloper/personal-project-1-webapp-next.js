@@ -13,19 +13,18 @@ import {
 import { useState } from "react";
 
 interface OptionMenuProps {
-  title: string;
+  id: string;
 }
-const OptionMenu: React.FC<OptionMenuProps> = ({ title }) => {
+const OptionMenu: React.FC<OptionMenuProps> = ({ id }) => {
 
   const [colorbg, setColor] = useState<boolean>(false);
   const handleColor = (): void => {
     setColor(!colorbg);
     console.log(colorbg);
   };
-  const handlePreviewClick = (blogTitle: string) => {
-    // Navigate to the blog post page
-    window.location.href = `/blogs/${blogTitle}`;
-  };
+  
+
+
   return (
     <>
       <DropdownMenu
@@ -66,7 +65,7 @@ const OptionMenu: React.FC<OptionMenuProps> = ({ title }) => {
           <DropdownMenuItem 
             // onClick={() => handlePreviewClick(title)}
           className=" hover:!text-white hover:!bg-[#2F7EAA]  group">
-            <Link className="flex" href={`/blogs/${title}`}>
+            <Link className="flex" href={`/blogs/${id}`}>
             <Image
               src="/assets/icons/Admin/view.svg"
               alt="eye icon"

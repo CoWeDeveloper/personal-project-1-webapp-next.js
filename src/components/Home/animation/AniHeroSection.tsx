@@ -57,19 +57,19 @@ function AnimaHeroSection() {
       </motion.h1>
       <motion.p
         variants={scaleIn}
-        className="lg:text-xl sm:text-md  text-gray-300 py-4 text-pretty font-[300]"
+        className="lg:text-xl sm:text-md xs:text-sm  text-gray-300 py-4 text-pretty font-[300]"
       >
         Streamline your business operations with our cutting-edge software
         solutions.
       </motion.p>
       <motion.div variants={fadeInButtons}>
-        <Link href={"./demo"}>
-          <button className="text-white font-bold-400 rounded-lg py-3 px-6 border duration-700 transition-all hover:bg-white hover:text-black">
+        <Link href={"./demo"} >
+          <button className="text-white font-bold-400 rounded-lg py-3 sm:px-6 xs: px-4 border duration-700 transition-all hover:bg-white hover:text-black">
             Request Demo
           </button>
         </Link>
         <Link href={"./softwares"}>
-        <button className="text-blue-500 hover:text-blue-700	hover:translate-x-3	duration-700 transition-all font-bold rounded-lg py-2 px-5 border-hidden ">
+        <button className="text-blue-500 hover:text-blue-700	hover:translate-x-3	duration-700 transition-all font-bold rounded-lg py-2 sm:px-5 xs:px-1 border-hidden ">
           Explore More <ArrowRightFromLine className="inline" />
         </button>
         </Link>

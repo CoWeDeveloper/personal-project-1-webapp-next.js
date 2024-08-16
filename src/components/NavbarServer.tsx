@@ -4,10 +4,10 @@ function NavbarServer()  {
 
   return (
     <> 
-    <div className="w-full relative flex justify-center">
+    {/* <div className="w-full relative flex justify-center"> */}
       <NavbarClient />
 
-    </div>
+    {/* </div> */}
     </>
   )
 }

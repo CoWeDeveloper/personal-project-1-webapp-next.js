@@ -6,6 +6,7 @@ import Footer from "./footer";
 import Loading from "@/app/loading";
 import MoveToTop from "./moveToTop";
 import "./globals.css";
+
 import Script from "next/script";
 import Head from "next/head";
 import metaImg from "../../public/assets/images/metaLogoImg.png";
