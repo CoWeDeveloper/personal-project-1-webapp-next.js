@@ -119,17 +119,22 @@ function EditorSession() {
 
   return (
     <>
-      <div className="absolute top-4 right-4 flex space-x-4">
+    <div className="w-full ">
+<div className="flex justify-end items-center w-full container mb-4">
+ {/* <h1 className="text-2xl font-extrabold text-black ">
+  Write a New Blog
+ </h1> */}
+      <div className=" flex space-x-4">
       
-        <button onClick={handlePreview}  className="flex items-center justify-center bg-[#2F7EAA] hover:bg-[#2a6a8d] text-white px-4 py-2 rounded shadow duration-300"> 
+        <button onClick={handlePreview}  className="flex items-center rounded-md justify-center bg-[#2F7EAA] hover:bg-[#2a6a8d] text-white px-4 py-2 rounded shadow duration-300"> 
           <Eye className='w-5 mr-2' />
           Preview
         </button>
        
         <button 
           onClick={handlePublish}
-          className="flex justify-center items-center bg-green-500 text-white px-2 rounded shadow hover:bg-green-600 duration-300"
-        >
+          className="flex justify-center items-center bg-green-500 text-white px-2 rounded-md shadow hover:bg-green-600 duration-300"
+          >
           <Image
             className="mr-2"
             src="/assets/icons/Demo/send.svg" 
@@ -140,22 +145,37 @@ function EditorSession() {
           Publish
         </button>
       </div>
-      <div className="container relative min-h-screen mx-auto p-4 bg-[#BCE7FD] shadow-2xl rounded-lg">
-        <h1 className="text-2xl font-extrabold mb-4 text-sky-900 text-shadow-base">Write a New Blog</h1>
+            </div>
+      <div className="container relative min-h-screen mx-auto p-4 bg-[#e6effa] shadow-2xl rounded-lg">
+        <h1 className="text-2xl font-extrabold mb-4 text-black flex ">
+        <Image 
+        className="mr-2"
+        src="/assets/icons/Blogs/penBlack.png" 
+        width={24}
+        height={24} 
+        alt="laptop with screen displaying calendar" 
+        />
+          
+          Write a New Blog</h1>
+        
+        <div className="flex flex-col">
+
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)} 
           placeholder='Write a title'
-          className='w-full py-2 px-2 my-2 rounded-lg'
-        />
-        <input
-          type="text" 
-          value={subDescription}
-          onChange={(e) => setSubDescription(e.target.value)}
-          placeholder='Title Sub description (optional)'
-          className='text-sm w-64 py-1 px-2 my-2 rounded-lg'
-        />
+          className='py-1 px-2 my-2 w-1/5 focus-within:w-1/2 rounded-sm bg-[#e6effa] outline-none border-b-2 duration-700 transition-all border-[#07598593] focus-within:border-[#075985] focus-within:rounderd-lg '
+          />
+
+<textarea
+  value={subDescription}
+  onChange={(e) => setSubDescription(e.target.value)}
+  placeholder='Sub Title(optional)'
+  className='text-sm w-2/4 h-16 py-1 px-2 my-2 rounded-lg outline-none duration-700 transition-all border-2 border-[#075985a2] focus-within:border-[#075985]'
+/>
+          </div>
+        
         <ImageUpload setImage={setImage} />
         <div className='h-full bg-white'>
           <ReactQuill
@@ -165,12 +185,13 @@ function EditorSession() {
             theme="snow"
             placeholder='Compose an epic...'
             className={`w-full custom-quill`}
-          />
+            />
         </div>
         <div className="text-right text-gray-600 text-xs mt-1 font-semibold">
           Word Count: {wordCount}
         </div>
       </div>
+            </div>
     </>
   );
 }
