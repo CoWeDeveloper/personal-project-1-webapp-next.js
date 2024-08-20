@@ -1,12 +1,18 @@
-import { useState, FC } from 'react';
+import { useState, FC, useEffect } from 'react';
 
 interface ImageUploadProps {
   setImage: React.Dispatch<React.SetStateAction<File | null>>;
+  existingImageURL?: string | null;
 }
 
-const ImageUpload : FC<ImageUploadProps> = ({ setImage}) => {
-
+const ImageUpload: FC<ImageUploadProps> = ({ setImage, existingImageURL }) => {
   const [preview, setPreview] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (existingImageURL) {
+      setPreview(existingImageURL);
+    }
+  }, [existingImageURL]);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -22,7 +28,7 @@ const ImageUpload : FC<ImageUploadProps> = ({ setImage}) => {
         htmlFor="imageUpload"
         className="cursor-pointer bg-sky-700 text-white py-2 px-4 rounded hover:bg-sky-800"
       >
-        Upload Image
+        { existingImageURL ? "Change": "Upload Image"}
       </label>
       <input
         id="imageUpload"
@@ -35,7 +41,8 @@ const ImageUpload : FC<ImageUploadProps> = ({ setImage}) => {
         <div className="ml-5 w-24">
           <img src={preview} alt="Image Preview" className="max-w-full h-auto rounded shadow-md" />
         </div>
-      )}
+      ) 
+      }
     </div>
   );
 };

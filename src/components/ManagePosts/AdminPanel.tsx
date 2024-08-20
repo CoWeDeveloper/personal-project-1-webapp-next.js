@@ -4,6 +4,7 @@ import Header from "./Header";
 import TableContent from "./TableContent";
 
 function AdminPanel() {
+
   return (
     <>
     <Header />

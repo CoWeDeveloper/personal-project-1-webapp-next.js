@@ -1,10 +1,12 @@
 import { AdminPanel } from "@/components/ManagePosts/index";
+import { Toaster } from "@/components/ui/toaster";
 
 function page() {
   return (
-    <div>
+    <>
+      <Toaster />
       <AdminPanel />
-    </div>
+    </>
   )
 }
 

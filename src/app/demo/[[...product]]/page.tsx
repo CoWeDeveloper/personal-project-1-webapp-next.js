@@ -5,11 +5,8 @@ import Schedule  from '@/components/demo/Schedule';
 import { Toaster } from "@/components/ui/toaster"
 
 function Demo({ params} : { params : {product? : string[]}}) {
-  // const {product} = params;
   const product:any  = params.product ? decodeURIComponent(params.product[0]) : undefined;
   
-  
-  // console.log(product)
   return (
     <>
       <HeroSection key={product || 'default'}  />
