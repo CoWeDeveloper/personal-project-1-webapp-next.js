@@ -23,7 +23,7 @@ const ImageUpload: FC<ImageUploadProps> = ({ setImage, existingImageURL }) => {
   };
 
   return (
-    <div className="flex items-center my-2">
+    <div className="flex items-center my-2 ml-4">
       <label
         htmlFor="imageUpload"
         className="cursor-pointer bg-sky-700 text-white py-2 px-4 rounded hover:bg-sky-800"

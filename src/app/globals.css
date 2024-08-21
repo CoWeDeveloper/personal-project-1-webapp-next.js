@@ -109,7 +109,10 @@ body {
     @apply drop-shadow-lg; 
     text-shadow: 20 10 30px hsla(0, 0%, 0%, 0.4); 
   }
-  
+  #toolbar {
+    border: none; /* Remove any border from the toolbar container */
+    box-shadow: none; /* Remove any box shadow if applied */
+}
   .preloader {
     width: 100%;
     height: 100vh;
@@ -120,6 +123,10 @@ body {
     z-index: 9999;
     text-align: center;
     overflow: hidden;
+}
+
+.custom-row{
+    margin-top:  20px !important;
 }
 
 .box{

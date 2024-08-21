@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import OptionMenu from "./OptionMenu";
 import {
   Table,
@@ -17,6 +16,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import Image from "next/image";
 import { ArrowUp10 , ArrowDown10} from 'lucide-react';
 
 import { useState, useEffect } from "react";
@@ -111,7 +111,7 @@ function TableContent() {
           {paginatedData.map((data: any, index: number) => (
             <TableRow
               key={data.id}
-              className="bg-slate-100 hover:my-5 text-stone-500 drop-shadow-md hover:drop-shadow-xl hover:-translate-y-1 border-8 border-white duration-600 transition-all"
+              className="bg-slate-100 hover:bg-slate-100 hover:my-5 text-stone-500 drop-shadow-md hover:drop-shadow-xl hover:-translate-y-1 border-8 border-white duration-600 transition-all"
             >
               <TableCell className="flex items-center">
                 <span className="mr-6 font-medium bg-sky-500 text-slate-200 w-6 drop-shadow-lg text-xs px-1 py-1 rounded-full text-center">

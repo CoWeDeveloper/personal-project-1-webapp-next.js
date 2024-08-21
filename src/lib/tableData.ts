@@ -59,7 +59,56 @@ export const tableData = [
         optionalImage: "/assets/images/Blogs/blogHeader.webp",
         date:"April 30,2024"
     },
-
+    {
+        id: "7",
+        bgImg: "/assets/images/Blogs/b5.webp",
+        author: "Ibrahim Saleem",
+        title: "Plan Inferencing Locations to Accelerate Your GenAI",
+        subDescripation: "This is the subtitle of the first blog. It is just an example to preview the text. This text is written to show how to will look like on computer",
+        content: "This is the body paragraph with preview infomration and so user can able to see and read lastest blogs on time. This text is dummy and just want to show how much it could render in computer screen with examples",
+        optionalImage: "/assets/images/Blogs/blogHeader.webp",
+        date:"April 30,2024"
+    },
+    {
+        id: "8",
+        bgImg: "/assets/images/Blogs/b6.webp",
+        author: "Umer Ahmed",
+        title: "Ai Anywhere with APEX File Storge For MIcrosoftware Azure",
+        subDescripation: "This is the subtitle of the first blog. It is just an example to preview the text. This text is written to show how to will look like on computer",
+        content: "This is the body paragraph with preview infomration and so user can able to see and read lastest blogs on time. This text is dummy and just want to show how much it could render in computer screen with examples",
+        optionalImage: "/assets/images/Blogs/blogHeader.webp",
+        date:"April 30,2024"
+    },
+    {
+        id: "9",
+        bgImg: "/assets/images/Blogs/b3.webp",
+        author: "Ibrahim Saleem",
+        title: "Get to Secure VPN Before Firewall Runined Your network",
+        subDescripation: "This is the subtitle of the first blog. It is just an example to preview the text. This text is written to show how to will look like on computer",
+        content: "This is the body paragraph with preview infomration and so user can able to see and read lastest blogs on time. This text is dummy and just want to show how much it could render in computer screen with examples",
+        optionalImage: "/assets/images/Blogs/blogHeader.webp",
+        date:"April 30,2024"
+    },
+    {
+        id: "10",
+        bgImg: "/assets/images/Blogs/b4.webp",
+        author: "Ibrahim Saleem",
+        title: "Get to CVEs Before They Compromise Your PC",
+        subDescripation: "This is the subtitle of the first blog. It is just an example to preview the text. This text is written to show how to will look like on computer",
+        content: "This is the body paragraph with preview infomration and so user can able to see and read lastest blogs on time. This text is dummy and just want to show how much it could render in computer screen with examples",
+        optionalImage: "/assets/images/Blogs/blogHeader.webp",
+        date:"April 30,2024"
+    },
+    {
+        id: "11",
+        bgImg: "/assets/images/Blogs/b5.webp",
+        author: "Ibrahim Saleem",
+        title: "Plan Inferencing Locations to Accelerate Your GenAI",
+        subDescripation: "This is the subtitle of the first blog. It is just an example to preview the text. This text is written to show how to will look like on computer",
+        content: "This is the body paragraph with preview infomration and so user can able to see and read lastest blogs on time. This text is dummy and just want to show how much it could render in computer screen with examples",
+        optionalImage: "/assets/images/Blogs/blogHeader.webp",
+        date:"April 30,2024"
+    },
 ];
 
 

@@ -1,27 +1,7 @@
-// "use client";
-// import {motion} from "framer-motion";
-// import { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
 
 function SearchField() {
-    // const [isSearchActive, setIsSearchActive] = useState(false);
-  // const inputRef = useRef<HTMLInputElement>(null);
-
-
-  // const handleBlur = () => {
-  //   setIsSearchActive(false);
-  // };
-
-  // useEffect(() => {
-  //   if (inputRef.current) {
-  //     inputRef.current.addEventListener('blur', handleBlur);
-  //   }
-  //   return () => {
-  //     if (inputRef.current) {
-  //       inputRef.current.removeEventListener('blur', handleBlur);
-  //     }
-  //   };
-  // }, []);
+    
   return (
     <>
       <div
