@@ -5,9 +5,7 @@ function SearchField() {
   return (
     <>
       <div
-        // onClick={handleSearchIconClick}
         className={`input__search mb-4 xs:mr-4  text-xs  bg-sky-50 focus-within:scale-110 focus-within:w-56 w-44 transition-all  duration-700 items-center`}
-
       >
         <Image
           src="/assets/icons/Admin/search.svg"

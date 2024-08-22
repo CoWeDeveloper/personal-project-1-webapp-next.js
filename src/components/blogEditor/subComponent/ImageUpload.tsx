@@ -1,4 +1,5 @@
 import { useState, FC, useEffect } from 'react';
+import Image from "next/image";
 
 interface ImageUploadProps {
   setImage: React.Dispatch<React.SetStateAction<File | null>>;
@@ -39,7 +40,10 @@ const ImageUpload: FC<ImageUploadProps> = ({ setImage, existingImageURL }) => {
       />
       {preview && (
         <div className="ml-5 w-24">
-          <img src={preview} alt="Image Preview" className="max-w-full h-auto rounded shadow-md" />
+          <Image src={preview} alt="Image Preview" 
+          width={500}
+          height={500}
+          className="max-w-full h-auto rounded shadow-md" />
         </div>
       ) 
       }

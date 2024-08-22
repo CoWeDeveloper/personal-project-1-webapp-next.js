@@ -16,10 +16,6 @@ interface blogPost {
   date: string;
 }
 
-interface blogPageProps {
-  blog: blogPost;
-}
-
 function blogsArticle() {
   const params = useParams(); // Ensure TypeScript is used correctly if applicable
   const id = params.slug;

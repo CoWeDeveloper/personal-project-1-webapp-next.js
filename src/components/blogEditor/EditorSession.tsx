@@ -161,9 +161,9 @@ function EditorSession() {
   return (
     <>
     
-      <div className="w-full ">
-      <div className="flex mt-5  ">
-        <div className="flex flex-col w-full px-4">
+      <div className="w-full relative ">
+      <div className="flex mt-5 sm:flex-nowrap md:mb-0 justify-center xs:flex-wrap xs:mb-5">
+        <div className="flex flex-col  w-full px-4">
 
             <input
             type="text"
@@ -172,7 +172,6 @@ function EditorSession() {
             placeholder="Author Name"
             className="py-1 px-2 my-2 text-lg w-full outline-none border-b-2 transition-all border-[#154d8f] focus:border-sky-600 focus:bg-white"
              />
-            
             <input
               type="text"
               value={title}
@@ -212,6 +211,9 @@ function EditorSession() {
         </div>
           </div>
         <CustomToolbar />
+      
+
+    
 
         <div className="bg-gray-100 w-full pt-2">
         <ImageUpload setImage={setImage} existingImageURL={imageURL} />
