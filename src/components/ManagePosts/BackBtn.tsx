@@ -9,11 +9,11 @@ function backbtn() {
     }
   return (
     <>
-      <button onClick={handleRoute}>
-      <ArrowLeft  className="text-white font-bold mt-3" strokeWidth={3}  size={24} />
+      <button className='self-center mt-5' onClick={handleRoute}>
+      <ArrowLeft  className="text-white font-bold  " strokeWidth={3}  size={24} />
       </button>
     </>
   )
 }
 
-export default backbtn
+export default backbtn;

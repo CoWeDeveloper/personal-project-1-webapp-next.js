@@ -7,7 +7,7 @@ const BlogEditor = () => {
   return (
     <>
       <Header />
-      <section className='relative w-full min-h-screen bg-white pb-24 flex justify-center items-center'>        
+      <section className='relative w-full min-h-screen bg-white  flex justify-center items-center'>        
       <Editorsession />
       </section>
     </>

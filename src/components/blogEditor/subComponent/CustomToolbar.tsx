@@ -2,7 +2,7 @@
 
 export default function CustomToolbar() {
     return (
-      <div id="toolbar" className="flex items-center space-x-2 my-1  p-2 ">
+      <div id="toolbar" className="flex items-center space-x-2 my-1 ml-1 p-2 ">
         <button className="ql-bold">B</button>
         <button className="ql-italic">I</button>
         <button className="ql-underline">U</button>

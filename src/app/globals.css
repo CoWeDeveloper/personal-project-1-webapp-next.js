@@ -111,7 +111,11 @@ body {
   }
   #toolbar {
     border: none; /* Remove any border from the toolbar container */
-    box-shadow: none; /* Remove any box shadow if applied */
+    box-shadow: none; /* Remove  any box shadow if applied */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    
 }
   .preloader {
     width: 100%;

@@ -63,7 +63,7 @@ function EditorSession() {
     return date.toLocaleDateString('en-US', options);
   }
 
-  const handlePublish = () => {
+  const handlePublish = async () => {
     if (content.trim() === '' || title.trim() === '' || (!image && !imageURL)) {
          toast({
           description: <WarningToast />,
@@ -74,7 +74,7 @@ function EditorSession() {
 
     const optionalImage = extractImageFromContent(content) ?? '';
 
-    const updatedBlog = {
+    const blogData = {
         id: blogId || String(Date.now()), 
         bgImg: image ? URL.createObjectURL(image) : imageURL || '/default-image-path',
         author: author,
@@ -85,21 +85,44 @@ function EditorSession() {
         date: formatDate(new Date()),
     };
 
-    if (editorMode && blogId) {
-        const index = tableData.findIndex(blog => blog.id === blogId);
-        if (index !== -1) {
-            tableData[index] = updatedBlog;
-        } 
+    try{
+      const response = await fetch("/api/blogs", {
+        method: editorMode ? "PUT" : "POST",
+        headers:{
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(blogData), //convert object into array
+      })
+
+    if (response.ok) {
+      if (editorMode) {
+        localStorage.setItem('blogUpdated', 'true');
+      } else {
+        localStorage.setItem('blogSubmitted', 'true');
+      }
+      router.push('/posts');
     } else {
-        addBlog(updatedBlog);
-       localStorage.setItem('blogSubmitted', 'true');
-       return router.push('/posts');
+      throw new Error('Failed to save the blog post.');
     }
+  } catch (error) {
+    console.error('Error publishing the blog:', error);
+  }
+    // if (editorMode && blogId) {
+    //     const index = tableData.findIndex(blog => blog.id === blogId);
+    //     if (index !== -1) {
+    //         tableData[index] = blogData;
+    //     } 
+    // } else {
+    //     addBlog(blogData);
+    //    localStorage.setItem('blogSubmitted', 'true');
+    //    return router.push('/posts');
+    // }
 
     // Set a flag to show the toast on /posts page
     localStorage.setItem('blogUpdated', 'true');
     router.push('/posts');
-};
+
+  };
 
   
   const handleContentChange = (value: string) => {
@@ -134,23 +157,6 @@ function EditorSession() {
     .split(' ')
     .filter(Boolean)
     .length;
-
-  // const modules = {
-  //   toolbar: [
-  //     ['bold', 'italic', 'underline', 'strike'],
-  //     ['blockquote', 'code-block'],
-  //     ['link', 'image'],
-  //     [{ 'font': [] }],
-  //     [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-  //     [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'list': 'check' }],
-  //     [{ 'indent': '-1' }, { 'indent': '+1' }],
-  //     [{ 'align': [] }],
-  //     [{ 'script': 'sub' }, { 'script': 'super' }],
-  //     [{ 'direction': 'rtl' }],
-  //     [{ 'color': [] }, { 'background': [] }],
-  //     ['clean']
-  //   ],
-  // };
 
   const modules = {
     toolbar: {

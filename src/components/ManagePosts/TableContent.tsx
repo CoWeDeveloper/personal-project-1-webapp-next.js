@@ -24,6 +24,14 @@ import { getTableData } from "@/lib/tableData";
 import { PublishToast, UpdateToast } from "./CustomToast";
 import { useToast } from "@/components/ui/use-toast";
 
+
+
+const fetchTableData = async ()=>{
+  const res = await fetch("/api/blogs");
+  const data = await res.json();
+  return data;
+} 
+
 function TableContent() {
   const [sortedData, setSortedData] = useState<any[]>([]);
   const [isAscending, setIsAscending] = useState<boolean>(false);
@@ -32,14 +40,23 @@ function TableContent() {
 
   useEffect(() => {
     // Fetch and sort data on initial render
-    const data = getTableData();
-    const sorted = data.sort((a: any, b: any) => {
-      const dateA = new Date(a.date).getTime();
-      const dateB = new Date(b.date).getTime();
-      return isAscending ? dateA - dateB : dateB - dateA;
+    fetchTableData().then((data) => {
+      const sorted = data.sort((a: any, b: any) => {
+        const dateA = new Date(a.date).getTime();
+        const dateB = new Date(b.date).getTime();
+        return isAscending ? dateA - dateB : dateB - dateA;
+      });
+      setSortedData(sorted);
     });
-    setSortedData(sorted);
+    // const data = getTableData();
+    // const sorted = data.sort((a: any, b: any) => {
+    //   const dateA = new Date(a.date).getTime();
+    //   const dateB = new Date(b.date).getTime();
+    //   return isAscending ? dateA - dateB : dateB - dateA;
+    // });
+    // setSortedData(sorted);
 
+    
     const blogSubmitted = localStorage.getItem('blogSubmitted');
     const blogUpdated = localStorage.getItem('blogUpdated');
     if (blogSubmitted) {

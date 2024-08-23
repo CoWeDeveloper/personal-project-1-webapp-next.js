@@ -8,7 +8,7 @@ function Header() {
 
 
   return (
-    <nav className="flex items-center w-full m-auto bg-[#154D8F] md:px-12 xs:px-1">
+    <nav className="flex  w-full m-auto bg-[#154D8F] md:px-12 xs:px-1">
       <BackBtn />
       <div>
         <Link href={"/"}>
