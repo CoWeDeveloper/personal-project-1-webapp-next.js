@@ -21,7 +21,7 @@ function EditorSession() {
   const [author, setAuthor] = useState<string>('');
   const [title, setTitle] = useState<string>('');
   const [content, setContent] = useState<string>('');
-  const [subDescription, setSubDescription] = useState<string>('');
+  const [subDescripation, setSubDescripation] = useState<string>('');
   const [image, setImage] = useState<File | null>(null);
   const [imageURL, setImageURL] = useState<string | null>(null);
   const [editorMode, setEditorMode] = useState<boolean>(false);
@@ -35,21 +35,29 @@ function EditorSession() {
 
 
   useEffect(() => {
-     
     if (id) {
-      const blog = tableData.find((blog: any) => blog.id == id);
-
-      if (blog) {
-        setAuthor(blog.author);
-        setTitle(blog.title);
-        setContent(blog.content);
-        setSubDescription(blog.subDescripation);
-        setImageURL(blog.bgImg); // Set existing image URL
-        setEditorMode(true);
-      } 
+      const fetchData = async () => {
+        try {
+          console.log("From blogpage client:",id)
+          const response = await fetch(`/api/blogs/${id}`); // Use dynamic route to fetch blog post
+          if (response.ok) {
+            const blog = await response.json();
+            setAuthor(blog.author);
+            setTitle(blog.title);
+            setContent(blog.content);
+            setSubDescripation(blog.subDescripation);
+            setImageURL(blog.bgImg);
+            setEditorMode(true);
+          } else {
+            console.error("Failed to fetch blog post:", response.status);
+          }
+        } catch (error) {
+          console.error("Error fetching blog post:", error);
+        }
+      };
+      fetchData();
     }
-    setBlogId(id);
-  }, [id, title]);
+  }, [id]);
 
   const extractImageFromContent = (content: string): string | null => {
     const doc = new DOMParser().parseFromString(content, 'text/html');
@@ -79,12 +87,11 @@ function EditorSession() {
         bgImg: image ? URL.createObjectURL(image) : imageURL || '/default-image-path',
         author: author,
         title: title,
-        subDescripation: subDescription,
+        subDescripation: subDescripation,
         content: content,
-        optionalImage: optionalImage,  
+        optionalImage: optionalImage ?? undefined,  
         date: formatDate(new Date()),
     };
-
     try{
       const response = await fetch("/api/blogs", {
         method: editorMode ? "PUT" : "POST",
@@ -93,9 +100,17 @@ function EditorSession() {
         },
         body: JSON.stringify(blogData), //convert object into array
       })
-
+      
+      
     if (response.ok) {
+      const blogData = await response.json();
       if (editorMode) {
+        setAuthor(blogData.author); // Update state with new values
+        setTitle(blogData.title);
+        setContent(blogData.content);
+        setSubDescripation(blogData.subDescripation);
+        setImageURL(blogData.bgImg);
+        setBlogId(blogData.id);
         localStorage.setItem('blogUpdated', 'true');
       } else {
         localStorage.setItem('blogSubmitted', 'true');
@@ -115,7 +130,7 @@ function EditorSession() {
     // } else {
     //     addBlog(blogData);
     //    localStorage.setItem('blogSubmitted', 'true');
-    //    return router.push('/posts');
+      //  return router.push('/posts');
     // }
 
     // Set a flag to show the toast on /posts page
@@ -141,7 +156,7 @@ function EditorSession() {
       bgImg: image ? URL.createObjectURL(image) : imageURL || '/default-image-path',
       author: author,
       title: title,
-      subDescripation: subDescription,
+      subDescripation: subDescripation,
       content: content,
       optionalImage: optionalImage ?? undefined,
       date: new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }),
@@ -187,8 +202,8 @@ function EditorSession() {
               className={`py-1 px-2 my-2 text-lg  rounded-sm   outline-none border-b-2 transition-all border-gray-300 focus:border-gray-400 focus:bg-white
               `}/>
             <textarea
-              value={subDescription}
-              onChange={(e) => setSubDescription(e.target.value)}
+              value={subDescripation}
+              onChange={(e) => setSubDescripation(e.target.value)}
               placeholder='Sub Title (optional)'
               className='text-sm resize-none  h-16 py-1 px-2 my-2 rounded-sm outline-none duration-700 transition-all border-b-2 border-gray-300 focus:border-gray-400 '
             />

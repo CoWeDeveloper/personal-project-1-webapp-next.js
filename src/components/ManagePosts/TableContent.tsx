@@ -41,12 +41,17 @@ function TableContent() {
   useEffect(() => {
     // Fetch and sort data on initial render
     fetchTableData().then((data) => {
-      const sorted = data.sort((a: any, b: any) => {
-        const dateA = new Date(a.date).getTime();
-        const dateB = new Date(b.date).getTime();
-        return isAscending ? dateA - dateB : dateB - dateA;
-      });
-      setSortedData(sorted);
+      console.log("Fetched Data:", data); // Add this line to inspect the data structure
+      if (Array.isArray(data)) { // Check if data is an array
+        const sorted = data.sort((a: any, b: any) => {
+          const dateA = new Date(a.date).getTime();
+          const dateB = new Date(b.date).getTime();
+          return isAscending ? dateA - dateB : dateB - dateA;
+        });
+        setSortedData(sorted);
+      } else {
+        console.error("Fetched data is not an array");
+      }
     });
     // const data = getTableData();
     // const sorted = data.sort((a: any, b: any) => {

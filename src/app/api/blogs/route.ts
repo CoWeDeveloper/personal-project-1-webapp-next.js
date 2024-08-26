@@ -1,52 +1,73 @@
 import prisma from "@/lib/prisma";
-import { Description } from "@radix-ui/react-toast";
+import { NextResponse } from "next/server";
 
-// API route to handle creating a new blog post
-export default async function handler(req : any, res: any){
+// Named export for the GET method
+export async function GET(req: Request) {
+    try {
+        // console.log('Prisma client:', prisma);  // Log the prisma instance
+        // if (!prisma || !prisma.blogPost) {
+        //     throw new Error('Prisma instance or model not defined');
+        // }
+        const posts = await prisma.blogPost.findMany();
+        return NextResponse.json(posts);
+    } catch (error: unknown) {
+        let errorMessage = 'Error fetching posts';
 
-if(req.method == "GET"){
-    try{
-        const posts = await prisma.post.findMany();
-        res.status(200).json(posts);
+        if (error instanceof Error) {
+            errorMessage = error.message;
+        }
 
-    }catch (error) {
-        res.status(500).json({ error: "Error fetching posts" });
-      }
+        console.error('Error fetching posts:', error);
+        return NextResponse.json({ error: errorMessage }, { status: 500 });
+    }
 }
 
-if(req.method == "POST"){
-    const {author, title,  subDescripation, content, bgImg}= req.body;
-    try{
-        const newPost = await prisma.post.create({
-            data:{
+// Named export for the POST method
+export async function POST(req: Request) {
+    try {
+        
+        const { id, author, title, subDescripation, content, bgImg, optionalImage, date } = await req.json();
+        console.log('Incoming data:', { id, author, title, subDescripation, content, bgImg, optionalImage, date });
+
+        const newPost = await prisma.blogPost.create({
+            data: {
+                id,
                 title,
                 author,
-                subDescripation: subDescripation,
+                subDescripation,
                 content,
-                bgImg
+                bgImg,
+                optionalImage,
+                date,
             },
         });
-        res.status(201).json(newPost);
-    }catch(error){
-        res.status(500).json({error: "Error Creating Post"})
+        return NextResponse.json(newPost, { status: 201 });
+    } catch (error: unknown) {
+        let errorMessage = 'Error Creating posts';
+
+        if (error instanceof Error) {
+            errorMessage = error.message;
+        }
+
+        console.error('Error creating posts:', error);
+        return NextResponse.json({ error: errorMessage }, { status: 500 });
     }
-} else if (req.method == "PUT"){
-    const {author, title,  subDescripation, content, bgImg}= req.body;
-    try{
-       const updatedPost = prisma.post.update({
-        data:{
-            title,
-            author,
-            subDescripation: subDescripation,
-            content,
-            bgImg
-        },
-       });
-       res.status(200).json(updatedPost);
-    }catch(error){
-        res.status(500).json({error: "Error in Updating Post"}) 
     }
-}
 
 
-}
+// Named export for the PUT method (if needed)
+export async function PUT(req: Request) {
+    try {
+      const {id, ...updatedData}= await req.json();
+  
+      const updatedPost = await prisma.blogPost.update({
+        where: { id: parseInt(id, 10) },
+        data: updatedData
+      });
+  
+      return NextResponse.json(updatedPost, { status: 200 });
+    } catch (error) {
+      console.error('Error updating post:', error);
+      return NextResponse.json({ error: "Error updating post" }, { status: 500 });
+    }
+  }

@@ -1,22 +1,20 @@
-
-datasource db {
-  provider  = "mysql"
-  url       = env("DATABASE_URL")
-
-}
-
 generator client {
   provider   = "prisma-client-js"
-  engineType = "binary"
+  engineType = "library"
 }
 
-model BlogPost {
-  id              Int      @id @default(autoincrement())
-  bgImg           String   @db.VarChar(255)
-  author          String   @db.VarChar(255)
-  title           String   @db.VarChar(255)
-  subDescripation String   @db.Text
-  content         String   @db.Text
-  optionalImage   String   @db.VarChar(255)
-  date            DateTime @db.Date
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model blogPost {
+  id              Int     @id @default(autoincrement())
+  bgImg           String  @db.VarChar(255)
+  author          String  @db.VarChar(255)
+  title           String  @db.VarChar(255)
+  subDescripation String  @db.Text
+  content         String  @db.Text
+  optionalImage   String? @db.VarChar(255)
+  date            String  @db.VarChar(40)
 }
