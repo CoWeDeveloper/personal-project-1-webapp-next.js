@@ -14,12 +14,14 @@ import { useState } from "react";
 import { tableData } from "@/lib/tableData";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
+import { DeleteToast } from "./CustomToast";
 
 interface OptionMenuProps {
   id: string;
+  onDelete: (id: string) => void; // Callback for deleting
 }
-const OptionMenu: React.FC<OptionMenuProps> = ({ id }) => {
-
+const OptionMenu: React.FC<OptionMenuProps> = ({ id, onDelete  }) => {
+  const {toast} = useToast();
   const [colorbg, setColor] = useState<boolean>(false);
   const handleColor = (): void => {
     setColor(!colorbg);
@@ -34,9 +36,29 @@ const OptionMenu: React.FC<OptionMenuProps> = ({ id }) => {
     tableData.splice(index, 1);
   }   
   }
-  const handleDelete = () => {
-    deleteBlog(id);
-    router.refresh(); // Refresh the page to reflect changes
+  const handleDelete = async () => {
+    try {
+      const response = await fetch(`/api/blogs/${id}`, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        toast({
+          description: <DeleteToast />,
+          variant: "destructive"
+        });
+        onDelete(id); // Update local state
+      } else {
+        throw new Error("Failed to delete the blog post.");
+      }
+    } catch (error) {
+      console.error("Error deleting blog post:", error);
+      toast({
+        title: "Error",
+        description: "Failed to delete the blog post.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (

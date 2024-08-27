@@ -24,30 +24,35 @@ const ImageUpload: FC<ImageUploadProps> = ({ setImage, existingImageURL }) => {
   };
 
   return (
-    <div className="flex items-center my-2 ml-4">
-      <label
-        htmlFor="imageUpload"
-        className="cursor-pointer bg-sky-700 text-white py-2 px-4 rounded hover:bg-sky-800"
-      >
-        { existingImageURL ? "Change": "Upload Image"}
-      </label>
-      <input
-        id="imageUpload"
-        type="file"
-        accept="image/*"
-        onChange={handleImageChange}
-        className="hidden"
+    <div className="flex flex-col w-full max-w-[300px] space-y-2 text-center self-end justify-end">
+  <div className="w-full  ">
+    {preview ? (
+      <Image
+        src={preview}
+        alt="Image Preview"
+        width={500}
+        height={500}
+        className="max-w-full h-auto rounded shadow-md"
       />
-      {preview && (
-        <div className="ml-5 w-24">
-          <Image src={preview} alt="Image Preview" 
-          width={500}
-          height={500}
-          className="max-w-full h-auto rounded shadow-md" />
-        </div>
-      ) 
-      }
-    </div>
+    ) : (
+      <div className="w-full h-auto bg-gray-200 rounded shadow-md"></div>
+    )}
+  </div>
+  <label
+    htmlFor="imageUpload"
+    className="cursor-pointer bg-sky-700 text-white py-2 px-4 rounded hover:bg-sky-800"
+  >
+    Upload Image
+  </label>
+  <input
+    id="imageUpload"
+    type="file"
+    accept="image/*"
+    onChange={handleImageChange}
+    className="hidden"
+  />
+</div>
+
   );
 };
 

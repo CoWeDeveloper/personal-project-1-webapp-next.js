@@ -1,41 +1,88 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { PrismaClient } from '@prisma/client';
+import { NextRequest, NextResponse } from 'next/server';
+import prisma from '@/lib/prisma'; // Adjust this import to your prisma setup
 
-const prisma = new PrismaClient();
+export async function GET(req: NextRequest) {
+  // Extract the id from the URL path
+  const id = req.nextUrl.pathname.split('/').pop(); // this give ID in string 
 
-// Handler for GET requests
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
-    // console.log(req.query)
-  const { id } = req.query;
-  const parsedId = parseInt(id as string, 10);
+  if (!id) {
+    return NextResponse.json({ error: "Invalid or missing id" }, { status: 400 });
+  }
 
   try {
     const blog = await prisma.blogPost.findUnique({
-      where: { id: parsedId },
+      where: {
+        id: parseInt(id, 10), // Make sure to convert the id to an integer
+      },
     });
-    if (blog) {
-      res.status(200).json(blog);
-    } else {
-      res.status(404).json({ message: 'Blog post not found' });
+
+    if (!blog) {
+      return NextResponse.json({ error: "Blog not found" }, { status: 404 });
     }
+
+    return NextResponse.json(blog, { status: 200 });
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching blog post' });
+    console.error("Error fetching blog post:", error);
+    return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
   }
 }
 
-// Handler for PUT requests
-export async function PUT(req: NextApiRequest, res: NextApiResponse) {
-  const { id } = req.query;
-  const parsedId = parseInt(id as string, 10);
-  const { title, author, subDescripation, content, bgImg, optionalImage, date } = req.body;
+export async function PUT(req: NextRequest) {
+  const id = req.nextUrl.pathname.split('/').pop();
+
+  if (!id) {
+    return NextResponse.json({ error: "Invalid or missing id" }, { status: 400 });
+  }
 
   try {
+    const data = await req.json();
+    const { author, title, content, subDescripation, bgImg } = data;
+
+    if (!author || !title || !content) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
     const updatedBlog = await prisma.blogPost.update({
-      where: { id: parsedId },
-      data: { title, author, subDescripation, content, bgImg, optionalImage, date },
+      where: { id: parseInt(id, 10) },
+      data: {
+        author,
+        title,
+        content,
+        subDescripation,
+        bgImg,
+      },
     });
-    res.status(200).json(updatedBlog);
+
+    return NextResponse.json(updatedBlog, { status: 200 });
+  } catch (error: unknown) {
+    let errorMessage = 'Error fetching posts';
+
+    if (error instanceof Error) {
+        errorMessage = error.message;
+    }
+
+    console.error('Error fetching posts:', error);
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
+}
+}
+
+export async function DELETE(req: NextRequest){
+  const id = req.nextUrl.pathname.split('/').pop();
+
+  if(!id){
+    return NextResponse.json({ messsage: "Id is missing or Invalid" }, {status: 400})
+  }
+
+  try {
+    await prisma.blogPost.delete({
+      where: {
+        id: parseInt(id, 10),
+      }
+    });
+    
+    return NextResponse.json({message: "Blogs post deleted successfully"}, { status: 200})
   } catch (error) {
-    res.status(500).json({ message: 'Error updating blog post' });
+    console.error("Error deleting blog post:", error);
+    return NextResponse.json({error: "Internal Server Error"}, { status: 500});    
   }
 }

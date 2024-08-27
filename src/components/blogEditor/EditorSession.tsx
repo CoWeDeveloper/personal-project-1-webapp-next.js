@@ -38,7 +38,7 @@ function EditorSession() {
     if (id) {
       const fetchData = async () => {
         try {
-          console.log("From blogpage client:",id)
+          
           const response = await fetch(`/api/blogs/${id}`); // Use dynamic route to fetch blog post
           if (response.ok) {
             const blog = await response.json();
@@ -79,11 +79,11 @@ function EditorSession() {
         });
         return
     }
-
+ 
     const optionalImage = extractImageFromContent(content) ?? '';
 
     const blogData = {
-        id: blogId || String(Date.now()), 
+      id: editorMode ? Number(blogId) : undefined, 
         bgImg: image ? URL.createObjectURL(image) : imageURL || '/default-image-path',
         author: author,
         title: title,
@@ -93,13 +93,15 @@ function EditorSession() {
         date: formatDate(new Date()),
     };
     try{
-      const response = await fetch("/api/blogs", {
+      const url = editorMode ? `/api/blogs/${id}` : `/api/blogs`;
+      const response = await fetch(url, {
         method: editorMode ? "PUT" : "POST",
         headers:{
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(blogData), //convert object into array
       })
+      console.log(response)
       
       
     if (response.ok) {
@@ -122,23 +124,13 @@ function EditorSession() {
   } catch (error) {
     console.error('Error publishing the blog:', error);
   }
-    // if (editorMode && blogId) {
-    //     const index = tableData.findIndex(blog => blog.id === blogId);
-    //     if (index !== -1) {
-    //         tableData[index] = blogData;
-    //     } 
-    // } else {
-    //     addBlog(blogData);
-    //    localStorage.setItem('blogSubmitted', 'true');
-      //  return router.push('/posts');
-    // }
+
 
     // Set a flag to show the toast on /posts page
     localStorage.setItem('blogUpdated', 'true');
     router.push('/posts');
 
   };
-
   
   const handleContentChange = (value: string) => {
     setContent(value);
@@ -183,8 +175,8 @@ function EditorSession() {
     <>
     
       <div className="w-full relative ">
-      <div className="flex mt-5 sm:flex-nowrap md:mb-0 justify-center xs:flex-wrap xs:mb-5">
-        <div className="flex flex-col  w-full px-4">
+      <div className="flex mt- bg-green-400 sm:flex-nowrap md:mb-0 justify-center xs:flex-wrap xs:mb-5">
+        <div className="flex flex-col bg-red-600  w-full px-4">
 
             <input
             type="text"
@@ -209,7 +201,9 @@ function EditorSession() {
             />
             </div>
             
-          <div className="flex items-start space-x-4  px-2">
+          <div className="flex flex-col px-2 bg-gray-600">
+            <div className="flex space-x-4 items-start">
+
             <button onClick={handlePreview} className="flex items-center rounded-md justify-center bg-[#2F7EAA] hover:bg-[#2a6a8d] text-white px-2 py-2 shadow duration-300">
               <Eye className='w-5 mr-2' />
               Preview
@@ -218,7 +212,7 @@ function EditorSession() {
             <button 
               onClick={handlePublish}
               className="flex justify-center items-center bg-green-500 text-white rounded-md shadow hover:bg-green-600 duration-300 px-4 py-2"
-            >
+              >
               <Image
                 className="mr-2"
                 src="/assets/icons/Demo/send.svg" 
@@ -228,7 +222,10 @@ function EditorSession() {
               />
               {editorMode ? 'Update' : 'Publish'}
             </button>
-          
+                </div>
+
+        <ImageUpload setImage={setImage} existingImageURL={imageURL} />
+
         </div>
           </div>
         <CustomToolbar />
@@ -237,16 +234,10 @@ function EditorSession() {
     
 
         <div className="bg-gray-100 w-full pt-2">
-        <ImageUpload setImage={setImage} existingImageURL={imageURL} />
 
         <div className="container relative min-h-screen mx-auto p-4  drop-shadow-2xl rounded-lg  pt-10 ">
-      
-          
-          
 
           <div className='h-full bg-white'>
-          
-
             <ReactQuill
               value={content}
               onChange={handleContentChange}

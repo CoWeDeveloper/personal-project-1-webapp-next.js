@@ -55,19 +55,3 @@ export async function POST(req: Request) {
     }
 
 
-// Named export for the PUT method (if needed)
-export async function PUT(req: Request) {
-    try {
-      const {id, ...updatedData}= await req.json();
-  
-      const updatedPost = await prisma.blogPost.update({
-        where: { id: parseInt(id, 10) },
-        data: updatedData
-      });
-  
-      return NextResponse.json(updatedPost, { status: 200 });
-    } catch (error) {
-      console.error('Error updating post:', error);
-      return NextResponse.json({ error: "Error updating post" }, { status: 500 });
-    }
-  }

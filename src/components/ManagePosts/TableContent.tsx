@@ -41,7 +41,7 @@ function TableContent() {
   useEffect(() => {
     // Fetch and sort data on initial render
     fetchTableData().then((data) => {
-      console.log("Fetched Data:", data); // Add this line to inspect the data structure
+      // console.log("Fetched Data:", data); // Add this line to inspect the data structure
       if (Array.isArray(data)) { // Check if data is an array
         const sorted = data.sort((a: any, b: any) => {
           const dateA = new Date(a.date).getTime();
@@ -116,6 +116,11 @@ function TableContent() {
     (_, i) => startPage + i
   );
 
+  const handleDelete = (id: string) => {
+    // Remove the deleted item from the state
+    setSortedData((prevData) => prevData.filter((item) => item.id !== id));
+  };
+
   return (
     <>
       <Table>
@@ -155,7 +160,7 @@ function TableContent() {
                 {data.date}
               </TableCell>
               <TableCell className="text-right md:pr-9 xs:pr-6">
-                <OptionMenu id={data.id} />
+                <OptionMenu id={data.id} onDelete={handleDelete} />
               </TableCell>
             </TableRow>
           ))}

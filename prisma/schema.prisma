@@ -14,7 +14,7 @@ model blogPost {
   author          String  @db.VarChar(255)
   title           String  @db.VarChar(255)
   subDescripation String  @db.Text
-  content         String  @db.Text
+  content         String  @db.LongText
   optionalImage   String? @db.VarChar(255)
   date            String  @db.VarChar(40)
 }
