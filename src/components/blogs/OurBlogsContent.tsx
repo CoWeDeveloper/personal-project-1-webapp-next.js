@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 function OurBlogsContent() {
   const [blogData, setBlogData] = useState([]); // State to hold fetched blog data
   const [loading, setLoading] = useState(true); // State to manage loading
-  const [error, setError] = useState(null); // State to manage errors
+  const [searchQuery,  setSearchQuery] = useState<string>("");
   const [currentPage, setCurrentPage] = useState(1); // Pagination state
   const cardsPerPage = 9;
 
@@ -40,13 +40,26 @@ function OurBlogsContent() {
     fetchBlogData();
   }, []);
 
+  const handleSearch = (query: string) =>{
+    setSearchQuery(query);
+  };
+
+  const filteredData = blogData.filter((blog: any)=>{
+    const searchLower = searchQuery.toLowerCase();
+    return(
+      blog.title.toLowerCase().includes(searchLower) ||
+      blog.content.toLowerCase().includes(searchLower) ||
+      blog.author.toLowerCase().includes(searchLower)
+    );
+  })
+
   // Calculate the indices for pagination
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
-  const paginatedData = blogData.slice(startIndex, endIndex); // Paginate data based on the current page
+  const paginatedData = filteredData.slice(startIndex, endIndex); // Paginate data based on the current page
 
   // Calculate total number of pages
-  const totalPages = Math.ceil(blogData.length / cardsPerPage);
+  const totalPages = Math.ceil(filteredData.length / cardsPerPage);
 
   // Calculate the start and end of the range of pages to display
   const maxPagesToShow = 5;
@@ -62,14 +75,10 @@ function OurBlogsContent() {
     return <div>Loading...</div>; // Show loading message
   }
 
-  if (error) {
-    return <div>{error}</div>; // Show error message
-  }
-
   return (
     <>
       <div className="flex justify-end text-xs md:px-28 sm:px-5 mt-5 -z-10">
-        <SearchField />
+        <SearchField onSearch={handleSearch} />
       </div>
       <div className="flex flex-wrap sm:gap-10 gap-8 justify-center items-center ">
         {paginatedData.map((data: any) => {

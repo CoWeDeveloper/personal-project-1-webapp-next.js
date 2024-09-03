@@ -138,11 +138,14 @@ function EditorSession() {
 
   const handlePreview = () => {
     if (content.trim() === '' || title.trim() === '' || (!image && !imageURL) || author.trim() === '') {
-      return alert('Title, content, and image cannot be empty');
+      toast({
+          description: <WarningToast />,
+          variant: "destructive"
+      });
+      return;
     }
 
     const optionalImage = extractImageFromContent(content);
-
     const previewBlog = {
       id: String(Date.now()),
       bgImg: image ? URL.createObjectURL(image) : imageURL || '/default-image-path',
@@ -174,44 +177,83 @@ function EditorSession() {
   return (
     <>
     
-      <div className="w-full relative ">
-      <div className="flex mt- bg-green-400 sm:flex-nowrap md:mb-0 justify-center xs:flex-wrap xs:mb-5">
-        <div className="flex flex-col bg-red-600  w-full px-4">
-
+      <div className="w-full relative">
+      <div className="flex mt-2 sm:flex-nowrap md:mb-0 justify-center xs:flex-wrap xs:mb-5">
+        <div className="flex flex-col w-full px-3">
+            <div className="w-full relative mt-2">
             <input
+            id="name"
+            name="name"
             type="text"
             value={author}
             onChange={(e) => setAuthor(e.target.value)}
-            placeholder="Author Name"
-            className="py-1 px-2 my-2 text-lg w-full outline-none border-b-2 transition-all border-[#154d8f] focus:border-sky-600 focus:bg-white"
-             />
+            placeholder=""
+            className="peer pt-2 my-2 text-lg w-full outline-none border-b-2 transition-all border-[#154d8f] focus:border-sky-600 focus:bg-white text-gray-500 focus:text-gray-600 font-medium"
+            />
+            <label
+            htmlFor="name"
+            className="transform -translate-y-4 scale-75 top-2 absolute text-stone-400 duration-300
+            origin-[0] bg-white peer-focus:px-2 peer-placeholder-shown:scale-100 
+            peer-placeholder-shown:top-1/2 peer-focus:text-[#4796cd] peer-focus:font-semibold
+            peer-focus:top-2 peer-focus:scale-75
+              peer-focus:-translate-y-4 left-0 "
+            >
+              Author Name
+            </label>
+            </div> 
+            <div className="w-full relative my-2">
             <input
+              id="title"
+              name="title"
               type="text"
               value={title}
-              
               onChange={(e) => setTitle(e.target.value)} 
-              placeholder='Write a title'
-              className={`py-1 px-2 my-2 text-lg  rounded-sm   outline-none border-b-2 transition-all border-gray-300 focus:border-gray-400 focus:bg-white
-              `}/>
+              placeholder=''
+              className={`peer pt-2 my-2 text-lg w-full rounded-sm outline-none border-b-2 transition-all border-gray-300 focus:border-gray-400 focus:bg-white text-gray-500 focus:text-gray-600 
+                `}/>
+                <label htmlFor="title"
+                 className="transform -translate-y-4 scale-75 top-2 absolute text-stone-400  duration-300
+                 origin-[0] bg-white peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:font-medium
+                 peer-placeholder-shown:top-1/2 peer-focus:text-[#4796cd] peer-focus:font-semibold
+            peer-focus:top-2 peer-focus:scale-75
+              peer-focus:-translate-y-4 left-0"
+                >
+                  Write a Title
+                </label>
+                </div>
+                <div className="w-full relative">
             <textarea
+              id="subTitle"
+              name="subTitle"
               value={subDescripation}
               onChange={(e) => setSubDescripation(e.target.value)}
-              placeholder='Sub Title (optional)'
-              className='text-sm resize-none  h-16 py-1 px-2 my-2 rounded-sm outline-none duration-700 transition-all border-b-2 border-gray-300 focus:border-gray-400 '
-            />
+              placeholder=''
+              className='peer w-full text-sm font-medium resize-none h-16 py-1 my-2 rounded-sm outline-none duration-700 transition-all border-b-2 border-gray-300 focus:border-gray-400 text-gray-500 focus:text-gray-600'
+              />
+              <label htmlFor="subTitle"
+                  className="transform -translate-y-5 scale-75 top-2 absolute  text-stone-400 duration-300
+                  origin-[0] bg-white peer-focus:px-2 peer-placeholder-shown:scale-100 peer-placeholder-shown:font-medium 
+                  peer-placeholder-shown:top-4 peer-focus:text-[#4796cd] peer-focus:font-semibold
+                  peer-focus:top-2 peer-focus:scale-75
+                  peer-focus:-translate-y-5 left-0"
+              >
+              Sub Title (optional)
+              </label>
+              </div>
+            <CustomToolbar />
             </div>
             
-          <div className="flex flex-col px-2 bg-gray-600">
-            <div className="flex space-x-4 items-start">
+          <div className="flex flex-col pr-2">
+            <div className="flex space-x-2 items-start">
 
-            <button onClick={handlePreview} className="flex items-center rounded-md justify-center bg-[#2F7EAA] hover:bg-[#2a6a8d] text-white px-2 py-2 shadow duration-300">
+            <button onClick={handlePreview} className="flex items-center rounded-md justify-center bg-[#2F7EAA] hover:bg-[#2a6a8d] text-white px-2 py-2 duration-300">
               <Eye className='w-5 mr-2' />
               Preview
             </button>
 
             <button 
               onClick={handlePublish}
-              className="flex justify-center items-center bg-green-500 text-white rounded-md shadow hover:bg-green-600 duration-300 px-4 py-2"
+              className="flex justify-center items-center bg-green-500 text-white rounded-md  hover:bg-green-600 duration-300 px-4 py-2"
               >
               <Image
                 className="mr-2"
@@ -222,29 +264,24 @@ function EditorSession() {
               />
               {editorMode ? 'Update' : 'Publish'}
             </button>
-                </div>
+            </div>
 
         <ImageUpload setImage={setImage} existingImageURL={imageURL} />
 
         </div>
           </div>
-        <CustomToolbar />
-      
+        <div className="bg-gray-100 w-full pt-2 pb-10">
 
-    
+        <div className="container mx-auto p-4  drop-shadow-2xl rounded-lg  pt-10 ">
 
-        <div className="bg-gray-100 w-full pt-2">
-
-        <div className="container relative min-h-screen mx-auto p-4  drop-shadow-2xl rounded-lg  pt-10 ">
-
-          <div className='h-full bg-white'>
+          <div className=' bg-white'>
             <ReactQuill
               value={content}
               onChange={handleContentChange}
               modules={modules}
               theme="snow"
               placeholder='Compose an epic...'
-              className='w-full custom-quill'
+              className='w-full custom-quill '
             />
           </div>
           <div className="text-right text-gray-600 text-xs mt-1 font-semibold">

@@ -1,5 +1,4 @@
 "use client";
-import OptionMenu from "./OptionMenu";
 import {
   Table,
   TableBody,
@@ -16,15 +15,14 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowUp10 , ArrowDown10} from 'lucide-react';
-
-import { useState, useEffect } from "react";
-import { getTableData } from "@/lib/tableData";
-import { PublishToast, UpdateToast } from "./CustomToast";
+import React, { useState, useEffect, ReactHTML } from "react";
+import { PublishToast, UpdateToast } from "./subComponent/CustomToast";
 import { useToast } from "@/components/ui/use-toast";
-
-
+import OptionMenu from "./subComponent/OptionMenu";
+import { StringMap } from "quill";
 
 const fetchTableData = async ()=>{
   const res = await fetch("/api/blogs");
@@ -32,9 +30,18 @@ const fetchTableData = async ()=>{
   return data;
 } 
 
+interface BlogData {
+  id: string,
+  title: string,
+  author: string,
+  bgImg: string,
+  date: string,
+}
+
 function TableContent() {
   const [sortedData, setSortedData] = useState<any[]>([]);
   const [isAscending, setIsAscending] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   const { toast } = useToast();
 
@@ -53,19 +60,11 @@ function TableContent() {
         console.error("Fetched data is not an array");
       }
     });
-    // const data = getTableData();
-    // const sorted = data.sort((a: any, b: any) => {
-    //   const dateA = new Date(a.date).getTime();
-    //   const dateB = new Date(b.date).getTime();
-    //   return isAscending ? dateA - dateB : dateB - dateA;
-    // });
-    // setSortedData(sorted);
 
-    
+    // Code for previewing blogs
     const blogSubmitted = localStorage.getItem('blogSubmitted');
     const blogUpdated = localStorage.getItem('blogUpdated');
     if (blogSubmitted) {
-      // Show the toast notification
       toast({
         description: <PublishToast />, // Use the custom component as the description
         variant: "default",
@@ -91,6 +90,11 @@ function TableContent() {
     setSortedData(sorted);
     setIsAscending(!isAscending);
   };
+ 
+  // filter data base on serach 
+  const filtredData = sortedData.filter((data)=>{
+    return data.title.toLowerCase().includes(searchQuery.toLowerCase())
+  });
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -101,10 +105,10 @@ function TableContent() {
   const endIndex = startIndex + rowsPerPage;
 
   // Slice the data to get only the rows for the current page
-  const paginatedData = sortedData.slice(startIndex, endIndex);
+  const paginatedData = filtredData.slice(startIndex, endIndex);
 
   // Calculate the total number of pages
-  const totalPages = Math.ceil(sortedData.length / rowsPerPage);
+  const totalPages = Math.ceil(filtredData.length / rowsPerPage);
   
   // Calculate the start and end of the range of pages to display
   const maxPagesToShow = 5;
@@ -120,13 +124,84 @@ function TableContent() {
     // Remove the deleted item from the state
     setSortedData((prevData) => prevData.filter((item) => item.id !== id));
   };
+  
+  const onSearch = (e: React.ChangeEvent<HTMLInputElement>) =>{
+
+   setSearchQuery(e.target.value) 
+  }
+
+  const highlightText = (text: string, query: string) => {
+    if (!query) return text;
+
+    const parts = text.split(new RegExp(`(${query})`, 'gi'));
+    return (
+      <>
+        {parts.map((part, index) =>
+          part.toLowerCase() === query.toLowerCase() ? (
+            <span key={index} className="bg-yellow-200">{part}</span>
+          ) : (
+            part
+          )
+        )}
+      </>
+    );
+  };
 
   return (
     <>
+      <header className="flex flex-wrap md:justify-start xs:justify-center lg:justify-between lg:items-start md:items-end md:mb-0 xs:mb-5">
+          <div className="text-stone-600 text-4xl font-semibold mb-10">
+            Manage Posts
+          </div>
+          <div className="flex md:flex-row xs:flex-col lg:items-start md:items-end xs:px-2 md:px-0 flex-wrap w-full  md:justify-between lg:w-auto xs:space-x-0 sm:space-x-4 md:my-2 lg:my-0">
+          <div className="input__search">
+    <Image
+      src="./assets/icons/Admin/search.svg"
+      alt="Plus Icon"
+      width={100}
+      height={100}
+      className="w-5 mx-2"
+    />
+    <input
+      type="text"
+      placeholder="Search"
+      onChange={onSearch}
+      className="outline-none w-full mx-auto"
+    />
+  </div>
+            <div className="flex !justify-end items-center w-full sm:w-auto xs:justify-center space-x-5 xs:my-2 md:my-0">
+              <Link href={"/editor"}>
+                <button className="flex items-center bg-[#58C796] hover:bg-[#57bb8f] text-white rounded-lg px-5 py-1.5">
+                  <Image
+                    src="./assets/icons/Admin/plus.svg"
+                    alt="Plus Icon"
+                    width={100}
+                    height={100}
+                    className="w-5 mr-2"
+                  />
+                  Add Post
+                </button>
+              </Link>
+           
+              {/* <button className="flex items-center  bg-[#2F7EAA] hover:bg-[#2a6a8d] text-white rounded-lg px-5 py-1.5">
+              <Image
+                src="./assets/icons/Admin/managePost.svg"
+                alt="Plus Icon"
+                width={100}
+                height={100}
+                className="w-6 mr-2"
+                />
+              Manage Post
+            </button> */}
+            </div>
+          </div>
+        </header>
+        {/* Table Content */}
       <Table>
         <TableHeader className="md:text-xl xs:text-sm">
           <TableRow>
             <TableHead>Publish Blogs</TableHead>
+            <TableHead>Author</TableHead>
             <TableHead onClick={handleFiltre} className="text-center cursor-pointer hover:bg-slate-200 hover:rounded-lg text-lg flex items-center">
               Publish Date
               {isAscending ? (<ArrowUp10  className="w-5" />) : (<ArrowDown10  className="w-5" />)}
@@ -153,8 +228,11 @@ function TableContent() {
                   className="rounded-lg aspect-auto mr-4"
                 />
                 <div className="md:text-xl xs:text-sm md:w-96 xs:w-64 font-semibold text-stone-500">
-                  {data.title}
+                {highlightText(data.title, searchQuery)}
                 </div>
+              </TableCell>
+              <TableCell>
+                {data.author}
               </TableCell>
               <TableCell className="text-right w-36 font-medium md:text-base xs:text-xs">
                 {data.date}

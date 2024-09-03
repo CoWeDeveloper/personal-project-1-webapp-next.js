@@ -3,15 +3,18 @@ import Image from "next/image";
 import { useParams } from 'next/navigation';
 import RecentBlogs from "./RecentBlogs";
 import SearchField from "./SearchField";
+import {CopyToast} from "./CustomToaster";
 import 'react-quill/dist/quill.snow.css'; 
 import { useState, useEffect } from "react";
+import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/loading";
+
 
 interface BlogPost {
   id: string;
   bgImg: string;
   title: string;
-  subDescription: string; // Corrected the spelling here
+  subDescripation: string; // Corrected the spelling here
   content: string;
   date: string;
 }
@@ -19,8 +22,10 @@ interface BlogPost {
 function BlogsArticle() {
   const params = useParams();
   const id = params.slug;
+  const {toast} = useToast();
   const [blog, setBlog] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -58,6 +63,48 @@ function BlogsArticle() {
     return <div>Blog not found</div>; // Show an error message if the blog is not found
   }
 
+  const shareUrl = window.location.href;
+
+  const handleShareClick = (plateform: string)=>{
+    let url = "";
+    const encodedSharedUrl = encodeURIComponent(shareUrl);
+    const encodedTitle = encodeURIComponent(blog.title);
+
+    switch (plateform){
+      case "facebook":
+        url =  `https://www.facebook.com/sharer/sharer.php?u=${encodedSharedUrl}`;
+        break;
+      case "twitter":
+        url = `https://twitter.com/intent/tweet?url=${encodedSharedUrl}&text=${encodedTitle}`;
+        break;
+      case "linkedin":
+        url = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedSharedUrl}&title=${encodedTitle}`;
+        break;
+      case "copy":
+        navigator.clipboard.writeText(shareUrl);
+        toast({
+          description: <CopyToast />,
+          variant: "default" 
+        });
+        return;
+      default:
+        return;
+
+    }
+    window.open(url, "_blank", "noopener,noreferrer");
+
+  }
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  };
+
+  // Highlight search term in blog content
+  const highlightedContent = blog.content.replace(
+    new RegExp(searchQuery, "gi"),
+    (match) => `<mark>${match}</mark>`
+  );
+
   return (
     <>
       {/* header */}
@@ -69,7 +116,7 @@ function BlogsArticle() {
               {blog.title}
             </h1>
             <h2 className="md:text-md sm:text-sm xs:text-xs mt-2 max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-16">
-              {blog.subDescription}
+              {blog.subDescripation}
             </h2>
           </div>
         </div>
@@ -88,13 +135,15 @@ function BlogsArticle() {
       {/* body */}
       <div className="w-full h-fit bg-white text-gray-700 pt-5 pb-14 lh:px-10 md:px-5 px-1">
         <div className="flex justify-end w-full mr-10 mb-5">
-          <SearchField />
+          <SearchField onSearch={handleSearch} />
         </div>
         <div className="flex justify-center md:mx-2 lg:mx-10 xs:mx-1">
           <div>
             <div className="text-pretty flex">
               <ul className="space-y-3 flex flex-col items-center xs:mr-2 lg:mr-5">
-                <li className="rounded-full xs:w-8 sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
+                <li 
+                onClick={() => handleShareClick("copy")}
+                className="rounded-full xs:w-8 sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
                   <Image
                     src="/assets/icons/Blogs/shareIcon.svg"
                     alt="Share icons"
@@ -103,7 +152,9 @@ function BlogsArticle() {
                     className="blogIcon"
                   />
                 </li>
-                <li className="rounded-full sm:p-3 xs:p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
+                <li 
+                 onClick={() => handleShareClick("twitter")}
+                className="rounded-full sm:p-3 xs:p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
                   <Image
                     src="/assets/icons/Blogs/twitterIcon.svg"
                     alt="Share icons"
@@ -112,7 +163,9 @@ function BlogsArticle() {
                     className="blogIcon"
                   />
                 </li>
-                <li className="rounded-full sm:p-3 xs:p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
+                <li 
+                onClick={() => handleShareClick("facebook")}
+                className="rounded-full sm:p-3 xs:p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
                   <Image
                     src="/assets/icons/Blogs/facebookIcon.svg"
                     alt="Share icons"
@@ -121,7 +174,9 @@ function BlogsArticle() {
                     className="blogIcon"
                   />
                 </li>
-                <li className="rounded-full sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-auto">
+                <li 
+                 onClick={() => handleShareClick("linkedin")}
+                className="rounded-full sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-auto">
                   <Image
                     src="/assets/icons/Blogs/linkedinIcon.svg"
                     alt="Share icons"
@@ -131,7 +186,9 @@ function BlogsArticle() {
                   />
                 </li>
               </ul>
-              <div className="quillContent" dangerouslySetInnerHTML={{ __html: blog.content }} />
+              <div className="quillContent"
+                   dangerouslySetInnerHTML={{ __html: highlightedContent }}
+               />
             </div>
           </div>
         </div>

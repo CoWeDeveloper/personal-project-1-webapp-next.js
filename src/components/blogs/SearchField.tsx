@@ -1,7 +1,12 @@
 import Image from "next/image";
+import { useState } from "react";
 
-function SearchField() {
-    
+function SearchField({onSearch}: {onSearch: (query:string)=> void}) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>)=>{
+        setSearchQuery(e.target.value);
+        onSearch(e.target.value)
+  }
   return (
     <>
       <div
@@ -21,6 +26,7 @@ function SearchField() {
           id="searchBlog"
           autoComplete="off"
           type="text"
+          onChange={handleInputChange}
           placeholder="Search blog"
           className="outline-none w-full mx-auto bg-sky-50"
         />

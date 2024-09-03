@@ -24,18 +24,20 @@ const ImageUpload: FC<ImageUploadProps> = ({ setImage, existingImageURL }) => {
   };
 
   return (
-    <div className="flex flex-col w-full max-w-[300px] space-y-2 text-center self-end justify-end">
-  <div className="w-full  ">
+    <div className="flex flex-col w-full h-full mb-2 text-center self-end justify-end ">
+  <div className="mt-1.5 mb-2.5 self-center">
     {preview ? (
       <Image
         src={preview}
         alt="Image Preview"
+        
         width={500}
         height={500}
-        className="max-w-full h-auto rounded shadow-md"
+        className=" rounded-md aspect-square w-64 h-36 shadow-md "
       />
-    ) : (
-      <div className="w-full h-auto bg-gray-200 rounded shadow-md"></div>
+    ) 
+    : (
+      <div className="aspect-square w-56 h-36 bg-gray-200 rounded shadow-md"></div>
     )}
   </div>
   <label

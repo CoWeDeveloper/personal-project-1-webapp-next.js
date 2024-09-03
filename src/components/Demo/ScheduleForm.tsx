@@ -7,6 +7,7 @@ import { useToast } from "@/components/ui/use-toast";
 import Select from 'react-select';
 import  sendEmail from "../services/sendEmail";
 import send from "../../../public/assets/icons/Demo/send.svg";
+import { FormToast } from "./CustomToaster";
 
 
 const initialValues = {
@@ -94,8 +95,8 @@ const options: any = [
         try {
             const response = await sendEmail( formData);
             
-              toast({title: "Form has been submitted Successfully",
-                description: "We will contact you shortly",
+              toast({
+                description: <FormToast />,
                      variant: "default"
               });
             
@@ -168,7 +169,7 @@ const options: any = [
              onChange={handleChange}
              onBlur={handleBlur}
              className="block px-2.5 pb-2.5 pt-4 w-full text-sm focus:text-black text-gray-500 bg-transparent rounded-lg
-              border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer  focus:font-medium focus:outline-none"/>
+              border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:font-medium focus:outline-none"/>
               <label htmlFor="email" 
               className="absolute text-sm text-gray-500 duration-300 transform
                -translate-y-4 scale-75 top-2 z-10 
