@@ -99,7 +99,7 @@ function TableContent() {
 
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const rowsPerPage = 5;
+  const rowsPerPage = 6;
 
   // Calculate the start and end indices of the rows for the current page
   const startIndex = (currentPage - 1) * rowsPerPage;
@@ -203,7 +203,7 @@ function TableContent() {
           <TableRow>
             <TableHead>Publish Blogs</TableHead>
             <TableHead className="text-right pr-20">Author</TableHead>
-            <TableHead onClick={handleFiltre} className="text-center cursor-pointer hover:bg-slate-200 hover:rounded-lg text-lg flex items-center">
+            <TableHead onClick={handleFiltre} className=" cursor-pointer hover:bg-slate-200 hover:rounded-lg text-lg flex items-center justify-end">
               Publish Date
               {isAscending ? (<ArrowUp10  className="w-5" />) : (<ArrowDown10  className="w-5" />)}
             </TableHead>
@@ -226,7 +226,7 @@ function TableContent() {
                   width={100}
                   height={100}
                   objectFit="cover"
-                  className="rounded-lg aspect-auto mr-4"
+                  className="rounded-lg aspect-auto mr-4 w-28 h-16"
                 />
                 <div className="md:text-xl xs:text-sm md:w-96 xs:w-64 font-semibold text-stone-500">
                 {highlightText(data.title, searchQuery)}
@@ -235,7 +235,7 @@ function TableContent() {
               <TableCell className="text-right font-medium md:text-base xs:text-xs pr-20">
                 {highlightText(data.author, searchQuery)}
               </TableCell>
-              <TableCell className="text-right w-36 font-medium md:text-base xs:text-xs">
+              <TableCell className="text-right w-44 font-medium md:text-base xs:text-xs">
                 {data.date}
               </TableCell>
               <TableCell className="text-right md:pr-9 xs:pr-6">

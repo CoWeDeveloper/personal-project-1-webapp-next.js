@@ -58,11 +58,11 @@ function EditorSession() {
     }
   }, [id]);
 
-  const extractImageFromContent = (content: string): string | null => {
-    const doc = new DOMParser().parseFromString(content, 'text/html');
-    const img = doc.querySelector('img');
-    return img ? img.src : null;
-  };
+  // const extractImageFromContent = (content: string): string | null => {
+  //   const doc = new DOMParser().parseFromString(content, 'text/html');
+  //   const img = doc.querySelector('img');
+  //   return img ? img.src : null;
+  // };
 
   function formatDate(dateString: any) {
     const date: any = new Date(dateString);
@@ -79,19 +79,18 @@ function EditorSession() {
         return
     }
  
-    const optionalImage = extractImageFromContent(content) ?? '';
+    // const optionalImage = extractImageFromContent(content) ?? '';
 
     const blogData = {
-      id: editorMode ? Number(blogId) : undefined, 
+        id: editorMode ? Number(blogId) : undefined, 
         bgImg: image ? URL.createObjectURL(image) : imageURL || '/default-image-path',
         author: author,
         title: title,
         subDescripation: subDescripation,
         content: content,
-        optionalImage: optionalImage ?? undefined,  
+        // optionalImage: optionalImage ?? undefined,  
         date: formatDate(new Date()),
     };
-    console.log(content)
     try{
       const url = editorMode ? `/api/blogs/${id}` : `/api/blogs`;
       const response = await fetch(url, {
@@ -145,7 +144,7 @@ function EditorSession() {
       return;
     }
 
-    const optionalImage = extractImageFromContent(content);
+    // const optionalImage = extractImageFromContent(content);
     const previewBlog = {
       id: String(Date.now()),
       bgImg: image ? URL.createObjectURL(image) : imageURL || '/default-image-path',

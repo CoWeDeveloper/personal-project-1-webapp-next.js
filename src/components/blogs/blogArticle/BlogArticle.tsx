@@ -14,7 +14,7 @@ interface BlogPost {
   id: string;
   bgImg: string;
   title: string;
-  subDescription: string;
+  subDescripation: string;
   content: string;
   date: string;
 }
@@ -115,7 +115,7 @@ function BlogsArticle() {
               {blog.title}
             </h1>
             <h2 className="md:text-md sm:text-sm xs:text-xs mt-2 max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-16">
-              {blog.subDescription}
+              {blog.subDescripation}
             </h2>
           </div>
         </div>

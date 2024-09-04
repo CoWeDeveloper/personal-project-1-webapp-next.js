@@ -93,7 +93,7 @@ function OurBlogsContent() {
                 width={200}
                 height={200}
                 objectFit="fit"
-                className="aspect-auto w-full rounded-t-xl"
+                className="aspect-auto w-96 h-48 rounded-t-xl"
               />
               <div className="pb-2 w-auto px-2">
                 <h2 className="font-bold text-stone-500 tracking-tighter capitalize text-lg w-64 pt-4 text-pretty">
