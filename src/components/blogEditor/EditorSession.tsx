@@ -16,7 +16,6 @@ import CustomToolbar from './subComponent/CustomToolbar';
 // Dynamically import ReactQuill
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
 
-
 function EditorSession() {
   const [author, setAuthor] = useState<string>('');
   const [title, setTitle] = useState<string>('');
@@ -92,6 +91,7 @@ function EditorSession() {
         optionalImage: optionalImage ?? undefined,  
         date: formatDate(new Date()),
     };
+    console.log(content)
     try{
       const url = editorMode ? `/api/blogs/${id}` : `/api/blogs`;
       const response = await fetch(url, {
@@ -153,7 +153,7 @@ function EditorSession() {
       title: title,
       subDescripation: subDescripation,
       content: content,
-      optionalImage: optionalImage ?? undefined,
+      // optionalImage: optionalImage ?? undefined,
       date: new Date().toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }),
     };
 

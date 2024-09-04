@@ -50,6 +50,7 @@ export async function PUT(req: NextRequest) {
         content,
         subDescripation,
         bgImg,
+        // optionalImage: optionalImage ?? null,
       },
     });
 

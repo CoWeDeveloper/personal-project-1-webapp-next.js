@@ -1,20 +1,20 @@
 "use client";
+
 import Image from "next/image";
 import { useParams } from 'next/navigation';
 import RecentBlogs from "./RecentBlogs";
 import SearchField from "./SearchField";
-import {CopyToast} from "./CustomToaster";
+import { CopyToast } from "./CustomToaster";
 import 'react-quill/dist/quill.snow.css'; 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import Loading from "@/app/loading";
-
 
 interface BlogPost {
   id: string;
   bgImg: string;
   title: string;
-  subDescripation: string; // Corrected the spelling here
+  subDescription: string;
   content: string;
   date: string;
 }
@@ -22,7 +22,7 @@ interface BlogPost {
 function BlogsArticle() {
   const params = useParams();
   const id = params.slug;
-  const {toast} = useToast();
+  const { toast } = useToast();
   const [blog, setBlog] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState<string>("");
@@ -35,44 +35,51 @@ function BlogsArticle() {
           const data = await res.json();
           setBlog(data);
         } else {
-          console.error('Failed to fetch blog data');
+          console.error('Failed to fetch blog data', res.status);
         }
       } catch (error) {
         console.error("Error fetching blog data:", error);
       } finally {
-        setLoading(false); // Set loading to false once fetching is complete
+        setLoading(false);
       }
     };
 
     const storedPreview = localStorage.getItem('previewBlog');
     if (storedPreview) {
-      setBlog(JSON.parse(storedPreview)); // Set blog from local storage
-      localStorage.removeItem('previewBlog'); // Remove after using
-      setLoading(false); // Set loading to false if using local storage data
+      setBlog(JSON.parse(storedPreview));
+      localStorage.removeItem('previewBlog');
+      setLoading(false);
     } else {
-      fetchBlogData(); // Fetch blog post if no preview data in local storage
+      fetchBlogData();
     }
-
   }, [id]);
 
+  const highlightedContent = useMemo(() => {
+    if (!blog || !searchQuery) return blog?.content || "";
+    return blog.content.replace(
+      new RegExp(`(${searchQuery})`, "gi"),
+      (match) => `<mark>${match}</mark>`
+    );
+  }, [blog?.content, searchQuery]);
+
   if (loading) {
-    return <Loading />; // Show loading state while fetching data
+    return <Loading />;
   }
 
   if (!blog) {
-    return <div>Blog not found</div>; // Show an error message if the blog is not found
+    return <div>Blog not found</div>;
   }
 
   const shareUrl = window.location.href;
 
-  const handleShareClick = (plateform: string)=>{
+  const handleShareClick = (platform: string) => {
     let url = "";
     const encodedSharedUrl = encodeURIComponent(shareUrl);
     const encodedTitle = encodeURIComponent(blog.title);
 
-    switch (plateform){
+    switch (platform) {
       case "facebook":
-        url =  `https://www.facebook.com/sharer/sharer.php?u=${encodedSharedUrl}`;
+        url = `https://www.facebook.com/sharer/sharer.php?u=${encodedSharedUrl}`;
         break;
       case "twitter":
         url = `https://twitter.com/intent/tweet?url=${encodedSharedUrl}&text=${encodedTitle}`;
@@ -84,26 +91,18 @@ function BlogsArticle() {
         navigator.clipboard.writeText(shareUrl);
         toast({
           description: <CopyToast />,
-          variant: "default" 
+          variant: "default"
         });
         return;
       default:
         return;
-
     }
     window.open(url, "_blank", "noopener,noreferrer");
-
-  }
+  };
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);
   };
-
-  // Highlight search term in blog content
-  const highlightedContent = blog.content.replace(
-    new RegExp(searchQuery, "gi"),
-    (match) => `<mark>${match}</mark>`
-  );
 
   return (
     <>
@@ -116,7 +115,7 @@ function BlogsArticle() {
               {blog.title}
             </h1>
             <h2 className="md:text-md sm:text-sm xs:text-xs mt-2 max-w-2xl mx-auto xs:px-2 md:px-10 lg:px-16">
-              {blog.subDescripation}
+              {blog.subDescription}
             </h2>
           </div>
         </div>

@@ -93,7 +93,8 @@ function TableContent() {
  
   // filter data base on serach 
   const filtredData = sortedData.filter((data)=>{
-    return data.title.toLowerCase().includes(searchQuery.toLowerCase())
+    return (data.title.toLowerCase().includes(searchQuery.toLowerCase())
+  || data.author.toLowerCase().includes(searchQuery.toLowerCase())) 
   });
 
   // Pagination
@@ -201,7 +202,7 @@ function TableContent() {
         <TableHeader className="md:text-xl xs:text-sm">
           <TableRow>
             <TableHead>Publish Blogs</TableHead>
-            <TableHead>Author</TableHead>
+            <TableHead className="text-right pr-20">Author</TableHead>
             <TableHead onClick={handleFiltre} className="text-center cursor-pointer hover:bg-slate-200 hover:rounded-lg text-lg flex items-center">
               Publish Date
               {isAscending ? (<ArrowUp10  className="w-5" />) : (<ArrowDown10  className="w-5" />)}
@@ -231,8 +232,8 @@ function TableContent() {
                 {highlightText(data.title, searchQuery)}
                 </div>
               </TableCell>
-              <TableCell>
-                {data.author}
+              <TableCell className="text-right font-medium md:text-base xs:text-xs pr-20">
+                {highlightText(data.author, searchQuery)}
               </TableCell>
               <TableCell className="text-right w-36 font-medium md:text-base xs:text-xs">
                 {data.date}
