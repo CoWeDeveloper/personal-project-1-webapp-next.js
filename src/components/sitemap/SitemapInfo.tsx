@@ -102,7 +102,7 @@ function SiteMapInfo() {
                 </li>
                 <li className="hover:text-sky-700 hover:font-medium duration-300 transition-all">
                   <Link href={"./softwares/blogs"}>
-                    FAQ's
+                    FAQ&rsquo;s
                   </Link>
                 </li>
               </ul>

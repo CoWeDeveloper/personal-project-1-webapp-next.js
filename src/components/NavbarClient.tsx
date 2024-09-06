@@ -50,7 +50,6 @@ function NavbarClient()  {
     ${scrollUp ? "bg-[#211c5d] sticky top-0 z-50" : "bg-transparent"}
   `}
 >
-
         <nav className='flex mx-auto items-center lg:justify-around  justify-between'> 
             <div className='xl:ml-24 '>
              <Link href={'/'}><Image src={logo} className='w-40 cursor-pointer' alt="CloudTanentLogo" /> </Link>

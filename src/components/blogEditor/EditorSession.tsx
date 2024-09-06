@@ -124,7 +124,6 @@ function EditorSession() {
     console.error('Error publishing the blog:', error);
   }
 
-
     // Set a flag to show the toast on /posts page
     localStorage.setItem('blogUpdated', 'true');
     router.push('/posts');

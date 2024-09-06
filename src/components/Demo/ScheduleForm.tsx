@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useFormik } from "formik";
 import { demoSchema } from "./schema";
 import { useToast } from "@/components/ui/use-toast";
@@ -49,7 +49,7 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
 } 
 
 
-const options: any = [
+const options: any = useMemo(()=>[
   { value: 'S&D Next', label: 'S&D Next (Sales & Distribution)', },
   { value: 'S&D E-Suite', label: 'S&D E-Euite (Sales & Distribution)' },
   { value: 'POS Xtreme', label: 'POS Xtreme (Point of Solution for Shops & Supermarkets)' },
@@ -61,7 +61,7 @@ const options: any = [
   { value: 'Production+', label: 'Production+' },
   { value: 'Primary+', label: 'Primary+ (Primary Sales)'},
   { value: 'Import+', label: 'Import+' },
-];
+], []);
 
   // form handling and validation 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue,}= useFormik ({
@@ -72,7 +72,6 @@ const options: any = [
         console.log("Checking the value ",values.solutions); // Log the array to verify its structure
 
         const solutionString : string = values.solutions.map((item : any) => item.value).join(', ');
-      
         const formData = {
           CompanyCode: 61,
           OfficeCode: 100061,
@@ -126,7 +125,7 @@ const options: any = [
         if (product) {
           const matchingOption = options?.find((option: any) => option.value === product);
           if (matchingOption) {
-            setFieldValue ('solutions' ,matchingOption);
+            setFieldValue ('solutions', matchingOption);
           }
         }
         const { pathname, hash } = window.location;
@@ -134,13 +133,11 @@ const options: any = [
         if (hash === '#schedule') {
           document.getElementById('schedule')?.scrollIntoView({ behavior: 'smooth' });
         }
-
-      }, [product]);
+      }, [product, options, setFieldValue]);
 
   return (
     <>
           <form onSubmit={handleSubmit}>          
-
           <div className="flex justify-center items-center mb-4 mt-2">
             <div className="relative w-full mr-4">
              <input type="text" id="name" name="name" placeholder=" "

@@ -1,16 +1,16 @@
 "use client";
-import Footer from "@/components/Footer";
+import FooterComp from "@/components/Footer";
 import { usePathname } from 'next/navigation'
 
-function footer() {
+function Footer() {
   const pathname = usePathname();
   const isLoginPage = pathname === '/login';
 
   return (
     <div> 
-        {!isLoginPage && <Footer />}
+        {!isLoginPage && <FooterComp />}
     </div>
   )
 }
 
-export default footer
+export default Footer;

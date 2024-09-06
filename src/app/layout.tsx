@@ -1,39 +1,37 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
-import { Inter } from "next/font/google";
-import NavbarServer from "@/components/NavbarServer";
-import Footer from "./footer";
-import Loading from "@/app/loading";
-import MoveToTop from "./moveToTop";
-import "./globals.css";
+import { Inter } from 'next/font/google';
+import NavbarServer from '@/components/NavbarServer';
+import Footer from './footer';
+import Loading from '@/app/loading';
+import MoveToTop from './moveToTop';
+import './globals.css';
+import Script from 'next/script';
+import Head from 'next/head';
+import metaImg from '../../public/assets/images/metaLogoImg.png';
 
-import Script from "next/script";
-import Head from "next/head";
-import metaImg from "../../public/assets/images/metaLogoImg.png";
-
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Cloud Tenants - Sales & Distribution and ERP Solutions Provider",
-    template: "%s - Cloud Tenants",
+    default: 'Cloud Tenants - Sales & Distribution and ERP Solutions Provider',
+    template: '%s - Cloud Tenants',
   },
-  description: "Cloud Tenants offers Mobile applications and Web-based solutions. We specialize in Sales and Distribution, POS, and ERP Modules. Book A Demo Now.",
-  
+  description: 'Cloud Tenants offers Mobile applications and Web-based solutions. We specialize in Sales and Distribution, POS, and ERP Modules. Book A Demo Now.',
   openGraph: {
     title: 'Cloud Tenants - Sales & Distribution and ERP Solutions Provider',
-    description: 'Cloud Tenants offers Mobile applications and Web-based solutions. We specialize in <b>Sales and Distribution, POS, and ERP Modules. Book A Demo Now.',
+    description: 'Cloud Tenants offers Mobile applications and Web-based solutions. We specialize in Sales and Distribution, POS, and ERP Modules. Book A Demo Now.',
     url: 'https://www.cloudtenants.com',
     siteName: 'cloudtenants',
     images: [
       {
-        url: metaImg.src, // Dynamic og route
+        url: metaImg.src,
         width: 800,
         height: 600,
         alt: 'Cloud tenants logo',
       },
       {
-        url: metaImg.src, // Dynamic og route
+        url: metaImg.src,
         width: 1800,
         height: 1600,
         alt: 'Cloud tenants logo',
@@ -131,8 +129,8 @@ const schemaBusiness = {
     ],
     "opens": "00:00",
     "closes": "23:59"
-  } 
-}
+  }
+};
 
 export default function RootLayout({
   children,
@@ -141,21 +139,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
- <Head>
- <Script async src="https://www.googletagmanager.com/gtag/js?id=G-S8WH9ZYXKL"></Script>
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html:`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-S8WH9ZYXKL');
-            `,
-          }}
-        />
- </Head>
+      <Head>
+      <title>Cloud Tenants</title>
+        <meta name="description" content="Cloud Tenants offers Mobile applications and Web-based solutions. We specialize in Sales and Distribution, POS, and ERP Modules. Book A Demo Now." />
+
+      </Head>
       <body className={inter.className}>
         <section className="m-0 p-0 scroll-smooth box-border">
           <NavbarServer />
@@ -165,27 +153,40 @@ export default function RootLayout({
           <MoveToTop />
           <Footer />
         </section>
-  
-        {/* Rendering schema markup  */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-S8WH9ZYXKL"></Script>
         <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaWebsite) }}
-        />
-       <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }}
-        />
-      <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrganization) }}
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-S8WH9ZYXKL');
+            `,
+          }}
         />
         <Script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBusiness) }}
+          id="schema-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaWebsite) }}
+        />
+        <Script
+          id='schema-breadcrumb'
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }}
+        />
+        <Script
+          id='scheam-organization'
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrganization) }}
+        />
+        <Script
+          id='schema-buesiness'
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBusiness) }}
         />
       </body>
-    
     </html>
-
   );
 }

@@ -15,7 +15,7 @@ function Faq() {
                 Frequently Asked Questions
               </h1>
               <h2 className="text-gray-500 md:text-xl/relaxed">
-                Got a question? We've got answers. If you have some other
+                Got a question? We&rsquo;ve got answers. If you have some other
                 questions, feel free to send us an email to <u className="hover:font-bold cursor-pointer hover:text-lg">info@cloudtenants.com </u>
               </h2>
             </div>

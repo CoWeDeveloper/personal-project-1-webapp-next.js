@@ -43,7 +43,7 @@ function DropMenu() {
                 <NavigationMenuLink href="/faq">
                   <div className="flex items-center px-2 rounded-lg py-1  hover:bg-gray-300 transition-all duration-700">
                     <Image src={faq} alt="career" className="mx-2.5 text-stone-900"  width={20} height={20} />
-                    FAQ's
+                    FAQ&rsquo;s
                   </div>
                 </NavigationMenuLink>
                 <NavigationMenuLink>

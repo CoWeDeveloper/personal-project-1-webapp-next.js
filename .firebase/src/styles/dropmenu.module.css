@@ -1,0 +1,7 @@
+.dropdown__list{
+    @apply text-black text-left hover:bg-gray-300; 
+}
+
+.dropdown__list a{
+    @apply flex items-center justify-between w-full;
+}

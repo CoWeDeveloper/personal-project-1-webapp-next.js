@@ -12,7 +12,7 @@ function LoginForm() {
     const [greet, setGreet] = useState(false);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
+    const [loading, setLoading] = useState(false);
 
     const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
         let emailValue = event.target.value;
@@ -24,17 +24,21 @@ function LoginForm() {
         setPassword(event.target.value);
     }
   
-  
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+      if (email == "" || password == ""){
+        return alert("Please enter email and password")
+      }
       event.preventDefault();
+
+      setLoading(true);
       
       const result = await signIn('credentials', {
           redirect: false, // Prevent automatic redirection
           email,
           password,
       });
-  
-      console.log(result);
+
+      setLoading(false);
   
       if (result?.error) {
           alert("Invalid credentials");
@@ -49,26 +53,33 @@ function LoginForm() {
   
     
   return (
-    <div className="bg-white/50 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full xs:mx-2">
+    <motion.div
+    initial= "hidden"
+    whileInView="visible"
+    viewport={{once: false}}
+    transition={{
+      duration: 1,
+      ease: "easeInOut"
+    }}
+    variants={{
+      hidden:{opacity: 0},
+      visible: {opacity: 1}
+    }}
+    className="bg-white/50 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full xs:mx-2">
       <div className="flex flex-col items-center mb-6">
         <Image
         src={logo}
         alt="Company Logo"
         width={100}
         height={100}
-        className="w-72  mb-4  shadow-sky-400 drop-shadow-2xl "
+        className="w-72 mb-4 shadow-sky-500 drop-shadow-xl"
         />
-
-        <motion.h1
-          initial={{ opacity: 0, y: "-10" }}
-          animate={{ opacity: greet ? 1 : 0, y: greet ? 1 : 10 }}
-          transition={{ duration: 0.3, ease: 'easeInOut' }}
-          className="sm:text-3xl  xs:text-lg font-bold shadow-dropShadow-3xl duration-300 "
+        <h1
+          className={`${greet ? 'translate-y-1 opacity-100 scale-100' : 'translate-y-6 opacity-0 scale-75'} sm:text-3xl xs:text-lg font-bold shadow-dropShadow-xl duration-700 transition-all`}
           style={{ visibility: greet ? 'visible' : 'hidden' }}
         >
           Welcome Back
-        </motion.h1>        
-        
+        </h1>        
       </div>
       <form onSubmit={handleSubmit}>    
         <div className="mb-4">
@@ -96,18 +107,16 @@ function LoginForm() {
             placeholder="Enter Password"
           />
         </div>
-        
-          
+            
           <button
-            className="flex justify-center w-full mx-auto bg-[#289bf3] hover:bg-[#388ccc] duration-1000 transition-all text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className={`flex justify-center w-full mx-auto ring-offset-0 hover:ring-2 hover:ring-offset-2 hover:ring-blue-400  ${loading ? "bg-[#388ccc]" : "bg-[#289bf3]"} hover:bg-[#388ccc] duration-600 ease-in-out transition-all text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline`}
             type="submit"
             >
-            Login 
+            {loading ? "Logging in..." : "Log in"} 
           </button> 
-          
         
       </form>
-    </div>
+    </motion.div>
   )
 }
 
