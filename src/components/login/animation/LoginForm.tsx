@@ -5,7 +5,9 @@ import {useState} from "react";
 import {motion} from "framer-motion";
 import logo from '../../../../public/assets/images/cloudlogo.png';
 import { signIn } from 'next-auth/react';
-import { redirect, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
+import { WarningToast } from "../CustomToaster";
+import { useToast } from "@/components/ui/use-toast";
 
 function LoginForm() {
     const router = useRouter();
@@ -13,6 +15,8 @@ function LoginForm() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
+
+    const { toast } = useToast();
 
     const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
         let emailValue = event.target.value;
@@ -25,11 +29,15 @@ function LoginForm() {
     }
   
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-      if (email == "" || password == ""){
-        return alert("Please enter email and password")
-      }
       event.preventDefault();
-
+      if (email == "" || password == ""){
+        toast({
+          description:<WarningToast title="Field Missing!" message="Please enter email and password"/>,
+          variant: "destructive"
+        })
+        return;
+      }
+    
       setLoading(true);
       
       const result = await signIn('credentials', {
@@ -41,16 +49,17 @@ function LoginForm() {
       setLoading(false);
   
       if (result?.error) {
-          alert("Invalid credentials");
+        toast({
+            description: <WarningToast title="Invalid Credentials" />,
+            variant: "destructive"
+        })
+        return;
+          // alert("Invalid credentials");
       } else if (result?.ok) {
           // Ensure proper redirection
           router.push('/posts');
       }
   };
-  
-  
-  
-  
     
   return (
     <motion.div

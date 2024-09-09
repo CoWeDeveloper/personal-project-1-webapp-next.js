@@ -53,9 +53,18 @@ body {
   }
 
   .custom-quill .ql-editor {
+    
     border: none !important;
     outline: none !important;
     color: #6b7280 !important;
+  }
+
+  .custom-quill p {
+    @apply text-base;
+  }
+
+  .custom-quill img{
+    @apply w-full h-64 aspect-square flex mx-auto justify-center text-center place-content-center;
   }
 
   .quillContent h1 {
@@ -112,6 +121,7 @@ body {
     @apply drop-shadow-lg;
     text-shadow: 20 10 30px hsla(0, 0%, 0%, 0.4);
   }
+  
   #toolbar {
     border: none; 
     box-shadow: none; 

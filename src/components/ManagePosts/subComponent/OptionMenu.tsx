@@ -100,7 +100,7 @@ const OptionMenu: React.FC<OptionMenuProps> = ({ id, onDelete  }) => {
             Edit
           </DropdownMenuItem>
             </Link>
-            <Link  href={`/blogs/${id}`}>
+            <Link  href={`/blogs/${id}`} target="">
           <DropdownMenuItem 
           className=" hover:!text-white hover:!bg-[#2F7EAA] cursor-pointer group duration-300 transtion-all">
             <Image

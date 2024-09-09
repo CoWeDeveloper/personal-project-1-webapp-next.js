@@ -22,7 +22,6 @@ import React, { useState, useEffect, ReactHTML } from "react";
 import { PublishToast, UpdateToast } from "./subComponent/CustomToast";
 import { useToast } from "@/components/ui/use-toast";
 import OptionMenu from "./subComponent/OptionMenu";
-import { StringMap } from "quill";
 
 const fetchTableData = async ()=>{
   const res = await fetch("/api/blogs");
@@ -39,7 +38,7 @@ interface BlogData {
 }
 
 function TableContent() {
-  const [sortedData, setSortedData] = useState<any[]>([]);
+  const [sortedData, setSortedData] = useState<BlogData[]>([]);
   const [isAscending, setIsAscending] = useState<boolean>(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
 
@@ -82,12 +81,12 @@ function TableContent() {
   }, [toast, isAscending]);
 
   const handleFiltre = () => {
-    const sorted = [...sortedData].sort((a, b) => {
-      const dateA = new Date(a.date).getTime();
-      const dateB = new Date(b.date).getTime();
-      return isAscending ? dateA - dateB : dateB - dateA;
-    });
-    setSortedData(sorted);
+    // const sorted = [...sortedData].sort((a, b) => {
+    //   const dateA = new Date(a.date).getTime();
+    //   const dateB = new Date(b.date).getTime();
+    //   return isAscending ? dateA - dateB : dateB - dateA;
+    // });
+    // setSortedData(sorted);
     setIsAscending(!isAscending);
   };
  
@@ -106,10 +105,15 @@ function TableContent() {
   const endIndex = startIndex + rowsPerPage;
 
   // Slice the data to get only the rows for the current page
-  const paginatedData = filtredData.slice(startIndex, endIndex);
+  const paginatedData = React.useMemo(() => {
+    return filtredData.slice(startIndex, endIndex);
+  }, [startIndex, endIndex, filtredData]);
 
   // Calculate the total number of pages
-  const totalPages = Math.ceil(filtredData.length / rowsPerPage);
+  const totalPages = React.useMemo(() => {
+    return Math.ceil(filtredData.length / rowsPerPage);
+  }, [filtredData.length]);
+    
   
   // Calculate the start and end of the range of pages to display
   const maxPagesToShow = 5;
@@ -203,9 +207,9 @@ function TableContent() {
           <TableRow>
             <TableHead>Publish Blogs</TableHead>
             <TableHead className="text-right pr-20">Author</TableHead>
-            <TableHead onClick={handleFiltre} className=" cursor-pointer hover:bg-slate-200 hover:rounded-lg text-lg flex items-center justify-end">
+            <TableHead onClick={handleFiltre} className=" cursor-pointer hover:bg-slate-200 hover:rounded-lg text-lg flex items-center  justify-end w-full mx-auto ">
               Publish Date
-              {isAscending ? (<ArrowUp10  className="w-5" />) : (<ArrowDown10  className="w-5" />)}
+              {isAscending ? <ArrowUp10 className="w-5 ml-2" /> : <ArrowDown10 className="w-5 ml-2" />}
             </TableHead>
             <TableHead className="text-right">Actions</TableHead>
           </TableRow>
@@ -225,7 +229,7 @@ function TableContent() {
                   alt="blog image"
                   width={100}
                   height={100}
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                   className="rounded-lg aspect-auto mr-4 w-28 h-16"
                 />
                 <div className="md:text-xl xs:text-sm md:w-96 xs:w-64 font-semibold text-stone-500">

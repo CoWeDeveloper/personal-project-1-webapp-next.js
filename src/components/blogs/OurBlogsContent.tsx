@@ -11,7 +11,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SearchField from "./SearchField";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { start } from "repl";
 
 function OurBlogsContent() {
   const [blogData, setBlogData] = useState([]); // State to hold fetched blog data
@@ -71,11 +72,16 @@ function OurBlogsContent() {
   // Calculate the indices for pagination
   const startIndex = (currentPage - 1) * cardsPerPage;
   const endIndex = startIndex + cardsPerPage;
-  const paginatedData = filteredData.slice(startIndex, endIndex); // Paginate data based on the current page
+  const paginatedData = React.useMemo(() => {
+    return filteredData.slice(startIndex, endIndex); // Paginate data based on the current page
+  }, [startIndex, endIndex, filteredData]);
+  
 
   // Calculate total number of pages
-  const totalPages = Math.ceil(filteredData.length / cardsPerPage);
-
+  const totalPages = React.useMemo(() => {
+    return Math.ceil(filteredData.length / cardsPerPage);
+  }, [filteredData.length]);
+  
   // Calculate the start and end of the range of pages to display
   const maxPagesToShow = 5;
   const startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));

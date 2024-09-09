@@ -70,6 +70,27 @@ function EditorSession() {
     return date.toLocaleDateString('en-US', options);
   }
 
+  const handleImageUpload = async (imageFile: File) => {
+    const formData = new FormData();
+    formData.append('image', imageFile);
+    // console.log(formData)
+    const response = await fetch('/api/upload', {
+      method: 'POST',
+      body: formData,
+    });
+  
+    if (response.ok) {
+      const { imageURL } = await response.json();
+      console.log('Image uploaded successfully. URL from server:', imageURL);
+      return imageURL;
+    } else {
+      throw new Error('Failed to upload image');
+    }
+  };
+  
+  
+  
+
   const handlePublish = async () => {
     if (content.trim() === '' || title.trim() === '' || (!image && !imageURL)) {
          toast({
@@ -79,11 +100,20 @@ function EditorSession() {
         return
     }
  
-    // const optionalImage = extractImageFromContent(content) ?? '';
+    let finalImageURL = imageURL;
+    if (image) {
+      try {
+        finalImageURL = await handleImageUpload(image);
+        console.log("finalImage",finalImageURL)
+      } catch (error) {
+        console.error('Image upload failed:', error);
+        return;
+      }
+    }
 
     const blogData = {
         id: editorMode ? Number(blogId) : undefined, 
-        bgImg: image ? URL.createObjectURL(image) : imageURL || '/default-image-path',
+        bgImg: finalImageURL || '/default-image-path',
         author: author,
         title: title,
         subDescripation: subDescripation,
@@ -133,6 +163,8 @@ function EditorSession() {
   const handleContentChange = (value: string) => {
     setContent(value);
   };
+
+  
 
   const handlePreview = () => {
     if (content.trim() === '' || title.trim() === '' || (!image && !imageURL) || author.trim() === '') {
@@ -264,7 +296,7 @@ function EditorSession() {
             </button>
             </div>
 
-        <ImageUpload setImage={setImage} existingImageURL={imageURL} />
+            <ImageUpload setImage={setImage} existingImageURL={imageURL} uploadImage={handleImageUpload} />
 
         </div>
           </div>

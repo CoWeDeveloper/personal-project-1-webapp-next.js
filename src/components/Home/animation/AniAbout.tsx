@@ -23,8 +23,10 @@ function AnimaAbout() {
           visible: { opacity: 1, x: "0%" },
           hidden: { opacity: 0, x: "-30%" }
         }}
-    
     >
+    {/* return NextResponse.json({ error: `Failed to upload image: ${err.message}`, stack: err.stack }, { status: 500 });
+  } */}
+
     <Link href={'/about'} className='hover:text-white active:hover:text-white'>
       <h2 
       className="text-right cursor-pointer max-sm:text-4xl sm:text-4xl  md:text-7xl lg:text-8xl font-semibold text-[#636468] tracking-tight ">

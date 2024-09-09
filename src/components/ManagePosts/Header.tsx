@@ -1,7 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
-import logo from "../../../public/assets/images/cloudlogo.png";
-import BackBtn from "./subComponent/BackBtn";
+import HeaderContent from "./subComponent/HeaderContent"
 
 interface MarginProps{
   margin: string
@@ -10,21 +7,10 @@ interface MarginProps{
 function Header({ margin }: MarginProps) {
 
   return (
-    <nav className={`flex items-center py-2.5 w-full bg-[#154D8F] md:px-${margin} xs:px-1`} >
-      <BackBtn />
-      <div>
-        <Link href={"/"}>
-        <Image 
-        src={logo}
-        alt="company logo"
-        width={200}
-        height={200}
-        className="w-40 ml-12"
-        />
-        </Link>
-        
-        </div>
-    </nav>
+    <nav className={`relative flex  flex-col md:flex-row items-center py-2.5 w-full bg-[#154D8F] md:px-${margin} xs:px-1`}>
+      <HeaderContent />
+    </nav> 
+
   )
 }
 
