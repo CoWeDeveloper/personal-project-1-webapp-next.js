@@ -1,6 +1,4 @@
-
 import AniSchedule from "./Animation/AniSchedule";
-
 
 function Schedule( { product} : { product? : {product : string[]}}  ) {  
   return (
@@ -12,4 +10,4 @@ function Schedule( { product} : { product? : {product : string[]}}  ) {
   )
 }
 
-export default Schedule
+export default Schedule;

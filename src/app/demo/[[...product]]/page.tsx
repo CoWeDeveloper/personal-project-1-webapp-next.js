@@ -1,4 +1,4 @@
-import { HeroSection, Schedule } from "@/components/demo/index";
+import { HeroSection, Schedule } from "@/components/demo";
 import { Toaster } from "@/components/ui/toaster";
 
 function Demo({ params }: { params: { product?: string[] } }) {

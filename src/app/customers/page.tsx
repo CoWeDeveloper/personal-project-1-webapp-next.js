@@ -1,4 +1,4 @@
-import { HeroSection, ValuableCustomers } from '@/components/customers/index';
+import { HeroSection, ValuableCustomers } from '@/components/customers';
 
 function Customers() {
   return (
