@@ -1,7 +1,4 @@
-import React from 'react';
-// import components
-import HeroSection from '@/components/customers/HeroSection';
-import ValuableCustomers from '@/components/customers/ValuableCustomers';
+import { HeroSection, ValuableCustomers } from '@/components/customers/index';
 
 function Customers() {
   return (

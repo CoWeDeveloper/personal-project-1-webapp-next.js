@@ -1,4 +1,4 @@
-import { HeroSection, ComponentAlliance } from "@/components/alliance";
+import { HeroSection, ComponentAlliance } from "@/components/alliance/index";
 
 function Alliances() {
   return (
