@@ -1,8 +1,0 @@
-{
-  "projects": {
-    "default": "cloudtenants-demo",
-    "yes": "cloudtenants-demo"
-  },
-  "targets": {},
-  "etags": {}
-}
