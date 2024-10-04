@@ -25,10 +25,7 @@ export async function GET(req: Request) {
 // Named export for the POST method
 export async function POST(req: Request) {
     try {
-        
         const { id, author, title, subDescripation, content, bgImg,  date } = await req.json();
-        console.log('Incoming data:', { id, author, title, subDescripation, content, bgImg, date });
-
         const newPost = await prisma.blogPost.create({
             data: {
                 id,
@@ -36,8 +33,7 @@ export async function POST(req: Request) {
                 author,
                 subDescripation,
                 content,
-                bgImg,
-                
+                bgImg,            
                 date,
             },
         });

@@ -12,7 +12,7 @@
   import SearchField from "./SearchField";
   import { ArrowRight } from "lucide-react";
   import React, { useEffect, useState } from "react";
-  import { start } from "repl";
+  import {motion} from "framer-motion";
 
   function OurBlogsContent() {
     const [blogData, setBlogData] = useState([]); // State to hold fetched blog data
@@ -104,7 +104,18 @@
         <div className="flex flex-wrap sm:gap-10 gap-8 justify-center items-center ">
           {paginatedData.map((data: any) => {
             return (
-              <div
+              <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true}}
+              transition={{ 
+                  duration: 1.2,
+                  ease: [0.42, 0, 0.58, 1]
+                }}
+                variants={{
+                visible: { opacity:1,  },
+                hidden: { opacity:0.1,  }
+              }}
                 key={data.id} // Add key prop for each blog post
                 className="w-72 shadow-xl bg-white ring-sky-50 hover:ring-4 ring-offset-0 hover:ring-offset-2 hover:ring-sky-200 hover:drop-shadow-xl hover:-translate-y-2 duration-700 transition-all rounded-lg"
               >
@@ -130,7 +141,7 @@
                     </button>
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

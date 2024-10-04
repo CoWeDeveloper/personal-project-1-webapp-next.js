@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: "Invalid or missing id" }, { status: 400 });
   }
 
-  try {
+  try{
     const blog = await prisma.blogPost.findUnique({
       where: {
         id: parseInt(id, 10), // Make sure to convert the id to an integer

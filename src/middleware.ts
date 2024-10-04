@@ -8,7 +8,9 @@ export async function middleware(request: NextRequest) {
     const url = request.nextUrl;
 
     // Check if the user is not authenticated and is trying to access protected pages
-    if (!token && (url.pathname.startsWith('/posts') || url.pathname.startsWith('/editor'))) {
+    if (!token && 
+        (url.pathname.startsWith('/posts') || url.pathname.startsWith('/editor'))) 
+        {
         // Redirect to the login page
         return NextResponse.redirect(new URL('/login', request.url));
     }

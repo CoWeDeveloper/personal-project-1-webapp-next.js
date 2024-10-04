@@ -55,6 +55,7 @@ export const authOptions: NextAuthOptions = {
         async jwt({ token, user }) {
             if (user) {
                 token.id = user.id as string;
+                token.exp = Math.floor(Date.now() / 1000) + 60 * 60 * 24; // the token expire after 1 day
             }
             return token;
         }

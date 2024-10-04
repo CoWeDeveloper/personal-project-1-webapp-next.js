@@ -1,0 +1,41 @@
+version: '3.8'
+services: 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    # container_name: cloudtenants
+    ports:
+      - "3000:3000"
+    environment: #setting all the variable in the environment
+      - DATABASE_URL=mysql://root:mydoor12@mysql:3306/company
+      - NEXTAUTH_SECRET=4e5f2a4d6c7e8b9f0123456789abcdef1234567890abcdef1234567890abcdef
+      - NEXT_PUBLIC_CC_EMAIL=m.owais@cloudtenants.com
+      - NEXT_PUBLIC_TO_EMAIL=owaischemist22@gmail.com
+    depends_on:
+      - mysql_db # This ensure the DB start before the app
+    volumes:
+      - .:/app # Mount the current directory to /app in the container
+
+  mysql_db:
+    image: mysql:latest # create a latest image
+    restart: always #  Restart the container if it stops
+    container_name: mysql_db_container
+    environment:
+      # - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=mydoor12
+      - MYSQL_DB=company
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_db:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge  
+
+volumes:
+  mysql_db:
+    driver: local

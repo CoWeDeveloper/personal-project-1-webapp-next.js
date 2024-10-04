@@ -1,15 +1,15 @@
-    "use client";
+"use client";
+import Image from "next/image";
+import { notFound, useParams } from 'next/navigation';
+import RecentBlogs from "./RecentBlogs";
+import Head from "next/head";
+import SearchField from "./SearchField";
+import { CopyToast } from "./CustomToaster";
+import 'react-quill/dist/quill.snow.css'; 
+import { useState, useEffect, useMemo } from "react";
 
-    import Image from "next/image";
-    import { useParams } from 'next/navigation';
-    import RecentBlogs from "./RecentBlogs";
-    import Head from "next/head";
-    import SearchField from "./SearchField";
-    import { CopyToast } from "./CustomToaster";
-    import 'react-quill/dist/quill.snow.css'; 
-    import { useState, useEffect, useMemo } from "react";
-    import { useToast } from "@/components/ui/use-toast";
-    import Loading from "@/app/loading";
+import Loading from "@/app/loading";
+import AniSocialMediaIcons from "./animation/AniSocialMediaIcons";
 
     interface BlogPost {
       id: string;
@@ -21,9 +21,15 @@
     }
 
     function BlogsArticle() {
-      const params = useParams();
-      const id = params.slug;
-      const { toast } = useToast();
+      const [shareUrl, setShareUrl] = useState<string>("");
+
+      useEffect(() => {
+        if (typeof window !== "undefined") {
+          setShareUrl(window.location.href);
+        }
+      }, []);// this is being use in meta tag
+      const params = useParams(); // this helps to get id from url
+      const id = params.slug; // id is being saved as variable
       const [blog, setBlog] = useState<BlogPost | null>(null);
       const [loading, setLoading] = useState<boolean>(true);
       const [searchQuery, setSearchQuery] = useState<string>("");
@@ -57,6 +63,7 @@
       const highlightedContent = useMemo(() => {
         if (!blog || !searchQuery) return blog?.content || "";
       
+        // This code help to filtre letter from search without effect the image tag in between
         const highlightSearchTerm = (htmlString: string) => {
           const parser = new DOMParser();
           const doc = parser.parseFromString(htmlString, "text/html");
@@ -94,64 +101,34 @@
         return <Loading />;
       }
 
-      if (!blog) {
-        return <div>Blog not found</div>;
-      }
-
-      const shareUrl = window.location.href;
-
-      const handleShareClick = (platform: string) => {
-        let url = "";
-        const encodedSharedUrl = encodeURIComponent(shareUrl);
-        const encodedTitle = encodeURIComponent(blog.title);
-
-        switch (platform) {
-          case "facebook":
-            url = `https://www.facebook.com/sharer/sharer.php?u=${encodedSharedUrl}`;
-            break;
-          case "twitter":
-            url = `https://twitter.com/intent/tweet?url=${encodedSharedUrl}&text=${encodedTitle}`;
-            break;
-          case "linkedin":
-            url = `https://www.linkedin.com/shareArticle?mini=true&url=${encodedSharedUrl}&title=${encodedTitle}`;
-            break;
-          case "copy":
-            navigator.clipboard.writeText(shareUrl);
-            toast({
-              description: <CopyToast />,
-              variant: "default"
-            });
-            return;
-          default:
-            return;
-        }
-        window.open(url, "_blank", "noopener,noreferrer");
-      };
+        if (!blog) {
+          notFound();
+        }  
 
       const handleSearch = (query: string) => {
         setSearchQuery(query);
       };
 
-      const schemaArticle = {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": blog.title,
-        "description": blog.subDescripation,
-        "image": blog.bgImg,
-        "datePublished": blog.date,
-        "author": {
-            "@type": "Person",
-            "name": "Author Name", // Replace with actual author name
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "Cloud Tenants",
-        }
-    };
+    //   const schemaArticle = {
+    //     "@context": "https://schema.org",
+    //     "@type": "Article",
+    //     "headline": blog.title,
+    //     "description": blog.subDescripation,
+    //     "image": blog.bgImg,
+    //     "datePublished": blog.date,
+    //     "author": {
+    //         "@type": "Person",
+    //         "name": "Author Name", // Replace with actual author name
+    //     },
+    //     "publisher": {
+    //         "@type": "Organization",
+    //         "name": "Cloud Tenants",
+    //     }
+    // };
 
       return (
         <>
-              {/* SEO Meta Tags */}
+              {/* SEO dynamic Meta Tags */}
         <Head>
           <title>{blog.title}</title>
           <meta name="description" content={blog.subDescripation} />
@@ -194,52 +171,9 @@
             <div className="flex justify-start md:mx-2 lg:mx-10 xs:mx-1">
               <div>
                 <div className="text-pretty flex">
-                  <ul className="space-y-3 flex flex-col items-center xs:mr-2 lg:mr-5">
-                    <li 
-                    onClick={() => handleShareClick("copy")}
-                    className="rounded-full xs:w-8 sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
-                      <Image
-                        src="/assets/icons/Blogs/shareIcon.svg"
-                        alt="Share icons"
-                        width={100}
-                        height={100}
-                        className="blogIcon"
-                      />
-                    </li>
-                    <li 
-                    onClick={() => handleShareClick("twitter")}
-                    className="rounded-full sm:p-3 xs:p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
-                      <Image
-                        src="/assets/icons/Blogs/twitterIcon.svg"
-                        alt="Share icons"
-                        width={100}
-                        height={100}
-                        className="blogIcon"
-                      />
-                    </li>
-                    <li 
-                    onClick={() => handleShareClick("facebook")}
-                    className="rounded-full sm:p-3 xs:p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all md:w-12 sm:w-10">
-                      <Image
-                        src="/assets/icons/Blogs/facebookIcon.svg"
-                        alt="Share icons"
-                        width={100}
-                        height={100}
-                        className="blogIcon"
-                      />
-                    </li>
-                    <li 
-                    onClick={() => handleShareClick("linkedin")}
-                    className="rounded-full sm:p-3 p-2 bg-stone-200 group hover:bg-sky-500 hover:cursor-pointer duration-500 transition-all w-auto">
-                      <Image
-                        src="/assets/icons/Blogs/linkedinIcon.svg"
-                        alt="Share icons"
-                        width={500}
-                        height={500}
-                        className="blogIcon"
-                      />
-                    </li>
-                  </ul>
+                 <AniSocialMediaIcons title={blog.title} />
+
+
                   <div className="quillContent"
                       dangerouslySetInnerHTML={{ __html: highlightedContent }}
                   />

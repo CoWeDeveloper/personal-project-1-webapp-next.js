@@ -1,0 +1,37 @@
+# making node.js 18 base image
+FROM node:18-alpine AS builder
+# label meta data
+LABEL maintainer="Software Engineer"
+# making a directory for our container
+WORKDIR /app
+# copying the package.json file to our working directory(app)
+COPY package.json ./
+# now we will install the dependency to our application as expected
+RUN npm install
+# copy the code
+COPY . .
+# build the next.14 application
+RUN npm run build
+# making a image for running the application. Two images is because of lite storage than the whole image.
+FROM node:18-alpine AS runner
+
+WORKDIR /app   
+
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package.json ./package.json
+COPY --from=builder /app/tailwind.config.ts ./tailwind.config.ts
+COPY --from=builder /app/tsconfig.json ./tsconfig.json
+COPY --from=builder /app/next-sitemap.config.js ./next-sitemap.config.js
+COPY --from=builder /app/prisma ./prisma
+COPY .env ./.env  
+
+
+# Set the environment variable for production
+ENV NODE_ENV production
+
+# Expose port 3000, the default port for Next.js
+EXPOSE 3000
+
+CMD ["npm", "start"]     

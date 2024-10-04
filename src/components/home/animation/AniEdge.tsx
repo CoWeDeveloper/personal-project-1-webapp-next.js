@@ -14,7 +14,7 @@ function AnimaEdge() {
     <motion.div 
     initial="hidden"
     whileInView="visible"
-    viewport={{once:false}}
+    viewport={{once:true}}
     exit="hidden"
     transition={{
         duration: 2,
@@ -32,7 +32,7 @@ function AnimaEdge() {
         <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{once:false}}
+            viewport={{once:true}}
             exit="hidden"
             transition={{
                 duration: 2,

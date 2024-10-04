@@ -1,6 +1,6 @@
 import AniComponentTech from "./animation/AniComponentTech";
 import { techData } from "../../data/techData";
-import Image from "next/image";
+
 function ComponentTech() {
   return (
   <>

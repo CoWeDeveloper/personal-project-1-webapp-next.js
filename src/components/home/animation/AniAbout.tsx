@@ -14,7 +14,7 @@ function AnimaAbout() {
     <motion.div 
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false }}
+        viewport={{ once: true }}
         transition={{ 
           duration: 1,
             ease: customEasing
@@ -41,7 +41,7 @@ function AnimaAbout() {
       <motion.div 
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false }}
+              viewport={{ once: true }}
               transition={{ 
                   duration: 1,
                   ease: customEasing

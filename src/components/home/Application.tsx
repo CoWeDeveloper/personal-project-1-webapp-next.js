@@ -1,12 +1,12 @@
-import AnimaApplication from "./animation/AniApplication";
+import AniApplication from "./animation/AniApplication";
 
 function Application() {
   return (
     <>
-     <section className='w-full h-fit bg-[#211c5d] md:py-20 xs:py-0  xs:p-5'>
+     <section className='w-full h-fit bg-[#211c5d] md:py-20 xs:py-5  xs:p-5'>
         <div className=' mx-auto lg:px-[11rem] md:px-38 max-w-screen-xl text-center justify-center'>
           
-            <AnimaApplication />
+            <AniApplication />
          
         </div>
 

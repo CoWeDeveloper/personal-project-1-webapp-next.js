@@ -58,13 +58,12 @@ function EditorSession() {
     }
   }, [id]);
 
-  // const extractImageFromContent = (content: string): string | null => {
   //   const doc = new DOMParser().parseFromString(content, 'text/html');
   //   const img = doc.querySelector('img');
   //   return img ? img.src : null;
   // };
 
-  function formatDate(dateString: any) {
+  function formatDate(dateString: any){
     const date: any = new Date(dateString);
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
     return date.toLocaleDateString('en-US', options);
@@ -73,7 +72,6 @@ function EditorSession() {
   const handleImageUpload = async (imageFile: File) => {
     const formData = new FormData();
     formData.append('image', imageFile);
-    // console.log(formData)
     const response = await fetch('/api/upload', {
       method: 'POST',
       body: formData,
@@ -87,12 +85,9 @@ function EditorSession() {
       throw new Error('Failed to upload image');
     }
   };
-  
-  
-  
 
   const handlePublish = async () => {
-    if (content.trim() === '' || title.trim() === '' || (!image && !imageURL)) {
+    if (content.trim() === '' || title.trim() === '') {
          toast({
           description: <WarningToast />,
           variant: "destructive"
@@ -104,16 +99,18 @@ function EditorSession() {
     if (image) {
       try {
         finalImageURL = await handleImageUpload(image);
-        console.log("finalImage",finalImageURL)
+        
       } catch (error) {
         console.error('Image upload failed:', error);
         return;
       }
+    }else{
+      finalImageURL = '/assets/images/Blogs/BlogHeader.webp'
     }
 
     const blogData = {
         id: editorMode ? Number(blogId) : undefined, 
-        bgImg: finalImageURL || '/default-image-path',
+        bgImg: finalImageURL , 
         author: author,
         title: title,
         subDescripation: subDescripation,

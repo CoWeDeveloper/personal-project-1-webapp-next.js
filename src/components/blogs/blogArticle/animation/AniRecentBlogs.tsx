@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import {useState, useEffect} from "react";
+import {motion} from "framer-motion";
 
 interface Blog {
     id: number;
@@ -54,7 +55,19 @@ if (randomBlogs.length === 0 ){
         <div className="pb-14    flex flex-wrap lg:gap-x-20 md:gap-x-10  justify-center my-14  items-center ">
     {randomBlogs.map((data: Blog)=>{
     return(
-        <div key={data.id} className="xs:my-4 w-96 h-48">
+        <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true}}
+        transition={{ 
+            duration: 1.2,
+            ease: [0.42, 0, 0.58, 1]
+          }}
+          variants={{
+          visible: { opacity:1,  },
+          hidden: { opacity:0.1,  }
+        }}
+        key={data.id} className="xs:my-4 w-96 h-48">
     <Image 
     src={data.bgImg}
     alt="Mobile innovation"
@@ -73,7 +86,7 @@ if (randomBlogs.length === 0 ){
         <ArrowRight className="ml-1 duration-300 transition-all group-hover:translate-x-2" size={16} />
       </button>
                 </Link>
-    </div>
+    </motion.div>
   )
 })}
 </div>

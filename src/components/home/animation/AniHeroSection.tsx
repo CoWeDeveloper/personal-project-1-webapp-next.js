@@ -45,13 +45,13 @@ function AnimaHeroSection() {
     variants={staggerContainer}
     initial="hidden"
     whileInView="show"
-    viewport={{ once: false, amount: 1 }}
+    viewport={{ once: true, amount: 1 }}
     className="lg:ml-7  ml-4 lg:w-1/2 md:w-2/3 sm:w-24 xs:w-auto space-y-2"
     >
       <motion.h1
      
         variants={fadeIn}
-        className="tracking-wide shadow-2xl lg:text-6xl md:text-5xl  sm:text-5xl text-3xl text-white text-pretty font-extrabold"
+        className="tracking-wide  lg:text-6xl md:text-5xl  sm:text-5xl text-3xl text-white text-pretty font-extrabold"
       >
         Your True Digital Transformation Partner.
       </motion.h1>

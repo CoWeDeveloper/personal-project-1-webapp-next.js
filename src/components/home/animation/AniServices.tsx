@@ -29,7 +29,7 @@ className=" tracking-wide text-center pb-14 cursor-pointer text-4xl font-extrabo
           <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false}}
+          viewport={{ once: true}}
           transition={{ 
               duration: 1.5,
               ease: customEasing

@@ -30,7 +30,7 @@ function AniProduct() {
         <motion.h3 
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false }}
+        viewport={{ once: true }}
         variants={{
             hidden: { opacity: 0, scale: 0.6},
             visible: { opacity: 1, scale: 1}
@@ -53,7 +53,7 @@ function AniProduct() {
     <motion.div  
     initial="hidden"
     whileInView="visible"
-    viewport={{ once: false }}
+    viewport={{ once: true }}
     variants={index % 2 === 0 ? leftVariant : rightVariant} 
     className="w-full flex flex-wrap mx-auto justify-center" >
       <div className={` w-full lg:w-[55%] ${product.id % 2 === 0 ? 'order-1' : 'order-0'} `} >

@@ -39,7 +39,7 @@ function AniCustomer() {
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 1 }}
+      viewport={{ once: true, }}
       className="container py-5"
     >
       <motion.h3

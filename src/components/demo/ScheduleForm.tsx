@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useFormik } from "formik";
 import { demoSchema } from "./schema";
 import { useToast } from "@/components/ui/use-toast";
@@ -8,7 +8,6 @@ import Select from 'react-select';
 import  sendEmail from "../services/sendEmail";
 import send from "../../../public/assets/icons/Demo/send.svg";
 import { FormToast } from "./CustomToaster";
-
 
 const initialValues = {
   name: '',
@@ -22,7 +21,6 @@ const initialValues = {
 }
 
 function ScheduleForm({product} : {product?: {product: string[]}} ){
-  
   const { toast } = useToast();
   
   const customStyles= {
@@ -30,6 +28,8 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
       ...styles,
       border: 'none', // Remove default border
       boxShadow: 'none', 
+      zIndex: "100",
+      position:"relative",
     }),
     multiValue: (styles: any) => ({
       ...styles,
@@ -46,8 +46,16 @@ function ScheduleForm({product} : {product?: {product: string[]}} ){
         borderBottomRightRadius: "1rem"
       }
   }),
+  menu:(styles: any) =>({
+    ...styles,
+    marginTop: "14px"
+  }),
+  menuList: (styles: any) => ({
+    ...styles,
+    fontSize:"0.8rem",
+    color: "#4b5563",
+  }),
 } 
-
 
 const options: any = useMemo(()=>[
   { value: 'S&D Next', label: 'S&D Next (Sales & Distribution)', },
@@ -69,16 +77,16 @@ const options: any = useMemo(()=>[
       validationSchema: demoSchema,
       onSubmit: async (values, { setSubmitting, resetForm }) => {
         // console.log(`payload data `, values);
-        console.log("Checking the value ",values.solutions); // Log the array to verify its structure
-
+        // console.log("Checking the value ",values.solutions); // Log the array to verify its structure
+        
         const solutionString : string = values.solutions.map((item : any) => item.value).join(', ');
         const formData = {
           CompanyCode: 61,
           OfficeCode: 100061,
           Subject: 'Software Demo Request',
-          CC: 'm.owais@cloudtenants.com',
+          CC: process.env.NEXT_PUBLIC_CC_EMAIL,
           FromNames: 'noreply@cloudtenants.com',
-          ToNames: 'owaischemist22@gmail.com',
+          ToNames: process.env.NEXT_PUBLIC_TO_EMAIL,
           Body: '',
           Template: 'DEMO_REQUEST',
           KeyValuesData: {
@@ -117,8 +125,6 @@ const options: any = useMemo(()=>[
     const handleSelectChange = (selectedOptions: any) => {
      setFieldValue('solutions', selectedOptions);
     };
-
-
     
     // for catch all segment. It find the value which ever "Schedule demo" button is pressed
       useEffect(() => {
@@ -266,7 +272,7 @@ const options: any = useMemo(()=>[
 
           <div className="flex justify-center items-center mb-4">
 
-<div className="relative w-full z-20">
+<div className="relative w-full z-30">
    <div>
     <ul>
       <li className="list-disc ml-5 text-sm">
@@ -274,16 +280,17 @@ const options: any = useMemo(()=>[
       </li>
     </ul>
           <Select
-          className="focus:text-black lg:w-[520px] xs:w-full text-sm text-gray-600 pb-1.5 pt-2 focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none "
+          className=" focus:text-black lg:w-[520px] xs:w-full text-sm text-gray-600 pb-1.5 pt-2 focus:font-medium bg-transparent rounded-lg border-2 border-gray-400 focus:ring-0 focus:border-gray-900 peer focus:outline-none "
           isMulti
           options={options}
           value={values.solutions}
           onChange={handleSelectChange}
           classNamePrefix="select"
           styles={customStyles}
-          // value={selectedOption ? [selectedOption] : selectedValue}
           isDisabled={!!product}
           placeholder="Select your desired product(s), e.g: Sales & Distribution, POS, etc"
+          menuPortalTarget={document.body} // this renders the dropdown into the body
+          menuPosition="fixed"
           />
       </div>
 </div>

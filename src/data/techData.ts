@@ -44,7 +44,7 @@ export const techData = [
         logo: [
             {
                 id: 7,
-                logoImg: "assets/icons/Technologies/11oracle.svg",
+                logoImg: "assets/icons/Technologies/orcale.svg",
                 alt: "Logo of oracle 11g",
                 width: "48"
             },
@@ -58,12 +58,6 @@ export const techData = [
                 id: 9,
                 logoImg: "assets/icons/Technologies/mongoDB.svg",
                 alt: "Logo of 19c mongoDB",
-                width: "48"
-            },
-            {
-                id: 11,
-                logoImg: "assets/icons/Technologies/19oracle.svg",
-                alt: "Logo of oracale 19c",
                 width: "48"
             },
             

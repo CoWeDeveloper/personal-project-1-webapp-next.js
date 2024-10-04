@@ -4,7 +4,7 @@ export const FormToast = () => {
     return (
       <div className="flex items-center font-semibold w-full">
       <CircleCheckBig  className="mr-2 text-green-900" />
-      Blog has been Updated!
+      Form has been Submitted Successfully!
     </div>
     )
   }
